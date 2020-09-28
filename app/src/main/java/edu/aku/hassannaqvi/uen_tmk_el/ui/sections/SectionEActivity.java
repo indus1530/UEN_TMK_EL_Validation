@@ -10,6 +10,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -49,7 +52,11 @@ public class SectionEActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        SaveDraft();
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
@@ -75,9 +82,9 @@ public class SectionEActivity extends AppCompatActivity {
     }
 
 
-    private void SaveDraft() {
-        form = new Form();
-        form.put("ele1", bi.ele101.isChecked() ? "1"
+    private void SaveDraft() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("ele1", bi.ele101.isChecked() ? "1"
                 : bi.ele102.isChecked() ? "2"
                 : bi.ele103.isChecked() ? "3"
                 : bi.ele104.isChecked() ? "4"
@@ -361,6 +368,7 @@ public class SectionEActivity extends AppCompatActivity {
         json.put("ele2003",bi.ele2003.isChecked() ? "3" :"-1");
 
         json.put("ele2096",bi.ele2096.isChecked() ? "96" :"-1");
+
 
 
 
