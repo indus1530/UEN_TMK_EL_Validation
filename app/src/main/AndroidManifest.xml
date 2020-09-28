@@ -28,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.sections.SectionEActivity"></activity>
+        <activity android:name=".ui.sections.SectionGActivity"></activity>
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
