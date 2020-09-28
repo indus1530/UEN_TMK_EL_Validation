@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
@@ -137,6 +138,10 @@ public class SectionCActivity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+    public void BtnEnd() {
+        AppUtilsKt.openEndActivity(this);
     }
 
 

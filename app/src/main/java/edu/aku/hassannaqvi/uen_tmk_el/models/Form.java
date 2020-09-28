@@ -26,6 +26,7 @@ public class Form extends LiveData<Form> {
     private String formtype = "";
     private String username;
     private String sysdate = "";
+
     private String elc1 = "-2";
     private String elc2 = "-2";
     private String elc3 = "-2";
@@ -34,6 +35,22 @@ public class Form extends LiveData<Form> {
     private String elc6 = "-2";
     private String elc7 = "-2";
     private String elc796 = "-2";
+
+    public String mmd1 = "-2";
+    public String mmd2 = "-2";
+    public String mmd3 = "-2";
+    public String mmd315 = "-2";
+    public String mmd4 = "-2";
+    public String mmd5 = "-2";
+    public String mmd6 = "-2";
+    public String mmd7 = "-2";
+    public String mmd08 = "-2";
+    public String mmd9 = "-2";
+    public String mmd10 = "-2";
+    public String mmd11 = "-2";
+    public String mmd12 = "-2";
+    public String mmd16 = "-2";
+
     private String istatus = ""; // Interview Status
     private String istatus96x = ""; // Interview Status
     private String endingdatetime = "";
@@ -157,6 +174,132 @@ public class Form extends LiveData<Form> {
 
     public void setElc796(String elc796) {
         this.elc796 = elc796;
+    }
+
+
+    public String getMmd1() {
+        return mmd1;
+    }
+
+    public void setMmd1(String mmd1) {
+        this.mmd1 = mmd1;
+    }
+
+
+    public String getMmd2() {
+        return mmd2;
+    }
+
+    public void setMmd2(String mmd2) {
+        this.mmd2 = mmd2;
+    }
+
+
+    public String getMmd3() {
+        return mmd3;
+    }
+
+    public void setMmd3(String mmd3) {
+        this.mmd3 = mmd3;
+    }
+
+
+    public String getMmd315() {
+        return mmd315;
+    }
+
+    public void setMmd315(String mmd315) {
+        this.mmd315 = mmd315;
+    }
+
+
+    public String getMmd4() {
+        return mmd4;
+    }
+
+    public void setMmd4(String mmd4) {
+        this.mmd4 = mmd4;
+    }
+
+
+    public String getMmd5() {
+        return mmd5;
+    }
+
+    public void setMmd5(String mmd5) {
+        this.mmd5 = mmd5;
+    }
+
+
+    public String getMmd6() {
+        return mmd6;
+    }
+
+    public void setMmd6(String mmd6) {
+        this.mmd6 = mmd6;
+    }
+
+
+    public String getMmd7() {
+        return mmd7;
+    }
+
+    public void setMmd7(String mmd7) {
+        this.mmd7 = mmd7;
+    }
+
+
+    public String getMmd08() {
+        return mmd08;
+    }
+
+    public void setMmd08(String mmd08) {
+        this.mmd08 = mmd08;
+    }
+
+
+    public String getMmd9() {
+        return mmd9;
+    }
+
+    public void setMmd9(String mmd9) {
+        this.mmd9 = mmd9;
+    }
+
+
+    public String getMmd10() {
+        return mmd10;
+    }
+
+    public void setMmd10(String mmd10) {
+        this.mmd10 = mmd10;
+    }
+
+
+    public String getMmd11() {
+        return mmd11;
+    }
+
+    public void setMmd11(String mmd11) {
+        this.mmd11 = mmd11;
+    }
+
+
+    public String getMmd12() {
+        return mmd12;
+    }
+
+    public void setMmd12(String mmd12) {
+        this.mmd12 = mmd12;
+    }
+
+
+    public String getMmd16() {
+        return mmd16;
+    }
+
+    public void setMmd16(String mmd16) {
+        this.mmd16 = mmd16;
     }
 
 

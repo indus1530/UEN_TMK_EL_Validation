@@ -46,7 +46,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_a06"
-                            android:text="@string/istatus" />
+                            android:text="istatus" />
 
                         <TextView
                             android:id="@+id/q_a06"
@@ -69,26 +69,26 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatusa" />
+                            android:text="istatusa" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatusb" />
+                            android:text="istatusb" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/istatus96" />
+                            android:text="istatus96" />
 
                         <EditText
                             android:id="@+id/istatus96x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
-                            android:hint="@string/istatus96x"
+                            android:hint="istatus96x"
                             android:inputType="text"
                             android:maxLength="40"
                             android:tag="istatus96"

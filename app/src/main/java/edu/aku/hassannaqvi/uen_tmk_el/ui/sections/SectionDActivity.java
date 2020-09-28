@@ -1,23 +1,16 @@
 package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -26,18 +19,17 @@ import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionMpBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionDBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
-import edu.aku.hassannaqvi.uen_tmk_el.models.Users;
-import edu.aku.hassannaqvi.uen_tmk_el.models.Villages;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
 
 public class SectionDActivity extends AppCompatActivity {
 
-    ActivitySectionMpBinding bi;
+    ActivitySectionDBinding bi;
     private List<String> usersFullName, ucNames, ucCodes, villageNames, villageCodes;
     private DatabaseHelper db;
 
@@ -47,110 +39,14 @@ public class SectionDActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
         bi.setCallback(this);
         setupSkip();
-        populateSpinner(this);
     }
 
 
     private void setupSkip() {
-        bi.mp107.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmp108));
-    }
-
-
-    private void populateSpinner(final Context context) {
-        db = MainApp.appInfo.getDbHelper();
-        // Spinner Drop down elements
-        usersFullName = new ArrayList<String>() {
-            {
-                add("....");
-            }
-        };
-
-        Collection<Users> dc = db.getUsers();
-        for (Users us : dc) {
-            usersFullName.add(us.getFull_name());
-        }
-
-        bi.mp102.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, usersFullName));
-        bi.mp102.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position == 0) {
-                    bi.mp103.setSelection(0);
-                    bi.mp103.setEnabled(false);
-                    return;
-                }
-
-                bi.mp103.setEnabled(true);
-                List<String> user2 = new ArrayList<>();
-
-                for (String names : usersFullName) {
-                    if (names.equals(bi.mp102.getSelectedItem().toString())) continue;
-                    user2.add(names);
-                }
-
-                bi.mp103.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, user2));
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-
-            }
-        });
-
-        bi.mp103.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position == 0) return;
-                ucNames = new ArrayList<>();
-                ucCodes = new ArrayList<>();
-                ucNames.add("....");
-                ucCodes.add("....");
-
-                Collection<Villages> pc = db.getVillageUc();
-                for (Villages p : pc) {
-                    ucNames.add(p.getUcname());
-                    ucCodes.add(p.getUcid());
-                }
-
-                bi.mp105.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, ucNames));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        bi.mp105.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position == 0) return;
-                villageNames = new ArrayList<>();
-                villageCodes = new ArrayList<>();
-                villageNames.add("....");
-                villageCodes.add("....");
-
-                Collection<Villages> pc = db.getVillageByUc(bi.mp105.getSelectedItem().toString());
-                for (Villages p : pc) {
-                    villageNames.add(p.getVillagename());
-                    villageCodes.add(p.getSeem_vid());
-                }
-
-                bi.mp104.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
     }
+
+
 
 
     public void BtnContinue() {
@@ -191,39 +87,47 @@ public class SectionDActivity extends AppCompatActivity {
         form.setDevicetagID(MainApp.appInfo.getTagName());
         form.setAppversion(MainApp.appInfo.getAppVersion());
 
-        form.setMp101(bi.mp101.getText().toString().trim().isEmpty() ? "-1" : bi.mp101.getText().toString());
 
-        form.setMp102(bi.mp102.getSelectedItem().toString());
+        form.setMmd1(bi.mmd1.getText().toString());
 
-        form.setMp103(bi.mp103.getSelectedItem().toString());
+        form.setMmd2(bi.mmd2.getText().toString());
 
-        form.setMp104(villageCodes.get(bi.mp104.getSelectedItemPosition()));
-
-        form.setMp105(ucCodes.get(bi.mp105.getSelectedItemPosition()));
-
-        form.setMp106(bi.mp106.getText().toString().trim().isEmpty() ? "-1" : bi.mp106.getText().toString());
-
-
-        form.setMp107(bi.mp10701.isChecked() ? "1"
-                : bi.mp10702.isChecked() ? "2"
-                : bi.mp10703.isChecked() ? "3"
-                : bi.mp1074.isChecked() ? "4"
-                : bi.mp10705.isChecked() ? "5"
-                : bi.mp10706.isChecked() ? "6"
-                : bi.mp10707.isChecked() ? "7"
-                : bi.mp10708.isChecked() ? "8"
-                : bi.mp10709.isChecked() ? "9"
-                : bi.mp10710.isChecked() ? "10"
-                : bi.mp10711.isChecked() ? "11"
+        form.setMmd3(bi.mmd301.isChecked() ? "1"
+                : bi.mmd302.isChecked() ? "2"
+                : bi.mmd303.isChecked() ? "3"
+                : bi.mmd304.isChecked() ? "4"
+                : bi.mmd305.isChecked() ? "5"
+                : bi.mmd306.isChecked() ? "6"
+                : bi.mmd307.isChecked() ? "7"
+                : bi.mmd308.isChecked() ? "8"
+                : bi.mmd309.isChecked() ? "9"
+                : bi.mmd310.isChecked() ? "10"
+                : bi.mmd311.isChecked() ? "11"
+                : bi.mmd312.isChecked() ? "12"
+                : bi.mmd313.isChecked() ? "13"
+                : bi.mmd314.isChecked() ? "14"
+                : bi.mmd315.isChecked() ? "96"
                 : "-1");
-        form.setMp107x(bi.mp10711x.getText().toString().trim().isEmpty() ? "-1" : bi.mp10711x.getText().toString());
 
-        form.setMp108(bi.mp108.getText().toString().trim().isEmpty() ? "-1" : bi.mp108.getText().toString());
+        form.setMmd315(bi.mmd315x.getText().toString());
 
-        form.setSeem_vid(ucCodes.get(bi.mp105.getSelectedItemPosition()) + villageCodes.get(bi.mp104.getSelectedItemPosition()));
+        form.setMmd4(bi.mmd401.isChecked() ? "1"
+                : bi.mmd402.isChecked() ? "2"
+                : bi.mmd403.isChecked() ? "3"
+                : "-1");
 
-        MainApp.setGPS(this);
+        form.setMmd5(bi.mmd5.getText().toString());
 
+        form.setMmd6(bi.mmd6.getText().toString());
+
+        form.setMmd7(bi.mmd701.getText().toString());
+        form.setMmd7(bi.mmd702.getText().toString());
+        form.setMmd7(bi.mmd703.getText().toString());
+        form.setMmd08(bi.mmd0801.getText().toString());
+        form.setMmd08(bi.mmd0802.getText().toString());
+        form.setMmd16(bi.mmd1601.isChecked() ? "1"
+                : bi.mmd1602.isChecked() ? "2"
+                : "-1");
 
     }
 
@@ -232,8 +136,9 @@ public class SectionDActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
-    /*public void BtnEnd() {
+
+    public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
-    }*/
+    }
 
 }
