@@ -35,7 +35,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
 
-public class SectionMPActivity extends AppCompatActivity {
+public class SectionDActivity extends AppCompatActivity {
 
     ActivitySectionMpBinding bi;
     private List<String> usersFullName, ucNames, ucCodes, villageNames, villageCodes;
@@ -44,7 +44,7 @@ public class SectionMPActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_mp);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
         bi.setCallback(this);
         setupSkip();
         populateSpinner(this);

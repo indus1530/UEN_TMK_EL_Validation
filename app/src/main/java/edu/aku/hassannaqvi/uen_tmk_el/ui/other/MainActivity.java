@@ -37,8 +37,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FormsReportDate;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionMFActivity;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionMPActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
@@ -294,10 +294,10 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
-                oF = new Intent(this, SectionMPActivity.class);
+                oF = new Intent(this, SectionDActivity.class);
                 break;
             case R.id.formB:
-                oF = new Intent(this, SectionMFActivity.class);
+                oF = new Intent(this, SectionCActivity.class);
                 break;
             /* case R.id.formC:
                 oF = new Intent(this, SectionEActivity.class);

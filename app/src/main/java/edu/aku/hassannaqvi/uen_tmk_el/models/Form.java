@@ -9,7 +9,6 @@ import com.google.gson.GsonBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
 
 /**
@@ -27,26 +26,14 @@ public class Form extends LiveData<Form> {
     private String formtype = "";
     private String username;
     private String sysdate = "";
-    private String mp101 = "-2";
-    private String mp102 = "-2";
-    private String mp103 = "-2";
-    private String mp104 = "-2";
-    private String mp105 = "-2";
-    private String mp106 = "-2";
-    private String mp107 = "-2";
-    private String mp107x = "-2";
-    private String mp108 = "-2";
-    private String pid = "-2";
-    private String mf101 = "-2";
-    private String mf102 = "-2";
-    private String mf103 = "-2";
-    private String mf104 = "-2";
-    private String mf105 = "-2";
-    private String mf106 = "-2";
-    private String mf106x = "-2";
-    private String mf107 = "-2";
-    private String mf108 = "-2";
-    private String mf108x = "-2";
+    private String elc1 = "-2";
+    private String elc2 = "-2";
+    private String elc3 = "-2";
+    private String elc4 = "-2";
+    private String elc5 = "-2";
+    private String elc6 = "-2";
+    private String elc7 = "-2";
+    private String elc796 = "-2";
     private String istatus = ""; // Interview Status
     private String istatus96x = ""; // Interview Status
     private String endingdatetime = "";
@@ -101,183 +88,75 @@ public class Form extends LiveData<Form> {
     }
 
 
-    public String getMp101() {
-        return mp101;
+    public String getElc1() {
+        return elc1;
     }
 
-    public void setMp101(String mp101) {
-        this.mp101 = mp101;
-    }
-
-
-    public String getMp102() {
-        return mp102;
-    }
-
-    public void setMp102(String mp102) {
-        this.mp102 = mp102;
+    public void setElc1(String elc1) {
+        this.elc1 = elc1;
     }
 
 
-    public String getMp103() {
-        return mp103;
+    public String getElc2() {
+        return elc2;
     }
 
-    public void setMp103(String mp103) {
-        this.mp103 = mp103;
-    }
-
-
-    public String getMp104() {
-        return mp104;
-    }
-
-    public void setMp104(String mp104) {
-        this.mp104 = mp104;
+    public void setElc2(String elc2) {
+        this.elc2 = elc2;
     }
 
 
-    public String getMp105() {
-        return mp105;
+    public String getElc3() {
+        return elc3;
     }
 
-    public void setMp105(String mp105) {
-        this.mp105 = mp105;
-    }
-
-
-    public String getMp106() {
-        return mp106;
-    }
-
-    public void setMp106(String mp106) {
-        this.mp106 = mp106;
+    public void setElc3(String elc3) {
+        this.elc3 = elc3;
     }
 
 
-    public String getMp107() {
-        return mp107;
+    public String getElc4() {
+        return elc4;
     }
 
-    public void setMp107(String mp107) {
-        this.mp107 = mp107;
-    }
-
-
-    public String getMp107x() {
-        return mp107x;
-    }
-
-    public void setMp107x(String mp107x) {
-        this.mp107x = mp107x;
+    public void setElc4(String elc4) {
+        this.elc4 = elc4;
     }
 
 
-    public String getMp108() {
-        return mp108;
+    public String getElc5() {
+        return elc5;
     }
 
-    public void setMp108(String mp108) {
-        this.mp108 = mp108;
-    }
-
-
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pid) {
-        this.pid = pid;
+    public void setElc5(String elc5) {
+        this.elc5 = elc5;
     }
 
 
-    public String getMf101() {
-        return mf101;
+    public String getElc6() {
+        return elc6;
     }
 
-    public void setMf101(String mf101) {
-        this.mf101 = mf101;
-    }
-
-
-    public String getMf102() {
-        return mf102;
-    }
-
-    public void setMf102(String mf102) {
-        this.mf102 = mf102;
+    public void setElc6(String elc6) {
+        this.elc6 = elc6;
     }
 
 
-    public String getMf103() {
-        return mf103;
+    public String getElc7() {
+        return elc7;
     }
 
-    public void setMf103(String mf103) {
-        this.mf103 = mf103;
-    }
-
-
-    public String getMf104() {
-        return mf104;
-    }
-
-    public void setMf104(String mf104) {
-        this.mf104 = mf104;
+    public void setElc7(String elc7) {
+        this.elc7 = elc7;
     }
 
 
-    public String getMf105() {
-        return mf105;
+    public String getElc796() {
+        return elc796;
     }
 
-    public void setMf105(String mf105) {
-        this.mf105 = mf105;
-    }
-
-
-    public String getMf106() {
-        return mf106;
-    }
-
-    public void setMf106(String mf106) {
-        this.mf106 = mf106;
-    }
-
-
-    public String getMf106x() {
-        return mf106x;
-    }
-
-    public void setMf106x(String mf106x) {
-        this.mf106x = mf106x;
-    }
-
-
-    public String getMf107() {
-        return mf107;
-    }
-
-    public void setMf107(String mf107) {
-        this.mf107 = mf107;
-    }
-
-
-    public String getMf108() {
-        return mf108;
-    }
-
-    public void setMf108(String mf108) {
-        this.mf108 = mf108;
-    }
-
-
-    public String getMf108x() {
-        return mf108x;
-    }
-
-    public void setMf108x(String mf108x) {
-        this.mf108x = mf108x;
+    public void setElc796(String elc796) {
+        this.elc796 = elc796;
     }
 
 
@@ -510,26 +389,14 @@ public class Form extends LiveData<Form> {
         this.formtype = jsonObject.getString(FormsTable.COLUMN_FORMTYPE);
         this.username = jsonObject.getString(FormsTable.COLUMN_USERNAME);
         this.sysdate = jsonObject.getString(FormsTable.COLUMN_SYSDATE);
-        this.mp101 = jsonObject.getString(FormsTable.COLUMN_MP101);
-        this.mp102 = jsonObject.getString(FormsTable.COLUMN_MP102);
-        this.mp103 = jsonObject.getString(FormsTable.COLUMN_MP103);
-        this.mp104 = jsonObject.getString(FormsTable.COLUMN_MP104);
-        this.mp105 = jsonObject.getString(FormsTable.COLUMN_MP105);
-        this.mp106 = jsonObject.getString(FormsTable.COLUMN_MP106);
-        this.mp107 = jsonObject.getString(FormsTable.COLUMN_MP107);
-        this.mp107x = jsonObject.getString(FormsTable.COLUMN_MP107x);
-        this.mp108 = jsonObject.getString(FormsTable.COLUMN_MP108);
-        this.pid = jsonObject.getString(FormsTable.COLUMN_PID);
-        this.mf101 = jsonObject.getString(FormsTable.COLUMN_MF101);
-        this.mf102 = jsonObject.getString(FormsTable.COLUMN_MF102);
-        this.mf103 = jsonObject.getString(FormsTable.COLUMN_MF103);
-        this.mf104 = jsonObject.getString(FormsTable.COLUMN_MF104);
-        this.mf105 = jsonObject.getString(FormsTable.COLUMN_MF105);
-        this.mf106 = jsonObject.getString(FormsTable.COLUMN_MF106);
-        this.mf106x = jsonObject.getString(FormsTable.COLUMN_MF106x);
-        this.mf107 = jsonObject.getString(FormsTable.COLUMN_MF107);
-        this.mf108 = jsonObject.getString(FormsTable.COLUMN_MF108);
-        this.mf108x = jsonObject.getString(FormsTable.COLUMN_MF108x);
+        this.elc1 = jsonObject.getString(FormsTable.COLUMN_ELC1);
+        this.elc2 = jsonObject.getString(FormsTable.COLUMN_ELC2);
+        this.elc3 = jsonObject.getString(FormsTable.COLUMN_ELC3);
+        this.elc4 = jsonObject.getString(FormsTable.COLUMN_ELC4);
+        this.elc5 = jsonObject.getString(FormsTable.COLUMN_ELC5);
+        this.elc6 = jsonObject.getString(FormsTable.COLUMN_ELC6);
+        this.elc7 = jsonObject.getString(FormsTable.COLUMN_ELC7);
+        this.elc796 = jsonObject.getString(FormsTable.COLUMN_ELC796);
         this.istatus = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.istatus96x = jsonObject.getString(FormsTable.COLUMN_ISTATUS96x);
         this.endingdatetime = jsonObject.getString(FormsTable.COLUMN_ENDINGDATETIME);
@@ -560,30 +427,15 @@ public class Form extends LiveData<Form> {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
         this.formtype = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
-        this.pid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_PID));
         this.seem_vid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SEEM_VID));
-        this.mp101 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP101));
-
-
-        this.mp102 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP102));
-        this.mp103 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP103));
-        this.mp104 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP104));
-        this.mp105 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP105));
-        this.mp106 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP106));
-        this.mp107 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP107));
-        this.mp107x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP107x));
-        this.mp108 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MP108));
-
-        this.mf101 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF101));
-        this.mf102 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF102));
-        this.mf103 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF103));
-        this.mf104 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF104));
-        this.mf105 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF105));
-        this.mf106 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF106));
-        this.mf106x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF106x));
-        this.mf107 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF107));
-        this.mf108 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF108));
-        this.mf108x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MF108x));
+        this.elc1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC1));
+        this.elc2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC2));
+        this.elc3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC3));
+        this.elc4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC4));
+        this.elc5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC5));
+        this.elc6 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC6));
+        this.elc7 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC7));
+        this.elc796 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC796));
         this._luid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN__LUID));
         this.mpsysdate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MPSYSDATE));
 
@@ -684,34 +536,15 @@ public class Form extends LiveData<Form> {
             json.put(FormsTable.COLUMN_USERNAME, this.username == null ? JSONObject.NULL : this.username);
             json.put(FormsTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
             json.put(FormsTable.COLUMN_SEEM_VID, this.seem_vid == null ? JSONObject.NULL : this.seem_vid);
-            json.put(FormsTable.COLUMN_PID, this.pid == null ? JSONObject.NULL : this.pid);
-            json.put(FormsTable.COLUMN_MP101, this.mp101 == null ? JSONObject.NULL : this.mp101);
+            json.put(FormsTable.COLUMN_ELC1, this.elc1 == null ? JSONObject.NULL : this.elc1);
 
-
-            if (this.formtype.equals(CONSTANTS.FORM_MP)) {
-                json.put(FormsTable.COLUMN_MP102, this.mp102 == null ? JSONObject.NULL : this.mp102);
-                json.put(FormsTable.COLUMN_MP103, this.mp103 == null ? JSONObject.NULL : this.mp103);
-                json.put(FormsTable.COLUMN_MP104, this.mp104 == null ? JSONObject.NULL : this.mp104);
-                json.put(FormsTable.COLUMN_MP105, this.mp105 == null ? JSONObject.NULL : this.mp105);
-                json.put(FormsTable.COLUMN_MP106, this.mp106 == null ? JSONObject.NULL : this.mp106);
-                json.put(FormsTable.COLUMN_MP107, this.mp107 == null ? JSONObject.NULL : this.mp107);
-                json.put(FormsTable.COLUMN_MP107x, this.mp107x == null ? JSONObject.NULL : this.mp107x);
-                json.put(FormsTable.COLUMN_MP108, this.mp108 == null ? JSONObject.NULL : this.mp108);
-            } else {
-                json.put(FormsTable.COLUMN__LUID, this._luid == null ? JSONObject.NULL : this._luid);
-                json.put(FormsTable.COLUMN_MPSYSDATE, this.mpsysdate == null ? JSONObject.NULL : this.mpsysdate);
-                json.put(FormsTable.COLUMN_MF101, this.mf101 == null ? JSONObject.NULL : this.mf101);
-                json.put(FormsTable.COLUMN_MF102, this.mf102 == null ? JSONObject.NULL : this.mf102);
-                json.put(FormsTable.COLUMN_MF103, this.mf103 == null ? JSONObject.NULL : this.mf103);
-                json.put(FormsTable.COLUMN_MF104, this.mf104 == null ? JSONObject.NULL : this.mf104);
-                json.put(FormsTable.COLUMN_MF105, this.mf105 == null ? JSONObject.NULL : this.mf105);
-                json.put(FormsTable.COLUMN_MF106, this.mf106 == null ? JSONObject.NULL : this.mf106);
-                json.put(FormsTable.COLUMN_MF106x, this.mf106x == null ? JSONObject.NULL : this.mf106x);
-                json.put(FormsTable.COLUMN_MF107, this.mf107 == null ? JSONObject.NULL : this.mf107);
-                json.put(FormsTable.COLUMN_MF108, this.mf108 == null ? JSONObject.NULL : this.mf108);
-                json.put(FormsTable.COLUMN_MF108x, this.mf108x == null ? JSONObject.NULL : this.mf108x);
-            }
-
+            json.put(FormsTable.COLUMN_ELC2, this.elc2 == null ? JSONObject.NULL : this.elc2);
+            json.put(FormsTable.COLUMN_ELC3, this.elc3 == null ? JSONObject.NULL : this.elc3);
+            json.put(FormsTable.COLUMN_ELC4, this.elc4 == null ? JSONObject.NULL : this.elc4);
+            json.put(FormsTable.COLUMN_ELC5, this.elc5 == null ? JSONObject.NULL : this.elc5);
+            json.put(FormsTable.COLUMN_ELC6, this.elc6 == null ? JSONObject.NULL : this.elc6);
+            json.put(FormsTable.COLUMN_ELC7, this.elc7 == null ? JSONObject.NULL : this.elc7);
+            json.put(FormsTable.COLUMN_ELC796, this.elc796 == null ? JSONObject.NULL : this.elc796);
 
             json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
             json.put(FormsTable.COLUMN_ISTATUS96x, this.istatus96x == null ? JSONObject.NULL : this.istatus96x);
