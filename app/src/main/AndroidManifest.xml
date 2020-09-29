@@ -29,6 +29,13 @@
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
 
+        <activity android:name=".ui.sections.SectionE02Activity"></activity>
+        <activity android:name=".ui.sections.SectionIActivity" />
+        <activity android:name=".ui.sections.SectionKActivity" />
+        <activity android:name=".ui.sections.SectionLActivity" />
+        <activity android:name=".ui.sections.SectionNActivity" />
+        <activity android:name=".ui.sections.SectionHActivity" />
+        <activity android:name=".ui.sections.SectionGActivity" />
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"

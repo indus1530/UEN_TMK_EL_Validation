@@ -25,7 +25,6 @@ public class SectionGActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_g);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g);
         bi.setCallback(this);
 
