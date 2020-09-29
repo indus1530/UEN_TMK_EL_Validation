@@ -145,13 +145,13 @@
     <string name="mmd403">ٽئين جنس</string>
     <string name="mmd5">پيءُ جو نالو؟ (5 سالن کان گھٽ عمر جي ٻارن لاءِ)</string>
     <string name="mmd6">ماءُ جو نالو؟ (5 سالن کان گھٽ عمر جي ٻارن لاءِ)</string>
-    <string name="mmd7">نالي جي تاريخ پئدائش ؟ (جيڪڏھن مھينو يا تاريخ معلوم نه  ھجي ته  98 لکو جيڪڏھن سال معلوم نه  ھجي ته   99 لکو)</string>
+    <string name="mmd7"> نالي جي تاريخ پئدائش ؟ </string>
+    <string name="mmd7_info"> جيڪڏھن مھينو يا تاريخ معلوم نه ھجي ته 98 لکو جيڪڏھن سال معلوم نه ھجي ته 99 لکو </string>
     <string name="mmd701">ڏينهن</string>
     <string name="mmd702">مهينو</string>
     <string name="mmd703">سال</string>
-    <string name="mmd08">نالي) جي عمر ڪيتري آھي؟ مڪمل سال لکو جيڪڏھن معلوم نه  آھي ته   98 لکو
-(جيڪڏھن عمر 95 سالن کان وڌيڪ ھجي ته  95 لکو)
-</string>
+    <string name="mmd08"> نالي جي عمر ڪيتري آھي ؟ مڪمل سال لکو - </string>
+    <string name="mmd08_info"> جيڪڏھن معلوم نه آھي ته 98 لکو جيڪڏھن عمر 95 سالن کان وڌيڪ ھجي ته 95 لکو </string>
     <string name="mmd0801">سال</string>
     <string name="mmd0802">مهينا</string>
     <string name="mmd9">نالو) ڪڏھن به اسڪول ويو آھي ؟ (3 سالن کان وڌيڪ عمر وارن لاءِ)</string>

@@ -1,24 +1,24 @@
 package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
-import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionKBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
@@ -87,22 +87,23 @@ public class SectionJActivity extends AppCompatActivity {
                 : bi.bfj3d.isChecked() ? ""
                 : bi.bfj3666.isChecked() ? "666"
                 : bi.bfj398.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj3mx", bi.bfj3mx.getText().toString());
         json.put("bfj3hx", bi.bfj3hx.getText().toString());
         json.put("bfj3dx", bi.bfj3dx.getText().toString());
-        json.put("bfj4", bi.bfj401.isChecked() ? "1"
+
+        /*json.put("bfj4", bi.bfj401.isChecked() ? "1"
                 : bi.bfj402.isChecked() ? "2"
-                :  "-1");
+                :  "-1");*/
 
-        json.put("bfj501",bi.bfj501.isChecked() ? "1" :"-1");
+        json.put("bfj501", bi.bfj501.isChecked() ? "1" : "-1");
 
-        json.put("bfj502",bi.bfj502.isChecked() ? "2" :"-1");
+        json.put("bfj502", bi.bfj502.isChecked() ? "2" : "-1");
 
-        json.put("bfj503",bi.bfj503.isChecked() ? "3" :"-1");
+        json.put("bfj503", bi.bfj503.isChecked() ? "3" : "-1");
 
-        json.put("bfj504",bi.bfj504.isChecked() ? "4" :"-1");
+        json.put("bfj504", bi.bfj504.isChecked() ? "4" : "-1");
 
         json.put("bfj505",bi.bfj505.isChecked() ? "5" :"-1");
 

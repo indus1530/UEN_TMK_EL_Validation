@@ -143,14 +143,16 @@
     <string name="mmd403">Tarnsgender</string>
     <string name="mmd5">Name of Father (For age of under 5 childrens)</string>
     <string name="mmd6">Name of Mother (For age of under 5 childrens)</string>
-    <string name="mmd7">Date of Birth (Record DOB from card/certificate/memory recall)</string>
-    <string name="mmd701">Day</string>
-    <string name="mmd702">Month</string>
-    <string name="mmd703">Year</string>
-    <string name="mmd08">Age (If date of birth cannot be recorded then record age by recall and record only months and years.)</string>
-    <string name="mmd0801">Years</string>
-    <string name="mmd0802">Months</string>
-    <string name="mmd9">Has {Name} ever attended a school?
+    <string name="mmd7"> Date of Birth </string>
+    <string name="mmd7_info"> Record DOB from card / certificate / memory recall </string>
+    <string name="mmd701"> Day </string>
+    <string name="mmd702"> Month </string>
+    <string name="mmd703"> Year </string>
+    <string name="mmd08"> Age in completed years </string>
+    <string name="mmd08_info"> If date of birth cannot be recorded then record age by recall and record only months and years. </string>
+    <string name="mmd0801"> Years </string>
+    <string name="mmd0802"> Months </string>
+    <string name="mmd9"> Has {Name} ever attended a school ?
 (For children less than five years, this variable will not be visible, and an auto generated NA code will appear)</string>
     <string name="mmd901">Yes </string>
     <string name="mmd902">No</string>

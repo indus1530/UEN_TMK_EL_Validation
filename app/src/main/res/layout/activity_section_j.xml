@@ -389,14 +389,18 @@
                             android:layout_alignTop="@id/qtxt_bfj4"
                             android:layout_alignBottom="@id/qtxt_bfj4"
                             android:text="@string/Q_bfj4" />
+
                     </RelativeLayout>
 
                     <RadioGroup
                         android:id="@+id/bfj4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- bfj5  CheckBox   -->
