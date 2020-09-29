@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
 
-            <!-- mmd_title1  Title   -->
+            <!-- mmd_title1  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd_title1"
                 style="@style/cardView">
@@ -45,7 +45,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!-- mmd_title2  Title   -->
+            <!-- mmd_title2  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd_title2"
                 style="@style/cardView">
@@ -440,7 +440,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd7  Title   -->
+            <!-- mmd7  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd7"
                 style="@style/cardView">
@@ -525,7 +525,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd08  Title   -->
+            <!-- mmd08  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd08"
                 style="@style/cardView">
@@ -593,7 +593,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd9  Title   -->
+            <!-- mmd9  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd9"
                 style="@style/cardView">
@@ -639,7 +639,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd10  Title   -->
+            <!-- mmd10  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd10"
                 style="@style/cardView">
@@ -811,7 +811,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd11  Title   -->
+            <!-- mmd11  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd11"
                 style="@style/cardView">
@@ -923,7 +923,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- mmd12  Title   -->
+            <!-- mmd12  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd12"
                 style="@style/cardView">

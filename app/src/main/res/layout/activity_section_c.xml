@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
 
-            <!-- elc_title1  Title   -->
+            <!-- elc_title1  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVelc_title1"
                 style="@style/cardView">
@@ -46,7 +46,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!-- elc_title2  Title   -->
+            <!-- elc_title2  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVelc_title2"
                 style="@style/cardView">
@@ -264,7 +264,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- elc5  Title   -->
+            <!-- elc5  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVelc5"
                 style="@style/cardView">
