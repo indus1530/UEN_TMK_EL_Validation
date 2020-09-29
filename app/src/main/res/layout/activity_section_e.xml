@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ele_title1  Title   -->
+            <!-- ele_title1  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVele_title1"
                 style="@style/cardView">
@@ -55,7 +55,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- ele_title2  Title   -->
+            <!-- ele_title2  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVele_title2"
                 style="@style/cardView">

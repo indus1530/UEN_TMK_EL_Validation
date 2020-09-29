@@ -853,7 +853,7 @@
 
             <!-- hwl_title 3  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVhwl_title 3"
+                android:id="@+id/fldGrpCVhwl_tittle3"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -867,20 +867,20 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_hwl_title 3"
+                            android:id="@+id/qtxt_hwl_tittle3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hwl_title 3"
-                            android:text="@string/hwl_title 3" />
+                            android:layout_toEndOf="@id/q_hwl_tittle3"
+                            android:text="@string/hwl_tittle3" />
 
                         <TextView
-                            android:id="@+id/q_hwl_title 3"
+                            android:id="@+id/q_hwl_tittle3"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hwl_title 3"
-                            android:layout_alignBottom="@id/qtxt_hwl_title 3"
-                            android:text="@string/Q_hwl_title 3" />
+                            android:layout_alignTop="@id/qtxt_hwl_tittle3"
+                            android:layout_alignBottom="@id/qtxt_hwl_tittle3"
+                            android:text="@string/Q_hwl_tittle3" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
