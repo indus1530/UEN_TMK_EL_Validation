@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -13,22 +12,19 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
-
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionEBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
+
+
 public class SectionEActivity extends AppCompatActivity {
 
     ActivitySectionEBinding bi;
@@ -42,6 +38,7 @@ public class SectionEActivity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkip();
     }
+
 
     private void setupSkip() {
 
@@ -118,8 +115,8 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.ele216.isChecked() ? "16"
                 : bi.ele296.isChecked() ? "96"
                 :  "-1");
-
         json.put("ele296x", bi.ele296x.getText().toString());
+
         json.put("ele3", bi.ele301.isChecked() ? "1"
                 : bi.ele302.isChecked() ? "2"
                 : bi.ele303.isChecked() ? "3"
@@ -150,14 +147,16 @@ public class SectionEActivity extends AppCompatActivity {
                 :  "-1");
 
         json.put("ele596x", bi.ele596x.getText().toString());
+
         json.put("ele6", bi.ele601.isChecked() ? "1"
                 : bi.ele602.isChecked() ? "2"
                 : bi.ele603.isChecked() ? "3"
                 : bi.ele604.isChecked() ? "4"
                 : bi.ele696.isChecked() ? "96"
-                :  "-1");
+                : "-1");
+        json.put("ele696x", bi.ele696x.getText().toString().trim().isEmpty() ? "-1" : bi.ele696x.getText().toString());
 
-        json.put("ele696x", bi.ele696x.getText().toString());
+
         json.put("ele7", bi.ele701.isChecked() ? "1"
                 : bi.ele702.isChecked() ? "2"
                 : bi.ele703.isChecked() ? "3"
