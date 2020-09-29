@@ -1580,7 +1580,6 @@
     <string name="can2002">نه </string>
     <string name="can21">کاٻي ڏنئوري جي گهير جي  وچ واري حصي جي ماپ (سينٽي ميٽر ۾) ٽيون دفعو</string>
 
-
     <!--QUESTION IDs-->
     <string name='Q_arih_title1'>arih_title1</string>
     <string name='Q_arih_title2'>arih_title2</string>
@@ -1954,5 +1953,6 @@
     <string name='Q_wsk7'>wsk7</string>
     <string name='Q_wsk8'>wsk8</string>
     <string name='Q_wsk9'>wsk9</string>
+
 
 </resources>
