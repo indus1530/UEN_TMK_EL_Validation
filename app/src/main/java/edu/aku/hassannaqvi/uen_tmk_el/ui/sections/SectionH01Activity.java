@@ -14,18 +14,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionHBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionH01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
-public class SectionHActivity extends AppCompatActivity {
+public class SectionH01Activity extends AppCompatActivity {
 
-    ActivitySectionHBinding bi;
+    ActivitySectionH01Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h01);
         bi.setCallback(this);
 
         setupSkip();
@@ -261,74 +261,6 @@ public class SectionHActivity extends AppCompatActivity {
                 : bi.arih2603.isChecked() ? "3"
                 : "-1");
 
-        json.put("arih27", bi.arih2701.isChecked() ? "1"
-                : bi.arih2702.isChecked() ? "98"
-                : "-1");
-        json.put("arih2701x", bi.arih2701x.getText().toString());
-
-        json.put("arih28", bi.arih2801.isChecked() ? "1"
-                : bi.arih2802.isChecked() ? "98"
-                : "-1");
-        json.put("arih2801x", bi.arih2801x.getText().toString());
-
-        json.put("arih29", bi.arih2901.isChecked() ? "1"
-                : bi.arih2902.isChecked() ? "2"
-                : bi.arih2903.isChecked() ? "3"
-                : bi.arih2904.isChecked() ? "4"
-                : bi.arih2905.isChecked() ? "5"
-                : bi.arih2906.isChecked() ? "6"
-                : bi.arih2907.isChecked() ? "7"
-                : bi.arih2908.isChecked() ? "8"
-                : bi.arih2909.isChecked() ? "9"
-                : bi.arih2996.isChecked() ? "96"
-                : "-1");
-        json.put("arih2996x", bi.arih2996x.getText().toString());
-
-        json.put("arih30", bi.arih3001.isChecked() ? ""
-                : bi.arih3002.isChecked() ? "98"
-                : "-1");
-        json.put("arih3001x", bi.arih3001x.getText().toString());
-
-        json.put("arih31", bi.arih3101.isChecked() ? "1"
-                : bi.arih3102.isChecked() ? "2"
-                : bi.arih3198.isChecked() ? "98"
-                : "-1");
-
-        json.put("arih32", bi.arih3201.isChecked() ? "1"
-                : bi.arih3202.isChecked() ? "2"
-                : bi.arih3298.isChecked() ? "98"
-                : "-1");
-
-        json.put("arih33", bi.arih3301.isChecked() ? "1"
-                : bi.arih3302.isChecked() ? "2"
-                : bi.arih3398.isChecked() ? "98"
-                : "-1");
-
-        json.put("arih34", bi.arih3401.isChecked() ? ""
-                : bi.arih3402.isChecked() ? "98"
-                : "-1");
-        json.put("arih3401x", bi.arih3401x.getText().toString());
-
-        json.put("arih35", bi.arih3501.isChecked() ? "1"
-                : bi.arih3502.isChecked() ? "2"
-                : bi.arih3503.isChecked() ? "3"
-                : bi.arih3504.isChecked() ? "4"
-                : bi.arih3596.isChecked() ? "96"
-                : "-1");
-
-        json.put("arih3601", bi.arih3601.isChecked() ? "1" : "-1");
-        json.put("arih3602", bi.arih3602.isChecked() ? "2" : "-1");
-        json.put("arih3603", bi.arih3603.isChecked() ? "3" : "-1");
-        json.put("arih3604", bi.arih3604.isChecked() ? "4" : "-1");
-        json.put("arih3605", bi.arih3605.isChecked() ? "5" : "-1");
-        json.put("arih3606", bi.arih3606.isChecked() ? "6" : "-1");
-        json.put("arih3607", bi.arih3607.isChecked() ? "7" : "-1");
-        json.put("arih3608", bi.arih3608.isChecked() ? "8" : "-1");
-        json.put("arih3609", bi.arih3609.isChecked() ? "9" : "-1");
-        json.put("arih3610", bi.arih3610.isChecked() ? "10" : "-1");
-        json.put("arih3611", bi.arih3611.isChecked() ? "11" : "-1");
-        json.put("arih3696", bi.arih3696.isChecked() ? "96" : "-1");
-        json.put("arih3696x", bi.arih3696x.getText().toString());
 
     }
 
