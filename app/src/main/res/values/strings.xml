@@ -1686,8 +1686,8 @@
     <string name='Q_bfj9'>bfj9</string>
     <string name='Q_can_title1'>can_title 1</string>
     <string name='Q_can_title2'>can_title 2</string>
-    <string name='Q_can_tittle1a'>can_tittle 1a</string>
-    <string name='Q_can_tittle2a'>can_tittle 2a</string>
+    <string name='Q_can_tittle1a'>can_tittle1a</string>
+    <string name='Q_can_tittle2a'>can_tittle2a</string>
     <string name='Q_can1'>can1</string>
     <string name='Q_can10'>can10</string>
     <string name='Q_can11'>can11</string>
@@ -1953,6 +1953,31 @@
     <string name='Q_wsk7'>wsk7</string>
     <string name='Q_wsk8'>wsk8</string>
     <string name='Q_wsk9'>wsk9</string>
+    <string name="Q_rab01">RA01</string>
+    <string name="q_rad">RAD</string>
+    <string name="Q_rac05">RAC05</string>
+    <string name="Q_rac04">RAC04</string>
+    <string name="Q_cmc01">CMC01</string>
+    <string name="Q_cmd01">CMD01</string>
+    <string name="Q_cmd02">CMD02</string>
+    <string name="Q_cmd03">CMD03</string>
+    <string name="Q_cme01">CME01</string>
+    <string name="Q_cme02">CME02</string>
+    <string name="Q_cme03">CME03</string>
+    <string name="Q_cme05">CME05</string>
+    <string name="Q_cme04">CME04</string>
+    <string name="Q_cmf01">CMF01</string>
+    <string name="Q_cmf02">CMF02</string>
+    <string name="Q_cmf03">CMF03</string>
+    <string name="Q_cmg01">CMG01</string>
+    <string name="Q_cmg02">CMG02</string>
+    <string name="Q_cmg03">CMG03</string>
+    <string name="Q_cmg04">CMG04</string>
+    <string name="Q_cmg05">CMG05</string>
+    <string name="Q_cmg06">CMG06</string>
+    <string name="Q_cmg07">CMG07</string>
+    <string name="Q_cmg08">CMG08</string>
+    <string name="Q_cmg96">CMG96</string>
 
 
 </resources>
