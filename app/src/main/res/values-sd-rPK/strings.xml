@@ -1620,8 +1620,8 @@
     <string name='Q_arih7'>arih7</string>
     <string name='Q_arih8'>arih8</string>
     <string name='Q_arih9'>arih9</string>
-    <string name='Q_bfj_title1'>bfj_title 1</string>
-    <string name='Q_bfj_title2'>bfj_title 2</string>
+    <string name='Q_bfj_title1'>bfj_tittle1</string>
+    <string name='Q_bfj_title2'>bfj_tittle2</string>
     <string name='Q_bfj1'>bfj1</string>
     <string name='Q_bfj10'>bfj10</string>
     <string name='Q_bfj11'>bfj11</string>
@@ -1685,8 +1685,8 @@
     <string name='Q_bfj7'>bfj7</string>
     <string name='Q_bfj8'>bfj8</string>
     <string name='Q_bfj9'>bfj9</string>
-    <string name='Q_can_title1'>can_title 1</string>
-    <string name='Q_can_title2'>can_title 2</string>
+    <string name='Q_can_title1'>can_tittle1</string>
+    <string name='Q_can_title2'>can_tittle2</string>
     <string name='Q_can_tittle1a'>can_tittle1a</string>
     <string name='Q_can_tittle2a'>can_tittle2a</string>
     <string name='Q_can1'>can1</string>
@@ -1831,7 +1831,7 @@
     <string name='Q_ele9g'>ele9g</string>
     <string name='Q_ele9h'>ele9h</string>
     <string name='Q_ele9i'>ele9i</string>
-    <string name='Q_hwl_title3'>hwl_title 3</string>
+    <string name='Q_hwl_title3'>hwl_tittle3</string>
     <string name='Q_hwl_title1'>hwl_title1</string>
     <string name='Q_hwl_title2'>hwl_title2</string>
     <string name='Q_hwl1'>hwl1</string>
@@ -1936,8 +1936,8 @@
     <string name='Q_raf6'>raf6</string>
     <string name='Q_raf7'>raf7</string>
     <string name='Q_rasno'>rasno</string>
-    <string name='Q_wsk_title1'>wsk_title 1</string>
-    <string name='Q_wsk_title2'>wsk_title 2</string>
+    <string name='Q_wsk_title1'>wsk_tittle1</string>
+    <string name='Q_wsk_title2'>wsk_tittle2</string>
     <string name='Q_wsk1'>wsk1</string>
     <string name='Q_wsk10'>wsk10</string>
     <string name='Q_wsk11'>wsk11</string>
