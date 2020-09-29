@@ -28,11 +28,10 @@ public class SectionKActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_l);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k);
         bi.setCallback(this);
         setupSkip();
     }
-
     private void setupSkip() {
 
     }
