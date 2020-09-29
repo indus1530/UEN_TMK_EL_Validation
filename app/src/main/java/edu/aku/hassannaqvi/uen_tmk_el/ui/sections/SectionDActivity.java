@@ -46,9 +46,6 @@ public class SectionDActivity extends AppCompatActivity {
 
     }
 
-
-
-
     public void BtnContinue() {
         if (!formValidation()) return;
         SaveDraft();
@@ -59,7 +56,6 @@ public class SectionDActivity extends AppCompatActivity {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     private boolean UpdateDB() {
 
@@ -75,7 +71,6 @@ public class SectionDActivity extends AppCompatActivity {
             return false;
         }
     }
-
 
     private void SaveDraft() {
 
@@ -131,11 +126,9 @@ public class SectionDActivity extends AppCompatActivity {
 
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
