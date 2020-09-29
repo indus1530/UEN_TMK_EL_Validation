@@ -871,7 +871,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_hwl_tittle3"
-                            android:text="@string/hwl_tittle3" />
+                            android:text="@string/Q_hwl_title3" />
 
                         <TextView
                             android:id="@+id/q_hwl_tittle3"
@@ -880,7 +880,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_hwl_tittle3"
                             android:layout_alignBottom="@id/qtxt_hwl_tittle3"
-                            android:text="@string/Q_hwl_tittle3" />
+                            android:text="@string/Q_hwl_title3" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

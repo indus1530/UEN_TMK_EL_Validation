@@ -7,7 +7,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -34,59 +33,59 @@ public class SectionIActivity extends AppCompatActivity {
 
     private void setupSkip() {
 
-        bi.chg1.setOnCheckedChangeListener((group, checkedId) -> {
+       /* bi.chg1.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId != bi.chg101.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG01);
             }
-        });
+        });*/
 
-        bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg601.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVchg7);
             }
-        });
+        });*/
 
-        bi.chg13.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg13.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg1302.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG02);
             }
-        });
+        });*/
 
-        bi.chg15.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg15.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg1502.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG03);
             }
-        });
+        });*/
 
-        bi.chg20.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg20.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg2003.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG04);
             }
-        });
+        });*/
 
-        bi.chg21.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg21.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg2102.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG05);
             }
-        });
+        });*/
 
-        bi.chg23.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg23.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg2301.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVchg24);
             }
-        });
+        });*/
 
-        bi.chg32.setOnCheckedChangeListener((group, checkedId) -> {
+        /*bi.chg32.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg3202.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG06);
             }
-        });
+        });*/
 
-        bi.chg33.setOnCheckedChangeListener((group, checkedId) -> {
+       /* bi.chg33.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg3302.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVchg34);
             }
-        });
+        });*/
 
     }
 
