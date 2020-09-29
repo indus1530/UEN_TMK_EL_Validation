@@ -39,6 +39,15 @@ import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FormsReportDate;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionFActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionGActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionHActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionIActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionJActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionKActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionLActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionNActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
@@ -294,19 +303,16 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
-                oF = new Intent(this, SectionDActivity.class);
-                break;
-            case R.id.formB:
                 oF = new Intent(this, SectionCActivity.class);
                 break;
-            /* case R.id.formC:
-                oF = new Intent(this, SectionEActivity.class);
+            case R.id.formC:
+                oF = new Intent(this, SectionCActivity.class);
                 break;
-             case R.id.formD:
+            case R.id.formD:
                 oF = new Intent(this, SectionDActivity.class);
                 break;
             case R.id.formE:
-                oF = new Intent(this, SectionEActivity.class);
+                oF = new Intent(this, SectionE01Activity.class);
                 break;
             case R.id.formF:
                 oF = new Intent(this, SectionFActivity.class);
@@ -328,7 +334,10 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 break;
             case R.id.formL:
                 oF = new Intent(this, SectionLActivity.class);
-                break;*/
+                break;
+            case R.id.formN:
+                oF = new Intent(this, SectionNActivity.class);
+                break;
             case R.id.databaseBtn:
                 oF = new Intent(this, AndroidDatabaseManager.class);
                 break;
