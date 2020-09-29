@@ -136,7 +136,6 @@ public class SectionGActivity extends AppCompatActivity {
         json.put("chg2", bi.chg2.getText().toString());
 
         json.put("chg301", bi.chg301.getText().toString());
-
         json.put("chg302", bi.chg302.getText().toString());
 
         json.put("chg4", bi.chg401.isChecked() ? "1"

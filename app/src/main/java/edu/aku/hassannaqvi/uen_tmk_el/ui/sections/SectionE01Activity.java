@@ -29,7 +29,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
-public class SectionEActivity extends AppCompatActivity {
+public class SectionE01Activity extends AppCompatActivity {
 
     ActivitySectionEBinding bi;
     private List<String> usersFullName, ucNames, ucCodes, villageNames, villageCodes;
