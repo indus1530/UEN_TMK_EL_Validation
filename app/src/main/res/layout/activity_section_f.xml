@@ -5,9 +5,7 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionFActivity" />
@@ -33,28 +31,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/raf_title1" />
 
-                        <TextView
-                            android:id="@+id/qtxt_raf_title1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_raf_title1"
-                            android:text="@string/raf_title1" />
-
-                        <TextView
-                            android:id="@+id/q_raf_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_raf_title1"
-                            android:layout_alignBottom="@id/qtxt_raf_title1"
-                            android:text="@string/Q_raf_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- raf_title2  Title   -->
@@ -67,28 +51,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/raf_title2" />
 
-                        <TextView
-                            android:id="@+id/qtxt_raf_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_raf_title2"
-                            android:text="@string/raf_title2" />
-
-                        <TextView
-                            android:id="@+id/q_raf_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_raf_title2"
-                            android:layout_alignBottom="@id/qtxt_raf_title2"
-                            android:text="@string/Q_raf_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- raf1  Radio   -->
@@ -606,144 +576,87 @@
                             android:layout_alignTop="@id/qtxt_rab"
                             android:layout_alignBottom="@id/qtxt_rab"
                             android:text="@string/Q_rab" />
+
                     </RelativeLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- rab01  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrab01"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_rab01"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rab01"
-                            android:text="@string/rab01" />
+                            android:layout_weight="1"
+                            android:text="@string/rab01"
+                            android:gravity="center"/>
 
                         <TextView
-                            android:id="@+id/q_rab01"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rab01"
-                            android:layout_alignBottom="@id/qtxt_rab01"
-                            android:text="@string/Q_rab01" />
-                    </RelativeLayout>
+                            android:layout_weight="1"
+                            android:text="@string/rab02"
+                            android:gravity="center"/>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rab01"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rab01"
-                        app:mask="##"
-                        app:maxValue="29"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/rab03"
+                            android:gravity="center" />
 
-            <!-- rab02  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrab02"
-                style="@style/cardView">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/qtxt_rab02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rab02"
-                            android:text="@string/rab02" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab01"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rab01"
+                            app:mask="##"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range" />
 
-                        <TextView
-                            android:id="@+id/q_rab02"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rab02"
-                            android:layout_alignBottom="@id/qtxt_rab02"
-                            android:text="@string/Q_rab02" />
-                    </RelativeLayout>
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab02"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rab02"
+                            app:mask="##"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rab02"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rab02"
-                        app:mask="##"
-                        app:maxValue="11"
-                        app:minValue="1"
-                        app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab03"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rab03"
+                            app:mask="##"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
-            <!-- rab03  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrab03"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_rab03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rab03"
-                            android:text="@string/rab03" />
-
-                        <TextView
-                            android:id="@+id/q_rab03"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rab03"
-                            android:layout_alignBottom="@id/qtxt_rab03"
-                            android:text="@string/Q_rab03" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rab03"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rab03"
-                        app:mask="##"
-                        app:maxValue="99"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <!-- rac  Radio   -->
             <androidx.cardview.widget.CardView
@@ -808,7 +721,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_rac01"
                             android:layout_alignBottom="@id/qtxt_rac01"
-                            android:text="@string/Q_rac01" />
+                            />
+                       <!-- android:text="@string/Q_rac01"-->
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -842,7 +756,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_rac02"
                             android:layout_alignBottom="@id/qtxt_rac02"
-                            android:text="@string/Q_rac02" />
+                             />
+                        <!--android:text="@string/Q_rac02"-->
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -876,7 +791,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_rac03"
                             android:layout_alignBottom="@id/qtxt_rac03"
-                            android:text="@string/Q_rac03" />
+                             />
+                        <!--android:text="@string/Q_rac03"-->
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -949,9 +865,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+
             <!-- rad  Title   -->
+            <!-- rad01  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrad"
+                android:id="@+id/fldGrpCVrad01"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -978,143 +897,84 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_rad"
                             android:layout_alignBottom="@id/qtxt_rad"
-                            android:text="@string/Q_rad" />
+                            android:text="@string/q_rad" />
+
                     </RelativeLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- rad01  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrad01"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_rad01"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rad01"
-                            android:text="@string/rad01" />
+                            android:layout_weight="1"
+                            android:text="@string/rad01"
+                            android:gravity="center"/>
 
                         <TextView
-                            android:id="@+id/q_rad01"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rad01"
-                            android:layout_alignBottom="@id/qtxt_rad01"
-                            android:text="@string/Q_rad01" />
-                    </RelativeLayout>
+                            android:layout_weight="1"
+                            android:text="@string/rad02"
+                            android:gravity="center"/>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rad01"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rad01"
-                        app:mask="##"
-                        app:maxValue="29"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/rad03"
+                            android:gravity="center" />
 
-            <!-- rad02  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrad02"
-                style="@style/cardView">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/qtxt_rad02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rad02"
-                            android:text="@string/rad02" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad01"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rad01"
+                            app:mask="##"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range" />
 
-                        <TextView
-                            android:id="@+id/q_rad02"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rad02"
-                            android:layout_alignBottom="@id/qtxt_rad02"
-                            android:text="@string/Q_rad02" />
-                    </RelativeLayout>
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad02"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rad02"
+                            app:mask="##"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rad02"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rad02"
-                        app:mask="##"
-                        app:maxValue="11"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad03"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/rad03"
+                            app:mask="##"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
 
-            <!-- rad03  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVrad03"
-                style="@style/cardView">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_rad03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_rad03"
-                            android:text="@string/rad03" />
-
-                        <TextView
-                            android:id="@+id/q_rad03"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_rad03"
-                            android:layout_alignBottom="@id/qtxt_rad03"
-                            android:text="@string/Q_rad03" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/rad03"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/rad03"
-                        app:mask="##"
-                        app:maxValue="99"
-                        app:minValue="1"
-                        app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1531,7 +1391,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_cmc02"
                             android:layout_alignBottom="@id/qtxt_cmc02"
-                            android:text="@string/Q_cmc02" />
+                             />
+                        <!--android:text="@string/Q_cmc02"-->
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
