@@ -34,57 +34,52 @@ public class SectionHActivity extends AppCompatActivity {
 
     private void setupSkip() {
 
-        bi.chg1.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId != bi.chg101.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG01);
+        bi.arih1.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId != bi.arih101.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVarih2);
             }
         });
 
-        bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg601.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVchg7);
+        bi.arih3.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih301.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecH01);
             }
         });
 
-        bi.chg13.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg1302.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG02);
+        bi.arih7.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih701.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVarih8);
             }
         });
 
-        bi.chg15.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg1502.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG03);
+        bi.arih14.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih1402.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecH02);
             }
         });
 
-        bi.chg20.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg2003.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG04);
+        bi.arih16.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih1602.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecH03);
             }
         });
 
-        bi.chg21.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg2102.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG05);
+        bi.arih21.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih2103.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecH04);
+                Clear.clearAllFields(bi.fldGrpCVarih26);
             }
         });
 
-        bi.chg23.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg2301.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVchg24);
+        bi.arih22.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih2202.getId()) {
+                Clear.clearAllFields(bi.fldGrpSecH05);
             }
         });
 
-        bi.chg32.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg3202.getId()) {
-                Clear.clearAllFields(bi.fldGrpSecG06);
-            }
-        });
-
-        bi.chg33.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg3302.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVchg34);
+        bi.arih24.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.arih2401.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVarih25);
             }
         });
 
