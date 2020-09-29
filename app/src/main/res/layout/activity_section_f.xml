@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -32,12 +33,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_raf_title1"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_raf_title1"
-                        android:text="@string/raf_title1" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_raf_title1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_raf_title1"
+                            android:text="@string/raf_title1" />
+
+                        <TextView
+                            android:id="@+id/q_raf_title1"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_raf_title1"
+                            android:layout_alignBottom="@id/qtxt_raf_title1"
+                            android:text="@string/Q_raf_title1" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -51,12 +67,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_raf_title2"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_raf_title2"
-                        android:text="@string/raf_title2" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_raf_title2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_raf_title2"
+                            android:text="@string/raf_title2" />
+
+                        <TextView
+                            android:id="@+id/q_raf_title2"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_raf_title2"
+                            android:layout_alignBottom="@id/qtxt_raf_title2"
+                            android:text="@string/Q_raf_title2" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -150,7 +181,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf2"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="15"
                         app:minValue="1"
@@ -168,12 +198,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_raf3"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_raf3"
-                        android:text="@string/raf3" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_raf3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_raf3"
+                            android:text="@string/raf3" />
+
+                        <TextView
+                            android:id="@+id/q_raf3"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_raf3"
+                            android:layout_alignBottom="@id/qtxt_raf3"
+                            android:text="@string/Q_raf3" />
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -187,7 +232,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf301"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="15"
                         app:minValue="1"
@@ -205,7 +249,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf302"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="15"
                         app:minValue="1"
@@ -223,7 +266,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf303"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="15"
                         app:minValue="1"
@@ -241,7 +283,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf304"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="15"
                         app:minValue="1"
@@ -345,7 +386,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf5"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="38"
                         app:minValue="1"
@@ -443,7 +483,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf7"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="10"
                         app:minValue="1"
@@ -489,7 +528,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rasno"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="9"
                         app:minValue="1"
@@ -548,12 +586,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_rab"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_rab"
-                        android:text="@string/rab" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_rab"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_rab"
+                            android:text="@string/rab" />
+
+                        <TextView
+                            android:id="@+id/q_rab"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_rab"
+                            android:layout_alignBottom="@id/qtxt_rab"
+                            android:text="@string/Q_rab" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -595,7 +648,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rab01"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="29"
                         app:minValue="1"
@@ -641,7 +693,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rab02"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="11"
                         app:minValue="1"
@@ -687,7 +738,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rab03"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="1"
@@ -909,12 +959,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_rad"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_rad"
-                        android:text="@string/rad" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_rad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_rad"
+                            android:text="@string/rad" />
+
+                        <TextView
+                            android:id="@+id/q_rad"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_rad"
+                            android:layout_alignBottom="@id/qtxt_rad"
+                            android:text="@string/Q_rad" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -956,7 +1021,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rad01"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="29"
                         app:minValue="1"
@@ -1002,7 +1066,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rad02"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="11"
                         app:minValue="1"
@@ -1048,7 +1111,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/rad03"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="1"
@@ -1238,7 +1300,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmf9"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="10"
                         app:minValue="1"
@@ -1284,7 +1345,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmsr"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="9"
                         app:minValue="1"
@@ -1486,12 +1546,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_cmd"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_cmd"
-                        android:text="@string/cmd" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_cmd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_cmd"
+                            android:text="@string/cmd" />
+
+                        <TextView
+                            android:id="@+id/q_cmd"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_cmd"
+                            android:layout_alignBottom="@id/qtxt_cmd"
+                            android:text="@string/Q_cmd" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1533,7 +1608,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmd01"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="29"
                         app:minValue="1"
@@ -1579,7 +1653,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmd02"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="11"
                         app:minValue="1"
@@ -1625,7 +1698,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmd03"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="1"
@@ -1847,12 +1919,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/qtxt_cmf"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_cmf"
-                        android:text="@string/cmf" />
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_cmf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_cmf"
+                            android:text="@string/cmf" />
+
+                        <TextView
+                            android:id="@+id/q_cmf"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_cmf"
+                            android:layout_alignBottom="@id/qtxt_cmf"
+                            android:text="@string/Q_cmf" />
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1894,7 +1981,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmf01"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="29"
                         app:minValue="1"
@@ -1940,7 +2026,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmf02"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="11"
                         app:minValue="1"
@@ -1986,7 +2071,6 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/cmf03"
-                        android:inputType="number"
                         app:mask="##"
                         app:maxValue="99"
                         app:minValue="1"
