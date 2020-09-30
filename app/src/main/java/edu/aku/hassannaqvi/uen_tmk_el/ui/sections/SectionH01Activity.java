@@ -15,7 +15,6 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionH01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionH01Activity extends AppCompatActivity {
@@ -94,7 +93,7 @@ public class SectionH01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionH02Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -260,7 +259,6 @@ public class SectionH01Activity extends AppCompatActivity {
                 : bi.arih2602.isChecked() ? "2"
                 : bi.arih2603.isChecked() ? "3"
                 : "-1");
-
 
     }
 

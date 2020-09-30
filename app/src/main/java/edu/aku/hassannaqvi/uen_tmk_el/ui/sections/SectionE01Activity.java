@@ -16,7 +16,6 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionE01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 public class SectionE01Activity extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class SectionE01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionE02Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
