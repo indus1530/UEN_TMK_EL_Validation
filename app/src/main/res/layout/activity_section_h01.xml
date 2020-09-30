@@ -191,6 +191,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/arih2"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -305,6 +306,7 @@
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih4"
                             app:mask="##"
+                            android:inputType="number"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -410,6 +412,7 @@
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih6"
                             app:mask="##"
+                            android:inputType="number"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -613,6 +616,7 @@
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih9"
                             app:mask="##"
+                            android:inputType="number"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -1597,6 +1601,7 @@
                                         android:layout_marginBottom="12dp"
                                         android:hint="@string/arih23"
                                         app:mask="##"
+                                        android:inputType="number"
                                         app:maxValue="30"
                                         app:minValue="1"
                                         app:type="range" />
