@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -19,19 +20,23 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionFActivity extends AppCompatActivity {
+
     ActivitySectionFBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_f);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f);
         bi.setCallback(this);
+        setupSkip();
 
     }
 
     private void setupSkip() {
-
+        bi.raf402.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVraf5));
+        bi.raf602.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ly2));
+        bi.cmf802.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ly1));
+        bi.cmf10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ly3));
     }
 
 
@@ -203,7 +208,7 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.cmf1098.isChecked() ? "98"
                 : "-1");
 
-        json.put("cmf1098x", bi.cmf1098x.getText().toString());
+        //     json.put("cmf1098x", bi.cmf1098x.getText().toString());
         json.put("cmf11", bi.cmf1101.isChecked() ? "1"
                 : bi.cmf1102.isChecked() ? "2"
                 : bi.cmf1103.isChecked() ? "3"
