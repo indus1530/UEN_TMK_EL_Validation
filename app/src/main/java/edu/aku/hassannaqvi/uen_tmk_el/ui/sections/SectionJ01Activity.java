@@ -37,6 +37,10 @@ public class SectionJ01Activity extends AppCompatActivity {
             }
         }));
 
+        bi.bfj4.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj5));
+
+
+
 
 
     }

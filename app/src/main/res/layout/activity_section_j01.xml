@@ -412,7 +412,8 @@
             <!-- bfj5  CheckBox   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj5"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{bfj402.checked ? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
