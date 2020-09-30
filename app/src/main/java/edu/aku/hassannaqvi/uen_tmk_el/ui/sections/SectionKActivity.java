@@ -1,25 +1,21 @@
 package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
-import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionKBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
+import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionKBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionKActivity extends AppCompatActivity {
 
@@ -36,9 +32,13 @@ public class SectionKActivity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue() throws JSONException {
+    public void BtnContinue() {
         if (!formValidation()) return;
-        SaveDraft();
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
@@ -48,7 +48,7 @@ public class SectionKActivity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addForm(form);
         form.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
@@ -58,11 +58,14 @@ public class SectionKActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return true;
     }
 
     private void SaveDraft() throws JSONException {
+
         JSONObject json = new JSONObject();
+
         json.put("wsk1", bi.wsk101.isChecked() ? "1"
                 : bi.wsk102.isChecked() ? "2"
                 : bi.wsk103.isChecked() ? "3"

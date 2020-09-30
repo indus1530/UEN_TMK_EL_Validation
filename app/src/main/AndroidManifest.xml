@@ -28,7 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.sections.SectionI02Activity"></activity>
+        <activity android:name=".ui.sections.SectionJ02Activity"></activity>
+        <activity android:name=".ui.sections.SectionI02Activity" />
         <activity android:name=".ui.sections.SectionH02Activity" />
         <activity android:name=".ui.sections.SectionG02Activity" />
         <activity
@@ -97,7 +98,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionJActivity"
+            android:name=".ui.sections.SectionJ01Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
