@@ -633,7 +633,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility='@{ele1102.checked? View.GONE : View.VISIBLE}'>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -763,7 +764,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility='@{ele1302.checked? View.GONE : View.VISIBLE}'>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -1283,12 +1285,6 @@
                             android:text="@string/ele1904" />
 
                         <CheckBox
-                            android:id="@+id/ele1905"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ele1905" />
-
-                        <CheckBox
                             android:id="@+id/ele1996"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1304,6 +1300,14 @@
                             android:text='@{ele1996.checked ? ele1996x.getText().toString() : ""}'
                             android:visibility='@{ele1996.checked? View.VISIBLE : View.GONE}' />
                     </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/ele1905"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="-1"
+                        android:text="@string/ele1905" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

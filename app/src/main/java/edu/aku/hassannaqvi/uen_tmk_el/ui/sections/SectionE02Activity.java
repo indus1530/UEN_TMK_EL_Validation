@@ -2,11 +2,13 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -31,6 +33,38 @@ public class SectionE02Activity extends AppCompatActivity {
     }
 
     private void setupSkip() {
+
+
+        bi.ele11.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.ele1102.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVele12);
+            }
+        }));
+
+        bi.ele13.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.ele1302.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVele14);
+            }
+        }));
+
+        bi.ele1905.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.ele19check, false);
+                Clear.clearAllFields(bi.fldGrpCVele20);
+                bi.fldGrpCVele20.setVisibility(View.GONE);
+
+            } else {
+                Clear.clearAllFields(bi.ele19check, true);
+                bi.fldGrpCVele20.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        /*bi.ele13.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.ele1302.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVele14);
+            }
+        }));*/
 
         /*bi.imi1.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.imi101.getId()) {
