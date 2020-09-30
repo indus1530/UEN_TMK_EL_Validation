@@ -14,18 +14,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionIBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionI01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
-public class SectionIActivity extends AppCompatActivity {
+public class SectionI01Activity extends AppCompatActivity {
 
-    ActivitySectionIBinding bi;
+    ActivitySectionI01Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i01);
         bi.setCallback(this);
 
         setupSkip();
@@ -232,97 +232,6 @@ public class SectionIActivity extends AppCompatActivity {
         json.put("imi4jplc", bi.imi4jplc01.isChecked() ? "1"
                 : bi.imi4jplc02.isChecked() ? "2"
                 : bi.imi4jplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4k", bi.imi4k01.isChecked() ? "1"
-                : bi.imi4k02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4ksrc", bi.imi4ksrc01.isChecked() ? "1"
-                : bi.imi4ksrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4kplc", bi.imi4kplc01.isChecked() ? "1"
-                : bi.imi4kplc02.isChecked() ? "2"
-                : bi.imi4kplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4l", bi.imi4l01.isChecked() ? "1"
-                : bi.imi4l02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4lsrc", bi.imi4lsrc01.isChecked() ? "1"
-                : bi.imi4lsrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4lplc", bi.imi4lplc01.isChecked() ? "1"
-                : bi.imi4lplc02.isChecked() ? "2"
-                : bi.imi4lplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4m", bi.imi4m01.isChecked() ? "1"
-                : bi.imi4m02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4msrc", bi.imi4msrc01.isChecked() ? "1"
-                : bi.imi4msrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4mplc", bi.imi4mplc01.isChecked() ? "1"
-                : bi.imi4mplc02.isChecked() ? "2"
-                : bi.imi4mplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4n", bi.imi4n01.isChecked() ? "1"
-                : bi.imi4n02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4nsrc", bi.imi4nsrc01.isChecked() ? "1"
-                : bi.imi4nsrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4nplc", bi.imi4nplc01.isChecked() ? "1"
-                : bi.imi4nplc02.isChecked() ? "2"
-                : bi.imi4nplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4o", bi.imi4o01.isChecked() ? "1"
-                : bi.imi4o02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4osrc", bi.imi4osrc01.isChecked() ? "1"
-                : bi.imi4osrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4oplc", bi.imi4oplc01.isChecked() ? "1"
-                : bi.imi4oplc02.isChecked() ? "2"
-                : bi.imi4oplc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4o1", bi.imi4o101.isChecked() ? "1"
-                : bi.imi4o102.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4o1src", bi.imi4o1src01.isChecked() ? "1"
-                : bi.imi4o1src02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4o1plc", bi.imi4o1plc01.isChecked() ? "1"
-                : bi.imi4o1plc02.isChecked() ? "2"
-                : bi.imi4o1plc03.isChecked() ? "3"
-                : "-1");
-
-        json.put("imi4p", bi.imi4p01.isChecked() ? "1"
-                : bi.imi4p02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4psrc", bi.imi4psrc01.isChecked() ? "1"
-                : bi.imi4psrc02.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi4pplc", bi.imi4pplc01.isChecked() ? "1"
-                : bi.imi4pplc02.isChecked() ? "2"
-                : bi.imi4pplc03.isChecked() ? "3"
                 : "-1");
 
     }
