@@ -403,6 +403,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <RadioButton
+                            android:id="@+id/bfj401"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj401" />
+
+                        <RadioButton
+                            android:id="@+id/bfj402"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj402" />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -553,6 +565,13 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/fldGrpj06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility='@{bfj602.checked? View.GONE : View.VISIBLE}'>
 
             <!-- bfj7  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -1162,6 +1181,8 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+        </LinearLayout>
+
             <!-- bfj9  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj9"
@@ -1269,7 +1290,8 @@
             <!-- bfj11  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj11"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{bfj1002.checked? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"

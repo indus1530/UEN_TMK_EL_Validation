@@ -576,7 +576,8 @@
             <!-- bfj22  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj22"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{bfj2101.checked? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -640,7 +641,8 @@
             <!-- bfj23  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj23"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{bfj2201.checked? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -778,6 +780,13 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/fldGrpj13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility='@{bfj1303.checked? View.GONE : View.VISIBLE}'>
 
             <!-- bfj14  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -1986,6 +1995,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
             <!--EndButton LinearLayout-->
             <LinearLayout
