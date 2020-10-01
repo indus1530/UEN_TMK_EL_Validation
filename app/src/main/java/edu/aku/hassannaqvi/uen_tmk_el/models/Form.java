@@ -526,10 +526,6 @@ public class Form extends LiveData<Form> {
     public Form Sync(JSONObject jsonObject) throws JSONException {
         this._ID = jsonObject.getString(FormsTable.COLUMN_ID);
         this._UID = jsonObject.getString(FormsTable.COLUMN_UID);
-        this.seem_vid = jsonObject.getString(FormsTable.COLUMN_SEEM_VID);
-        this._luid = jsonObject.getString(FormsTable.COLUMN__LUID);
-        this.mpsysdate = jsonObject.getString(FormsTable.COLUMN_MPSYSDATE);
-        this.formtype = jsonObject.getString(FormsTable.COLUMN_FORMTYPE);
         this.username = jsonObject.getString(FormsTable.COLUMN_USERNAME);
         this.sysdate = jsonObject.getString(FormsTable.COLUMN_SYSDATE);
         this.elc1 = jsonObject.getString(FormsTable.COLUMN_ELC1);
@@ -569,8 +565,6 @@ public class Form extends LiveData<Form> {
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.formtype = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
-        this.seem_vid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SEEM_VID));
         this.elc1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC1));
         this.elc2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC2));
         this.elc3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC3));
@@ -579,10 +573,6 @@ public class Form extends LiveData<Form> {
         this.elc6 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC6));
         this.elc7 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC7));
         this.elc796 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ELC796));
-        this._luid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN__LUID));
-        this.mpsysdate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_MPSYSDATE));
-
-
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus96x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS96x));
         this.endingdatetime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ENDINGDATETIME));
@@ -675,10 +665,8 @@ public class Form extends LiveData<Form> {
         try {
             json.put(FormsTable.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
             json.put(FormsTable.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-            json.put(FormsTable.COLUMN_FORMTYPE, this.formtype == null ? JSONObject.NULL : this.formtype);
             json.put(FormsTable.COLUMN_USERNAME, this.username == null ? JSONObject.NULL : this.username);
             json.put(FormsTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
-            json.put(FormsTable.COLUMN_SEEM_VID, this.seem_vid == null ? JSONObject.NULL : this.seem_vid);
             json.put(FormsTable.COLUMN_ELC1, this.elc1 == null ? JSONObject.NULL : this.elc1);
 
             json.put(FormsTable.COLUMN_ELC2, this.elc2 == null ? JSONObject.NULL : this.elc2);

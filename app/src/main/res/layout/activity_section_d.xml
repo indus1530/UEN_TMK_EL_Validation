@@ -102,10 +102,10 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/mmd1"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:hint="@string/mmd1"
-                        app:mask="##"
                         app:maxValue="0"
                         app:minValue="0"
                         app:type="range" />
@@ -151,9 +151,10 @@
                     <EditText
                         android:id="@+id/mmd2"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/mmd2" />
+                        android:layout_height="wrap_content"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:hint="@string/name"
+                        android:maxLength="20" />
 
                 </LinearLayout>
 
@@ -419,6 +420,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- mmd6  Input   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd6"
@@ -466,6 +468,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- mmd7  tittle  -->
             <androidx.cardview.widget.CardView
@@ -543,6 +546,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             app:mask="##"
                             app:maxValue="0"
@@ -555,6 +559,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             app:mask="##"
                             app:maxValue="0"
@@ -567,6 +572,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             app:mask="##"
                             app:maxValue="0"
@@ -650,6 +656,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             app:mask="##"
                             app:maxValue="10"
@@ -662,6 +669,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             app:mask="##"
                             app:maxValue="11"
@@ -906,6 +914,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- mmd11  tittle  -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd11"
@@ -936,6 +945,7 @@
                             android:layout_alignTop="@id/qtxt_mmd11"
                             android:layout_alignBottom="@id/qtxt_mmd11"
                             android:text="@string/Q_mmd11" />
+
                     </RelativeLayout>
 
                     <RadioButton
@@ -1015,8 +1025,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/mmd1113" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- mmd12  tittle  -->
             <androidx.cardview.widget.CardView
@@ -1079,6 +1092,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- mmd16  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmmd16"
@@ -1115,18 +1129,21 @@
                     <RadioGroup
                         android:id="@+id/mmd16"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/mmd1601"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/mmd1601" />
 
                         <RadioButton
                             android:id="@+id/mmd1602"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/mmd1602" />
 
                     </RadioGroup>
