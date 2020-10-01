@@ -125,24 +125,28 @@
                     <RadioGroup
                         android:id="@+id/arih1"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/arih101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih101" />
 
                         <RadioButton
                             android:id="@+id/arih102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih102" />
 
                         <RadioButton
                             android:id="@+id/arih198"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih198" />
 
                     </RadioGroup>
@@ -192,6 +196,7 @@
                         android:hint="@string/arih2"
                         app:mask="##"
                         android:inputType="number"
+                        android:maxLength="2"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -233,24 +238,28 @@
                     <RadioGroup
                         android:id="@+id/arih3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/arih301"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih301" />
 
                         <RadioButton
                             android:id="@+id/arih302"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih302" />
 
                         <RadioButton
                             android:id="@+id/arih303"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/arih303" />
 
                     </RadioGroup>
@@ -307,6 +316,7 @@
                             android:hint="@string/arih4"
                             app:mask="##"
                             android:inputType="number"
+                            android:maxLength="2"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -345,32 +355,52 @@
                                 android:text="@string/Q_arih5" />
                         </RelativeLayout>
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/arih501" />
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/arih501"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/arih501" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="2"
+                                android:text="@string/arih501" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/arih502" />
+                            <EditText
+                                android:id="@+id/arih501"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="12dp"
+                                android:layout_weight="1"
+                                android:hint="@string/arih501" />
 
-                        <EditText
-                            android:id="@+id/arih502"
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/arih502" />
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="2"
+                                android:text="@string/arih502" />
+
+                            <EditText
+                                android:id="@+id/arih502"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="12dp"
+                                android:layout_weight="1"
+                                android:hint="@string/arih502" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- arih6  Input-Numeric   -->
@@ -413,6 +443,7 @@
                             android:hint="@string/arih6"
                             app:mask="##"
                             android:inputType="number"
+                            android:maxLength="2"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -454,24 +485,28 @@
                         <RadioGroup
                             android:id="@+id/arih7"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/arih701"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih701" />
 
                             <RadioButton
                                 android:id="@+id/arih702"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih702" />
 
                             <RadioButton
                                 android:id="@+id/arih798"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih798" />
 
                         </RadioGroup>
@@ -617,6 +652,7 @@
                             android:hint="@string/arih9"
                             app:mask="##"
                             android:inputType="number"
+                            android:maxLength="2"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -918,21 +954,27 @@
                         <RadioGroup
                             android:id="@+id/arih13"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/arih1301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih1301" />
 
                             <RadioButton
                                 android:id="@+id/arih1302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih1302" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- arih14  Radio   -->
@@ -970,18 +1012,21 @@
                         <RadioGroup
                             android:id="@+id/arih14"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/arih1401"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih1401" />
 
                             <RadioButton
                                 android:id="@+id/arih1402"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/arih1402" />
 
                         </RadioGroup>
@@ -1091,18 +1136,21 @@
                             <RadioGroup
                                 android:id="@+id/arih16"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/arih1601"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:text="@string/arih1601" />
 
                                 <RadioButton
                                     android:id="@+id/arih1602"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:text="@string/arih1602" />
 
                             </RadioGroup>
@@ -1528,24 +1576,28 @@
                                 <RadioGroup
                                     android:id="@+id/arih22"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
 
                                     <RadioButton
                                         android:id="@+id/arih2201"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:text="@string/arih2201" />
 
                                     <RadioButton
                                         android:id="@+id/arih2202"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:text="@string/arih2202" />
 
                                     <RadioButton
                                         android:id="@+id/arih2203"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:text="@string/arih2203" />
 
                                 </RadioGroup>
@@ -1602,6 +1654,7 @@
                                         android:hint="@string/arih23"
                                         app:mask="##"
                                         android:inputType="number"
+                                        android:maxLength="2"
                                         app:maxValue="30"
                                         app:minValue="1"
                                         app:type="range" />
@@ -1643,18 +1696,21 @@
                                     <RadioGroup
                                         android:id="@+id/arih24"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
 
                                         <RadioButton
                                             android:id="@+id/arih2401"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
+                                            android:layout_weight="1"
                                             android:text="@string/arih2401" />
 
                                         <RadioButton
                                             android:id="@+id/arih2402"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
+                                            android:layout_weight="1"
                                             android:text="@string/arih2402" />
 
                                     </RadioGroup>
@@ -1752,7 +1808,9 @@
 
                     </LinearLayout>
 
+
                 </LinearLayout>
+
 
                 <!-- arih26  Radio   -->
                 <androidx.cardview.widget.CardView

@@ -225,11 +225,14 @@
                         android:id="@+id/elc3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/name" />
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:hint="@string/name"
+                        android:maxLength="20" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- elc4  Radio   -->
             <androidx.cardview.widget.CardView
@@ -289,6 +292,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- elc5  tittle  -->
             <androidx.cardview.widget.CardView
@@ -356,6 +360,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             android:maxLength="2"
                             app:maxValue="11"
@@ -368,6 +373,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:inputType="number"
                             android:hint="##"
                             android:maxLength="2"
                             app:maxValue="49"

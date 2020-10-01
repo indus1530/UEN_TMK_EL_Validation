@@ -125,21 +125,27 @@
                     <RadioGroup
                         android:id="@+id/can1"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/can101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can101" />
 
                         <RadioButton
                             android:id="@+id/can102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can102" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can2  Input-Numeric   -->
@@ -181,6 +187,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can2"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="140"
                         app:minValue="50"
@@ -227,6 +234,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can3"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="100"
                         app:minValue="35"
@@ -677,6 +685,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can10"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
@@ -723,6 +732,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can11"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
@@ -765,21 +775,27 @@
                     <RadioGroup
                         android:id="@+id/can12"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/can1201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can1201" />
 
                         <RadioButton
                             android:id="@+id/can1202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can1202" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can13  Input-Numeric   -->
@@ -821,6 +837,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can13"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
@@ -867,6 +884,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can14"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
@@ -913,6 +931,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can15"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
@@ -955,21 +974,27 @@
                     <RadioGroup
                         android:id="@+id/can16"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/can1601"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can1601" />
 
                         <RadioButton
                             android:id="@+id/can1602"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can1602" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can17  Input-Numeric   -->
@@ -1011,6 +1036,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can17"
                         android:inputType="number"
+                        android:maxLength="3"
                         app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
@@ -1057,6 +1083,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can18"
                         android:inputType="number"
+                        android:maxLength="2"
                         app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"
@@ -1103,6 +1130,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can19"
                         android:inputType="number"
+                        android:maxLength="2"
                         app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"
@@ -1145,21 +1173,27 @@
                     <RadioGroup
                         android:id="@+id/can20"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/can2001"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can2001" />
 
                         <RadioButton
                             android:id="@+id/can2002"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can2002" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can21  Input-Numeric   -->
@@ -1201,6 +1235,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can21"
                         android:inputType="number"
+                        android:maxLength="2"
                         app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"

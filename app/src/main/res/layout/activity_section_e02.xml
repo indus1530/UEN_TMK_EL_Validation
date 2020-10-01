@@ -501,8 +501,8 @@
                             android:layout_height="56dp"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele1201"
-                            android:tag="ele1201"
                             android:inputType="number"
+                            android:tag="ele1201"
                             android:text='@{ele1201.checked ? ele1201x.getText().toString() : ""}'
                             android:visibility='@{ele1201.checked? View.VISIBLE : View.GONE}' />
 
@@ -630,115 +630,172 @@
 
                     </RelativeLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1401" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1401"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1401"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1401" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1402" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1401"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1402"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1402"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1403" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1403"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1403"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1402" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1404" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1402"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1404"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1404"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1405" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1405"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1405"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1403" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/ele1406" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1403"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/ele1406"
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/ele1406"
-                        android:inputType="number"
-                        app:mask="##"
-                        app:maxValue="100"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1404" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1404"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1405" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1405"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/ele1406" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ele1406"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele15  Radio   -->
             <androidx.cardview.widget.CardView
@@ -770,32 +827,40 @@
                             android:layout_alignTop="@id/qtxt_ele15"
                             android:layout_alignBottom="@id/qtxt_ele15"
                             android:text="@string/Q_ele15" />
+
                     </RelativeLayout>
 
                     <RadioGroup
                         android:id="@+id/ele15"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/ele1501"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/ele1501" />
 
                         <RadioButton
                             android:id="@+id/ele1502"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/ele1502" />
 
                         <RadioButton
                             android:id="@+id/ele15098"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/ele15098" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- ele16  Radio   -->
@@ -905,19 +970,22 @@
                             android:id="@+id/ele1696"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/ele1696" />
+                            android:text="@string/other" />
 
                         <EditText
                             android:id="@+id/ele1696x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/ele1696"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
                             android:tag="ele1696"
                             android:text='@{ele1696.checked ? ele1696x.getText().toString() : ""}'
                             android:visibility='@{ele1696.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- ele17  Radio   -->
@@ -1054,20 +1122,24 @@
                             android:id="@+id/ele1896"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/ele1896" />
+                            android:text="@string/other" />
 
                         <EditText
                             android:id="@+id/ele1896x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/ele1896"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
                             android:tag="ele1896"
                             android:text='@{ele1896.checked ? ele1896x.getText().toString() : ""}'
                             android:visibility='@{ele1896.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele19  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -1099,6 +1171,7 @@
                             android:layout_alignTop="@id/qtxt_ele19"
                             android:layout_alignBottom="@id/qtxt_ele19"
                             android:text="@string/Q_ele19" />
+
                     </RelativeLayout>
 
                     <LinearLayout
@@ -1136,17 +1209,18 @@
                             android:id="@+id/ele1996"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/ele1996" />
+                            android:text="@string/other" />
 
                         <EditText
                             android:id="@+id/ele1996x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/ele1996"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
                             android:tag="ele1996"
                             android:text='@{ele1996.checked ? ele1996x.getText().toString() : ""}'
                             android:visibility='@{ele1996.checked? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
 
                     <CheckBox
@@ -1157,6 +1231,7 @@
                         android:text="@string/ele1905" />
 
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- ele20  CheckBox   -->
@@ -1221,8 +1296,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ele2096" />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!--EndButton LinearLayout-->
