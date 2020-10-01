@@ -116,7 +116,8 @@
     <string name="elc706">Dwelling not found </string>
     <string name="elc707">No Child between 0-05 years</string>
     <string name="elc708">Temporarily locked </string>
-    <string name="elc796">Others (specify)</string>
+    <string name="elc796"> Others </string>
+    <string name="elc796x"> Specify </string>
     <string name="mmd_title1">SECTION D: HOUSEHOLD MEMBERS’ INFORMATION (This section will be asked from the head of the household or someone else at least 18 years of age or older.)</string>
     <string name="mmd_title2">Now I would like to ask you questions on household member information who live with you in this house and share the same kitchen. This information will be used to assess the health care needs, and services available to you and your household members in the area. </string>
     <string name="mmd1">Member Serial number</string>
@@ -141,8 +142,10 @@
     <string name="mmd401">Male</string>
     <string name="mmd402">Female</string>
     <string name="mmd403">Tarnsgender</string>
-    <string name="mmd5">Name of Father (For age of under 5 childrens)</string>
-    <string name="mmd6">Name of Mother (For age of under 5 childrens)</string>
+    <string name="mmd5"> Name of Father </string>
+    <string name="mmd5_info"> For age of under 5 children </string>
+    <string name="mmd6"> Name of Mother </string>
+    <string name="mmd6_info"> For age of under 5 children </string>
     <string name="mmd7"> Date of Birth </string>
     <string name="mmd7_info"> Record DOB from card / certificate / memory recall </string>
     <string name="mmd701"> Day </string>
@@ -152,11 +155,12 @@
     <string name="mmd08_info"> If date of birth cannot be recorded then record age by recall and record only months and years. </string>
     <string name="mmd0801"> Years </string>
     <string name="mmd0802"> Months </string>
-    <string name="mmd9"> Has {Name} ever attended a school ?
-(For children less than five years, this variable will not be visible, and an auto generated NA code will appear)</string>
+    <string name="mmd9"> Has {Name} ever attended a school ? </string>
+    <string name="mmd9_info"> For children less than five years, this variable will not be visible, and an auto generated NA code will appear </string>
     <string name="mmd901">Yes </string>
     <string name="mmd902">No</string>
-    <string name="mmd10">What is the highest class (NAME) completed? Education</string>
+    <string name="mmd10"> What is the highest class (NAME) completed ? Education </string>
+    <string name="mmd10_info"> What is the highest class (NAME) completed ? Education </string>
     <string name="mmd1000">0 = less than 1 YEAR completed </string>
     <string name="mmd1001">1 = class 1 </string>
     <string name="mmd1002">2 = class 2</string>
