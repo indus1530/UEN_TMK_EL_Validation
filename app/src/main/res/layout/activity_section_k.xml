@@ -1177,7 +1177,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-        android:visibility='@{wsk1104.checked || wsk1111.checked? View.GONE : View.VISIBLE}'>
+            android:visibility='@{wsk1104.checked || wsk1111.checked? View.GONE : View.VISIBLE}'>
 
             <!-- wsk12  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1236,6 +1236,13 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/fldGrpk12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility='@{wsk1201.checked? View.VISIBLE : View.GONE}'>
 
             <!-- wsk13  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1426,6 +1433,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
         </LinearLayout>
 
             <!--EndButton LinearLayout-->
