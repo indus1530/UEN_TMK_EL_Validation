@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -126,12 +127,19 @@ public class SectionDActivity extends AppCompatActivity {
 
     }
 
+
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
+
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
+    }
+
+
+    public void showTooltipView(View view) {
+        AppUtilsKt.showTooltip(this, view);
     }
 
 }

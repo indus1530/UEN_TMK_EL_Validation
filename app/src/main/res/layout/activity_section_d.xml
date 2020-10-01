@@ -403,7 +403,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd5"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd5" />
 
                     </RelativeLayout>
@@ -452,7 +452,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd6"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd6" />
 
                     </RelativeLayout>
@@ -501,7 +501,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd7"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd7" />
 
                     </RelativeLayout>
@@ -618,7 +618,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd08"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd08" />
 
                     </RelativeLayout>
@@ -714,7 +714,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd9"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd9" />
 
                     </RelativeLayout>
@@ -767,7 +767,7 @@
                             android:layout_alignBottom="@id/qtxt_mmd10"
                             android:drawableStart="@drawable/ic_info_outline_black_24dp"
                             android:drawablePadding="16dp"
-                            android:onClick="showTooltip"
+                            android:onClick="@{callback::showTooltipView}"
                             android:text="@string/Q_mmd10" />
 
                     </RelativeLayout>
