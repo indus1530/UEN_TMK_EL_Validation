@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -29,6 +30,12 @@ public class SectionKActivity extends AppCompatActivity {
         setupSkip();
     }
     private void setupSkip() {
+
+        bi.wsk3.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.wsk303.getId()) {
+                Clear.clearAllFields(bi.fldGrpk03);
+            }
+        }));
 
     }
 
