@@ -398,6 +398,13 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:id="@+id/fldGrpk05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility='@{hwl502.checked? View.GONE : View.VISIBLE}'>
+
             <!-- hwl6  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhwl6"
@@ -515,6 +522,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
             <!-- hwl8  CheckBox   -->
             <androidx.cardview.widget.CardView
