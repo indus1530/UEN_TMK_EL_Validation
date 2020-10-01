@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 public class SectionG02Activity extends AppCompatActivity {
 
     ActivitySectionG02Binding bi;
+    public static boolean chg101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,14 @@ public class SectionG02Activity extends AppCompatActivity {
     }
 
     private void setupSkip() {
+
+        chg101 = getIntent().getBooleanExtra("chg1", true);
+        if (chg101) {
+            bi.fldGrpSecG07.setVisibility(View.GONE);
+            Clear.clearAllFields(bi.fldGrpSecG07);
+        } else
+            bi.fldGrpSecG07.setVisibility(View.VISIBLE);
+
 
         bi.chg32.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg3202.getId()) {
