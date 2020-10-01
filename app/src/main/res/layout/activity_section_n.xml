@@ -180,8 +180,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can2"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="140"
                         app:minValue="50"
                         app:type="range" />
@@ -226,8 +226,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can3"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="35"
                         app:type="range" />
@@ -295,7 +295,8 @@
             <!-- can5  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVcan5"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{can402.checked? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -675,8 +676,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can10"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
@@ -721,8 +722,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can11"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
@@ -819,8 +820,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can13"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
@@ -865,8 +866,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can14"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
@@ -911,8 +912,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can15"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
@@ -1009,8 +1010,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can17"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
@@ -1055,8 +1056,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can18"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"
                         app:type="range" />
@@ -1101,8 +1102,8 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can19"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"
                         app:type="range" />
@@ -1199,13 +1200,15 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can21"
-                        app:mask="##"
                         android:inputType="number"
+                        app:mask="##"
                         app:maxValue="30"
                         app:minValue="10"
                         app:type="range" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+            </androidx.cardview.widget.CardView>
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1233,6 +1236,9 @@
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
