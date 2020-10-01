@@ -37,6 +37,8 @@ public class SectionKActivity extends AppCompatActivity {
             }
         }));
 
+        bi.wsk8.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVwsk9));
+
     }
 
     public void BtnContinue() {
