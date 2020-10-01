@@ -400,6 +400,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_mmd5"
                             android:layout_alignBottom="@id/qtxt_mmd5"
+                            android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                            android:drawablePadding="16dp"
+                            android:onClick="showTooltip"
                             android:text="@string/Q_mmd5" />
 
                     </RelativeLayout>
@@ -445,6 +448,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_mmd6"
                             android:layout_alignBottom="@id/qtxt_mmd6"
+                            android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                            android:drawablePadding="16dp"
+                            android:onClick="showTooltip"
                             android:text="@string/Q_mmd6" />
 
                     </RelativeLayout>
@@ -452,9 +458,10 @@
                     <EditText
                         android:id="@+id/mmd6"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/mmd6" />
+                        android:layout_height="wrap_content"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:hint="@string/name"
+                        android:maxLength="20" />
 
                 </LinearLayout>
 
@@ -697,7 +704,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_mmd9"
                             android:layout_alignBottom="@id/qtxt_mmd9"
+                            android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                            android:drawablePadding="16dp"
+                            android:onClick="showTooltip"
                             android:text="@string/Q_mmd9" />
+
                     </RelativeLayout>
 
                     <RadioButton
@@ -711,8 +722,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/mmd902" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- mmd10  tittle  -->
             <androidx.cardview.widget.CardView
@@ -743,7 +757,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_mmd10"
                             android:layout_alignBottom="@id/qtxt_mmd10"
+                            android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                            android:drawablePadding="16dp"
+                            android:onClick="showTooltip"
                             android:text="@string/Q_mmd10" />
+
                     </RelativeLayout>
 
                     <RadioButton
@@ -883,7 +901,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/mmd1099" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- mmd11  tittle  -->
@@ -1028,6 +1048,7 @@
                             android:layout_alignTop="@id/qtxt_mmd12"
                             android:layout_alignBottom="@id/qtxt_mmd12"
                             android:text="@string/Q_mmd12" />
+
                     </RelativeLayout>
 
                     <RadioButton
