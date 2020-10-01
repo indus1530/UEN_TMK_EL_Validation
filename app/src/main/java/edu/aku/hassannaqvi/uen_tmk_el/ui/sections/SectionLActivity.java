@@ -40,6 +40,8 @@ public class SectionLActivity extends AppCompatActivity {
             }
         }));
 
+        bi.hwl6.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVhwl7));
+
     }
 
     public void BtnContinue() {
