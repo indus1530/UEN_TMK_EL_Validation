@@ -31,12 +31,6 @@ public class SectionJ01Activity extends AppCompatActivity {
 
     private void setupSkip() {
 
-        bi.bfj3.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.bfj3666.getId()) {
-                Clear.clearAllFields(bi.fldGrpj03);
-            }
-        }));
-
         bi.bfj4.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj5));
 
         bi.bfj6.setOnCheckedChangeListener(((radioGroup, i) -> {
