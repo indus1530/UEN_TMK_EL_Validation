@@ -617,13 +617,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl808" />
-
-                        <CheckBox
-                            android:id="@+id/hwl809"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/hwl809" />
                     </LinearLayout>
+                    <CheckBox
+                        android:tag="-1"
+                        android:id="@+id/hwl809"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hwl809" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1035,12 +1035,13 @@
                             android:layout_height="wrap_content"
                             android:text="@string/hwl1209" />
 
-                        <CheckBox
-                            android:id="@+id/hwl1210"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/hwl1210" />
                     </LinearLayout>
+                    <CheckBox
+                        android:tag="-1"
+                        android:id="@+id/hwl1210"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hwl1210" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
