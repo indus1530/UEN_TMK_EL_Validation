@@ -41,6 +41,8 @@ public class SectionKActivity extends AppCompatActivity {
 
         bi.wsk11.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpk11));
 
+        bi.wsk12.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpk12));
+
     }
 
     public void BtnContinue() {
