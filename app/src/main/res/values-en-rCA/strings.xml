@@ -116,7 +116,8 @@
     <string name="elc706">Dwelling not found </string>
     <string name="elc707">No Child between 0-05 years</string>
     <string name="elc708">Temporarily locked </string>
-    <string name="elc796">Others (specify)</string>
+    <string name="elc796"> Others </string>
+    <string name="elc796x"> Specify </string>
     <string name="mmd_title1">SECTION D: HOUSEHOLD MEMBERS’ INFORMATION (This section will be asked from the head of the household or someone else at least 18 years of age or older.)</string>
     <string name="mmd_title2">Now I would like to ask you questions on household member information who live with you in this house and share the same kitchen. This information will be used to assess the health care needs, and services available to you and your household members in the area. </string>
     <string name="mmd1">Member Serial number</string>

@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionDBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
@@ -51,7 +51,7 @@ public class SectionDActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }

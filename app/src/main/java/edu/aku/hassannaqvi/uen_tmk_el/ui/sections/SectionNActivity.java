@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -14,7 +15,7 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionNBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionNActivity extends AppCompatActivity {
@@ -31,6 +32,12 @@ public class SectionNActivity extends AppCompatActivity {
 
     private void setupSkip() {
 
+        bi.can4.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == bi.can402.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVcan5);
+            }
+        });
+
     }
 
     public void BtnContinue() {
@@ -42,7 +49,7 @@ public class SectionNActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }

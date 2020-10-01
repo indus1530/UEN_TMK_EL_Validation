@@ -101,6 +101,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20a01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -152,6 +153,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20b01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -203,6 +205,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20c01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -254,6 +257,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20d01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -305,6 +309,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20e01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -356,6 +361,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20f01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -407,6 +413,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20g01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -458,6 +465,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20h01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -509,6 +517,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/bfj20i01"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />

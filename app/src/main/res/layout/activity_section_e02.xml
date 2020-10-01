@@ -802,6 +802,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1401"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />
@@ -819,6 +820,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1402"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />
@@ -836,6 +838,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1403"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />
@@ -853,6 +856,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1404"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />
@@ -870,6 +874,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1405"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />
@@ -887,6 +892,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele1406"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="100"
                         app:minValue="1"
                         app:type="range" />

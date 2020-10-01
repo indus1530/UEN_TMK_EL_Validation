@@ -151,6 +151,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf2"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="15"
                         app:minValue="1"
                         app:type="range" />
@@ -202,6 +203,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf301"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="15"
                         app:minValue="1"
                         app:type="range" />
@@ -219,6 +221,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf302"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="15"
                         app:minValue="1"
                         app:type="range" />
@@ -236,6 +239,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf303"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="15"
                         app:minValue="1"
                         app:type="range" />
@@ -253,6 +257,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf304"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="15"
                         app:minValue="1"
                         app:type="range" />
@@ -357,6 +362,7 @@
                         android:layout_marginBottom="12dp"
                         android:hint="@string/raf5"
                         app:mask="##"
+                        android:inputType="number"
                         app:maxValue="38"
                         app:minValue="1"
                         app:type="range" />
@@ -455,18 +461,19 @@
                                 android:text="@string/Q_raf7" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/raf7"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/raf7"
-                            app:mask="##"
-                            app:maxValue="10"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/raf7"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/raf7"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="10"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- rasno  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -500,18 +507,19 @@
                                 android:text="@string/Q_rasno" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/rasno"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/rasno"
-                            app:mask="##"
-                            app:maxValue="9"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/rasno"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/rasno"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="9"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- raa  Input   -->
                 <androidx.cardview.widget.CardView
@@ -592,26 +600,26 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/rab01" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rab01" />
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/rab02" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rab02" />
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/rab03" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rab03" />
 
                         </LinearLayout>
 
@@ -620,44 +628,47 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rab01"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rab01"
-                                app:mask="##"
-                                app:maxValue="29"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab01"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rab01"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rab02"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rab02"
-                                app:mask="##"
-                                app:maxValue="11"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab02"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rab02"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rab03"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rab03"
-                                app:mask="##"
-                                app:maxValue="99"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rab03"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rab03"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
 
                         </LinearLayout>
 
@@ -721,17 +732,17 @@
                                 android:layout_toEndOf="@id/q_rac01"
                                 android:text="@string/rac01" />
 
-                            <TextView
-                                android:id="@+id/q_rac01"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_rac01"
-                                android:layout_alignBottom="@id/qtxt_rac01" />
-                            <!-- android:text="@string/Q_rac01"-->
-                        </RelativeLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/q_rac01"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_rac01"
+                            android:layout_alignBottom="@id/qtxt_rac01" />
+                        <!-- android:text="@string/Q_rac01"-->
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- rac02  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -936,44 +947,47 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rad01"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rad01"
-                                app:mask="##"
-                                app:maxValue="29"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad01"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rad01"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rad02"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rad02"
-                                app:mask="##"
-                                app:maxValue="11"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad02"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rad02"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/rad03"
-                                android:layout_width="0dp"
-                                android:layout_height="56dp"
-                                android:layout_marginBottom="12dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/rad03"
-                                app:mask="##"
-                                app:maxValue="99"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/rad03"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/rad03"
+                            android:inputType="number"
+                            app:mask="##"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
 
                         </LinearLayout>
 
@@ -1167,18 +1181,19 @@
                                 android:text="@string/Q_cmf9" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmf9"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmf9"
-                            app:mask="##"
-                            app:maxValue="10"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmf9"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmf9"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="10"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmsr  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1212,18 +1227,19 @@
                                 android:text="@string/Q_cmsr" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmsr"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmsr"
-                            app:mask="##"
-                            app:maxValue="9"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmsr"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmsr"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="9"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cma  Input   -->
                 <androidx.cardview.widget.CardView
@@ -1397,17 +1413,17 @@
                                 android:layout_toEndOf="@id/q_cmc02"
                                 android:text="@string/cmc02" />
 
-                            <TextView
-                                android:id="@+id/q_cmc02"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_cmc02"
-                                android:layout_alignBottom="@id/qtxt_cmc02" />
-                            <!--android:text="@string/Q_cmc02"-->
-                        </RelativeLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/q_cmc02"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_cmc02"
+                            android:layout_alignBottom="@id/qtxt_cmc02" />
+                        <!--android:text="@string/Q_cmc02"-->
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmd  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1475,18 +1491,19 @@
                                 android:text="@string/Q_cmd01" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmd01"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmd01"
-                            app:mask="##"
-                            app:maxValue="29"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmd01"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmd01"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="29"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmd02  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1520,18 +1537,19 @@
                                 android:text="@string/Q_cmd02" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmd02"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmd02"
-                            app:mask="##"
-                            app:maxValue="11"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmd02"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmd02"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="11"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmd03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1565,18 +1583,19 @@
                                 android:text="@string/Q_cmd03" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmd03"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmd03"
-                            app:mask="##"
-                            app:maxValue="99"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmd03"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmd03"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="99"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cme  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1848,18 +1867,19 @@
                                 android:text="@string/Q_cmf01" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmf01"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmf01"
-                            app:mask="##"
-                            app:maxValue="29"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmf01"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmf01"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="29"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmf02  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1893,18 +1913,19 @@
                                 android:text="@string/Q_cmf02" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmf02"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmf02"
-                            app:mask="##"
-                            app:maxValue="11"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmf02"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmf02"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="11"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmf03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1938,18 +1959,19 @@
                                 android:text="@string/Q_cmf03" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cmf03"
-                            android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmf03"
-                            app:mask="##"
-                            app:maxValue="99"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cmf03"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/cmf03"
+                        android:inputType="number"
+                        app:mask="##"
+                        app:maxValue="99"
+                        app:minValue="1"
+                        app:type="range" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
                 <!-- cmg  Radio   -->
                 <androidx.cardview.widget.CardView
