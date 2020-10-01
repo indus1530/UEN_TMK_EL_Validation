@@ -504,18 +504,21 @@
                     <RadioGroup
                         android:id="@+id/chg32"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/chg3201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/chg3201" />
 
                         <RadioButton
                             android:id="@+id/chg3202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/chg3202" />
 
                     </RadioGroup>
@@ -566,18 +569,21 @@
                         <RadioGroup
                             android:id="@+id/chg33"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/chg3301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/chg3301" />
 
                             <RadioButton
                                 android:id="@+id/chg3302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/chg3302" />
 
                         </RadioGroup>
