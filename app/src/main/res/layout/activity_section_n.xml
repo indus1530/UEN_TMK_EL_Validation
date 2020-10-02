@@ -183,7 +183,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can2"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can2"
                         android:inputType="number"
@@ -230,7 +230,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can3"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can3"
                         android:inputType="number"
@@ -347,7 +347,7 @@
                         <EditText
                             android:id="@+id/can501x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/can501"
                             android:tag="can501"
@@ -398,7 +398,7 @@
                     <EditText
                         android:id="@+id/can6"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can6" />
                 </LinearLayout>
@@ -681,7 +681,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can10"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can10"
                         android:inputType="number"
@@ -728,7 +728,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can11"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can11"
                         android:inputType="number"
@@ -833,7 +833,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can13"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can13"
                         android:inputType="number"
@@ -880,7 +880,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can14"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can14"
                         android:inputType="number"
@@ -927,7 +927,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can15"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can15"
                         android:inputType="number"
@@ -1032,7 +1032,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can17"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can17"
                         android:inputType="number"
@@ -1079,7 +1079,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can18"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can18"
                         android:inputType="number"
@@ -1126,7 +1126,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can19"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can19"
                         android:inputType="number"
@@ -1231,7 +1231,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can21"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can21"
                         android:inputType="number"

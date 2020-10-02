@@ -128,8 +128,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk1title1" />
 
                         <RadioButton
@@ -164,8 +163,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk1title2" />
 
                         <RadioButton
@@ -182,8 +180,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk1title3" />
 
                         <RadioButton
@@ -200,8 +197,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk1title4" />
 
                         <RadioButton
@@ -249,7 +245,7 @@
                         <EditText
                             android:id="@+id/wsk196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk196"
                             android:tag="wsk196"
@@ -298,8 +294,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk2title1" />
 
                         <RadioButton
@@ -334,8 +329,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk2title2" />
 
                         <RadioButton
@@ -352,8 +346,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk2title3" />
 
                         <RadioButton
@@ -370,8 +363,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/wsk2title4" />
 
                         <RadioButton
@@ -419,7 +411,7 @@
                         <EditText
                             android:id="@+id/wsk296x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk296"
                             android:tag="wsk296"
@@ -564,7 +556,7 @@
                         <EditText
                             android:id="@+id/wsk1596x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk1596"
                             android:tag="wsk1596"
@@ -620,7 +612,7 @@
                         <EditText
                             android:id="@+id/wsk401x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk401"
                             android:tag="wsk401"
@@ -964,7 +956,7 @@
                         <EditText
                             android:id="@+id/wsk996x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk996"
                             android:tag="wsk996"
@@ -1056,7 +1048,7 @@
                         <EditText
                             android:id="@+id/wsk1096x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk1096"
                             android:tag="wsk1096"
@@ -1424,7 +1416,7 @@
                         <EditText
                             android:id="@+id/wsk1605x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/wsk1605"
                             android:tag="wsk1605"

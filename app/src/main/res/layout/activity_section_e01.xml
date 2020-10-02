@@ -206,7 +206,7 @@
                         <EditText
                             android:id="@+id/ele196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele196"
                             android:tag="ele196"
@@ -255,8 +255,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/ele2_title1" />
 
                         <RadioButton
@@ -279,8 +278,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/ele2_title2" />
 
                         <RadioButton
@@ -309,8 +307,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/ele2_title3" />
 
                         <RadioButton
@@ -376,7 +373,7 @@
                         <EditText
                             android:id="@+id/ele296x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele296"
                             android:tag="ele296"
@@ -609,7 +606,7 @@
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/ele401"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/ele401"
                         android:inputType="number"
@@ -685,7 +682,7 @@
                         <EditText
                             android:id="@+id/ele596x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele596"
                             android:tag="ele596"
@@ -765,7 +762,7 @@
                         <EditText
                             android:id="@+id/ele696x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele696"
                             android:tag="ele696"
@@ -893,7 +890,7 @@
                         <EditText
                             android:id="@+id/ele796x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/ele796"
                             android:tag="ele796"

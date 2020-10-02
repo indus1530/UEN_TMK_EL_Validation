@@ -134,8 +134,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl1title" />
 
                         <RadioButton
@@ -159,7 +158,7 @@
                         <EditText
                             android:id="@+id/hwl196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl196"
                             android:tag="hwl196"
@@ -566,8 +565,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl8a" />
 
                         <CheckBox
@@ -697,7 +695,7 @@
                         <EditText
                             android:id="@+id/hwl996x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl996"
                             android:tag="hwl996"
@@ -777,7 +775,7 @@
                         <EditText
                             android:id="@+id/hwl1096x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1096"
                             android:tag="hwl1096"
@@ -851,7 +849,7 @@
                         <EditText
                             android:id="@+id/hwl1196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1196"
                             android:tag="hwl1196"
@@ -930,7 +928,7 @@
                     <EditText
                         android:id="@+id/hwl11a"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hwl11a" />
                 </LinearLayout>
@@ -977,8 +975,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl12title" />
 
                         <CheckBox
@@ -1115,7 +1112,7 @@
                         <EditText
                             android:id="@+id/hwl1396x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1396"
                             android:tag="hwl1396"
@@ -1195,7 +1192,7 @@
                         <EditText
                             android:id="@+id/hwl1496x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1496"
                             android:tag="hwl1496"
@@ -1269,7 +1266,7 @@
                         <EditText
                             android:id="@+id/hwl1596x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1596"
                             android:tag="hwl1596"
