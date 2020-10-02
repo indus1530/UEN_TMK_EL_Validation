@@ -438,8 +438,9 @@
     <string name="raf1">as {Names of MWRA in the family} ever been pregnant since her marriage?</string>
     <string name="raf101">Yes</string>
     <string name="raf102">No</string>
-    <string name="raf2">How many times {Name} has been pregnant since her marriage?</string>
-    <string name="raf3">What were the outcome of her total pregnancies (details of all pregnancies after marriage including live, still and miscarriage)</string>
+    <string name="raf2"> How many times {Name} has been pregnant since her marriage ? </string>
+    <string name="raf3"> What were the outcome of her total pregnancies </string>
+    <string name="raf3_info"> details of all pregnancies after marriage including live, still and miscarriage </string>
     <string name="raf301">Born alive (Live birth)</string>
     <string name="raf302">Born dead (Still birth)</string>
     <string name="raf303">Miscarriage </string>

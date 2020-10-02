@@ -167,9 +167,9 @@ public class SectionE02Activity extends AppCompatActivity {
                 : bi.ele1202.isChecked() ? "2"
                 : bi.ele1203.isChecked() ? "3"
                 : "-1");
+        json.put("ele1201x", bi.ele1201x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1201x.getText().toString());
+        json.put("ele1202x", bi.ele1202x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1202x.getText().toString());
 
-        json.put("ele1201x", bi.ele1201x.getText().toString());
-        json.put("ele1202x", bi.ele1202x.getText().toString());
         json.put("ele13", bi.ele1301.isChecked() ? "1"
                 : bi.ele1302.isChecked() ? "2"
                 : "-1");
