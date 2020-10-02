@@ -32,32 +32,12 @@ public class SectionFActivity extends AppCompatActivity {
 
     }
 
+
     private void setupSkip() {
-
-        bi.raf4.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId != bi.raf401.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVraf5);
-            }
-        });
-
-        bi.raf6.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.raf602.getId()) {
-                Clear.clearAllFields(bi.fldGrpsecf01);
-            }
-        });
-
-        bi.cmf8.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.cmf802.getId()) {
-                Clear.clearAllFields(bi.fldGrpsecf02);
-            }
-        });
-
-        bi.cmf10.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId != bi.cmf1001.getId()) {
-                Clear.clearAllFields(bi.fldGrpsecf03);
-            }
-        });
-
+        bi.raf4.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpCVraf5));
+        bi.raf6.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf01));
+        bi.cmf8.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf02));
+        bi.cmf10.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf03));
     }
 
 
