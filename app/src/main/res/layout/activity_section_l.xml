@@ -282,7 +282,8 @@
             <!-- hwl4  CheckBox   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhwl4"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{hwl302.checked? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -397,6 +398,13 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:id="@+id/fldGrpk05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility='@{hwl502.checked? View.GONE : View.VISIBLE}'>
+
             <!-- hwl6  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhwl6"
@@ -452,7 +460,8 @@
             <!-- hwl7  CheckBox   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhwl7"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{hwl602.checked? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -514,6 +523,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
             <!-- hwl8  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -607,13 +617,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl808" />
-
-                        <CheckBox
-                            android:id="@+id/hwl809"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/hwl809" />
                     </LinearLayout>
+                    <CheckBox
+                        android:tag="-1"
+                        android:id="@+id/hwl809"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hwl809" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1025,12 +1035,13 @@
                             android:layout_height="wrap_content"
                             android:text="@string/hwl1209" />
 
-                        <CheckBox
-                            android:id="@+id/hwl1210"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/hwl1210" />
                     </LinearLayout>
+                    <CheckBox
+                        android:tag="-1"
+                        android:id="@+id/hwl1210"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hwl1210" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
