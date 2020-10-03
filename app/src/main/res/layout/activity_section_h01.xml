@@ -194,9 +194,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/arih2"
-                        app:mask="##"
                         android:inputType="number"
                         android:maxLength="2"
+                        app:mask="##"
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
@@ -314,9 +314,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih4"
-                            app:mask="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            app:mask="##"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -363,6 +363,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:gravity="center"
                                 android:layout_weight="2"
                                 android:text="@string/arih501" />
 
@@ -370,7 +371,6 @@
                                 android:id="@+id/arih501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
                                 android:layout_weight="1"
                                 android:hint="@string/arih501" />
 
@@ -384,6 +384,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:gravity="center"
                                 android:layout_weight="2"
                                 android:text="@string/arih502" />
 
@@ -391,7 +392,6 @@
                                 android:id="@+id/arih502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
                                 android:layout_weight="1"
                                 android:hint="@string/arih502" />
 
@@ -439,9 +439,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih6"
-                            app:mask="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            app:mask="##"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -648,9 +648,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih9"
-                            app:mask="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            app:mask="##"
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
@@ -1485,47 +1485,51 @@
                             <RadioGroup
                                 android:id="@+id/arih21"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/arih2101"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:text="@string/arih2101" />
-
-                                <EditText
-                                    android:id="@+id/arih2101x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/arih2101"
-                                    android:tag="arih2101"
-                                    android:text='@{arih2101.checked ? arih2101x.getText().toString() : ""}'
-                                    android:visibility='@{arih2101.checked? View.VISIBLE : View.GONE}' />
 
                                 <RadioButton
                                     android:id="@+id/arih2102"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:text="@string/arih2102" />
-
-                                <EditText
-                                    android:id="@+id/arih2102x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/arih2102"
-                                    android:tag="arih2102"
-                                    android:text='@{arih2102.checked ? arih2102x.getText().toString() : ""}'
-                                    android:visibility='@{arih2102.checked? View.VISIBLE : View.GONE}' />
 
                                 <RadioButton
                                     android:id="@+id/arih2103"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:text="@string/arih2103" />
 
                             </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/arih2101x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:hint="@string/arih2101"
+                                android:tag="arih2101"
+                                android:text='@{arih2101.checked ? arih2101x.getText().toString() : ""}'
+                                android:visibility='@{arih2101.checked? View.VISIBLE : View.GONE}' />
+
+                            <EditText
+                                android:id="@+id/arih2102x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:hint="@string/arih2102"
+                                android:tag="arih2102"
+                                android:text='@{arih2102.checked ? arih2102x.getText().toString() : ""}'
+                                android:visibility='@{arih2102.checked? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
 
@@ -1650,9 +1654,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="12dp"
                                         android:hint="@string/arih23"
-                                        app:mask="##"
                                         android:inputType="number"
                                         android:maxLength="2"
+                                        app:mask="##"
                                         app:maxValue="30"
                                         app:minValue="1"
                                         app:type="range" />
