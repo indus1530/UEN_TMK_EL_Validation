@@ -226,15 +226,55 @@ public class SectionE01Activity extends AppCompatActivity {
 
         json.put("ele8p", bi.ele8p01.isChecked() ? "1"
                 : bi.ele8p02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8q", bi.ele8q01.isChecked() ? "1"
                 : bi.ele8q02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8r", bi.ele8r01.isChecked() ? "1"
                 : bi.ele8r02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
+
+        json.put("ele9a", bi.ele9a01.isChecked() ? "1"
+                : bi.ele9a02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9b", bi.ele9b01.isChecked() ? "1"
+                : bi.ele9b02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9c", bi.ele9c01.isChecked() ? "1"
+                : bi.ele9c02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9d", bi.ele9d01.isChecked() ? "1"
+                : bi.ele9d02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9e", bi.ele9e01.isChecked() ? "1"
+                : bi.ele9e02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9f", bi.ele9f01.isChecked() ? "1"
+                : bi.ele9f02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9g", bi.ele9g01.isChecked() ? "1"
+                : bi.ele9g02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9h", bi.ele9h01.isChecked() ? "1"
+                : bi.ele9h02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele9i", bi.ele9i01.isChecked() ? "1"
+                : bi.ele9i02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele10", bi.ele1001.isChecked() ? "1"
+                : bi.ele1002.isChecked() ? "2"
+                : "-1");
 
     }
 
