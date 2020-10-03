@@ -336,31 +336,37 @@
                     <RadioGroup
                         android:id="@+id/can5"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/can501"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can501" />
-
-                        <EditText
-                            android:id="@+id/can501x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/can501"
-                            android:tag="can501"
-                            android:text='@{can501.checked ? can501x.getText().toString() : ""}'
-                            android:visibility='@{can501.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/can502"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/can502" />
+
                     </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/can501x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/can501"
+                        android:tag="can501"
+                        android:text='@{can501.checked ? can501x.getText().toString() : ""}'
+                        android:visibility='@{can501.checked? View.VISIBLE : View.GONE}' />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can6  Input   -->

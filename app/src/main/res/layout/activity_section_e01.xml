@@ -932,923 +932,902 @@
                             android:text="@string/Q_ele8" />
                     </RelativeLayout>
 
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8a"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8a" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8a"
-                                android:text="@string/ele8a" />
-
-                            <TextView
-                                android:id="@+id/q_ele8a"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8a"
-                                android:layout_alignBottom="@id/qtxt_ele8a"
-                                android:text="@string/Q_ele8a" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8a"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8a01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8a01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8a01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8a01" />
+                        <RadioButton
+                            android:id="@+id/ele8a02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8a02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8a02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8a02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8b"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8b" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8b"
-                                android:text="@string/ele8b" />
-
-                            <TextView
-                                android:id="@+id/q_ele8b"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8b"
-                                android:layout_alignBottom="@id/qtxt_ele8b"
-                                android:text="@string/Q_ele8b" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8b"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8b01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8b01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8b01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8b01" />
+                        <RadioButton
+                            android:id="@+id/ele8b02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8b02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8b02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8b02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8c"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8c" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8c"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8c"
-                                android:text="@string/ele8c" />
-
-                            <TextView
-                                android:id="@+id/q_ele8c"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8c"
-                                android:layout_alignBottom="@id/qtxt_ele8c"
-                                android:text="@string/Q_ele8c" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8c"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8c01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8c01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8c01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8c01" />
+                        <RadioButton
+                            android:id="@+id/ele8c02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8c02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8c02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8c02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8d"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8d" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8d"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8d"
-                                android:text="@string/ele8d" />
-
-                            <TextView
-                                android:id="@+id/q_ele8d"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8d"
-                                android:layout_alignBottom="@id/qtxt_ele8d"
-                                android:text="@string/Q_ele8d" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8d"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8d01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8d01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8d01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8d01" />
+                        <RadioButton
+                            android:id="@+id/ele8d02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8d02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8d02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8d02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8e"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8e"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8e" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8e"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8e"
-                                android:text="@string/ele8e" />
-
-                            <TextView
-                                android:id="@+id/q_ele8e"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8e"
-                                android:layout_alignBottom="@id/qtxt_ele8e"
-                                android:text="@string/Q_ele8e" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8e"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8e01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8e01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8e01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8e01" />
+                        <RadioButton
+                            android:id="@+id/ele8e02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8e02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8e02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8e02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8f"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8f"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8f" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8f"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8f"
-                                android:text="@string/ele8f" />
-
-                            <TextView
-                                android:id="@+id/q_ele8f"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8f"
-                                android:layout_alignBottom="@id/qtxt_ele8f"
-                                android:text="@string/Q_ele8f" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8f"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8f01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8f01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8f01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8f01" />
+                        <RadioButton
+                            android:id="@+id/ele8f02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8f02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8f02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8f02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8g"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8g"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8g" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8g"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8g"
-                                android:text="@string/ele8g" />
-
-                            <TextView
-                                android:id="@+id/q_ele8g"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8g"
-                                android:layout_alignBottom="@id/qtxt_ele8g"
-                                android:text="@string/Q_ele8g" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8g"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8g01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8g01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8g01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8g01" />
+                        <RadioButton
+                            android:id="@+id/ele8g02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8g02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8g02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8g02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8h"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8h"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8h" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8h"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8h"
-                                android:text="@string/ele8h" />
-
-                            <TextView
-                                android:id="@+id/q_ele8h"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8h"
-                                android:layout_alignBottom="@id/qtxt_ele8h"
-                                android:text="@string/Q_ele8h" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8h"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8h01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8h01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8h01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8h01" />
+                        <RadioButton
+                            android:id="@+id/ele8h02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8h02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8h02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8h02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8i"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8i"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8i" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8i"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8i"
-                                android:text="@string/ele8i" />
-
-                            <TextView
-                                android:id="@+id/q_ele8i"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8i"
-                                android:layout_alignBottom="@id/qtxt_ele8i"
-                                android:text="@string/Q_ele8i" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8i"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8i01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8i01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8i01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8i01" />
+                        <RadioButton
+                            android:id="@+id/ele8i02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8i02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8i02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8i02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8j"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8j"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8j" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8j"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8j"
-                                android:text="@string/ele8j" />
-
-                            <TextView
-                                android:id="@+id/q_ele8j"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8j"
-                                android:layout_alignBottom="@id/qtxt_ele8j"
-                                android:text="@string/Q_ele8j" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8j"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8j01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8j01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8j01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8j01" />
+                        <RadioButton
+                            android:id="@+id/ele8j02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8j02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8j02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8j02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8k"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8k"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8k" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8k"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8k"
-                                android:text="@string/ele8k" />
-
-                            <TextView
-                                android:id="@+id/q_ele8k"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8k"
-                                android:layout_alignBottom="@id/qtxt_ele8k"
-                                android:text="@string/Q_ele8k" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8k"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8k01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8k01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8k01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8k01" />
+                        <RadioButton
+                            android:id="@+id/ele8k02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8k02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8k02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8k02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8l"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8l"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8l" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8l"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8l"
-                                android:text="@string/ele8l" />
-
-                            <TextView
-                                android:id="@+id/q_ele8l"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8l"
-                                android:layout_alignBottom="@id/qtxt_ele8l"
-                                android:text="@string/Q_ele8l" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8l"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8l01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8l01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8l01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8l01" />
+                        <RadioButton
+                            android:id="@+id/ele8l02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8l02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8l02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8l02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8m"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8m"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8m" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8m"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8m"
-                                android:text="@string/ele8m" />
-
-                            <TextView
-                                android:id="@+id/q_ele8m"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8m"
-                                android:layout_alignBottom="@id/qtxt_ele8m"
-                                android:text="@string/Q_ele8m" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8m"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8m01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8m01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8m01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8m01" />
+                        <RadioButton
+                            android:id="@+id/ele8m02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8m02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8m02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8m02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8n"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8n"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8n" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8n"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8n"
-                                android:text="@string/ele8n" />
-
-                            <TextView
-                                android:id="@+id/q_ele8n"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8n"
-                                android:layout_alignBottom="@id/qtxt_ele8n"
-                                android:text="@string/Q_ele8n" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8n"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8n01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8n01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8n01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8n01" />
+                        <RadioButton
+                            android:id="@+id/ele8n02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8n02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8n02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8n02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8o"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8o"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8o" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8o"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8o"
-                                android:text="@string/ele8o" />
-
-                            <TextView
-                                android:id="@+id/q_ele8o"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8o"
-                                android:layout_alignBottom="@id/qtxt_ele8o"
-                                android:text="@string/Q_ele8o" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8o"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8o01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8o01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8o01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8o01" />
+                        <RadioButton
+                            android:id="@+id/ele8o02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8o02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8o02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8o02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8p"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8p"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8p" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8p"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8p"
-                                android:text="@string/ele8p" />
-
-                            <TextView
-                                android:id="@+id/q_ele8p"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8p"
-                                android:layout_alignBottom="@id/qtxt_ele8p"
-                                android:text="@string/Q_ele8p" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8p"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8p01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8p01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8p01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8p01" />
+                        <RadioButton
+                            android:id="@+id/ele8p02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8p02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8p02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8p02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8q"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/qtxt_ele8q"
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_weight="2"
+                            android:text="@string/ele8q" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8q"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8q"
-                                android:text="@string/ele8q" />
-
-                            <TextView
-                                android:id="@+id/q_ele8q"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8q"
-                                android:layout_alignBottom="@id/qtxt_ele8q"
-                                android:text="@string/Q_ele8q" />
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ele8q"
-                            android:layout_width="match_parent"
+                        <RadioButton
+                            android:id="@+id/ele8q01"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_weight="1"
+                            android:text="@string/ele8q01" />
 
-                            <RadioButton
-                                android:id="@+id/ele8q01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8q01" />
+                        <RadioButton
+                            android:id="@+id/ele8q02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8q02" />
 
-                            <RadioButton
-                                android:id="@+id/ele8q02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8q02" />
+                    </RadioGroup>
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/ele8r"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/qtxt_ele8r"
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele8r" />
+
+                        <RadioButton
+                            android:id="@+id/ele8r01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8r01" />
+
+                        <RadioButton
+                            android:id="@+id/ele8r02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele8r02" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ele9  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVele9"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_ele9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_ele9"
+                            android:text="@string/ele9" />
 
-                            <TextView
-                                android:id="@+id/qtxt_ele8r"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_ele8r"
-                                android:text="@string/ele8r" />
+                        <TextView
+                            android:id="@+id/q_ele9"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_ele9"
+                            android:layout_alignBottom="@id/qtxt_ele9"
+                            android:text="@string/Q_ele9" />
 
-                            <TextView
-                                android:id="@+id/q_ele8r"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_ele8r"
-                                android:layout_alignBottom="@id/qtxt_ele8r"
-                                android:text="@string/Q_ele8r" />
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                        <RadioGroup
-                            android:id="@+id/ele8r"
+                    <RadioGroup
+                        android:id="@+id/ele9a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9a" />
+
+                        <RadioButton
+                            android:id="@+id/ele9a01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9a01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9a02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9a02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9b" />
+
+                        <RadioButton
+                            android:id="@+id/ele9b01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9b01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9b02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9b02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9c" />
+
+                        <RadioButton
+                            android:id="@+id/ele9c01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9c01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9c02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9c02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9d" />
+
+                        <RadioButton
+                            android:id="@+id/ele9d01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9d01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9d02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9d02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9e" />
+
+                        <RadioButton
+                            android:id="@+id/ele9e01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9e01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9e02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9e02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9f" />
+
+                        <RadioButton
+                            android:id="@+id/ele9f01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9f01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9f02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9f02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9g"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9g" />
+
+                        <RadioButton
+                            android:id="@+id/ele9g01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9g01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9g02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9g02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9h"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9h" />
+
+                        <RadioButton
+                            android:id="@+id/ele9h01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9h01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9h02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9h02" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/ele9i"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/ele9i" />
+
+                        <RadioButton
+                            android:id="@+id/ele9i01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9i01" />
+
+                        <RadioButton
+                            android:id="@+id/ele9i02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele9i02" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ele10  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVele10"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_ele10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_toEndOf="@id/q_ele10"
+                            android:text="@string/ele10" />
 
-                            <RadioButton
-                                android:id="@+id/ele8r01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8r01" />
+                        <TextView
+                            android:id="@+id/q_ele10"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_ele10"
+                            android:layout_alignBottom="@id/qtxt_ele10"
+                            android:text="@string/Q_ele10" />
 
-                            <RadioButton
-                                android:id="@+id/ele8r02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/ele8r02" />
+                    </RelativeLayout>
 
-                        </RadioGroup>
+                    <RadioGroup
+                        android:id="@+id/ele10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/ele1001"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele1001" />
+
+                        <RadioButton
+                            android:id="@+id/ele1002"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ele1002" />
+
+                    </RadioGroup>
 
                 </LinearLayout>
 
