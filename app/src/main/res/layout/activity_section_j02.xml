@@ -499,8 +499,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bfj2396" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- bfj13  Radio   -->
@@ -538,47 +541,54 @@
                     <RadioGroup
                         android:id="@+id/bfj13"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/bfj1301"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1301" />
-
-                        <EditText
-                            android:id="@+id/bfj1301x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1301"
-                            android:tag="bfj1301"
-                            android:text='@{bfj1301.checked ? bfj1301x.getText().toString() : ""}'
-                            android:visibility='@{bfj1301.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/bfj1302"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1302" />
-
-                        <EditText
-                            android:id="@+id/bfj1302x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1302"
-                            android:tag="bfj1302"
-                            android:text='@{bfj1302.checked ? bfj1302x.getText().toString() : ""}'
-                            android:visibility='@{bfj1302.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/bfj1303"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1303" />
+
                     </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/bfj1301x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/bfj1301"
+                        android:tag="bfj1301"
+                        android:text='@{bfj1301.checked ? bfj1301x.getText().toString() : ""}'
+                        android:visibility='@{bfj1301.checked? View.VISIBLE : View.GONE}' />
+
+                    <EditText
+                        android:id="@+id/bfj1302x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/bfj1302"
+                        android:tag="bfj1302"
+                        android:text='@{bfj1302.checked ? bfj1302x.getText().toString() : ""}'
+                        android:visibility='@{bfj1302.checked? View.VISIBLE : View.GONE}' />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 

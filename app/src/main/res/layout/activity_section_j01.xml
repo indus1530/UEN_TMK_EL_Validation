@@ -1353,47 +1353,54 @@
                     <RadioGroup
                         android:id="@+id/bfj11"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/bfj1101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1101" />
-
-                        <EditText
-                            android:id="@+id/bfj1101x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1101"
-                            android:tag="bfj1101"
-                            android:text='@{bfj1101.checked ? bfj1101x.getText().toString() : ""}'
-                            android:visibility='@{bfj1101.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/bfj1102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1102" />
-
-                        <EditText
-                            android:id="@+id/bfj1102x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1102"
-                            android:tag="bfj1102"
-                            android:text='@{bfj1102.checked ? bfj1102x.getText().toString() : ""}'
-                            android:visibility='@{bfj1102.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/bfj1198"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/bfj1198" />
+
                     </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/bfj1101x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/bfj1101"
+                        android:tag="bfj1101"
+                        android:text='@{bfj1101.checked ? bfj1101x.getText().toString() : ""}'
+                        android:visibility='@{bfj1101.checked? View.VISIBLE : View.GONE}' />
+
+                    <EditText
+                        android:id="@+id/bfj1102x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/bfj1102"
+                        android:tag="bfj1102"
+                        android:text='@{bfj1102.checked ? bfj1102x.getText().toString() : ""}'
+                        android:visibility='@{bfj1102.checked? View.VISIBLE : View.GONE}' />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- bfj12  Radio   -->
