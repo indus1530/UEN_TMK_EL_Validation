@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <!-- raf_title1  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVraf_title1"
@@ -43,7 +42,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <!-- raf_title2  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVraf_title2"
@@ -63,7 +61,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
             <!-- raf1  Radio   -->
             <androidx.cardview.widget.CardView
@@ -123,7 +120,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <!-- raf2  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVraf2"
@@ -172,7 +168,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
             <!-- raf3  Title   -->
             <androidx.cardview.widget.CardView
@@ -380,7 +375,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <!-- raf5  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVraf5"
@@ -430,7 +424,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
             <!-- raf6  Radio   -->
             <androidx.cardview.widget.CardView
@@ -547,7 +540,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- rasno  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVrasno"
@@ -597,7 +589,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- raa  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVraa"
@@ -642,7 +633,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <!-- rab  Title   -->
                 <androidx.cardview.widget.CardView
@@ -756,7 +746,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- rac  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVrac"
@@ -829,7 +818,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <!-- rad  Title   -->
                 <androidx.cardview.widget.CardView
@@ -941,7 +929,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <!-- rae  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1192,10 +1179,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/cmsr"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:mask="##"
                             app:maxValue="9"
                             app:minValue="1"
                             app:type="range" />
@@ -1389,17 +1375,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmd01" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmd01"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmd01"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="29"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1415,17 +1401,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmd02" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmd02"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmd02"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="11"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1441,17 +1427,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmd03" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmd03"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmd03"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="99"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1537,7 +1523,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- cmf  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcmf"
@@ -1586,17 +1571,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmf01" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmf01"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmf01"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="29"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1612,17 +1597,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmf02" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmf02"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmf02"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="11"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1638,17 +1623,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center"
                                     android:text="@string/cmf03" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/cmf03"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/cmf03"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:mask="##"
                                     app:maxValue="99"
                                     app:minValue="1"
                                     app:type="range" />
