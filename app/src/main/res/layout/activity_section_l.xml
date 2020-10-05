@@ -134,8 +134,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl1title" />
 
                         <RadioButton
@@ -159,7 +158,7 @@
                         <EditText
                             android:id="@+id/hwl196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl196"
                             android:tag="hwl196"
@@ -204,21 +203,27 @@
                     <RadioGroup
                         android:id="@+id/hwl2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/hwl201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl201" />
 
                         <RadioButton
                             android:id="@+id/hwl202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl202" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl3  Radio   -->
@@ -275,8 +280,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl303" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl4  CheckBox   -->
@@ -381,21 +389,27 @@
                     <RadioGroup
                         android:id="@+id/hwl5"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/hwl501"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl501" />
 
                         <RadioButton
                             android:id="@+id/hwl502"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl502" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -440,21 +454,27 @@
                     <RadioGroup
                         android:id="@+id/hwl6"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/hwl601"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl601" />
 
                         <RadioButton
                             android:id="@+id/hwl602"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/hwl602" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl7  CheckBox   -->
@@ -566,8 +586,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl8a" />
 
                         <CheckBox
@@ -697,7 +716,7 @@
                         <EditText
                             android:id="@+id/hwl996x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl996"
                             android:tag="hwl996"
@@ -777,7 +796,7 @@
                         <EditText
                             android:id="@+id/hwl1096x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1096"
                             android:tag="hwl1096"
@@ -851,7 +870,7 @@
                         <EditText
                             android:id="@+id/hwl1196x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1196"
                             android:tag="hwl1196"
@@ -930,7 +949,7 @@
                     <EditText
                         android:id="@+id/hwl11a"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hwl11a" />
                 </LinearLayout>
@@ -977,8 +996,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/hwl12title" />
 
                         <CheckBox
@@ -1115,7 +1133,7 @@
                         <EditText
                             android:id="@+id/hwl1396x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1396"
                             android:tag="hwl1396"
@@ -1195,7 +1213,7 @@
                         <EditText
                             android:id="@+id/hwl1496x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1496"
                             android:tag="hwl1496"
@@ -1269,7 +1287,7 @@
                         <EditText
                             android:id="@+id/hwl1596x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/hwl1596"
                             android:tag="hwl1596"

@@ -74,7 +74,7 @@
                             <EditText
                                 android:id="@+id/chg2601x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg2601"
                                 android:tag="chg2601"
@@ -190,7 +190,7 @@
                             <EditText
                                 android:id="@+id/chg2796x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg2796"
                                 android:tag="chg2796"
@@ -246,7 +246,7 @@
                             <EditText
                                 android:id="@+id/chg2801x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg2801"
                                 android:tag="chg2801"
@@ -308,7 +308,7 @@
                             <EditText
                                 android:id="@+id/chg2901x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg2901"
                                 android:tag="chg2901"
@@ -370,7 +370,7 @@
                             <EditText
                                 android:id="@+id/chg3001x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg3001"
                                 android:tag="chg3001"
@@ -456,7 +456,7 @@
                             <EditText
                                 android:id="@+id/chg3196x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg3196"
                                 android:tag="chg3196"
@@ -712,7 +712,7 @@
                             <EditText
                                 android:id="@+id/chg3496x"
                                 android:layout_width="match_parent"
-                                android:layout_height="56dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/chg3496"
                                 android:tag="chg3496"

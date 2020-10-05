@@ -68,7 +68,7 @@
                         <EditText
                             android:id="@+id/arih2701x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih2701"
                             android:tag="arih2701"
@@ -130,7 +130,7 @@
                         <EditText
                             android:id="@+id/arih2801x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih2801"
                             android:tag="arih2801"
@@ -246,7 +246,7 @@
                         <EditText
                             android:id="@+id/arih2996x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih2996"
                             android:tag="arih2996"
@@ -302,7 +302,7 @@
                         <EditText
                             android:id="@+id/arih3001x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih3001"
                             android:tag="arih3001"
@@ -559,7 +559,7 @@
                         <EditText
                             android:id="@+id/arih3401x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih3401"
                             android:tag="arih3401"
@@ -759,7 +759,7 @@
                         <EditText
                             android:id="@+id/arih3696x"
                             android:layout_width="match_parent"
-                            android:layout_height="56dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih3696"
                             android:tag="arih3696"
