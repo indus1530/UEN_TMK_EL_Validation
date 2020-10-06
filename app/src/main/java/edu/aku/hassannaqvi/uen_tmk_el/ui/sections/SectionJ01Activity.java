@@ -33,11 +33,7 @@ public class SectionJ01Activity extends AppCompatActivity {
 
         bi.bfj4.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj5));
 
-        bi.bfj6.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.bfj602.getId()) {
-                Clear.clearAllFields(bi.fldGrpj06);
-            }
-        }));
+        bi.bfj6.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpj06));
 
         bi.bfj10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj11));
     }

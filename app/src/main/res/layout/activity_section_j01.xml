@@ -1,8 +1,11 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionJ01Activity" />
@@ -280,13 +283,18 @@
                             android:layout_height="wrap_content"
                             android:text="@string/bfj3m" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj3mx"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj3m"
+                            android:gravity="center"
+                            android:hint="##"
                             android:tag="bfj3m"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="59"
+                            app:minValue="1"
+                            app:type="range"
                             android:text='@{bfj3m.checked ? bfj3mx.getText().toString() : ""}'
                             android:visibility='@{bfj3m.checked? View.VISIBLE : View.GONE}' />
 
@@ -296,13 +304,18 @@
                             android:layout_height="wrap_content"
                             android:text="@string/bfj3h" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj3hx"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj3h"
+                            android:gravity="center"
+                            android:hint="##"
                             android:tag="bfj3h"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="23"
+                            app:minValue="1"
+                            app:type="range"
                             android:text='@{bfj3h.checked ? bfj3hx.getText().toString() : ""}'
                             android:visibility='@{bfj3h.checked? View.VISIBLE : View.GONE}' />
 
@@ -312,12 +325,18 @@
                             android:layout_height="wrap_content"
                             android:text="@string/bfj3d" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj3dx"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/bfj3d"
+                            android:gravity="center"
+                            android:hint="##"
                             android:tag="bfj3d"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range"
                             android:text='@{bfj3d.checked ? bfj3dx.getText().toString() : ""}'
                             android:visibility='@{bfj3d.checked? View.VISIBLE : View.GONE}' />
 
@@ -398,6 +417,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj5  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -554,7 +574,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility='@{bfj602.checked? View.GONE : View.VISIBLE}'>
+                android:visibility='@{bfj601.checked? View.VISIBLE : View.GONE}'>
 
                 <!-- bfj7  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -999,6 +1019,7 @@
                                 android:layout_alignTop="@id/qtxt_bfj16"
                                 android:layout_alignBottom="@id/qtxt_bfj16"
                                 android:text="@string/Q_bfj16" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1012,13 +1033,18 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/bfj1601" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/bfj1601x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:hint="@string/bfj1601"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:tag="bfj1601"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="20"
+                                app:minValue="1"
+                                app:type="range"
                                 android:text='@{bfj1601.checked ? bfj1601x.getText().toString() : ""}'
                                 android:visibility='@{bfj1601.checked? View.VISIBLE : View.GONE}' />
 
@@ -1039,6 +1065,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
 
                 <!-- bfj17  Radio   -->
@@ -1071,6 +1098,7 @@
                                 android:layout_alignTop="@id/qtxt_bfj17"
                                 android:layout_alignBottom="@id/qtxt_bfj17"
                                 android:text="@string/Q_bfj17" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1136,6 +1164,7 @@
                                 android:layout_alignTop="@id/qtxt_bfj18"
                                 android:layout_alignBottom="@id/qtxt_bfj18"
                                 android:text="@string/Q_bfj18" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1295,7 +1324,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj11"
                 style="@style/cardView"
-                android:visibility='@{bfj1002.checked ? View.GONE : View.VISIBLE}'>
+                android:visibility='@{bfj1001.checked ? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1322,6 +1351,7 @@
                             android:layout_alignTop="@id/qtxt_bfj11"
                             android:layout_alignBottom="@id/qtxt_bfj11"
                             android:text="@string/Q_bfj11" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1353,23 +1383,33 @@
 
                     </RadioGroup>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/bfj1101x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/bfj1101"
+                        android:gravity="center"
+                        android:hint="##"
                         android:tag="bfj1101"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:maxValue="29"
+                        app:minValue="1"
+                        app:type="range"
                         android:text='@{bfj1101.checked ? bfj1101x.getText().toString() : ""}'
                         android:visibility='@{bfj1101.checked? View.VISIBLE : View.GONE}' />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/bfj1102x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/bfj1102"
+                        android:gravity="center"
+                        android:hint="##"
                         android:tag="bfj1102"
+                        android:inputType="number"
+                        app:maxLength="2"
+                        app:maxValue="11"
+                        app:minValue="1"
+                        app:type="range"
                         android:text='@{bfj1102.checked ? bfj1102x.getText().toString() : ""}'
                         android:visibility='@{bfj1102.checked? View.VISIBLE : View.GONE}' />
 
@@ -1407,6 +1447,7 @@
                             android:layout_alignTop="@id/qtxt_bfj12"
                             android:layout_alignBottom="@id/qtxt_bfj12"
                             android:text="@string/Q_bfj12" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1420,13 +1461,18 @@
                             android:layout_height="wrap_content"
                             android:text="@string/bfj1201" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj1201x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1201"
+                            android:gravity="center"
+                            android:hint="##"
                             android:tag="bfj1201"
+                            android:inputType="number"
+                            app:maxLength="2"
+                            app:maxValue="29"
+                            app:minValue="1"
+                            app:type="range"
                             android:text='@{bfj1201.checked ? bfj1201x.getText().toString() : ""}'
                             android:visibility='@{bfj1201.checked? View.VISIBLE : View.GONE}' />
 
@@ -1436,13 +1482,18 @@
                             android:layout_height="wrap_content"
                             android:text="@string/bfj1202" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj1202x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/bfj1202"
+                            android:gravity="center"
+                            android:hint="##"
                             android:tag="bfj1202"
+                            android:inputType="number"
+                            app:maxLength="2"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range"
                             android:text='@{bfj1202.checked ? bfj1202x.getText().toString() : ""}'
                             android:visibility='@{bfj1202.checked? View.VISIBLE : View.GONE}' />
 
@@ -1457,9 +1508,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bfj1298" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj19  Radio   -->
             <androidx.cardview.widget.CardView

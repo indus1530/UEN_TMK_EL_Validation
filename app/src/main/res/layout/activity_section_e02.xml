@@ -163,7 +163,7 @@
                         android:tag="ele1201"
                         android:inputType="number"
                         android:visibility='@{ele1201.checked? View.VISIBLE : View.GONE}'
-                        app:maxLength="3"
+                        android:maxLength="3"
                         app:maxValue="100"
                         app:minValue="1"
                         android:text='@{ele1201.checked ? ele1201x.getText().toString() : ""}'
@@ -178,7 +178,7 @@
                         android:tag="ele1202"
                         android:inputType="number"
                         android:visibility='@{ele1202.checked? View.VISIBLE : View.GONE}'
-                        app:maxLength="3"
+                        android:maxLength="3"
                         app:maxValue="100"
                         app:minValue="1"
                         android:text='@{ele1202.checked ? ele1202x.getText().toString() : ""}'
@@ -712,7 +712,7 @@
                         android:inputType="number"
                         android:text='@{ ele1701.checked ? ele1701x.getText().toString() : "" }'
                         android:visibility='@{ ele1701.checked ? View.VISIBLE : View.GONE }'
-                        app:maxLength="5"
+                        android:maxLength="5"
                         app:maxValue="99999"
                         app:minValue="1"
                         app:type="range" />

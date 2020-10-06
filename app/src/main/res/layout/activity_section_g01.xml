@@ -334,7 +334,7 @@
                             android:tag="chg401"
                             android:text='@{chg401.checked ? chg401x.getText().toString() : ""}'
                             android:visibility='@{chg401.checked? View.VISIBLE : View.GONE}'
-                            app:maxLength="2"
+                            android:maxLength="2"
                             app:maxValue="29"
                             app:minValue="1"
                             app:type="range" />
@@ -1556,7 +1556,7 @@
                                     android:tag="chg2001"
                                     android:text='@{chg2001.checked ? chg2001x.getText().toString() : ""}'
                                     android:visibility='@{chg2001.checked ? View.VISIBLE : View.GONE}'
-                                    app:maxLength="2"
+                                    android:maxLength="2"
                                     app:maxValue="24"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1571,7 +1571,7 @@
                                     android:tag="chg2002"
                                     android:text='@{chg2002.checked ? chg2002x.getText().toString() : ""}'
                                     android:visibility='@{chg2002.checked? View.VISIBLE : View.GONE}'
-                                    app:maxLength="2"
+                                    android:maxLength="2"
                                     app:maxValue="30"
                                     app:minValue="4"
                                     app:type="range" />
