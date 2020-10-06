@@ -1,25 +1,25 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
 
+    <data>
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionJ01Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- bfj_title 1  Title   -->
             <androidx.cardview.widget.CardView
@@ -31,29 +31,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
                         <TextView
-                            android:id="@+id/qtxt_bfj_title1"
+                            style="@style/sub"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj_title1"
                             android:text="@string/bfj_title1" />
 
-                        <TextView
-                            android:id="@+id/q_bfj_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj_title1"
-                            android:layout_alignBottom="@id/qtxt_bfj_title1"
-                            android:text="@string/Q_bfj_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj_title 2  Title   -->
             <androidx.cardview.widget.CardView
@@ -65,29 +52,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
                         <TextView
-                            android:id="@+id/qtxt_bfj_title2"
+                            style="@style/sub"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj_title2"
                             android:text="@string/bfj_title2" />
 
-                        <TextView
-                            android:id="@+id/q_bfj_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj_title2"
-                            android:layout_alignBottom="@id/qtxt_bfj_title2"
-                            android:text="@string/Q_bfj_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj1  Input   -->
             <androidx.cardview.widget.CardView
@@ -119,15 +93,19 @@
                             android:layout_alignTop="@id/qtxt_bfj1"
                             android:layout_alignBottom="@id/qtxt_bfj1"
                             android:text="@string/Q_bfj1" />
+
                     </RelativeLayout>
 
                     <EditText
                         android:id="@+id/bfj1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:hint="@string/bfj1" />
+                        android:digits="Aa"
+                        android:hint="@string/name"
+                        android:maxLength="20" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- bfj2  Radio   -->
@@ -800,31 +778,16 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
                             <TextView
-                                android:id="@+id/qtxt_bfj15title"
+                                style="@style/sub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_bfj15title"
                                 android:text="@string/bfj15title" />
-
-                            <TextView
-                                android:id="@+id/q_bfj15title"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_bfj15title"
-                                android:layout_alignBottom="@id/qtxt_bfj15title"
-                                android:text="@string/Q_bfj15title" />
-                        </RelativeLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -847,6 +810,7 @@
                                     android:layout_alignTop="@id/qtxt_bfj15a"
                                     android:layout_alignBottom="@id/qtxt_bfj15a"
                                     android:text="@string/Q_bfj15a" />
+
                             </RelativeLayout>
 
                             <RadioGroup
@@ -963,6 +927,7 @@
                                     android:layout_alignTop="@id/qtxt_bfj15c"
                                     android:layout_alignBottom="@id/qtxt_bfj15c"
                                     android:text="@string/Q_bfj15c" />
+
                             </RelativeLayout>
 
                             <RadioGroup
@@ -1064,9 +1029,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bfj1698" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bfj17  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1231,6 +1200,7 @@
                             android:layout_alignTop="@id/qtxt_bfj9"
                             android:layout_alignBottom="@id/qtxt_bfj9"
                             android:text="@string/Q_bfj9" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1321,7 +1291,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj11"
                 style="@style/cardView"
-                android:visibility='@{bfj1002.checked? View.GONE : View.VISIBLE}'>
+                android:visibility='@{bfj1002.checked ? View.GONE : View.VISIBLE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"

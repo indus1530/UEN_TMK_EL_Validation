@@ -51,6 +51,7 @@
                             android:layout_alignTop="@id/qtxt_wsk_title1"
                             android:layout_alignBottom="@id/qtxt_wsk_title1"
                             android:text="@string/Q_wsk_title1" />
+
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -52,9 +52,13 @@
                             android:layout_alignTop="@id/qtxt_arih_title1"
                             android:layout_alignBottom="@id/qtxt_arih_title1"
                             android:text="@string/Q_arih_title1" />
+
                     </RelativeLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- arih_title2  Title   -->
             <androidx.cardview.widget.CardView
@@ -306,6 +310,7 @@
                                 android:layout_alignTop="@id/qtxt_arih4"
                                 android:layout_alignBottom="@id/qtxt_arih4"
                                 android:text="@string/Q_arih4" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -320,8 +325,11 @@
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- arih5  Title   -->
                 <androidx.cardview.widget.CardView

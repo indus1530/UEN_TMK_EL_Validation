@@ -819,6 +819,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- rad  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVrad"
@@ -1059,6 +1060,7 @@
                             android:layout_alignTop="@id/qtxt_cmf8"
                             android:layout_alignBottom="@id/qtxt_cmf8"
                             android:text="@string/Q_cmf8" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1069,14 +1071,14 @@
 
                         <RadioButton
                             android:id="@+id/cmf801"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/cmf801" />
 
                         <RadioButton
                             android:id="@+id/cmf802"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/cmf802" />
@@ -1094,6 +1096,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility='@{cmf802.checked? View.GONE : View.VISIBLE}'>
+
 
                 <!-- cmf9  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1125,6 +1128,7 @@
                                 android:layout_alignTop="@id/qtxt_cmf9"
                                 android:layout_alignBottom="@id/qtxt_cmf9"
                                 android:text="@string/Q_cmf9" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -1132,15 +1136,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/cmf9"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:mask="##"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmsr  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1218,6 +1224,7 @@
                                 android:layout_alignTop="@id/qtxt_cma"
                                 android:layout_alignBottom="@id/qtxt_cma"
                                 android:text="@string/Q_cma" />
+
                         </RelativeLayout>
 
                         <EditText
@@ -1225,9 +1232,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
-                            android:hint="@string/cma" />
+                            android:hint="@string/name" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmb  Input   -->
                 <androidx.cardview.widget.CardView
@@ -1259,6 +1269,7 @@
                                 android:layout_alignTop="@id/qtxt_cmb"
                                 android:layout_alignBottom="@id/qtxt_cmb"
                                 android:text="@string/Q_cmb" />
+
                         </RelativeLayout>
 
                         <EditText
@@ -1267,8 +1278,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/cmb" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmc  Radio   -->
                 <androidx.cardview.widget.CardView
