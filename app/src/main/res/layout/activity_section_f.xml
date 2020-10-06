@@ -1017,7 +1017,7 @@
                                 android:id="@+id/rae96x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/rae96"
+                                android:hint="@string/specify"
                                 android:tag="rae96"
                                 android:text='@{rae96.checked ? rae96x.getText().toString() : ""}'
                                 android:visibility='@{rae96.checked? View.VISIBLE : View.GONE}' />
@@ -1137,7 +1137,6 @@
                             android:id="@+id/cmf9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
@@ -1193,8 +1192,11 @@
                             app:maxValue="9"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cma  Input   -->
                 <androidx.cardview.widget.CardView
@@ -1278,8 +1280,8 @@
                             android:id="@+id/cmb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/cmb" />
+                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/name" />
 
                     </LinearLayout>
 
@@ -1316,6 +1318,7 @@
                                 android:layout_alignTop="@id/qtxt_cmc"
                                 android:layout_alignBottom="@id/qtxt_cmc"
                                 android:text="@string/Q_cmc" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1343,6 +1346,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmd  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1374,6 +1378,7 @@
                                 android:layout_alignTop="@id/qtxt_cmd"
                                 android:layout_alignBottom="@id/qtxt_cmd"
                                 android:text="@string/Q_cmd" />
+
                         </RelativeLayout>
 
                         <LinearLayout
@@ -1466,6 +1471,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cme  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcme"
@@ -1538,6 +1544,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmf  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1647,11 +1654,11 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:hint="##"
                                     android:inputType="number"
-                                    android:maxLength="2"
-                                    app:maxValue="99"
-                                    app:minValue="1"
+                                    android:hint="####"
+                                    android:maxLength="4"
+                                    app:maxValue="2020"
+                                    app:minValue="1920"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1661,6 +1668,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cmg  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1692,6 +1700,7 @@
                                 android:layout_alignTop="@id/qtxt_cmg"
                                 android:layout_alignBottom="@id/qtxt_cmg"
                                 android:text="@string/Q_cmg" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1762,9 +1771,13 @@
                                 android:tag="cmg96"
                                 android:text='@{cmg96.checked ? cmg96x.getText().toString() : ""}'
                                 android:visibility='@{cmg96.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
             </LinearLayout>
 
@@ -1799,35 +1812,41 @@
                             android:layout_alignTop="@id/qtxt_cmf10"
                             android:layout_alignBottom="@id/qtxt_cmf10"
                             android:text="@string/Q_cmf10" />
+
                     </RelativeLayout>
 
                     <RadioGroup
                         android:id="@+id/cmf10"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/cmf1001"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
                             android:text="@string/cmf1001" />
 
                         <RadioButton
                             android:id="@+id/cmf1002"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
                             android:text="@string/cmf1002" />
 
                         <RadioButton
                             android:id="@+id/cmf1003"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/cmf1003" />
 
                         <RadioButton
                             android:id="@+id/cmf1098"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/cmf1098" />
 
                     </RadioGroup>
@@ -1874,6 +1893,7 @@
                                 android:layout_alignTop="@id/qtxt_cmf11"
                                 android:layout_alignBottom="@id/qtxt_cmf11"
                                 android:text="@string/Q_cmf11" />
+
                         </RelativeLayout>
 
                         <RadioGroup
