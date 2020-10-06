@@ -11,9 +11,11 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE02Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -21,9 +23,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <!-- ele11  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVele11"
+                android:id="@+id/ele11cv"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -87,16 +90,17 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- ele12  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVele12"
-                style="@style/cardView">
+                android:id="@+id/ele12cv"
+                style="@style/cardView"
+                android:visibility='@{ele1101.checked ? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility='@{ele1102.checked? View.GONE : View.VISIBLE}'>
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -150,31 +154,40 @@
 
                     </RadioGroup>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/ele1201x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/ele1201"
-                        android:inputType="number"
-                        android:maxLength="3"
+                        android:gravity="center"
+                        android:hint="###"
                         android:tag="ele1201"
+                        android:inputType="number"
+                        android:visibility='@{ele1201.checked? View.VISIBLE : View.GONE}'
+                        app:maxLength="3"
+                        app:maxValue="100"
+                        app:minValue="1"
                         android:text='@{ele1201.checked ? ele1201x.getText().toString() : ""}'
-                        android:visibility='@{ele1201.checked ? View.VISIBLE : View.GONE}' />
+                        app:type="range" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/ele1202x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/ele1202"
-                        android:inputType="number"
-                        android:maxLength="3"
+                        android:gravity="center"
+                        android:hint="###"
                         android:tag="ele1202"
+                        android:inputType="number"
+                        android:visibility='@{ele1202.checked? View.VISIBLE : View.GONE}'
+                        app:maxLength="3"
+                        app:maxValue="100"
+                        app:minValue="1"
                         android:text='@{ele1202.checked ? ele1202x.getText().toString() : ""}'
-                        android:visibility='@{ele1202.checked ? View.VISIBLE : View.GONE}' />
+                        app:type="range" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele13  Radio   -->
             <androidx.cardview.widget.CardView
@@ -235,11 +248,12 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- ele14  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVele14"
+                android:id="@+id/ele14cv"
                 style="@style/cardView"
-                android:visibility='@{ele1302.checked? View.GONE : View.VISIBLE}'>
+                android:visibility='@{ele1301.checked? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -434,6 +448,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele15  Radio   -->
             <androidx.cardview.widget.CardView
@@ -688,20 +703,24 @@
 
                     </RadioGroup>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/ele1701x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/ele1701"
-                        android:inputType="number"
-                        android:maxLength="5"
+                        android:hint="#####"
                         android:tag="ele1701"
-                        android:text='@{ele1701.checked ? ele1701x.getText().toString() : ""}'
-                        android:visibility='@{ele1701.checked? View.VISIBLE : View.GONE}' />
+                        android:inputType="number"
+                        android:text='@{ ele1701.checked ? ele1701x.getText().toString() : "" }'
+                        android:visibility='@{ ele1701.checked ? View.VISIBLE : View.GONE }'
+                        app:maxLength="5"
+                        app:maxValue="99999"
+                        app:minValue="1"
+                        app:type="range" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele18  Radio   -->
             <androidx.cardview.widget.CardView
@@ -733,6 +752,7 @@
                             android:layout_alignTop="@id/qtxt_ele18"
                             android:layout_alignBottom="@id/qtxt_ele18"
                             android:text="@string/Q_ele18" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -785,6 +805,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele19  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -879,6 +900,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- ele20  CheckBox   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVele20"
@@ -943,11 +965,22 @@
                             android:layout_height="wrap_content"
                             android:text="@string/ele2096" />
 
+                        <EditText
+                            android:id="@+id/ele2096x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
+                            android:tag="ele2096"
+                            android:text='@{ele2096.checked ? ele2096x.getText().toString() : ""}'
+                            android:visibility='@{ele2096.checked? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!--EndButton LinearLayout-->
             <LinearLayout
@@ -977,6 +1010,7 @@
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
+
 
         </LinearLayout>
 

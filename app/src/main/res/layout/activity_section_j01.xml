@@ -100,7 +100,7 @@
                         android:id="@+id/bfj1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="Aa"
+                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                         android:hint="@string/name"
                         android:maxLength="20" />
 

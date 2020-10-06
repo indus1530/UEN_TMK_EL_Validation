@@ -33,19 +33,8 @@ public class SectionE02Activity extends AppCompatActivity {
     }
 
     private void setupSkip() {
-
-
-        bi.ele11.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.ele1102.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVele12);
-            }
-        }));
-
-        bi.ele13.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.ele1302.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVele14);
-            }
-        }));
+        bi.ele11.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ele12cv));
+        bi.ele13.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ele14cv));
 
         bi.ele1905.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b) {
@@ -58,25 +47,6 @@ public class SectionE02Activity extends AppCompatActivity {
                 bi.fldGrpCVele20.setVisibility(View.VISIBLE);
             }
         });
-
-
-        /*bi.ele13.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.ele1302.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVele14);
-            }
-        }));*/
-
-        /*bi.imi1.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.imi101.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVimi2);
-            }
-        });*/
-
-        /*bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg601.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVchg7);
-            }
-        });*/
 
     }
 
@@ -134,17 +104,12 @@ public class SectionE02Activity extends AppCompatActivity {
                 : bi.ele1302.isChecked() ? "2"
                 : "-1");
 
-        json.put("ele1401", bi.ele1401.getText().toString());
-
-        json.put("ele1402", bi.ele1402.getText().toString());
-
-        json.put("ele1403", bi.ele1403.getText().toString());
-
-        json.put("ele1404", bi.ele1404.getText().toString());
-
-        json.put("ele1405", bi.ele1405.getText().toString());
-
-        json.put("ele1406", bi.ele1406.getText().toString());
+        json.put("ele1401", bi.ele1401.getText().toString().trim().isEmpty() ? "-1" : bi.ele1401.getText().toString());
+        json.put("ele1402", bi.ele1402.getText().toString().trim().isEmpty() ? "-1" : bi.ele1402.getText().toString());
+        json.put("ele1403", bi.ele1403.getText().toString().trim().isEmpty() ? "-1" : bi.ele1403.getText().toString());
+        json.put("ele1404", bi.ele1404.getText().toString().trim().isEmpty() ? "-1" : bi.ele1404.getText().toString());
+        json.put("ele1405", bi.ele1405.getText().toString().trim().isEmpty() ? "-1" : bi.ele1405.getText().toString());
+        json.put("ele1406", bi.ele1406.getText().toString().trim().isEmpty() ? "-1" : bi.ele1406.getText().toString());
 
         json.put("ele15", bi.ele1501.isChecked() ? "1"
                 : bi.ele1502.isChecked() ? "2"
@@ -164,42 +129,35 @@ public class SectionE02Activity extends AppCompatActivity {
                 : bi.ele1611.isChecked() ? "11"
                 : bi.ele1696.isChecked() ? "96"
                 : "-1");
+        json.put("ele1696x", bi.ele1696x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1696x.getText().toString());
 
-        json.put("ele1696x", bi.ele1696x.getText().toString());
         json.put("ele17", bi.ele1701.isChecked() ? "1"
                 : bi.ele1702.isChecked() ? "2"
                 : bi.ele1798.isChecked() ? "98"
                 : "-1");
+        json.put("ele1701x", bi.ele1701x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1701x.getText().toString());
 
-        json.put("ele1701x", bi.ele1701x.getText().toString());
         json.put("ele18", bi.ele1801.isChecked() ? "1"
                 : bi.ele1802.isChecked() ? "2"
                 : bi.ele1803.isChecked() ? "3"
                 : bi.ele1804.isChecked() ? "4"
                 : bi.ele1896.isChecked() ? "96"
                 : "-1");
+        json.put("ele1896x", bi.ele1896x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1896x.getText().toString());
 
-        json.put("ele1896x", bi.ele1896x.getText().toString());
         json.put("ele1901", bi.ele1901.isChecked() ? "1" : "-1");
-
         json.put("ele1902", bi.ele1902.isChecked() ? "2" : "-1");
-
         json.put("ele1903", bi.ele1903.isChecked() ? "3" : "-1");
-
         json.put("ele1904", bi.ele1904.isChecked() ? "4" : "-1");
-
         json.put("ele1905", bi.ele1905.isChecked() ? "5" : "-1");
-
         json.put("ele1996", bi.ele1996.isChecked() ? "96" : "-1");
+        json.put("ele1996x", bi.ele1996x.getText().toString().trim().isEmpty() ? "-1" : bi.ele1996x.getText().toString());
 
-        json.put("ele1996x", bi.ele1996x.getText().toString());
         json.put("ele2001", bi.ele2001.isChecked() ? "1" : "-1");
-
         json.put("ele2002", bi.ele2002.isChecked() ? "2" : "-1");
-
         json.put("ele2003", bi.ele2003.isChecked() ? "3" : "-1");
-
         json.put("ele2096", bi.ele2096.isChecked() ? "96" : "-1");
+        json.put("ele2096x", bi.ele2096x.getText().toString().trim().isEmpty() ? "-1" : bi.ele2096x.getText().toString());
 
     }
 

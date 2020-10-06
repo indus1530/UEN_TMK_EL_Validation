@@ -776,6 +776,7 @@
                                 android:layout_alignTop="@id/qtxt_rac"
                                 android:layout_alignBottom="@id/qtxt_rac"
                                 android:text="@string/Q_rac" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -895,7 +896,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="29"
+                                app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -908,7 +909,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="11"
+                                app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -918,11 +919,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="##"
+                                android:hint="####"
                                 android:inputType="number"
-                                android:maxLength="2"
-                                app:maxValue="99"
-                                app:minValue="1"
+                                android:maxLength="4"
+                                app:maxValue="2020"
+                                app:minValue="1920"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -930,6 +931,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- rae  Radio   -->
                 <androidx.cardview.widget.CardView
