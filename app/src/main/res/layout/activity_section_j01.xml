@@ -266,6 +266,7 @@
                             android:layout_alignTop="@id/qtxt_bfj3"
                             android:layout_alignBottom="@id/qtxt_bfj3"
                             android:text="@string/Q_bfj3" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -315,7 +316,6 @@
                             android:id="@+id/bfj3dx"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:hint="@string/bfj3d"
                             android:tag="bfj3d"
                             android:text='@{bfj3d.checked ? bfj3dx.getText().toString() : ""}'
@@ -332,9 +332,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bfj398" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj4  Radio   -->
             <androidx.cardview.widget.CardView

@@ -133,10 +133,10 @@ public class SectionH01Activity extends AppCompatActivity {
                 : bi.arih303.isChecked() ? "98"
                 : "-1");
 
-        json.put("arih4", bi.arih4.getText().toString());
+        json.put("arih4", bi.arih4.getText().toString().trim().isEmpty() ? "-1" : bi.arih4.getText().toString());
 
-        json.put("arih501", bi.arih501.getText().toString());
-        json.put("arih502", bi.arih502.getText().toString());
+        json.put("arih501", bi.arih501.getText().toString().trim().isEmpty() ? "-1" : bi.arih501.getText().toString());
+        json.put("arih502", bi.arih502.getText().toString().trim().isEmpty() ? "-1" : bi.arih502.getText().toString());
 
         json.put("arih6", bi.arih6.getText().toString());
 
@@ -154,8 +154,9 @@ public class SectionH01Activity extends AppCompatActivity {
         json.put("arih807", bi.arih807.isChecked() ? "7" : "-1");
         json.put("arih808", bi.arih808.isChecked() ? "8" : "-1");
         json.put("arih896", bi.arih896.isChecked() ? "96" : "-1");
+        json.put("arih896x", bi.arih896x.getText().toString().trim().isEmpty() ? "-1" : bi.arih896x.getText().toString());
 
-        json.put("arih9", bi.arih9.getText().toString());
+        json.put("arih9", bi.arih9.getText().toString().trim().isEmpty() ? "-1" : bi.arih9.getText().toString());
 
         json.put("arih10", bi.arih1001.isChecked() ? "1"
                 : bi.arih1002.isChecked() ? "2"
@@ -208,6 +209,7 @@ public class SectionH01Activity extends AppCompatActivity {
                 : bi.arih1704.isChecked() ? "4"
                 : bi.arih1796.isChecked() ? "96"
                 : "-1");
+        json.put("arih1796x", bi.arih1796x.getText().toString().trim().isEmpty() ? "-1" : bi.arih1796x.getText().toString());
 
         json.put("arih18", bi.arih1801.isChecked() ? "1"
                 : bi.arih1802.isChecked() ? "2"
