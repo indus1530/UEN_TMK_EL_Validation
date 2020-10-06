@@ -42,14 +42,12 @@ public class SectionG01Activity extends AppCompatActivity {
             }
         });
 
+
         bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg601.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVchg7);
-                bi.fldGrpCVchg7.setVisibility(View.GONE);
-            } else {
-                bi.fldGrpCVchg7.setVisibility(View.VISIBLE);
-            }
+            Clear.clearAllFields(bi.chg7cv);
+            Clear.clearAllFields(bi.llchg8);
         });
+
 
         bi.chg13.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg1302.getId()) {
