@@ -87,7 +87,7 @@
                             android:id="@+id/istatus96x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 .,"
                             android:hint="istatus96x"
                             android:inputType="text"
                             android:maxLength="40"
