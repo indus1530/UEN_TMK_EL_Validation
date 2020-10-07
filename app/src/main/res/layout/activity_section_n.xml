@@ -332,6 +332,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/can501"
+                        android:inputType="numberDecimal"
+                        android:maxLength="3"
                         android:tag="can501"
                         android:text='@{can501.checked ? can501x.getText().toString() : ""}'
                         android:visibility='@{can501.checked? View.VISIBLE : View.GONE}' />
@@ -377,6 +379,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                         android:hint="@string/can6" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
