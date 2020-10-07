@@ -3,9 +3,7 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionLActivity" />
@@ -31,15 +29,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
                     <TextView
-                        android:id="@+id/q_hwl_title1"
                         style="@style/sub"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Q_hwl_title1" />
+                        android:text="@string/hwl_title1" />
 
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl_title2  Title   -->
@@ -52,16 +49,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
                     <TextView
-
-                        android:id="@+id/q_hwl_title2"
                         style="@style/sub"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Q_hwl_title2" />
+                        android:text="@string/hwl_title2" />
 
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl1  Radio   -->
@@ -108,6 +103,7 @@
                             android:text="@string/hwl101" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl1title" />
@@ -560,6 +556,7 @@
                         android:tag="0">
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl8a" />
@@ -611,6 +608,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl808" />
+
                     </LinearLayout>
 
                     <CheckBox
@@ -619,7 +617,9 @@
                         android:layout_height="wrap_content"
                         android:tag="-1"
                         android:text="@string/hwl809" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- hwl9  Radio   -->
@@ -876,7 +876,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_hwl_tittle3"
-                            android:text="@string/Q_hwl_title3" />
+                            android:text="@string/hwl_title3" />
 
                         <TextView
                             android:id="@+id/q_hwl_tittle3"
@@ -971,6 +971,7 @@
                         android:tag="0">
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/hwl12title" />
@@ -1301,5 +1302,7 @@
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

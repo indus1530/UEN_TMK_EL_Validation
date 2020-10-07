@@ -11,11 +11,9 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionKActivity" />
     </data>
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -773,6 +771,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- wsk7  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwsk7"
@@ -837,6 +836,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk8  Radio   -->
             <androidx.cardview.widget.CardView
@@ -903,6 +903,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk9  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1006,6 +1007,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- wsk10  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwsk10"
@@ -1097,6 +1099,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk11  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1212,6 +1215,7 @@
                 android:orientation="vertical"
                 android:visibility='@{wsk1104.checked || wsk1111.checked? View.GONE : View.VISIBLE}'>
 
+
                 <!-- wsk12  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwsk12"
@@ -1285,6 +1289,7 @@
                     android:orientation="vertical"
                     android:visibility='@{wsk1201.checked? View.VISIBLE : View.GONE}'>
 
+
                     <!-- wsk13  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVwsk13"
@@ -1343,6 +1348,7 @@
 
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- wsk14  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVwsk14"
@@ -1400,6 +1406,7 @@
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- wsk16  Radio   -->
                     <androidx.cardview.widget.CardView

@@ -3,6 +3,7 @@
 
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
@@ -33,11 +34,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                        <TextView
-                            style="@style/sub"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/arih_title1" />
+                    <TextView
+                        style="@style/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/arih_title1" />
 
                 </LinearLayout>
 
@@ -54,11 +55,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                        <TextView
-                            style="@style/sub"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/arih_title2" />
+                    <TextView
+                        style="@style/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/arih_title2" />
 
                 </LinearLayout>
 
@@ -345,8 +346,8 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
                                 android:layout_weight="2"
+                                android:gravity="center"
                                 android:text="@string/arih501" />
 
                             <EditText
@@ -366,8 +367,8 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
                                 android:layout_weight="2"
+                                android:gravity="center"
                                 android:text="@string/arih502" />
 
                             <EditText

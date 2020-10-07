@@ -3,9 +3,7 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity" />
@@ -31,7 +29,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
                     <TextView
                         android:id="@+id/qtxt_imi_title1"
                         style="@style/sub"
@@ -39,8 +36,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/imi_title1" />
 
-
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- imi_title2  Title   -->
@@ -53,17 +50,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
-
-                        <TextView
-                            android:id="@+id/qtxt_imi_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/sub"
-                            android:text="@string/imi_title2" />
-
+                    <TextView
+                        android:id="@+id/qtxt_imi_title2"
+                        style="@style/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imi_title2" />
 
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- imi1  Radio   -->

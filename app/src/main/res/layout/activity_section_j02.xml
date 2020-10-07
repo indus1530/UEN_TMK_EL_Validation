@@ -3,17 +3,17 @@
 
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionJ02Activity" />
     </data>
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -62,6 +62,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj20  Title   -->
             <androidx.cardview.widget.CardView
@@ -575,6 +576,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- bfj13  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj13"
@@ -642,14 +644,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="##"
-                        android:tag="bfj1301"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:tag="bfj1301"
+                        android:text='@{bfj1301.checked ? bfj1301x.getText().toString() : ""}'
+                        android:visibility='@{bfj1301.checked? View.VISIBLE : View.GONE}'
                         app:maxValue="29"
                         app:minValue="1"
-                        app:type="range"
-                        android:text='@{bfj1301.checked ? bfj1301x.getText().toString() : ""}'
-                        android:visibility='@{bfj1301.checked? View.VISIBLE : View.GONE}' />
+                        app:type="range" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/bfj1302x"
@@ -657,14 +659,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="##"
-                        android:tag="bfj1302"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:tag="bfj1302"
+                        android:text='@{bfj1302.checked ? bfj1302x.getText().toString() : ""}'
+                        android:visibility='@{bfj1302.checked? View.VISIBLE : View.GONE}'
                         app:maxValue="11"
                         app:minValue="1"
-                        app:type="range"
-                        android:text='@{bfj1302.checked ? bfj1302x.getText().toString() : ""}'
-                        android:visibility='@{bfj1302.checked? View.VISIBLE : View.GONE}' />
+                        app:type="range" />
 
                 </LinearLayout>
 
@@ -870,10 +872,10 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
+                            android:maxLength="2"
                             android:tag="bfj2401"
                             android:text='@{bfj2401.checked ? bfj2401x.getText().toString() : ""}'
                             android:visibility='@{bfj2401.checked? View.VISIBLE : View.GONE}'
-                            android:maxLength="2"
                             app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />

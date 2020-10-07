@@ -24,6 +24,49 @@
             android:orientation="vertical">
 
 
+            <!-- ele_title1  tittle  -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVele_title1"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/qtxt_ele_title1"
+                        style="@style/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ele_title1" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ele_title2  tittle  -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVele_title2"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/qtxt_ele_title2"
+                        style="@style/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ele_title2" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
             <!-- ele11  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/ele11cv"
