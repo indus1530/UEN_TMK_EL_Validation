@@ -672,7 +672,7 @@
                             android:id="@+id/ele1696x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="ele1696"
                             android:text='@{ele1696.checked ? ele1696x.getText().toString() : ""}'
@@ -837,7 +837,7 @@
                             android:id="@+id/ele1896x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="ele1896"
                             android:text='@{ele1896.checked ? ele1896x.getText().toString() : ""}'
@@ -924,7 +924,7 @@
                             android:id="@+id/ele1996x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="ele1996"
                             android:text='@{ele1996.checked ? ele1996x.getText().toString() : ""}'
@@ -1012,7 +1012,7 @@
                             android:id="@+id/ele2096x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="ele2096"
                             android:text='@{ele2096.checked ? ele2096x.getText().toString() : ""}'

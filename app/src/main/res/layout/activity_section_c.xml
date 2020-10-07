@@ -503,15 +503,15 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/elc796" />
 
-                            <EditText
-                                android:id="@+id/elc796x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                                android:hint="@string/specify"
-                                android:tag="elc796"
-                                android:text='@{elc796.checked ? elc796x.getText().toString() : ""}'
-                                android:visibility='@{elc796.checked ? View.VISIBLE : View.GONE}' />
+                        <EditText
+                            android:id="@+id/elc796x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
+                            android:hint="@string/specify"
+                            android:tag="elc796"
+                            android:text='@{elc796.checked ? elc796x.getText().toString() : ""}'
+                            android:visibility='@{elc796.checked? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
 
