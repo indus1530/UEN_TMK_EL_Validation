@@ -61,11 +61,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20a"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20a" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -89,11 +88,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20b"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -117,12 +115,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20c"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20c" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -137,6 +133,7 @@
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -145,16 +142,15 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20d"
                             style="@style/textView"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20d" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bfj20d01"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -176,7 +172,7 @@
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20e" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -203,7 +199,7 @@
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20f" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -227,11 +223,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20g"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20g" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -255,11 +250,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20h"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20h" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -283,11 +277,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20i"
                             style="@style/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="3"
                             android:text="@string/bfj20i" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker

@@ -113,6 +113,7 @@
 
     <style name="checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:paddingStart">24dp</item>
         <item name="android:drawablePadding">8dp</item>
         <item name="android:paddingEnd">8dp</item>
@@ -299,4 +300,17 @@
         <item name="android:background">@color/white_overlay</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
+
+    <style name="textViewIntro">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/white_overlay</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>

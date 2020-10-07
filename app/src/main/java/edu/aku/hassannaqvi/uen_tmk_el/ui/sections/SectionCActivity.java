@@ -3,8 +3,12 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -25,6 +29,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
+import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.userName;
 
 
 public class SectionCActivity extends AppCompatActivity {
@@ -37,6 +42,17 @@ public class SectionCActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
         bi.setCallback(this);
         setupSkip();
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.intro_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        TextView textView = dialogView.findViewById(R.id.elc_title22);
+        textView.setText(" منھنجو نالو آھي " + userName);
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
     }
 
 
