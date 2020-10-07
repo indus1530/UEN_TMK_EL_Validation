@@ -56,6 +56,8 @@
                 style="@style/textViewIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="23dp"
+                android:textStyle="bold"
                 android:text="@string/elc_title21" />
 
             <TextView

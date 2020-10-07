@@ -308,7 +308,7 @@
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:minHeight">52dp</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:background">@color/white_overlay</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
