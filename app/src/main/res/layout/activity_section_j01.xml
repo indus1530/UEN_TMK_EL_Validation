@@ -235,9 +235,13 @@
                             android:tag="bfj296"
                             android:text='@{bfj296.checked ? bfj296x.getText().toString() : ""}'
                             android:visibility='@{bfj296.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj3  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1407,7 +1411,7 @@
                         android:hint="##"
                         android:tag="bfj1102"
                         android:inputType="number"
-                        app:maxLength="2"
+                        android:maxLength="2"
                         app:maxValue="11"
                         app:minValue="1"
                         app:type="range"
@@ -1470,7 +1474,7 @@
                             android:hint="##"
                             android:tag="bfj1201"
                             android:inputType="number"
-                            app:maxLength="2"
+                            android:maxLength="2"
                             app:maxValue="29"
                             app:minValue="1"
                             app:type="range"
@@ -1491,7 +1495,7 @@
                             android:hint="##"
                             android:tag="bfj1202"
                             android:inputType="number"
-                            app:maxLength="2"
+                            android:maxLength="2"
                             app:maxValue="11"
                             app:minValue="1"
                             app:type="range"

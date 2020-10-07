@@ -85,9 +85,13 @@
                             android:layout_alignTop="@id/qtxt_hwl_title2"
                             android:layout_alignBottom="@id/qtxt_hwl_title2"
                             android:text="@string/Q_hwl_title2" />
+
                     </RelativeLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- hwl1  Radio   -->
             <androidx.cardview.widget.CardView

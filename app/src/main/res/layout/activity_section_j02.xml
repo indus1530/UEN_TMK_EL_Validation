@@ -603,7 +603,7 @@
                         android:hint="##"
                         android:tag="bfj1301"
                         android:inputType="number"
-                        app:maxLength="2"
+                        android:maxLength="2"
                         app:maxValue="29"
                         app:minValue="1"
                         app:type="range"
@@ -618,7 +618,7 @@
                         android:hint="##"
                         android:tag="bfj1302"
                         android:inputType="number"
-                        app:maxLength="2"
+                        android:maxLength="2"
                         app:maxValue="11"
                         app:minValue="1"
                         app:type="range"
@@ -832,7 +832,7 @@
                             android:tag="bfj2401"
                             android:text='@{bfj2401.checked ? bfj2401x.getText().toString() : ""}'
                             android:visibility='@{bfj2401.checked? View.VISIBLE : View.GONE}'
-                            app:maxLength="2"
+                            android:maxLength="2"
                             app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />
