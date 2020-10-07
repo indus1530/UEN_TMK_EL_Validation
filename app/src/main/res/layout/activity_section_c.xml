@@ -500,7 +500,7 @@
                             android:id="@+id/elc796x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="elc796"
                             android:text='@{elc796.checked ? elc796x.getText().toString() : ""}'

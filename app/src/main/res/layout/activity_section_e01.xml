@@ -183,6 +183,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele196"
                             android:tag="ele196"
                             android:text='@{ele196.checked ? ele196x.getText().toString() : ""}'
@@ -353,6 +354,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele296"
                             android:tag="ele296"
                             android:text='@{ele296.checked ? ele296x.getText().toString() : ""}'
@@ -662,6 +664,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele596"
                             android:tag="ele596"
                             android:text='@{ele596.checked ? ele596x.getText().toString() : ""}'
@@ -742,6 +745,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele696"
                             android:tag="ele696"
                             android:text='@{ele696.checked ? ele696x.getText().toString() : ""}'
@@ -870,6 +874,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele796"
                             android:tag="ele796"
                             android:text='@{ele796.checked ? ele796x.getText().toString() : ""}'
