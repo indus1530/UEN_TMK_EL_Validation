@@ -32,29 +32,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/can_title1" />
 
-                        <TextView
-                            android:id="@+id/qtxt_can_title1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can_title1"
-                            android:text="@string/can_title1" />
-
-                        <TextView
-                            android:id="@+id/q_can_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can_title1"
-                            android:layout_alignBottom="@id/qtxt_can_title1"
-                            android:text="@string/Q_can_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can_title 2  Title   -->
             <androidx.cardview.widget.CardView
@@ -66,28 +53,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/can_title2" />
 
-                        <TextView
-                            android:id="@+id/qtxt_can_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can_title2"
-                            android:text="@string/can_title2" />
-
-                        <TextView
-                            android:id="@+id/q_can_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can_title2"
-                            android:layout_alignBottom="@id/qtxt_can_title2"
-                            android:text="@string/Q_can_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can1  Radio   -->
