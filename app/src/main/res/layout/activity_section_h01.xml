@@ -1,26 +1,27 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
 
+    <data>
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- arih_title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -32,29 +33,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
                         <TextView
-                            android:id="@+id/qtxt_arih_title1"
+                            style="@style/sub"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_arih_title1"
                             android:text="@string/arih_title1" />
 
-                        <TextView
-                            android:id="@+id/q_arih_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_arih_title1"
-                            android:layout_alignBottom="@id/qtxt_arih_title1"
-                            android:text="@string/Q_arih_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- arih_title2  Title   -->
             <androidx.cardview.widget.CardView
@@ -66,29 +54,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
                         <TextView
-                            android:id="@+id/qtxt_arih_title2"
+                            style="@style/sub"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_arih_title2"
                             android:text="@string/arih_title2" />
 
-                        <TextView
-                            android:id="@+id/q_arih_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_arih_title2"
-                            android:layout_alignBottom="@id/qtxt_arih_title2"
-                            android:text="@string/Q_arih_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- arih1  Radio   -->
             <androidx.cardview.widget.CardView
@@ -200,8 +175,11 @@
                         app:maxValue="10"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- arih3  Radio   -->
             <androidx.cardview.widget.CardView
@@ -233,6 +211,7 @@
                             android:layout_alignTop="@id/qtxt_arih3"
                             android:layout_alignBottom="@id/qtxt_arih3"
                             android:text="@string/Q_arih3" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -306,13 +285,13 @@
                                 android:layout_alignTop="@id/qtxt_arih4"
                                 android:layout_alignBottom="@id/qtxt_arih4"
                                 android:text="@string/Q_arih4" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/arih4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:hint="@string/arih4"
                             android:inputType="number"
                             android:maxLength="2"
@@ -320,8 +299,11 @@
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- arih5  Title   -->
                 <androidx.cardview.widget.CardView
@@ -606,8 +588,21 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/arih896" />
+
+                            <EditText
+                                android:id="@+id/arih896x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:hint="@string/specify"
+                                android:tag="arih896"
+                                android:text='@{arih896.checked ? arih896x.getText().toString() : ""}'
+                                android:visibility='@{arih896.checked ? View.VISIBLE : View.GONE}' />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- arih9  Input-Numeric   -->
@@ -640,13 +635,13 @@
                                 android:layout_alignTop="@id/qtxt_arih9"
                                 android:layout_alignBottom="@id/qtxt_arih9"
                                 android:text="@string/Q_arih9" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/arih9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:hint="@string/arih9"
                             android:inputType="number"
                             android:maxLength="2"
@@ -654,8 +649,11 @@
                             app:maxValue="30"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- arih10  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1195,6 +1193,7 @@
                                         android:layout_alignTop="@id/qtxt_arih17"
                                         android:layout_alignBottom="@id/qtxt_arih17"
                                         android:text="@string/Q_arih17" />
+
                                 </RelativeLayout>
 
                                 <RadioGroup
@@ -1231,9 +1230,23 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/arih1796" />
+
+                                    <EditText
+                                        android:id="@+id/arih1796x"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                        android:hint="@string/specify"
+                                        android:tag="arih1796"
+                                        android:text='@{arih1796.checked ? arih1796x.getText().toString() : ""}'
+                                        android:visibility='@{arih1796.checked? View.VISIBLE : View.GONE}' />
+
                                 </RadioGroup>
+
                             </LinearLayout>
+
                         </androidx.cardview.widget.CardView>
+
 
                         <!-- arih18  Radio   -->
                         <androidx.cardview.widget.CardView

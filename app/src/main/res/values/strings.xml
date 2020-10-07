@@ -488,11 +488,11 @@
     <string name="cmf802">نه</string>
     <string name="cmf9">جيڪڏهن ها ته ڪيتراٻار مري ويا آھن؟ (مري ويل ٻارن جو تعداد)</string>
     <string name="cmsr">فهرست نمبر</string>
-    <string name="cma">مري ويل ٻارجومڪمل نالو</string>
-    <string name="cmb">مري ويل ٻار جي ماءُ يا پيءُ جونالو</string>
-    <string name="cmc">جنس</string>
-    <string name="cmc01"> مرد      </string>
-    <string name="cmc02">عورت</string>
+    <string name="cma"> مري ويل ٻار جو مڪمل نالو </string>
+    <string name="cmb"> مري ويل ٻار جي ماءُ يا پيءُ جو نالو </string>
+    <string name="cmc"> جنس </string>
+    <string name="cmc01"> مرد </string>
+    <string name="cmc02">عورت </string>
     <string name="cmd">مرڻ وقت عمر</string>
     <string name="cmd01">ڏينهن</string>
     <string name="cmd02">مهينو</string>
