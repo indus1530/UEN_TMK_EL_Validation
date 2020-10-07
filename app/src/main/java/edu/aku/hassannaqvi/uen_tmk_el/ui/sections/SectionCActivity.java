@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -49,7 +50,7 @@ public class SectionCActivity extends AppCompatActivity {
         dialogBuilder.setView(dialogView);
 
         TextView textView = dialogView.findViewById(R.id.elc_title22);
-        textView.setText(" منھنجو نالو آھي " + userName);
+        textView.setText(" منھنجو نالو " + userName + " آھي ");
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
@@ -57,24 +58,7 @@ public class SectionCActivity extends AppCompatActivity {
 
 
     private void setupSkip() {
-
-        /*bi.mf105.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVmf106);
-            Clear.clearAllFields(bi.fldGrpCVmf107);
-            Clear.clearAllFields(bi.fldGrpCVmf108);
-            bi.fldGrpCVmf106.setVisibility(View.GONE);
-            bi.fldGrpCVmf107.setVisibility(View.GONE);
-            bi.fldGrpCVmf108.setVisibility(View.GONE);
-
-            if (i == bi.mf10501.getId()) {
-                bi.fldGrpCVmf107.setVisibility(View.VISIBLE);
-            } else if (i == bi.mf10502.getId()) {
-                bi.fldGrpCVmf106.setVisibility(View.VISIBLE);
-            } else if (i == bi.mf10503.getId()) {
-                bi.fldGrpCVmf108.setVisibility(View.VISIBLE);
-            }
-        });*/
-
+        bi.elc2.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.llelec2));
     }
 
 
