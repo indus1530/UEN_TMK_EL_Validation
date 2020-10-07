@@ -3,9 +3,7 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity" />
@@ -31,28 +29,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/qtxt_imi_title1"
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/imi_title1" />
 
-                        <TextView
-                            android:id="@+id/qtxt_imi_title1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_imi_title1"
-                            android:text="@string/imi_title1" />
-
-                        <TextView
-                            android:id="@+id/q_imi_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_imi_title1"
-                            android:layout_alignBottom="@id/qtxt_imi_title1"
-                            android:text="@string/Q_imi_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- imi_title2  Title   -->
@@ -65,28 +50,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/qtxt_imi_title2"
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/imi_title2" />
 
-                        <TextView
-                            android:id="@+id/qtxt_imi_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_imi_title2"
-                            android:text="@string/imi_title2" />
-
-                        <TextView
-                            android:id="@+id/q_imi_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_imi_title2"
-                            android:layout_alignBottom="@id/qtxt_imi_title2"
-                            android:text="@string/Q_imi_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- imi1  Radio   -->

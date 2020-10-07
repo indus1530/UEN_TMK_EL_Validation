@@ -30,27 +30,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/qtxt_ele_title1"
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/ele_title1" />
 
-                        <TextView
-                            android:id="@+id/qtxt_ele_title1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_ele_title1"
-                            android:text="@string/ele_title1" />
 
-                        <TextView
-                            android:id="@+id/q_ele_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_ele_title1"
-                            android:layout_alignBottom="@id/qtxt_ele_title1"
-                            android:text="@string/Q_ele_title1" />
-                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -64,27 +51,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+
+                    <TextView
+                        android:id="@+id/qtxt_ele_title2"
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/ele_title2" />
 
-                        <TextView
-                            android:id="@+id/qtxt_ele_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_ele_title2"
-                            android:text="@string/ele_title2" />
 
-                        <TextView
-                            android:id="@+id/q_ele_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_ele_title2"
-                            android:layout_alignBottom="@id/qtxt_ele_title2"
-                            android:text="@string/Q_ele_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -254,6 +229,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ele2_title1" />
@@ -277,6 +253,7 @@
                             android:text="@string/ele203" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ele2_title2" />
@@ -306,6 +283,7 @@
                             android:text="@string/ele207" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ele2_title3" />
