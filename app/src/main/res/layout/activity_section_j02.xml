@@ -52,6 +52,7 @@
                             android:layout_alignTop="@id/qtxt_bfj20"
                             android:layout_alignBottom="@id/qtxt_bfj20"
                             android:text="@string/Q_bfj20" />
+
                     </RelativeLayout>
 
                     <LinearLayout
@@ -795,42 +796,46 @@
                         <RadioGroup
                             android:id="@+id/bfj24"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/bfj2401"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
                                 android:text="@string/bfj2401" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/bfj2401x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:tag="bfj2401"
-                                android:inputType="number"
-                                app:maxLength="2"
-                                app:maxValue="15"
-                                app:minValue="1"
-                                app:type="range"
-                                android:text='@{bfj2401.checked ? bfj2401x.getText().toString() : ""}'
-                                android:visibility='@{bfj2401.checked? View.VISIBLE : View.GONE}' />
 
                             <RadioButton
                                 android:id="@+id/bfj2402"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/bfj2402" />
 
                             <RadioButton
                                 android:id="@+id/bfj2498"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
                                 android:text="@string/bfj2498" />
 
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/bfj2401x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:tag="bfj2401"
+                            android:text='@{bfj2401.checked ? bfj2401x.getText().toString() : ""}'
+                            android:visibility='@{bfj2401.checked? View.VISIBLE : View.GONE}'
+                            app:maxLength="2"
+                            app:maxValue="15"
+                            app:minValue="1"
+                            app:type="range" />
 
                     </LinearLayout>
 
