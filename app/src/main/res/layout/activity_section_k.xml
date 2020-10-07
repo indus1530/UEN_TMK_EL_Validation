@@ -1,25 +1,28 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tmk.models.Form" />-->
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionKActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- wsk_title 1     -->
             <androidx.cardview.widget.CardView
@@ -31,30 +34,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/wsk_title1" />
 
-                        <TextView
-                            android:id="@+id/qtxt_wsk_title1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_wsk_title1"
-                            android:text="@string/wsk_title1" />
-
-                        <TextView
-                            android:id="@+id/q_wsk_title1"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_wsk_title1"
-                            android:layout_alignBottom="@id/qtxt_wsk_title1"
-                            android:text="@string/Q_wsk_title1" />
-
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk_title 2     -->
             <androidx.cardview.widget.CardView
@@ -66,29 +55,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/wsk_title2" />
 
-                        <TextView
-                            android:id="@+id/qtxt_wsk_title2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_wsk_title2"
-                            android:text="@string/wsk_title2" />
-
-                        <TextView
-                            android:id="@+id/q_wsk_title2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_wsk_title2"
-                            android:layout_alignBottom="@id/qtxt_wsk_title2"
-                            android:text="@string/Q_wsk_title2" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk1  Radio   -->
             <androidx.cardview.widget.CardView
@@ -120,6 +96,7 @@
                             android:layout_alignTop="@id/qtxt_wsk1"
                             android:layout_alignBottom="@id/qtxt_wsk1"
                             android:text="@string/Q_wsk1" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -128,6 +105,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk1title1" />
@@ -163,6 +141,7 @@
                             android:text="@string/wsk105" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk1title2" />
@@ -180,6 +159,7 @@
                             android:text="@string/wsk107" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk1title3" />
@@ -197,6 +177,7 @@
                             android:text="@string/wsk109" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk1title4" />
@@ -247,14 +228,18 @@
                             android:id="@+id/wsk196x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/wsk196"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
                             android:tag="wsk196"
                             android:text='@{wsk196.checked ? wsk196x.getText().toString() : ""}'
                             android:visibility='@{wsk196.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk2  Radio   -->
             <androidx.cardview.widget.CardView
@@ -286,6 +271,7 @@
                             android:layout_alignTop="@id/qtxt_wsk2"
                             android:layout_alignBottom="@id/qtxt_wsk2"
                             android:text="@string/Q_wsk2" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -294,6 +280,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk2title1" />
@@ -329,6 +316,7 @@
                             android:text="@string/wsk205" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk2title2" />
@@ -346,6 +334,7 @@
                             android:text="@string/wsk207" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk2title3" />
@@ -363,6 +352,7 @@
                             android:text="@string/wsk209" />
 
                         <TextView
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk2title4" />
@@ -413,14 +403,18 @@
                             android:id="@+id/wsk296x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/wsk296"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/specify"
                             android:tag="wsk296"
                             android:text='@{wsk296.checked ? wsk296x.getText().toString() : ""}'
                             android:visibility='@{wsk296.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- wsk3  Radio   -->
             <androidx.cardview.widget.CardView
@@ -487,6 +481,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility='@{wsk303.checked? View.VISIBLE : View.GONE}'>
+
 
                 <!-- wsk15  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -568,6 +563,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wsk4  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwsk4"
@@ -598,37 +594,50 @@
                                 android:layout_alignTop="@id/qtxt_wsk4"
                                 android:layout_alignBottom="@id/qtxt_wsk4"
                                 android:text="@string/Q_wsk4" />
+
                         </RelativeLayout>
 
                         <RadioGroup
                             android:id="@+id/wsk4"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/wsk401"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/wsk401" />
-
-                            <EditText
-                                android:id="@+id/wsk401x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:hint="@string/wsk401"
-                                android:tag="wsk401"
-                                android:text='@{wsk401.checked ? wsk401x.getText().toString() : ""}'
-                                android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}' />
 
                             <RadioButton
                                 android:id="@+id/wsk498"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/wsk498" />
+
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/wsk401x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:tag="wsk401"
+                            android:text='@{wsk401.checked ? wsk401x.getText().toString() : ""}'
+                            android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="120"
+                            app:minValue="1"
+                            app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wsk5  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -696,9 +705,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wsk505" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
 
@@ -855,6 +868,7 @@
                             android:layout_alignTop="@id/qtxt_wsk8"
                             android:layout_alignBottom="@id/qtxt_wsk8"
                             android:text="@string/Q_wsk8" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -865,21 +879,21 @@
 
                         <RadioButton
                             android:id="@+id/wsk801"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wsk801" />
 
                         <RadioButton
                             android:id="@+id/wsk802"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wsk802" />
 
                         <RadioButton
                             android:id="@+id/wsk898"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wsk898" />
@@ -892,9 +906,9 @@
 
             <!-- wsk9  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwsk9"
+                android:id="@+id/wsk9cv"
                 style="@style/cardView"
-                android:visibility='@{wsk801.checked? View.VISIBLE : View.GONE}'>
+                android:visibility='@{wsk801.checked ? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -921,6 +935,7 @@
                             android:layout_alignTop="@id/qtxt_wsk9"
                             android:layout_alignBottom="@id/qtxt_wsk9"
                             android:text="@string/Q_wsk9" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -980,13 +995,15 @@
                             android:id="@+id/wsk996x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:hint="@string/wsk996"
+                            android:hint="@string/specify"
                             android:tag="wsk996"
                             android:text='@{wsk996.checked ? wsk996x.getText().toString() : ""}'
                             android:visibility='@{wsk996.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- wsk10  Radio   -->
@@ -1455,13 +1472,16 @@
                                     android:id="@+id/wsk1605x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="12dp"
-                                    android:hint="@string/wsk1605"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/specify"
                                     android:tag="wsk1605"
                                     android:text='@{wsk1605.checked ? wsk1605x.getText().toString() : ""}'
                                     android:visibility='@{wsk1605.checked? View.VISIBLE : View.GONE}' />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
