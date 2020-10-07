@@ -238,6 +238,7 @@
                                 android:id="@+id/chg301"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:layout_weight="2"
                                 android:hint="@string/chg301" />
 
@@ -259,6 +260,7 @@
                                 android:id="@+id/chg302"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:layout_weight="2"
                                 android:hint="@string/chg302" />
 
@@ -577,7 +579,7 @@
                                 android:id="@+id/chg796x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                 android:hint="@string/chg796"
                                 android:tag="chg796"
                                 android:text='@{chg796.checked ? chg796x.getText().toString() : ""}'
@@ -1244,6 +1246,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="12dp"
+                                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                             android:hint="@string/chg1696"
                                             android:tag="chg1696"
                                             android:text='@{chg1696.checked ? chg1696x.getText().toString() : ""}'
@@ -1693,6 +1696,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="12dp"
+                                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                             android:hint="@string/chg22"
                                             android:inputType="number"
                                             android:maxLength="2"

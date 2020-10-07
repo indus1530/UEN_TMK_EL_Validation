@@ -478,7 +478,7 @@
                             android:id="@+id/bfj2296x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="bfj2296"
                             android:text='@{bfj2296.checked ? bfj2296x.getText().toString() : ""}'
@@ -557,7 +557,7 @@
                             android:id="@+id/bfj2396x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/specify"
                             android:tag="bfj2396"
                             android:text='@{bfj2396.checked ? bfj2396x.getText().toString() : ""}'
@@ -790,6 +790,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bfj1496" />
+
+                            <EditText
+                                android:id="@+id/bfj1496x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/bfj1496"
+                                android:tag="bfj1496"
+                                android:text='@{bfj1496.checked ? bfj1496x.getText().toString() : ""}'
+                                android:visibility='@{bfj1496.checked? View.VISIBLE : View.GONE}' />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

@@ -1015,6 +1015,7 @@
                                 android:id="@+id/rae96x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                 android:hint="@string/specify"
                                 android:tag="rae96"
                                 android:text='@{rae96.checked ? rae96x.getText().toString() : ""}'
@@ -1234,6 +1235,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                             android:hint="@string/name" />
 
                     </LinearLayout>
@@ -1764,7 +1766,7 @@
                                 android:id="@+id/cmg96x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                 android:hint="@string/specify"
                                 android:tag="cmg96"
                                 android:text='@{cmg96.checked ? cmg96x.getText().toString() : ""}'
@@ -1933,7 +1935,7 @@
                                 android:id="@+id/cmf1196x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                 android:hint="@string/specify"
                                 android:tag="cmf1196"
                                 android:text='@{cmf1196.checked ? cmf1196x.getText().toString() : ""}'

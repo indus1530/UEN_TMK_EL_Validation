@@ -131,6 +131,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl196"
                             android:tag="hwl196"
                             android:text='@{hwl196.checked ? hwl196x.getText().toString() : ""}'
@@ -694,6 +695,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl996"
                             android:tag="hwl996"
                             android:text='@{hwl996.checked ? hwl996x.getText().toString() : ""}'
@@ -774,6 +776,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl1096"
                             android:tag="hwl1096"
                             android:text='@{hwl1096.checked ? hwl1096x.getText().toString() : ""}'
@@ -848,6 +851,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl1196"
                             android:tag="hwl1196"
                             android:text='@{hwl1196.checked ? hwl1196x.getText().toString() : ""}'
@@ -926,6 +930,7 @@
                         android:id="@+id/hwl11a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                         android:layout_marginBottom="12dp"
                         android:hint="@string/hwl11a" />
                 </LinearLayout>
@@ -1113,6 +1118,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl1396"
                             android:tag="hwl1396"
                             android:text='@{hwl1396.checked ? hwl1396x.getText().toString() : ""}'
@@ -1193,6 +1199,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl1496"
                             android:tag="hwl1496"
                             android:text='@{hwl1496.checked ? hwl1496x.getText().toString() : ""}'
@@ -1267,6 +1274,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
                             android:hint="@string/hwl1596"
                             android:tag="hwl1596"
                             android:text='@{hwl1596.checked ? hwl1596x.getText().toString() : ""}'
