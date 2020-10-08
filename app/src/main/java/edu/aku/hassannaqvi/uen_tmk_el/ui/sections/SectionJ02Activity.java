@@ -4,15 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJ02Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
@@ -147,6 +146,12 @@ public class SectionJ02Activity extends AppCompatActivity {
         json.put("bfj1412", bi.bfj1412.isChecked() ? "12" : "-1");
 
         json.put("bfj1496", bi.bfj1496.isChecked() ? "96" : "-1");
+
+        json.put("bfj1496x", bi.bfj1496x.getText().toString());
+        json.put("bfj24", bi.bfj2401.isChecked() ? ""
+                : bi.bfj2402.isChecked() ? "2"
+                : bi.bfj2498.isChecked() ? "98"
+                : "-1");
 
         json.put("bfj24", bi.bfj2401.isChecked() ? ""
                 : bi.bfj2402.isChecked() ? "2"

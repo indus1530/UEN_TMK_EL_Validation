@@ -355,6 +355,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:hint="@string/arih501" />
 
                         </LinearLayout>
@@ -376,6 +377,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:hint="@string/arih502" />
 
                         </LinearLayout>
@@ -594,7 +596,7 @@
                                 android:id="@+id/arih896x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                 android:hint="@string/specify"
                                 android:tag="arih896"
                                 android:text='@{arih896.checked ? arih896x.getText().toString() : ""}'
@@ -1236,7 +1238,7 @@
                                         android:id="@+id/arih1796x"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                                         android:hint="@string/specify"
                                         android:tag="arih1796"
                                         android:text='@{arih1796.checked ? arih1796x.getText().toString() : ""}'
@@ -1532,6 +1534,7 @@
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/arih2101"
                                 android:tag="arih2101"
+                                android:inputType="number"
                                 android:text='@{arih2101.checked ? arih2101x.getText().toString() : ""}'
                                 android:visibility='@{arih2101.checked? View.VISIBLE : View.GONE}' />
 
@@ -1541,6 +1544,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/arih2102"
+                                android:inputType="number"
                                 android:tag="arih2102"
                                 android:text='@{arih2102.checked ? arih2102x.getText().toString() : ""}'
                                 android:visibility='@{arih2102.checked? View.VISIBLE : View.GONE}' />

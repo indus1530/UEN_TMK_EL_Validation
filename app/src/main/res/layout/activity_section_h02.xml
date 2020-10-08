@@ -112,6 +112,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:inputType="number"
                             android:hint="@string/arih2701"
                             android:tag="arih2701"
                             android:text='@{arih2701.checked ? arih2701x.getText().toString() : ""}'
@@ -175,6 +176,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/arih2801"
+                            android:inputType="number"
                             android:tag="arih2801"
                             android:text='@{arih2801.checked ? arih2801x.getText().toString() : ""}'
                             android:visibility='@{arih2801.checked? View.VISIBLE : View.GONE}' />
@@ -290,6 +292,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/arih2996"
                             android:tag="arih2996"
                             android:text='@{arih2996.checked ? arih2996x.getText().toString() : ""}'
@@ -346,6 +349,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:inputType="number"
                             android:hint="@string/arih3001"
                             android:tag="arih3001"
                             android:text='@{arih3001.checked ? arih3001x.getText().toString() : ""}'
@@ -603,6 +607,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:inputType="number"
                             android:hint="@string/arih3401"
                             android:tag="arih3401"
                             android:text='@{arih3401.checked ? arih3401x.getText().toString() : ""}'
@@ -803,6 +808,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/arih3696"
                             android:tag="arih3696"
                             android:text='@{arih3696.checked ? arih3696x.getText().toString() : ""}'
