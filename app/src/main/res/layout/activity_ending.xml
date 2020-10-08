@@ -46,7 +46,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_a06"
-                            android:text="istatus" />
+                            android:text="@string/elc7" />
 
                         <TextView
                             android:id="@+id/q_a06"
@@ -55,7 +55,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_a06"
                             android:layout_alignBottom="@id/qtxt_a06"
-                            android:text="istatus" />
+                            android:text="@string/Q_elc7" />
 
                     </RelativeLayout>
 
@@ -69,26 +69,62 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="istatusa" />
+                            android:text="@string/elc701" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="istatusb" />
+                            android:text="@string/elc702" />
+
+                        <RadioButton
+                            android:id="@+id/istatusc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc703" />
+
+                        <RadioButton
+                            android:id="@+id/istatusd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc704" />
+
+                        <RadioButton
+                            android:id="@+id/istatuse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc705" />
+
+                        <RadioButton
+                            android:id="@+id/istatusf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc706" />
+
+                        <RadioButton
+                            android:id="@+id/istatusg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc707" />
+
+                        <RadioButton
+                            android:id="@+id/istatush"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/elc708" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="istatus96" />
+                            android:text="@string/elc796" />
 
                         <EditText
                             android:id="@+id/istatus96x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
-                            android:hint="istatus96x"
+                            android:hint="@string/elc796x"
                             android:inputType="text"
                             android:maxLength="40"
                             android:tag="istatus96"

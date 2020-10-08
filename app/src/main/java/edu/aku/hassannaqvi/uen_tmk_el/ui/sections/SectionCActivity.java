@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
@@ -67,7 +68,7 @@ public class SectionCActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, bi.elc202.isChecked() ? EndingActivity.class : MainActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -119,19 +120,6 @@ public class SectionCActivity extends AppCompatActivity {
         form.setElc6(bi.elc601.isChecked() ? "1"
                 : bi.elc602.isChecked() ? "2"
                 : "-1");
-
-        form.setElc7(bi.elc701.isChecked() ? "1"
-                : bi.elc702.isChecked() ? "2"
-                : bi.elc703.isChecked() ? "3"
-                : bi.elc704.isChecked() ? "4"
-                : bi.elc705.isChecked() ? "5"
-                : bi.elc706.isChecked() ? "6"
-                : bi.elc707.isChecked() ? "7"
-                : bi.elc708.isChecked() ? "8"
-                : bi.elc796.isChecked() ? "96"
-                : "-1");
-
-        form.setElc796(bi.elc796x.getText().toString());
 
         MainApp.setGPS(this);
     }
