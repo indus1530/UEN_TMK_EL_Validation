@@ -33,47 +33,40 @@
         style="@style/textViewIntro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/elc_title12" />
+
+    <TextView
+        style="@style/textViewIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/elc_title20" />
+
+    <TextView
+        style="@style/textViewIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/elc_title21"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/elc_title22"
+        style="@style/textViewIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/elc_title22" />
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <LinearLayout
+        <TextView
+            style="@style/textViewIntro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/textViewIntro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/elc_title20" />
-
-            <TextView
-                style="@style/textViewIntro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="23dp"
-                android:textStyle="bold"
-                android:text="@string/elc_title21" />
-
-            <TextView
-                android:id="@+id/elc_title22"
-                style="@style/textViewIntro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/elc_title22" />
-
-            <TextView
-                style="@style/textViewIntro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/elc_title23" />
-
-        </LinearLayout>
 
     </ScrollView>
 
