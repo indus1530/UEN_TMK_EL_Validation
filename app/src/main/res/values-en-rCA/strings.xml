@@ -89,19 +89,25 @@
     <string name="elb9">House Hold Number</string>
     <string name="elb10">Village Name</string>
     <string name="elb11">Block/mohalla</string>
-    <string name="elc_title1">SECTION C:  INTRODUCTION AND CONSENT (This section will be asked from the head of the household or someone else at least 18 years of age or older)</string>
-    <string name="elc_title2">Assalam o Alaikum. My name is (Name of Interviewer) and I am working with center of excellance in Women and Child Health, Aga Khan University Karachi. In collaboration with Provincial Health Department of Sindh. We are conducting an Endline HH survey on “Evaluation of a community engagement and demand creation strategy for Childhood Diarrhea and Pneumonia in Pakistan”. As part of the survey, we are collecting information on the status of health of population in this prject based clusters of District. The Information we are collecting relates to knowledge, attitudes and practices on child health including morbidity and mortality. This information will be used to design strategies in improving child health services by government and other healthcare providers in your area. The whole process of this interview may take approximately 30 to 40 minutes. We would very much appreciate your participation in this survey. All of the answers you provide will be confidential. Your participation in this survey is voluntary. If you do not want to provide information to a specific question or a section, please let me know. You may also withdraw from this interview at any time</string>
-    <string name="elc1">At this time do you have any question for me that relates to the information I have provided you above?</string>
-    <string name="elc101">Yes</string>
-    <string name="elc102">No</string>
-    <string name="elc2">May I begin the interview now?</string>
-    <string name="elc201">Yes</string>
-    <string name="elc202">No</string>
-    <string name="elc3">Name of the Respondent</string>
-    <string name="elc4">Respondent’s gender </string>
-    <string name="elc401">Male</string>
-    <string name="elc402">Female</string>
-    <string name="elc5">Age of Respondent in completed years</string>
+
+    <string name="elc_title11"> SECTION C:  INTRODUCTION AND CONSENT </string>
+    <string name="elc_title12"> This section will be asked from the head of the household or someone else at least 18 years of age or older </string>
+    <string name="elc_title20"> Please Read INTRODUCTION &amp; CONSENT Audible Loud </string>
+    <string name="elc_title21"> Assalaam-O-Allaikum: </string>
+    <string name="elc_title22"> My name is (Name of Interviewer) </string>
+    <string name="elc_title23"> and I am working with center of excellence in Women and Child Health, Aga Khan University Karachi. In collaboration with Provincial Health Department of Sindh. We are conducting an Endline HH survey on “Evaluation of a community engagement and demand creation strategy for Childhood Diarrhea and Pneumonia in Pakistan”. As part of the survey, we are collecting information on the status of health of population in this prject based clusters of District. The Information we are collecting relates to knowledge, attitudes and practices on child health including morbidity and mortality. This information will be used to design strategies in improving child health services by government and other healthcare providers in your area. The whole process of this interview may take approximately 30 to 40 minutes. We would very much appreciate your participation in this survey. All of the answers you provide will be confidential. Your participation in this survey is voluntary. If you do not want to provide information to a specific question or a section, please let me know. You may also withdraw from this interview at any time </string>
+
+    <string name="elc1"> At this time do you have any question for me that relates to the information I have provided you above ? </string>
+    <string name="elc101"> Yes </string>
+    <string name="elc102"> No </string>
+    <string name="elc2"> May I begin the interview now ? </string>
+    <string name="elc201"> Yes </string>
+    <string name="elc202"> No </string>
+    <string name="elc3"> Name of the Respondent </string>
+    <string name="elc4"> Respondent’s gender </string>
+    <string name="elc401"> Male </string>
+    <string name="elc402"> Female </string>
+    <string name="elc5"> Age of Respondent in completed years </string>
     <string name="elc501">Months</string>
     <string name="elc502">Years</string>
     <string name="elc6">Does your HH Have a child aged 0-05-years? </string>
@@ -184,7 +190,8 @@
     <string name="mmd1020">20= class 20</string>
     <string name="mmd1098">98 = Don\'t Know</string>
     <string name="mmd1099">99= Not Applicable</string>
-    <string name="mmd11">Occupation (For children less than five years, this variable will not be visible, and an auto generated NA code will appear)</string>
+    <string name="mmd11"> Occupation </string>
+    <string name="mmd11_info"> For children less than five years, this variable will not be visible, and an auto generated NA code will appear </string>
     <string name="mmd1101">Housewife </string>
     <string name="mmd1102">Professional /Manage</string>
     <string name="mmd1103">Clerical/technical </string>

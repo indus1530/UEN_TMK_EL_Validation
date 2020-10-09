@@ -324,11 +324,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:inputType="number"
                                 android:hint="##"
+                                android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="11"
-                                app:minValue="1"
+                                app:maxValue="49"
+                                app:minValue="15"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -337,11 +337,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:inputType="number"
                                 android:hint="##"
+                                android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="49"
-                                app:minValue="15"
+                                app:maxValue="11"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
