@@ -401,17 +401,17 @@
                         android:layout_height="wrap_content"
                         android:text="@string/mmd5a" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/mmd5a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/mmd5a"
-                        android:inputType="number"
+                        android:inputType="number" />
 
-
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- mmd6  Input   -->
             <androidx.cardview.widget.CardView
@@ -451,15 +451,12 @@
                         android:layout_height="wrap_content"
                         android:text="@string/mmd6a" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/mmd6a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/mmd6a"
-                        android:inputType="number"
-
-
-                        app:type="range" />
+                        android:inputType="number" />
 
                 </LinearLayout>
 
@@ -518,15 +515,12 @@
                         android:layout_height="wrap_content"
                         android:text="@string/mmd703" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/mmd703"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/mmd703"
-                        android:inputType="number"
-
-
-                        app:type="range" />
+                        android:inputType="number" />
 
                 </LinearLayout>
 
