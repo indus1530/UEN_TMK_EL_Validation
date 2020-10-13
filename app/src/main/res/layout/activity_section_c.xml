@@ -191,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/name"
-                            android:maxLength="20" />
+                            android:maxLength="100" />
 
                     </LinearLayout>
 
