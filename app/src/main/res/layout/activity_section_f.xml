@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -10,15 +11,18 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionFActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- raf_title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -40,6 +44,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- raf_title2  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVraf_title2"
@@ -59,6 +64,96 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
+            <!-- f1a  Input   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVf1a"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_f1a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_f1a"
+                            android:text="@string/f1a" />
+
+                        <TextView
+                            android:id="@+id/q_f1a"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_f1a"
+                            android:layout_alignBottom="@id/qtxt_f1a"
+                            android:text="@string/Q_f1a" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/f1a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/f1a" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- f1b  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVf1b"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_f1b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_f1b"
+                            android:text="@string/f1b" />
+
+                        <TextView
+                            android:id="@+id/q_f1b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_f1b"
+                            android:layout_alignBottom="@id/qtxt_f1b"
+                            android:text="@string/Q_f1b" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/f1b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/f1b"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <!-- raf1  Radio   -->
             <androidx.cardview.widget.CardView
@@ -90,6 +185,7 @@
                             android:layout_alignTop="@id/qtxt_raf1"
                             android:layout_alignBottom="@id/qtxt_raf1"
                             android:text="@string/Q_raf1" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -117,6 +213,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- raf2  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -1654,8 +1751,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:inputType="number"
                                     android:hint="####"
+                                    android:inputType="number"
                                     android:maxLength="4"
                                     app:maxValue="2020"
                                     app:minValue="1920"

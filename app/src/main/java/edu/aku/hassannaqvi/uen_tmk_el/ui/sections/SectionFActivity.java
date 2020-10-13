@@ -79,6 +79,9 @@ public class SectionFActivity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("f1a", bi.f1a.getText().toString().trim().isEmpty() ? "-1" : bi.f1a.getText().toString());
+        json.put("f1b", bi.f1b.getText().toString().trim().isEmpty() ? "-1" : bi.f1b.getText().toString());
+
         json.put("raf1", bi.raf101.isChecked() ? "1"
                 : bi.raf102.isChecked() ? "2"
                 : "-1");

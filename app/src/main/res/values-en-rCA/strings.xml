@@ -453,8 +453,11 @@
     <string name="ele2002">NGO</string>
     <string name="ele2003">Individual</string>
     <string name="ele2096">Other specify </string>
+
     <string name="raf_title1">Section F: Reproductive health, Maternal AND CHild MORTALITY (Instructions: Complete this section for all married women aged 15-49 years in the household)</string>
     <string name="raf_title2">Definition of Live Birth: Live birth refers to the complete expulsion or extraction from its mother of a product of conception, irrespective of the duration of the pregnancy, which, after such separation, breathes or shows any other evidence of life - e.g. beating of the heart, pulsation of the umbilical cord or definite movement of voluntary muscles - whether or not the umbilical cord has been cut or the placenta is attached. Each product of such a birth is considered born alive.</string>
+    <string name="f1a"> Name of MWRA </string>
+    <string name="f1b"> Line # of MWRA </string>
     <string name="raf1">as {Names of MWRA in the family} ever been pregnant since her marriage?</string>
     <string name="raf101">Yes</string>
     <string name="raf102">No</string>
@@ -1953,6 +1956,8 @@ Select all that apply).</string>
     <string name='Q_rae'>rae</string>
     <string name='Q_raf_title1'>raf_title1</string>
     <string name='Q_raf_title2'>raf_title2</string>
+    <string name='Q_f1a'>f1a</string>
+    <string name='Q_f1b'>f1b</string>
     <string name='Q_raf1'>raf1</string>
     <string name='Q_raf2'>raf2</string>
     <string name='Q_raf3'>raf3</string>
