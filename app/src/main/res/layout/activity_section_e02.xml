@@ -206,8 +206,8 @@
                         android:tag="ele1201"
                         android:inputType="number"
                         android:visibility='@{ele1201.checked? View.VISIBLE : View.GONE}'
-                        android:maxLength="3"
-                        app:maxValue="100"
+                        android:maxLength="4"
+                        app:maxValue="1000"
                         app:minValue="1"
                         android:text='@{ele1201.checked ? ele1201x.getText().toString() : ""}'
                         app:type="range" />
@@ -221,8 +221,8 @@
                         android:tag="ele1202"
                         android:inputType="number"
                         android:visibility='@{ele1202.checked? View.VISIBLE : View.GONE}'
-                        android:maxLength="3"
-                        app:maxValue="100"
+                        android:maxLength="4"
+                        app:maxValue="1000"
                         app:minValue="1"
                         android:text='@{ele1202.checked ? ele1202x.getText().toString() : ""}'
                         app:type="range" />
@@ -346,7 +346,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -373,7 +373,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -400,7 +400,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -427,7 +427,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -454,7 +454,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -481,7 +481,7 @@
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="3"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -589,6 +589,7 @@
                             android:layout_alignTop="@id/qtxt_ele16"
                             android:layout_alignBottom="@id/qtxt_ele16"
                             android:text="@string/Q_ele16" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -750,14 +751,15 @@
                         android:id="@+id/ele1701x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="#####"
+                        android:gravity="center"
+                        android:hint="########"
                         android:tag="ele1701"
                         android:inputType="number"
                         android:text='@{ ele1701.checked ? ele1701x.getText().toString() : "" }'
                         android:visibility='@{ ele1701.checked ? View.VISIBLE : View.GONE }'
-                        android:maxLength="5"
-                        app:maxValue="99999"
-                        app:minValue="1"
+                        android:maxLength="8"
+                        app:maxValue="10000000"
+                        app:minValue="1000"
                         app:type="range" />
 
                 </LinearLayout>

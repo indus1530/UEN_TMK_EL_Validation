@@ -740,15 +740,18 @@
                             android:id="@+id/ele696x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
                             android:hint="@string/ele696"
                             android:tag="ele696"
                             android:text='@{ele696.checked ? ele696x.getText().toString() : ""}'
                             android:visibility='@{ele696.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele7  Radio   -->
             <androidx.cardview.widget.CardView
