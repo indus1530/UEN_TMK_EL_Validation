@@ -273,6 +273,7 @@
     <string name="ele317">Wood planks/Shingles</string>
     <string name="ele318">Palm/Bamboo</string>
     <string name="ele319">Plywood</string>
+    <string name="ele396">  </string>
     <string name="ele4">How many rooms in this house are used for sleeping?</string>
     <string name="ele401">Number of rooms</string>
     <string name="ele5">Do you or someone living in this Household own this dwelling?</string>
@@ -355,6 +356,15 @@
     <string name="ele8r">Internet Connection</string>
     <string name="ele8r01">Yes</string>
     <string name="ele8r02">No</string>
+    <string name="ele8s"> Geyser </string>
+    <string name="ele8s01"> Yes </string>
+    <string name="ele8s02"> No </string>
+    <string name="ele8t"> Fan </string>
+    <string name="ele8t01"> Yes </string>
+    <string name="ele8t02"> No </string>
+    <string name="ele8u"> Microwave oven </string>
+    <string name="ele8u01"> Yes </string>
+    <string name="ele8u02"> No </string>
     <string name="ele9">Does any member of this household own?</string>
     <string name="ele9a">Watch</string>
     <string name="ele9a01">Yes</string>

@@ -73,7 +73,6 @@ public class SectionE01Activity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         JSONObject json = new JSONObject();
-
         json.put("ele1", bi.ele101.isChecked() ? "1"
                 : bi.ele102.isChecked() ? "2"
                 : bi.ele103.isChecked() ? "3"
@@ -129,15 +128,18 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele317.isChecked() ? "17"
                 : bi.ele318.isChecked() ? "18"
                 : bi.ele319.isChecked() ? "19"
-                :  "-1");
+                : bi.ele396.isChecked() ? ""
+                : "-1");
 
-        json.put("ele401", bi.ele401.getText().toString());
+        json.put("ele396x", bi.ele396x.getText().toString());
+
+        json.put("ele4", bi.ele4.getText().toString());
 
         json.put("ele5", bi.ele501.isChecked() ? "1"
                 : bi.ele502.isChecked() ? "2"
                 : bi.ele503.isChecked() ? "3"
                 : bi.ele596.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("ele596x", bi.ele596x.getText().toString());
         json.put("ele6", bi.ele601.isChecked() ? "1"
@@ -234,6 +236,18 @@ public class SectionE01Activity extends AppCompatActivity {
 
         json.put("ele8r", bi.ele8r01.isChecked() ? "1"
                 : bi.ele8r02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele8s", bi.ele8s01.isChecked() ? "1"
+                : bi.ele8s02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele8t", bi.ele8t01.isChecked() ? "1"
+                : bi.ele8t02.isChecked() ? "2"
+                : "-1");
+
+        json.put("ele8u", bi.ele8u01.isChecked() ? "1"
+                : bi.ele8u02.isChecked() ? "2"
                 : "-1");
 
         json.put("ele9a", bi.ele9a01.isChecked() ? "1"
