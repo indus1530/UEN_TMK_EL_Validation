@@ -11,6 +11,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -50,7 +53,11 @@ public class SectionDActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        SaveDraft();
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
@@ -74,7 +81,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
     }
 
-    private void SaveDraft() {
+    private void SaveDraft() throws JSONException {
 
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
@@ -85,11 +92,13 @@ public class SectionDActivity extends AppCompatActivity {
         form.setAppversion(MainApp.appInfo.getAppVersion());
 
 
-        form.setMmd1(bi.mmd1.getText().toString());
+        JSONObject json = new JSONObject();
 
-        form.setMmd2(bi.mmd2.getText().toString());
+        json.put("mmd1", bi.mmd1.getText().toString());
 
-        form.setMmd3(bi.mmd301.isChecked() ? "1"
+        json.put("mmd2", bi.mmd2.getText().toString());
+
+        json.put("mmd3", bi.mmd301.isChecked() ? "1"
                 : bi.mmd302.isChecked() ? "2"
                 : bi.mmd303.isChecked() ? "3"
                 : bi.mmd304.isChecked() ? "4"
@@ -106,24 +115,30 @@ public class SectionDActivity extends AppCompatActivity {
                 : bi.mmd315.isChecked() ? "96"
                 : "-1");
 
-        form.setMmd315(bi.mmd315x.getText().toString());
-
-        form.setMmd4(bi.mmd401.isChecked() ? "1"
+        json.put("mmd315x", bi.mmd315x.getText().toString());
+        json.put("mmd4", bi.mmd401.isChecked() ? "1"
                 : bi.mmd402.isChecked() ? "2"
                 : bi.mmd403.isChecked() ? "3"
                 : "-1");
 
-        form.setMmd5(bi.mmd5.getText().toString());
+        //json.put("mmd5", bi.mmd5.getText().toString());
+        json.put("mmd5a", bi.mmd5a.getText().toString());
 
-        form.setMmd6(bi.mmd6.getText().toString());
+        //json.put("mmd6", bi.mmd6.getText().toString());
+        json.put("mmd6a", bi.mmd6a.getText().toString());
 
-        form.setMmd7(bi.mmd701.getText().toString());
-        form.setMmd7(bi.mmd702.getText().toString());
-        form.setMmd7(bi.mmd703.getText().toString());
-        form.setMmd08(bi.mmd0801.getText().toString());
-        form.setMmd08(bi.mmd0802.getText().toString());
-        form.setMmd16(bi.mmd1601.isChecked() ? "1"
-                : bi.mmd1602.isChecked() ? "2"
+        json.put("mmd701", bi.mmd701.getText().toString());
+
+        json.put("mmd702", bi.mmd702.getText().toString());
+
+        json.put("mmd703", bi.mmd703.getText().toString());
+
+        json.put("mmd0801", bi.mmd0801.getText().toString());
+
+        json.put("mmd0802", bi.mmd0802.getText().toString());
+
+        json.put("mmd13", bi.mmd1301.isChecked() ? "1"
+                : bi.mmd1302.isChecked() ? "2"
                 : "-1");
 
     }

@@ -208,10 +208,13 @@
     <string name="mmd1201">شادي شدھ</string>
     <string name="mmd1202">غير شادي شدھ</string>
     <string name="mmd1203">. بيوھ، رنڊوھ</string>
-    <string name="mmd1204">طلاق يافته  ,زال يا مڙس کان الڳ رھندڙ</string>
-    <string name="mmd16">ڇا نالو گھر ۾ موجود آھي؟</string>
-    <string name="mmd1601">ھا</string>
-    <string name="mmd1602"> نه </string>
+    <string name="mmd1204"> طلاق يافته, زال يا مڙس کان الڳ رھندڙ </string>
+    <string name="mmd1299"> لاڳو نه آھي </string>
+    <string name="mmd13"> ڇا نالو گھر ۾ موجود آھي ؟ </string>
+    <string name="mmd1301">ھا </string>
+    <string name="mmd1302"> نه </string>
+    <string name="mmd5a"> پيءُ جو لائن نمبر </string>
+    <string name="mmd6a"> ماءُ جو لائن نمبر </string>
     <string name="ele_title1">سيڪشن اِي: گھراڻي جي معاشي ۽ سماجي حيثيت </string>
     <string name="ele_title2">ھدايتون؛ ھي سيڪشن انڊيڪس ماءُ يا گھراڻي جي سربراھ يا 18 سال ۽ ان کان وڌيڪ عمر جي ڪنهن سمجھدار شخص کان پڇيو ويندو.کان ڀرايو ويندو </string>
     <string name="ele1">گھر جو فرش ڪھڙي قسم جو آھي؟(مشاھدو ڪريو)</string>
@@ -1930,6 +1933,7 @@
     <string name='Q_mmd6'>mmd6</string>
     <string name='Q_mmd7'>mmd7</string>
     <string name='Q_mmd9'>mmd9</string>
+    <string name='Q_mmd13'>mmd13</string>
     <string name='Q_raa'>raa</string>
     <string name='Q_rab'>rab</string>
     <string name='Q_rac'>rac</string>
