@@ -638,7 +638,6 @@
                         android:id="@+id/qtxt_raf7c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_raf7c"
                         android:text="@string/raf7c" />
 
                     <TextView
@@ -772,10 +771,8 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/qtxt_raf7e"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_raf7e"
                         android:text="@string/raf7e" />
 
                     <TextView
@@ -1139,8 +1136,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cmf9c" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- cmf9d  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -1249,10 +1249,8 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/qtxt_cmf9f"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_cmf9f"
                         android:text="@string/cmf9f" />
 
                     <TextView
@@ -1386,10 +1384,8 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/qtxt_cmf9h"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/q_cmf9h"
                         android:text="@string/cmf9h" />
 
                     <TextView
