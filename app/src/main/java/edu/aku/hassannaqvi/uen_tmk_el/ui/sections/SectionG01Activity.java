@@ -260,7 +260,7 @@ public class SectionG01Activity extends AppCompatActivity {
                 : bi.chg2102.isChecked() ? "2"
                 : "-1");
 
-        json.put("chg22", bi.chg22.getText().toString());
+        json.put("chg22", bi.chg22.getText().toString().trim().isEmpty() ? "-1" : bi.chg22.getText().toString());
 
         json.put("chg23", bi.chg2301.isChecked() ? "1"
                 : bi.chg2302.isChecked() ? "2"

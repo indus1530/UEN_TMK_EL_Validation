@@ -1781,13 +1781,11 @@
                                             android:id="@+id/chg22"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginBottom="12dp"
-                                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,"
-                                            android:hint="@string/chg22"
+                                            android:gravity="center"
+                                            android:hint="##"
                                             android:inputType="number"
                                             android:maxLength="2"
-                                            app:mask="##"
-                                            app:maxValue="99"
+                                            app:maxValue="30"
                                             app:minValue="1"
                                             app:type="range" />
 
