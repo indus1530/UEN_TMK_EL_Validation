@@ -110,6 +110,102 @@
             </androidx.cardview.widget.CardView>
 
 
+            <!-- bfj1a  Input   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVbfj1a"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_bfj1a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_bfj1a"
+                            android:text="@string/bfj1a" />
+
+                        <TextView
+                            android:id="@+id/q_bfj1a"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_bfj1a"
+                            android:layout_alignBottom="@id/qtxt_bfj1a"
+                            android:text="@string/Q_bfj1a" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/bfj1a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:hint="@string/name"
+                        android:maxLength="20" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- bfj1b  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVbfj1b"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_bfj1b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_bfj1b"
+                            android:text="@string/bfj1b" />
+
+                        <TextView
+                            android:id="@+id/q_bfj1b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_bfj1b"
+                            android:layout_alignBottom="@id/qtxt_bfj1b"
+                            android:text="@string/Q_bfj1b" />
+
+                    </RelativeLayout>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/bfj1b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="##"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:maxValue="35"
+                        app:minValue="1"
+                        app:type="range" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
             <!-- bfj2  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbfj2"

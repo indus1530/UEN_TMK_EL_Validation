@@ -84,6 +84,9 @@ public class SectionI01Activity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("imi1a", bi.imi1a.getText().toString().trim().isEmpty() ? "-1" : bi.imi1a.getText().toString());
+        json.put("i1b", bi.i1b.getText().toString().trim().isEmpty() ? "-1" : bi.i1b.getText().toString());
+
         json.put("imi1", bi.imi101.isChecked() ? "1"
                 : bi.imi102.isChecked() ? "2"
                 : bi.imi198.isChecked() ? "98"

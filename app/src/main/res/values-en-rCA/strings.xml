@@ -957,7 +957,9 @@ An episode of diarrhea is defined as, “(three or more loose stools in a day/24
     <string name="arih3696">Other(Specify)</string>
     <string name="imi_title1">section i: Immunization</string>
     <string name="imi_title2">This section relates to the history of immunization for the child. The immunization history of the selected child will be recorded. Preference will be given to the information from an immunization card; however, in case an immunization card is not available, then verbal history will be taken from the respondent. In case you have problems in understanding the card, please take a picture of the card and discuss with your supervisor. Please refer to the training manual for further instructions. (drop down from the list of total children of under 2 years age in household along with his/her mother Name)</string>
-    <string name="imi1">Has {NAME} ever received any vaccinations to prevent him/her from getting diseases, including vaccinations received in a campaign or immunization day or child health day?</string>
+    <string name="imi1a"> Name of Child </string>
+    <string name="i1b"> Child Serial Number </string>
+    <string name="imi1"> Has {NAME} ever received any vaccinations to prevent him/her from getting diseases, including vaccinations received in a campaign or immunization day or child health day?</string>
     <string name="imi101">Yes</string>
     <string name="imi102">No</string>
     <string name="imi198">Don’t know</string>
@@ -1146,6 +1148,8 @@ An episode of diarrhea is defined as, “(three or more loose stools in a day/24
     <string name="bfj_title1">Section J: BREAST FEEDING AND NUTRITION (This Section will be filled from Index Mother for the children below the ages of 24 months (name will be auto picked from household member list.)</string>
     <string name="bfj_title2">Now I would like to talk about breast feeding and nutrition of the youngest child at your household</string>
     <string name="bfj1">Name of Child (to be selected from section D)</string>
+    <string name="bfj1a">Name of child mother</string>
+    <string name="bfj1b">Line # of child mother</string>
     <string name="bfj2">What was the first thing that was given to your {NAME} right after birth? </string>
     <string name="bfj201">Breast milk</string>
     <string name="bfj202">Milk (other than breast milk) </string>
@@ -1707,6 +1711,8 @@ Select all that apply).</string>
     <string name='Q_bfj_title1'>bfj_tittle1</string>
     <string name='Q_bfj_title2'>bfj_tittle2</string>
     <string name='Q_bfj1'>bfj1</string>
+    <string name='Q_bfj1a'>bfj1a</string>
+    <string name='Q_bfj1b'>bfj1b</string>
     <string name='Q_bfj10'>bfj10</string>
     <string name='Q_bfj11'>bfj11</string>
     <string name='Q_bfj12'>bfj12</string>
@@ -1962,6 +1968,8 @@ Select all that apply).</string>
     <string name='Q_hwl9'>hwl9</string>
     <string name='Q_imi_title1'>imi_title1</string>
     <string name='Q_imi_title2'>imi_title2</string>
+    <string name='Q_imi1a'>imi1a</string>
+    <string name='Q_i1b'>i1b</string>
     <string name='Q_imi1'>imi1</string>
     <string name='Q_imi2'>imi2</string>
     <string name='Q_imi3'>imi3</string>

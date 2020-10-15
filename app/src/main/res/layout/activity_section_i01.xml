@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -9,15 +10,18 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- imi_title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -30,7 +34,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/qtxt_imi_title1"
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -39,6 +42,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- imi_title2  Title   -->
             <androidx.cardview.widget.CardView
@@ -51,7 +55,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/qtxt_imi_title2"
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -60,6 +63,96 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
+            <!-- imi1a  Input   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVimi1a"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_imi1a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_imi1a"
+                            android:text="@string/imi1a" />
+
+                        <TextView
+                            android:id="@+id/q_imi1a"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_imi1a"
+                            android:layout_alignBottom="@id/qtxt_imi1a"
+                            android:text="@string/Q_imi1a" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/imi1a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/imi1a" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- i1b  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVi1b"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_i1b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_i1b"
+                            android:text="@string/i1b" />
+
+                        <TextView
+                            android:id="@+id/q_i1b"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_i1b"
+                            android:layout_alignBottom="@id/qtxt_i1b"
+                            android:text="@string/Q_i1b" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/i1b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/i1b"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <!-- imi1  Radio   -->
             <androidx.cardview.widget.CardView
@@ -91,6 +184,7 @@
                             android:layout_alignTop="@id/qtxt_imi1"
                             android:layout_alignBottom="@id/qtxt_imi1"
                             android:text="@string/Q_imi1" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -126,6 +220,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- imi2  CheckBox   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVimi2"
@@ -157,6 +252,7 @@
                             android:layout_alignTop="@id/qtxt_imi2"
                             android:layout_alignBottom="@id/qtxt_imi2"
                             android:text="@string/Q_imi2" />
+
                     </RelativeLayout>
 
                     <LinearLayout
@@ -215,6 +311,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- imi3  Radio   -->
             <androidx.cardview.widget.CardView

@@ -72,7 +72,9 @@ public class SectionJ01Activity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
-        json.put("bfj1", bi.bfj1.getText().toString());
+        json.put("bfj1", bi.bfj1.getText().toString().trim().isEmpty() ? "-1" : bi.bfj1.getText().toString());
+        json.put("bfj1a", bi.bfj1a.getText().toString().trim().isEmpty() ? "-1" : bi.bfj1a.getText().toString());
+        json.put("bfj1b", bi.bfj1b.getText().toString().trim().isEmpty() ? "-1" : bi.bfj1b.getText().toString());
 
         json.put("bfj2", bi.bfj201.isChecked() ? "1"
                 : bi.bfj202.isChecked() ? "2"

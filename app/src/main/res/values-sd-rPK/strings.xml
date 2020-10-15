@@ -956,6 +956,8 @@
     <string name="arih3696">ٻيو ڪجھ (وضاحت ڪريو) </string>
     <string name="imi_title1">سيڪشن آئِي؛ حفاظتي ٽڪن جي معلومات (ھي سيڪشن گھراڻي جي سڀني 2 سالان کان گھٽ عمر جي ٻارن لاءِ انڊيڪس ماءُ کان پڇيو ويندو (ٻارن جا نالا خاندان جي معلومات واري حصي مان پاڻ مرادو ظاھر ٿيندا )</string>
     <string name="imi_title2">ھي سيڪشن ٻار جي حفاظتي ٽڪن جي معلومات جي حوالي سان آھي. ٻار جي ٽڪن جي معلومات ريڪارڊ ڪريو، ٽڪن جي معلومات ٽڪن واري ڪارڊ تان ڏسو، جيڪڏھن ٽڪن وارو ڪارڊ موجود نه آھي ته پوءِ جواب ڏيندڙ کان زباني پڇا ڪريو. جيڪڏھن توھان کي ڪارڊ سمجھڻ ۾ ڏکيائي ٿي رھي آھي ته پوءِ ڪارڊ جي تصوير کڻو ۽ پنهنجي سپروائيزر کان پڇا ڪريو. لسٽ مان 24 مھينن تائين وارن ٻارن جي چونڊ ڪريو. </string>
+    <string name="imi1a">ٻار جو نالو</string>
+    <string name="i1b">ٻار جو سيريل نمبر </string>
     <string name="imi1">ڇا (نالو) ڪڏھن به ٽڪا لڳرايا آھن جيڪي بيماري کان بچاءُ لاءِ لڳرايا ويندا آھن؟ (بشمول مھم يا ٽڪن جي ڏيھاڙي يا ٻار جي صحت جي ڏيھاڙي) </string>
     <string name="imi101">ھا</string>
     <string name="imi102">نه </string>
@@ -1144,7 +1146,9 @@
     <string name="imi4pplc03">گھر</string>
     <string name="bfj_title1">ماڊيول جي؛ ماءُ جو کير ۽ غذايت (ھي سيڪشن گھراڻي جي 24 مھينن کان گھٽ عمر جي ٻارن لاءِ انڊيڪس ماءُ کان پڇيو ويندو (ٻارن جا نالا خاندان جي معلومات واري حصي مان پاڻ مرادو ظاھر ٿيندا)</string>
     <string name="bfj_title2">ھاڻي آئون توھان کان ماءُ جي کير ۽ غذايت بابت پڇنديس</string>
-    <string name="bfj1">نئين ڄاول ٻارجونالو  (ٻار جو نالو ماءُ جي نالي سميت ظاھر ٿيندو)</string>
+    <string name="bfj1"> نئين ڄاول ٻار جو نالو (ٻار جو نالو ماءُ جي نالي سميت ظاھر ٿيندو) </string>
+    <string name="bfj1a"> ٻار جي ماءُ جو نالو </string>
+    <string name="bfj1b"> ٻار جي ماءُ جو لائن نمبر </string>
     <string name="bfj2">اها ڪهڙي شيءِ هئي جيڪا سڀ کان پهريون ڀيرو نئين ڄاول ٻار کي  پيدائش کان پوءِ ترت ڏني وئي هئي؟</string>
     <string name="bfj201">ماءُ جو کير. </string>
     <string name="bfj202">کير (ماءُ جي کير کان علاوه) . </string>
@@ -1704,6 +1708,8 @@
     <string name='Q_bfj_title1'>bfj_tittle1</string>
     <string name='Q_bfj_title2'>bfj_tittle2</string>
     <string name='Q_bfj1'>bfj1</string>
+    <string name='Q_bfj1a'>bfj1a</string>
+    <string name='Q_bfj1b'>bfj1b</string>
     <string name='Q_bfj10'>bfj10</string>
     <string name='Q_bfj11'>bfj11</string>
     <string name='Q_bfj12'>bfj12</string>
@@ -1928,6 +1934,8 @@
     <string name='Q_hwl9'>hwl9</string>
     <string name='Q_imi_title1'>imi_title1</string>
     <string name='Q_imi_title2'>imi_title2</string>
+    <string name='Q_imi1a'>imi1a</string>
+    <string name='Q_i1b'>i1b</string>
     <string name='Q_imi1'>imi1</string>
     <string name='Q_imi2'>imi2</string>
     <string name='Q_imi3'>imi3</string>

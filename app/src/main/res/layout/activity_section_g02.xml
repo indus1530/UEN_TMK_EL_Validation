@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -10,9 +11,11 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionG02Activity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -251,7 +254,7 @@
                                 android:hint="@string/specify"
                                 android:tag="chg2796"
                                 android:text='@{chg2796.checked ? chg2796x.getText().toString() : ""}'
-                                android:visibility='@{chg2796.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{chg2796.checked ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
 
