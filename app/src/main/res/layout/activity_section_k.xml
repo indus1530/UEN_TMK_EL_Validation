@@ -624,13 +624,13 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="###"
+                            android:tag="wsk401"
                             android:inputType="number"
                             android:maxLength="3"
-                            android:tag="wsk401"
                             android:text='@{wsk401.checked ? wsk401x.getText().toString() : ""}'
-                            android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="120"
                             app:minValue="1"
+                            android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="240"
                             app:type="range" />
 
                     </LinearLayout>

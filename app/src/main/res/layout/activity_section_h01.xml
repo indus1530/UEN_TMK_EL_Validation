@@ -11,11 +11,9 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity" />
     </data>
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -344,15 +342,15 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/arih501" />
 
                             <EditText
                                 android:id="@+id/arih501"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -366,19 +364,69 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/arih501a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/arih501a"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="@string/arih501a"
+                                android:inputType="number"
+                                app:mask="##"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/arih502" />
 
                             <EditText
                                 android:id="@+id/arih502"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:hint="@string/arih502" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/arih502a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/arih502a"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="@string/arih502a"
+                                android:inputType="number"
+                                app:mask="##"
+                                app:type="range" />
 
                         </LinearLayout>
 
@@ -484,13 +532,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/arih702" />
-
-                            <RadioButton
-                                android:id="@+id/arih798"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/arih798" />
 
                         </RadioGroup>
 
@@ -1533,8 +1574,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/arih2101"
-                                android:tag="arih2101"
                                 android:inputType="number"
+                                android:tag="arih2101"
                                 android:text='@{arih2101.checked ? arih2101x.getText().toString() : ""}'
                                 android:visibility='@{arih2101.checked? View.VISIBLE : View.GONE}' />
 
