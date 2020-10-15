@@ -240,22 +240,21 @@ public class SectionG01Activity extends AppCompatActivity {
                 : bi.chg1805.isChecked() ? "5"
                 : "-1");
 
-        json.put("chg1901", bi.chg1901.isChecked() ? "1" : "-1");
-        json.put("chg1902", bi.chg1902.isChecked() ? "2" : "-1");
-        json.put("chg1903", bi.chg1903.isChecked() ? "3" : "-1");
-        json.put("chg1904", bi.chg1904.isChecked() ? "4" : "-1");
-        json.put("chg1905", bi.chg1905.isChecked() ? "5" : "-1");
-        json.put("chg1906", bi.chg1906.isChecked() ? "6" : "-1");
-        json.put("chg1907", bi.chg1907.isChecked() ? "7" : "-1");
-        json.put("chg1908", bi.chg1908.isChecked() ? "8" : "-1");
+        json.put("chg1901", bi.chg1901.isChecked() ? "2" : "-1");
+        json.put("chg1902", bi.chg1902.isChecked() ? "3" : "-1");
+        json.put("chg1903", bi.chg1903.isChecked() ? "4" : "-1");
+        json.put("chg1904", bi.chg1904.isChecked() ? "5" : "-1");
+        json.put("chg1905", bi.chg1905.isChecked() ? "6" : "-1");
+        json.put("chg1906", bi.chg1906.isChecked() ? "7" : "-1");
+        json.put("chg1907", bi.chg1907.isChecked() ? "8" : "-1");
+        json.put("chg1908", bi.chg1908.isChecked() ? "9" : "-1");
 
         json.put("chg20", bi.chg2001.isChecked() ? "1"
                 : bi.chg2002.isChecked() ? "2"
-                : bi.chg2003.isChecked() ? "3"
+                : bi.chg2003.isChecked() ? "66"
                 : "-1");
-
-        json.put("chg2001x", bi.chg2001x.getText().toString());
-        json.put("chg2002x", bi.chg2002x.getText().toString());
+        json.put("chg2001x", bi.chg2001x.getText().toString().trim().isEmpty() ? "-1" : bi.chg2001x.getText().toString());
+        json.put("chg2002x", bi.chg2002x.getText().toString().trim().isEmpty() ? "-1" : bi.chg2002x.getText().toString());
 
         json.put("chg21", bi.chg2101.isChecked() ? "1"
                 : bi.chg2102.isChecked() ? "2"

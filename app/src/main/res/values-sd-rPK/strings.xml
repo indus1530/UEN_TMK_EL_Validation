@@ -615,10 +615,12 @@
     <string name="chg102">نه </string>
     <string name="chg198">خبر نه آھي </string>
     <string name="chg2">گذريل ٻن ھفتن (چوڏھن ڏينهن) ۾ ڪيترن ٻارن کي دستن جي بيماري ٿي؟ ٻارن جو تعداد</string>
-    <string name="chg3">گذريل ٻن ھفتن (چوڏھن ڏينهن) جي دوران توھان جي گھر ۾ ڪھڙي ٻارکي سڀني کان آخر۾يا ويجھي عرصي ۾دستن جي بيماري ٿي ھئي؟</string>
-    <string name="chg301">ٻارجونالو</string>
-    <string name="chg302">ماءُجونالو</string>
-    <string name="chg4">نالو) کي ڪيترن ڏينهن تائين دستن جي بيماري ھئي؟</string>
+    <string name="chg3"> گذريل ٻن ھفتن (چوڏھن ڏينهن) جي دوران توھان جي گھر ۾ ڪھڙي ٻار کي سڀني کان آخر ۾ يا ويجھي عرصي ۾ دستن جي بيماري ٿي ھئي ؟ </string>
+    <string name="chg301"> ٻار جو نالو </string>
+    <string name="chg301a"> ٻار جو سيريل </string>
+    <string name="chg302"> ماءُ جو نالو </string>
+    <string name="chg302a"> ماءُ جو سيريل </string>
+    <string name="chg4"> نالو) کي ڪيترن ڏينهن تائين دستن جي بيماري ھئي ؟ </string>
     <string name="chg401">ڏينهن</string>
     <string name="chg402">اڃان بيمار آھي </string>
     <string name="chg5">ڇا دستن ۾ رت آيو؟</string>

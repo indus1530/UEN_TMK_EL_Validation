@@ -190,7 +190,7 @@
 
 
                 <!-- chg3  Title   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVchg3"
                     style="@style/cardView">
 
@@ -238,8 +238,8 @@
                                 android:id="@+id/chg301"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:layout_weight="2"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
                                 android:hint="@string/chg301" />
 
                         </LinearLayout>
@@ -260,11 +260,97 @@
                                 android:id="@+id/chg302"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                                 android:layout_weight="2"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
                                 android:hint="@string/chg302" />
 
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>-->
+
+
+                <!-- chg3  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVchg3"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_chg3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_chg3"
+                                android:text="@string/chg3" />
+
+                            <TextView
+                                android:id="@+id/q_chg3"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_chg3"
+                                android:layout_alignBottom="@id/qtxt_chg3"
+                                android:text="@string/Q_chg3" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/chg301" />
+
+                        <EditText
+                            android:id="@+id/chg301"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/chg301" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chg301a" />
+
+                        <EditText
+                            android:id="@+id/chg301a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/chg301a"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/chg302" />
+
+                        <EditText
+                            android:id="@+id/chg302"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/chg302" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chg302a" />
+
+                        <EditText
+                            android:id="@+id/chg302a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/chg302a"
+                            android:inputType="number" />
 
                     </LinearLayout>
 
@@ -1560,7 +1646,7 @@
                                     android:tag="chg2001"
                                     android:text='@{chg2001.checked ? chg2001x.getText().toString() : ""}'
                                     android:visibility='@{chg2001.checked ? View.VISIBLE : View.GONE}'
-                                    app:maxValue="24"
+                                    app:maxValue="23"
                                     app:minValue="1"
                                     app:type="range" />
 
