@@ -798,6 +798,8 @@ An episode of diarrhea is defined as, “(three or more loose stools in a day/24
     <string name="arih5">Who had the most recent illness with cough that he/she breathe faster than usual with short, rapid breaths or have difficulty breathing in the past two weeks?</string>
     <string name="arih501">Name of Child </string>
     <string name="arih502">Name of mother </string>
+    <string name="arih501a">Child Serial Number</string>
+    <string name="arih502a">Mother Serial Number</string>
     <string name="arih6">How many days did {NAME} suffer for the symptoms of cough and fast breathing?(Number of days)</string>
     <string name="arih7">Did you seek care/or initial treatment for {NAME} for the symptoms of cough and fast breathing?</string>
     <string name="arih701">Yes</string>

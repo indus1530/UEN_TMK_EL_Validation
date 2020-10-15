@@ -136,13 +136,14 @@ public class SectionH01Activity extends AppCompatActivity {
         json.put("arih4", bi.arih4.getText().toString().trim().isEmpty() ? "-1" : bi.arih4.getText().toString());
 
         json.put("arih501", bi.arih501.getText().toString().trim().isEmpty() ? "-1" : bi.arih501.getText().toString());
+        json.put("arih501a", bi.arih501a.getText().toString().trim().isEmpty() ? "-1" : bi.arih501a.getText().toString());
         json.put("arih502", bi.arih502.getText().toString().trim().isEmpty() ? "-1" : bi.arih502.getText().toString());
+        json.put("arih502a", bi.arih502a.getText().toString().trim().isEmpty() ? "-1" : bi.arih502a.getText().toString());
 
         json.put("arih6", bi.arih6.getText().toString());
 
         json.put("arih7", bi.arih701.isChecked() ? "1"
                 : bi.arih702.isChecked() ? "2"
-                : bi.arih798.isChecked() ? "98"
                 : "-1");
 
         json.put("arih801", bi.arih801.isChecked() ? "1" : "-1");
