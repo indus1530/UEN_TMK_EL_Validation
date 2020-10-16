@@ -36,9 +36,9 @@ public class SectionFActivity extends AppCompatActivity {
 
     private void setupSkip() {
         bi.raf4.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpCVraf5));
-        bi.raf6.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf01));
-        bi.cmf8.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf02));
-        bi.cmf10.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf03));
+        //bi.raf6.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf01));
+        //bi.cmf8.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf02));
+        //bi.cmf10.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf03));
     }
 
 
@@ -78,20 +78,23 @@ public class SectionFActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         JSONObject json = new JSONObject();
+        json.put("f1a", bi.f1a.getText().toString());
 
-        json.put("f1a", bi.f1a.getText().toString().trim().isEmpty() ? "-1" : bi.f1a.getText().toString());
-        json.put("f1b", bi.f1b.getText().toString().trim().isEmpty() ? "-1" : bi.f1b.getText().toString());
+        json.put("f1b", bi.f1b.getText().toString());
 
         json.put("raf1", bi.raf101.isChecked() ? "1"
                 : bi.raf102.isChecked() ? "2"
                 : "-1");
 
-        json.put("raf2", bi.raf2.getText().toString().trim().isEmpty() ? "-1" : bi.raf2.getText().toString());
+        json.put("raf2", bi.raf2.getText().toString());
 
-        json.put("raf301", bi.raf301.getText().toString().trim().isEmpty() ? "-1" : bi.raf301.getText().toString());
-        json.put("raf302", bi.raf302.getText().toString().trim().isEmpty() ? "-1" : bi.raf302.getText().toString());
-        json.put("raf303", bi.raf303.getText().toString().trim().isEmpty() ? "-1" : bi.raf303.getText().toString());
-        json.put("raf304", bi.raf304.getText().toString().trim().isEmpty() ? "-1" : bi.raf304.getText().toString());
+        json.put("raf301", bi.raf301.getText().toString());
+
+        json.put("raf302", bi.raf302.getText().toString());
+
+        json.put("raf303", bi.raf303.getText().toString());
+
+        json.put("raf304", bi.raf304.getText().toString());
 
         json.put("raf4", bi.raf401.isChecked() ? "1"
                 : bi.raf402.isChecked() ? "2"
@@ -104,81 +107,85 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.raf602.isChecked() ? "2"
                 : "-1");
 
-        json.put("raf7", bi.raf7.getText().toString().trim().isEmpty() ? "-1" : bi.raf7.getText().toString());
+        json.put("raf7", bi.raf7.getText().toString());
 
-        json.put("rasno", bi.rasno.getText().toString().trim().isEmpty() ? "-1" : bi.rasno.getText().toString());
+        json.put("raf7a", bi.raf7a.getText().toString());
 
-        json.put("raa", bi.raa.getText().toString().trim().isEmpty() ? "-1" : bi.raa.getText().toString());
+        json.put("raf7b", bi.raf7b.getText().toString());
 
-        json.put("rab01", bi.rab01.getText().toString().trim().isEmpty() ? "-1" : bi.rab01.getText().toString());
-        json.put("rab02", bi.rab02.getText().toString().trim().isEmpty() ? "-1" : bi.rab02.getText().toString());
-        json.put("rab03", bi.rab03.getText().toString().trim().isEmpty() ? "-1" : bi.rab03.getText().toString());
+        json.put("raf7cd", bi.raf7cd.getText().toString());
 
-        json.put("rac", bi.rac01.isChecked() ? "1"
-                : bi.rac02.isChecked() ? "2"
-                : bi.rac03.isChecked() ? "3"
-                : bi.rac04.isChecked() ? "4"
-                : bi.rac05.isChecked() ? "5"
+        json.put("raf7cm", bi.raf7cm.getText().toString());
+
+        json.put("raf7cy", bi.raf7cy.getText().toString());
+
+        json.put("raf7d", bi.raf7d01.isChecked() ? "1"
+                : bi.raf7d02.isChecked() ? "2"
+                : bi.raf7d03.isChecked() ? "3"
+                : bi.raf7d04.isChecked() ? "4"
+                : bi.raf7d05.isChecked() ? "5"
                 : "-1");
 
-        json.put("rad01", bi.rad01.getText().toString().trim().isEmpty() ? "-1" : bi.rad01.getText().toString());
-        json.put("rad02", bi.rad02.getText().toString().trim().isEmpty() ? "-1" : bi.rad02.getText().toString());
-        json.put("rad03", bi.rad03.getText().toString().trim().isEmpty() ? "-1" : bi.rad03.getText().toString());
+        json.put("raf7e", bi.raf7e.getText().toString());
 
-        json.put("rae", bi.rae01.isChecked() ? "1"
-                : bi.rae02.isChecked() ? "2"
-                : bi.rae03.isChecked() ? "3"
-                : bi.rae04.isChecked() ? "4"
-                : bi.rae05.isChecked() ? "5"
-                : bi.rae06.isChecked() ? "6"
-                : bi.rae96.isChecked() ? "96"
+        json.put("raf7f", bi.raf7f01.isChecked() ? "1"
+                : bi.raf7f02.isChecked() ? "2"
+                : bi.raf7f03.isChecked() ? "3"
+                : bi.raf7f04.isChecked() ? "4"
+                : bi.raf7f05.isChecked() ? "5"
+                : bi.raf7f06.isChecked() ? "6"
+                : bi.raf7f96.isChecked() ? "96"
                 : "-1");
-        json.put("rae96x", bi.rae96x.getText().toString().trim().isEmpty() ? "-1" : bi.rae96x.getText().toString());
 
+        json.put("raf7f96x", bi.raf7f96x.getText().toString());
         json.put("cmf8", bi.cmf801.isChecked() ? "1"
                 : bi.cmf802.isChecked() ? "2"
                 : "-1");
 
         json.put("cmf9", bi.cmf9.getText().toString());
 
-        json.put("cmsr", bi.cmsr.getText().toString());
-        json.put("cma", bi.cma.getText().toString());
-        json.put("cmb", bi.cmb.getText().toString());
+        json.put("cmf9a", bi.cmf9a.getText().toString());
 
-        json.put("cmc", bi.cmc01.isChecked() ? "1"
-                : bi.cmc02.isChecked() ? "2"
+        json.put("cmf9b", bi.cmf9b.getText().toString());
+
+        json.put("cmf9c", bi.cmf9c.getText().toString());
+
+        json.put("cmf9d", bi.cmf9d.getText().toString());
+
+        json.put("cmf9e", bi.cmf9e01.isChecked() ? "1"
+                : bi.cmf9e02.isChecked() ? "2"
                 : "-1");
 
-        json.put("cmd01", bi.cmd01.getText().toString().trim().isEmpty() ? "-1" : bi.cmd01.getText().toString());
-        json.put("cmd02", bi.cmd02.getText().toString().trim().isEmpty() ? "-1" : bi.cmd02.getText().toString());
-        json.put("cmd03", bi.cmd03.getText().toString().trim().isEmpty() ? "-1" : bi.cmd03.getText().toString());
+        json.put("cmf9fd", bi.cmf9fd.getText().toString());
 
-        json.put("cme", bi.cme01.isChecked() ? "1"
-                : bi.cme02.isChecked() ? "2"
-                : bi.cme03.isChecked() ? "3"
-                : bi.cme04.isChecked() ? "4"
-                : bi.cme05.isChecked() ? "5"
+        json.put("cmf9fm", bi.cmf9fm.getText().toString());
+
+        json.put("cmf9fy", bi.cmf9fy.getText().toString());
+
+        json.put("cmf9g", bi.cmf9g01.isChecked() ? "1"
+                : bi.cmf9g02.isChecked() ? "2"
+                : bi.cmf9g03.isChecked() ? "3"
+                : bi.cmf9g04.isChecked() ? "4"
+                : bi.cmf9g05.isChecked() ? "5"
                 : "-1");
 
-        json.put("cmf01", bi.cmf01.getText().toString().trim().isEmpty() ? "-1" : bi.cmf01.getText().toString());
-        json.put("cmf02", bi.cmf02.getText().toString().trim().isEmpty() ? "-1" : bi.cmf02.getText().toString());
-        json.put("cmf03", bi.cmf03.getText().toString().trim().isEmpty() ? "-1" : bi.cmf03.getText().toString());
+        json.put("cmf9h", bi.cmf9h.getText().toString());
 
-        json.put("cmg", bi.cmg01.isChecked() ? "1"
-                : bi.cmg02.isChecked() ? "2"
-                : bi.cmg03.isChecked() ? "3"
-                : bi.cmg04.isChecked() ? "4"
-                : bi.cmg05.isChecked() ? "5"
-                : bi.cmg06.isChecked() ? "6"
-                : bi.cmg07.isChecked() ? "7"
-                : bi.cmg08.isChecked() ? "8"
-                : bi.cmg96.isChecked() ? "96"
+        json.put("cmf9i", bi.cmf9i1.isChecked() ? "1"
+                : bi.cmf9i2.isChecked() ? "2"
+                : bi.cmf9i3.isChecked() ? "3"
+                : bi.cmf9i4.isChecked() ? "4"
+                : bi.cmf9i5.isChecked() ? "5"
+                : bi.cmf9i6.isChecked() ? "6"
+                : bi.cmf9i7.isChecked() ? "7"
+                : bi.cmf9i8.isChecked() ? "8"
+                : bi.cmf9i96.isChecked() ? "96"
                 : "-1");
-        json.put("cmg96x", bi.cmg96x.getText().toString().trim().isEmpty() ? "-1" : bi.cmg96x.getText().toString());
 
+        json.put("cmf9i96x", bi.cmf9i96x.getText().toString());
         json.put("cmf10", bi.cmf1001.isChecked() ? "1"
                 : bi.cmf1002.isChecked() ? "2"
-                : bi.cmf1003.isChecked() ? "666"
+                : bi.cmf1003.isChecked() ? "66"
                 : bi.cmf1098.isChecked() ? "98"
                 : "-1");
 
@@ -188,13 +195,18 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.cmf1104.isChecked() ? "4"
                 : bi.cmf1196.isChecked() ? "96"
                 : "-1");
-        json.put("cmf1196x", bi.cmf1196x.getText().toString().trim().isEmpty() ? "-1" : bi.cmf1196x.getText().toString());
 
+        json.put("cmf1196x", bi.cmf1196x.getText().toString());
         json.put("cmf1201", bi.cmf1201.isChecked() ? "1" : "-1");
+
         json.put("cmf1202", bi.cmf1202.isChecked() ? "2" : "-1");
+
         json.put("cmf1203", bi.cmf1203.isChecked() ? "3" : "-1");
+
         json.put("cmf1204", bi.cmf1204.isChecked() ? "4" : "-1");
+
         json.put("cmf1205", bi.cmf1205.isChecked() ? "5" : "-1");
+
         json.put("cmf1206", bi.cmf1206.isChecked() ? "6" : "-1");
 
 
