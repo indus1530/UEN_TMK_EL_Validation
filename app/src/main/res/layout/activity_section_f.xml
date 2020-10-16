@@ -143,16 +143,15 @@
                             android:text="@string/Q_f1b" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/f1b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/f1b"
-                        android:inputType="number"
+                        android:inputType="number" />
 
-
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- raf1  Radio   -->
@@ -237,6 +236,7 @@
                             android:layout_alignTop="@id/qtxt_raf2"
                             android:layout_alignBottom="@id/qtxt_raf2"
                             android:text="@string/Q_raf2" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -249,7 +249,9 @@
                         app:maxValue="20"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- raf3  Title   -->
@@ -785,16 +787,15 @@
                             android:text="@string/Q_raf7e" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/raf7e"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/raf7e"
-                        android:inputType="number"
+                        android:inputType="number" />
 
-
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- raf7f  Radio   -->
@@ -1375,16 +1376,15 @@
                             android:text="@string/Q_cmf9h" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/cmf9h"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cmf9h"
-                        android:inputType="number"
+                        android:inputType="number" />
 
-
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- cmf9i  Radio   -->

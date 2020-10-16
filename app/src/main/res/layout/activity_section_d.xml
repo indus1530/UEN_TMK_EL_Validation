@@ -393,18 +393,18 @@
                             android:layout_alignTop="@id/qtxt_mmd5"
                             android:layout_alignBottom="@id/qtxt_mmd5"
                             android:text="@string/Q_mmd5" />
+
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/mmd5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/mmd5"
-                        android:inputType="number"
+                        android:inputType="number" />
 
-
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -455,7 +455,9 @@
                         app:maxValue="11"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 

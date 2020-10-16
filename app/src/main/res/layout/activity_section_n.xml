@@ -34,7 +34,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/can_title1" />
+                        android:text="@string/can_title_1" />
 
                 </LinearLayout>
 
@@ -55,7 +55,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/can_title2" />
+                        android:text="@string/can_title_2" />
 
                 </LinearLayout>
 
@@ -149,21 +149,22 @@
                             android:layout_alignTop="@id/qtxt_can2"
                             android:layout_alignBottom="@id/qtxt_can2"
                             android:text="@string/Q_can2" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can2"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="140"
                         app:minValue="50"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can3  Input-Numeric   -->
@@ -202,15 +203,15 @@
                         android:id="@+id/can3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can3"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="35"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- can4  Radio   -->
@@ -520,7 +521,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_can_tittle1a"
-                            android:text="@string/can_tittle1a" />
+                            android:text="@string/can_tittle_1a" />
 
                         <TextView
                             android:id="@+id/q_can_tittle1a"
@@ -529,10 +530,14 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_can_tittle1a"
                             android:layout_alignBottom="@id/qtxt_can_tittle1a"
-                            android:text="@string/Q_can_tittle1a" />
+                            android:text="@string/Q_can_tittle_1a" />
+
                     </RelativeLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can_tittle2a  Title   -->
             <androidx.cardview.widget.CardView
@@ -554,7 +559,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_can_tittle2a"
-                            android:text="@string/can_tittle2a" />
+                            android:text="@string/can_tittle_2a" />
 
                         <TextView
                             android:id="@+id/q_can_tittle2a"
@@ -563,7 +568,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_can_tittle2a"
                             android:layout_alignBottom="@id/qtxt_can_tittle2a"
-                            android:text="@string/Q_can_tittle2a" />
+                            android:text="@string/Q_can_tittle_2a" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -662,16 +667,17 @@
                         android:id="@+id/can10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can10"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can11  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -703,22 +709,24 @@
                             android:layout_alignTop="@id/qtxt_can11"
                             android:layout_alignBottom="@id/qtxt_can11"
                             android:text="@string/Q_can11" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/can11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can11"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can12  Radio   -->
             <androidx.cardview.widget.CardView
@@ -814,16 +822,17 @@
                         android:id="@+id/can13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can13"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="160"
                         app:minValue="60"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can14  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -865,7 +874,6 @@
                         android:hint="@string/can14"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
@@ -908,11 +916,9 @@
                         android:id="@+id/can15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can15"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
@@ -1013,16 +1019,17 @@
                         android:id="@+id/can17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
                         android:hint="@string/can17"
                         android:inputType="number"
                         android:maxLength="3"
-                        app:mask="##"
                         app:maxValue="100"
                         app:minValue="30"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- can18  Input-Numeric   -->
             <androidx.cardview.widget.CardView
