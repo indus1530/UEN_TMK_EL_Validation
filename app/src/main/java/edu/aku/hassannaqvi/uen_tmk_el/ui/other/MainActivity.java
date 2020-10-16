@@ -37,6 +37,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FormsReportDate;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionBActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity;
@@ -303,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
-                oF = new Intent(this, SectionCActivity.class);
+                oF = new Intent(this, SectionBActivity.class);
                 break;
             case R.id.formC:
                 oF = new Intent(this, SectionCActivity.class);

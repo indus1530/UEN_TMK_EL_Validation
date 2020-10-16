@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.tmk.ui.sections.SectionFActivity" />
+            type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionBActivity" />
     </data>
 
 
@@ -98,11 +98,13 @@
 
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/elb1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/elb1"
+                        android:gravity="center"
+                        android:hint="##########"
+                        android:maxLength="10"
                         android:inputType="number" />
 
                 </LinearLayout>
@@ -206,7 +208,7 @@
 
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/elb3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -248,6 +250,7 @@
                             android:layout_alignTop="@id/qtxt_elb4"
                             android:layout_alignBottom="@id/qtxt_elb4"
                             android:text="@string/Q_elb4" />
+
                     </RelativeLayout>
 
                     <EditText
@@ -259,6 +262,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <!-- elb5  Input   -->
             <androidx.cardview.widget.CardView
@@ -290,6 +294,7 @@
                             android:layout_alignTop="@id/qtxt_elb5"
                             android:layout_alignBottom="@id/qtxt_elb5"
                             android:text="@string/Q_elb5" />
+
                     </RelativeLayout>
 
                     <EditText
@@ -742,6 +747,7 @@
                             android:layout_alignTop="@id/qtxt_elb12"
                             android:layout_alignBottom="@id/qtxt_elb12"
                             android:text="@string/Q_elb12" />
+
                     </RelativeLayout>
 
                     <EditText
@@ -784,6 +790,7 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="Save"
                     android:textColor="@color/white" />
+
             </LinearLayout>
             <!--EndButton LinearLayout-->
 
