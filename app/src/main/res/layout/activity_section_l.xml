@@ -33,7 +33,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/hwl_title1" />
+                        android:text="@string/hwl_title_1" />
 
                 </LinearLayout>
 
@@ -53,7 +53,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/hwl_title2" />
+                        android:text="@string/hwl_title_2" />
 
                 </LinearLayout>
 
@@ -860,6 +860,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- hwl_title 3  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVhwl_tittle3"
@@ -870,29 +871,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
+                        style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:text="@string/hwl_title_3" />
 
-                        <TextView
-                            android:id="@+id/qtxt_hwl_tittle3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hwl_tittle3"
-                            android:text="@string/hwl_title3" />
-
-                        <TextView
-                            android:id="@+id/q_hwl_tittle3"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hwl_tittle3"
-                            android:layout_alignBottom="@id/qtxt_hwl_tittle3"
-                            android:text="@string/Q_hwl_title3" />
-                    </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- hwl11a  Input   -->
             <androidx.cardview.widget.CardView

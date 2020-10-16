@@ -95,7 +95,7 @@
     <string name="elc_title11"> SECTION C:  INTRODUCTION &amp; CONSENT </string>
     <string name="elc_title12"> This section will be asked from the head of the household or someone else at least 18 years of age or older </string>
     <string name="elc_title21"> Please Read the CONSENT &amp; INTRODUCTION Loud &amp; Clear </string>
-    <string name="elc_title22"> Assalam o Alaikum: </string>
+    <string name="elc_title22"> Assalaam o Alaikum: </string>
     <string name="elc_title23"> My name is (Name of Interviewer) </string>
     <string name="elc_title24"> and I am working with center of excellance in Women and Child Health, Aga Khan University Karachi. In collaboration with Provincial Health Department of Sindh. We are conducting an Endline HH survey on “Evaluation of a community engagement and demand creation strategy for Childhood Diarrhea and Pneumonia in Pakistan”. As part of the survey, we are collecting information on the status of health of population in this prject based clusters of District. The Information we are collecting relates to knowledge, attitudes and practices on child health including morbidity and mortality. This information will be used to design strategies in improving child health services by government and other healthcare providers in your area. The whole process of this interview may take approximately 30 to 40 minutes. We would very much appreciate your participation in this survey. All of the answers you provide will be confidential. Your participation in this survey is voluntary. If you do not want to provide information to a specific question or a section, please let me know. You may also withdraw from this interview at any time</string>
 
@@ -1451,8 +1451,8 @@ Is this person under age 15? What sex?</string>
     <string name="wsk1603">Govt (Municipality/Town Committee/UC </string>
     <string name="wsk1604">Other NGO</string>
     <string name="wsk1605">Other(specify</string>
-    <string name="hwl_title1">SECTION L: HANDWASHING (This section will be filled by the index Mother or head of the household or someone else at least 18 years of age or older)</string>
-    <string name="hwl_title2">Observation &amp; Information</string>
+    <string name="hwl_title_1">SECTION L: HANDWASHING (This section will be filled by the index Mother or head of the household or someone else at least 18 years of age or older)</string>
+    <string name="hwl_title_2">Observation &amp; Information</string>
     <string name="hwl1">We would like to learn about the places that household members use to wash their hands. Can you please show me where members of your household most often wash their hands?</string>
     <string name="hwl101">Observed </string>
     <string name="hwl1title">Not Observed </string>

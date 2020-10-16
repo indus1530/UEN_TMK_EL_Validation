@@ -36,7 +36,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wsk_title1" />
+                        android:text="@string/wsk_title_1" />
 
                 </LinearLayout>
 
@@ -57,7 +57,7 @@
                         style="@style/sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wsk_title2" />
+                        android:text="@string/wsk_title_2" />
 
                 </LinearLayout>
 
