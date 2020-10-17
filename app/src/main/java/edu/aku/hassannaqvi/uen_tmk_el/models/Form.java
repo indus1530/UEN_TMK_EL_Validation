@@ -682,15 +682,53 @@ public class Form extends LiveData<Form> {
             json.put(FormsTable.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
             json.put(FormsTable.COLUMN_USERNAME, this.username == null ? JSONObject.NULL : this.username);
             json.put(FormsTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
-            json.put(FormsTable.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
+            json.put(FormsTable.COLUMN_ELB1, this.elb1 == null ? JSONObject.NULL : this.elb1);
+            json.put(FormsTable.COLUMN_ELB2, this.elb2 == null ? JSONObject.NULL : this.elb2);
+            json.put(FormsTable.COLUMN_ELB3, this.elb3 == null ? JSONObject.NULL : this.elb3);
+            json.put(FormsTable.COLUMN_ELB4, this.elb4 == null ? JSONObject.NULL : this.elb4);
+            json.put(FormsTable.COLUMN_ELB5, this.elb5 == null ? JSONObject.NULL : this.elb5);
+            json.put(FormsTable.COLUMN_ELB6, this.elb6 == null ? JSONObject.NULL : this.elb6);
+            json.put(FormsTable.COLUMN_ELB7, this.elb7 == null ? JSONObject.NULL : this.elb7);
+            json.put(FormsTable.COLUMN_ELB8, this.elb8 == null ? JSONObject.NULL : this.elb8);
+            json.put(FormsTable.COLUMN_ELB8a, this.elb8a == null ? JSONObject.NULL : this.elb8a);
+            json.put(FormsTable.COLUMN_ELB09, this.elb09 == null ? JSONObject.NULL : this.elb09);
+            json.put(FormsTable.COLUMN_ELB10, this.elb10 == null ? JSONObject.NULL : this.elb10);
+            json.put(FormsTable.COLUMN_ELB11, this.elb11 == null ? JSONObject.NULL : this.elb11);
+            json.put(FormsTable.COLUMN_ELB12, this.elb12 == null ? JSONObject.NULL : this.elb12);
 
-            json.put(FormsTable.COLUMN_SD, this.sD == null ? JSONObject.NULL : this.sD);
-            json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
-            json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
-            json.put(FormsTable.COLUMN_SG, this.sG == null ? JSONObject.NULL : this.sG);
-            json.put(FormsTable.COLUMN_SH, this.sH == null ? JSONObject.NULL : this.sH);
-            json.put(FormsTable.COLUMN_SI, this.sI == null ? JSONObject.NULL : this.sI);
-            json.put(FormsTable.COLUMN_SJ, this.sJ == null ? JSONObject.NULL : this.sJ);
+            if (this.sC != null && !this.sC.equals("")) {
+                json.put(FormsTable.COLUMN_SC, new JSONObject(this.sC));
+            }
+            if (this.sD != null && !this.sD.equals("")) {
+                json.put(FormsTable.COLUMN_SD, new JSONObject(this.sD));
+            }
+            if (this.sE != null && !this.sE.equals("")) {
+                json.put(FormsTable.COLUMN_SE, new JSONObject(this.sE));
+            }
+            if (this.sF != null && !this.sF.equals("")) {
+                json.put(FormsTable.COLUMN_SF, new JSONObject(this.sF));
+            }
+            if (this.sG != null && !this.sG.equals("")) {
+                json.put(FormsTable.COLUMN_SG, new JSONObject(this.sG));
+            }
+            if (this.sH != null && !this.sH.equals("")) {
+                json.put(FormsTable.COLUMN_SH, new JSONObject(this.sH));
+            }
+            if (this.sI != null && !this.sI.equals("")) {
+                json.put(FormsTable.COLUMN_SI, new JSONObject(this.sI));
+            }
+            if (this.sJ != null && !this.sJ.equals("")) {
+                json.put(FormsTable.COLUMN_SJ, new JSONObject(this.sJ));
+            }
+            if (this.sK != null && !this.sK.equals("")) {
+                json.put(FormsTable.COLUMN_SK, new JSONObject(this.sK));
+            }
+            if (this.sL != null && !this.sL.equals("")) {
+                json.put(FormsTable.COLUMN_SL, new JSONObject(this.sL));
+            }
+            if (this.sN != null && !this.sN.equals("")) {
+                json.put(FormsTable.COLUMN_SN, new JSONObject(this.sN));
+            }
 
             json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
             json.put(FormsTable.COLUMN_ISTATUS96x, this.istatus96x == null ? JSONObject.NULL : this.istatus96x);
