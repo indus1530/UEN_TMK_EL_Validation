@@ -18,7 +18,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -82,7 +81,6 @@ public class SectionDActivity extends AppCompatActivity {
 
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        form.setFormtype(CONSTANTS.FORM_MP);
         form.setUsername(MainApp.userName);
         form.setDeviceID(MainApp.appInfo.getDeviceID());
         form.setDevicetagID(MainApp.appInfo.getTagName());
@@ -190,6 +188,8 @@ public class SectionDActivity extends AppCompatActivity {
         json.put("mmd15", bi.mmd15.getText().toString());
 
         json.put("mmd16", bi.mmd16.getText().toString());
+
+        form.setsD(json.toString());
 
     }
 

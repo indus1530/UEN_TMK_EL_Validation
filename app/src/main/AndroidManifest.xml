@@ -28,22 +28,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.sections.SectionBActivity"></activity>
+
+
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
+
         <activity
             android:name=".ui.list_activity.FormsReportDate"
             android:label="Forms Report"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
+
         <activity
             android:name=".ui.list_activity.PendingFormsActivity"
             android:label="Unfinished Forms"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
+
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait"
@@ -54,21 +58,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.other.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish" />
+
         <activity
             android:name=".ui.other.MainActivity"
             android:theme="@style/AppThemeEnglish" />
+
+        <activity
+            android:name=".ui.sections.SectionBActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+
         <activity
             android:name=".ui.sections.SectionCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
         <activity
             android:name=".ui.sections.SectionDActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
         <activity
             android:name=".ui.sections.SectionE01Activity"
             android:screenOrientation="portrait"
