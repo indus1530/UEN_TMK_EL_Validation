@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -101,7 +100,6 @@ public class SectionCActivity extends AppCompatActivity {
 
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        form.setFormtype(CONSTANTS.FORM_MF);
         form.setUsername(MainApp.userName);
         form.setDeviceID(MainApp.appInfo.getDeviceID());
         form.setDevicetagID(MainApp.appInfo.getTagName());
@@ -129,6 +127,8 @@ public class SectionCActivity extends AppCompatActivity {
         json.put("elc6", bi.elc601.isChecked() ? "1"
                 : bi.elc602.isChecked() ? "2"
                 : "-1");
+
+        form.setsC(json.toString());
 
 
         MainApp.setGPS(this);

@@ -11,13 +11,11 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -85,33 +83,31 @@ public class SectionBActivity extends AppCompatActivity {
 
         form = new Form();
         form.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        form.setFormtype(CONSTANTS.FORM_MF);
         form.setUsername(MainApp.userName);
         form.setDeviceID(MainApp.appInfo.getDeviceID());
         form.setDevicetagID(MainApp.appInfo.getTagName());
         form.setAppversion(MainApp.appInfo.getAppVersion());
 
-        JSONObject json = new JSONObject();
 
-        json.put("elb1", bi.elb1.getText().toString());
+        form.setElb1(bi.elb1.getText().toString());
 
-        json.put("elb2", bi.elb201.isChecked() ? "1"
+        form.setElb2(bi.elb201.isChecked() ? "1"
                 : bi.elb202.isChecked() ? "2"
                 : bi.elb203.isChecked() ? "3"
                 : "-1");
 
-        json.put("elb3", bi.elb3.getText().toString());
+        form.setElb3(bi.elb3.getText().toString());
 
-        json.put("elb4", bi.elb4.getText().toString());
+        form.setElb4(bi.elb4.getText().toString());
 
-        json.put("elb5", bi.elb5.getText().toString());
+        form.setElb5(bi.elb5.getText().toString());
 
-        json.put("elb6", bi.elb601.isChecked() ? "1"
+        form.setElb6(bi.elb601.isChecked() ? "1"
                 : bi.elb602.isChecked() ? "2"
                 : bi.elb603.isChecked() ? "3"
                 : "-1");
 
-        json.put("elb7", bi.elb701.isChecked() ? "1"
+        form.setElb7(bi.elb701.isChecked() ? "1"
                 : bi.elb702.isChecked() ? "2"
                 : bi.elb703.isChecked() ? "3"
                 : bi.elb704.isChecked() ? "4"
@@ -123,21 +119,20 @@ public class SectionBActivity extends AppCompatActivity {
                 : bi.elb710.isChecked() ? "10"
                 : "-1");
 
-        json.put("elb8", bi.elb8.getText().toString());
+        form.setElb8(bi.elb8.getText().toString());
 
-        json.put("elb8a", bi.elb8a.getText().toString());
+        form.setElb8a(bi.elb8a.getText().toString());
 
-        json.put("elb09", bi.elb0901.isChecked() ? "1"
+        form.setElb09(bi.elb0901.isChecked() ? "1"
                 : bi.elb0902.isChecked() ? "2"
                 : bi.elb0903.isChecked() ? "3"
                 : "-1");
 
-        json.put("elb10", bi.elb10.getText().toString());
+        form.setElb10(bi.elb10.getText().toString());
 
-        json.put("elb11", bi.elb11.getText().toString());
+        form.setElb11(bi.elb11.getText().toString());
 
-        json.put("elb12", bi.elb12.getText().toString());
-
+        form.setElb12(bi.elb12.getText().toString());
 
         MainApp.setGPS(this);
     }
