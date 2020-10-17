@@ -9,9 +9,9 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillagesContract;
 
 public final class CreateTable {
 
-    public static final String DATABASE_NAME = "moringa_plantation.db";
-    public static final String DB_NAME = "moringa_plantation_copy.db";
-    public static final String PROJECT_NAME = "moringa_plantation";
+    public static final String DATABASE_NAME = "uenTMKel2020.db";
+    public static final String DB_NAME = "uenTMKel2020_copy.db";
+    public static final String PROJECT_NAME = "uenTMKel2020";
     public static final int DATABASE_VERSION = 1;
 
     public static final String SQL_CREATE_FORMS = "CREATE TABLE "
@@ -23,6 +23,19 @@ public final class CreateTable {
             + FormsTable.COLUMN_SYSDATE + " TEXT,"
             + FormsTable.COLUMN_UID + " TEXT,"
             + FormsTable.COLUMN_USERNAME + " TEXT,"
+            + FormsTable.COLUMN_ELB1 + " TEXT,"
+            + FormsTable.COLUMN_ELB2 + " TEXT,"
+            + FormsTable.COLUMN_ELB3 + " TEXT,"
+            + FormsTable.COLUMN_ELB4 + " TEXT,"
+            + FormsTable.COLUMN_ELB5 + " TEXT,"
+            + FormsTable.COLUMN_ELB6 + " TEXT,"
+            + FormsTable.COLUMN_ELB7 + " TEXT,"
+            + FormsTable.COLUMN_ELB8 + " TEXT,"
+            + FormsTable.COLUMN_ELB8a + " TEXT,"
+            + FormsTable.COLUMN_ELB09 + " TEXT,"
+            + FormsTable.COLUMN_ELB10 + " TEXT,"
+            + FormsTable.COLUMN_ELB11 + " TEXT,"
+            + FormsTable.COLUMN_ELB12 + " TEXT,"
             + FormsTable.COLUMN_SC + " TEXT,"
             + FormsTable.COLUMN_SD + " TEXT,"
             + FormsTable.COLUMN_SE + " TEXT,"
@@ -31,6 +44,9 @@ public final class CreateTable {
             + FormsTable.COLUMN_SH + " TEXT,"
             + FormsTable.COLUMN_SI + " TEXT,"
             + FormsTable.COLUMN_SJ + " TEXT,"
+            + FormsTable.COLUMN_SK + " TEXT,"
+            + FormsTable.COLUMN_SL + " TEXT,"
+            + FormsTable.COLUMN_SN + " TEXT,"
             + FormsTable.COLUMN_GPSLAT + " TEXT,"
             + FormsTable.COLUMN_GPSLNG + " TEXT,"
             + FormsTable.COLUMN_GPSDATE + " TEXT,"
