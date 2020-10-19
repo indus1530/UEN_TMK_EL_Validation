@@ -449,12 +449,12 @@
     <string name="ele396">Other Specify</string>
     <string name="raf_title1">Section F: Reproductive health, Maternal AND CHild MORTALITY (Instructions: Complete this section for all married women aged 15-49 years in the household)</string>
     <string name="raf_title2">Definition of Live Birth: Live birth refers to the complete expulsion or extraction from its mother of a product of conception, irrespective of the duration of the pregnancy, which, after such separation, breathes or shows any other evidence of life - e.g. beating of the heart, pulsation of the umbilical cord or definite movement of voluntary muscles - whether or not the umbilical cord has been cut or the placenta is attached. Each product of such a birth is considered born alive.</string>
-    <string name="f1a">Name of MWRA</string>
-    <string name="f1b">Line # of MWRA</string>
-    <string name="raf1">as {Names of MWRA in the family} ever been pregnant since her marriage?</string>
+    <string name="f1a">Name of MWRA </string>
+    <string name="f1b">Line # of MWRA </string>
+    <string name="raf1"> as {Names of MWRA in the family} ever been pregnant since her marriage ? </string>
     <string name="raf101">Yes</string>
     <string name="raf102">No</string>
-    <string name="raf2">How many times {Name} has been pregnant since her marriage?</string>
+    <string name="raf2">How many times {Name} has been pregnant since her marriage ? </string>
     <string name="raf3">What were the outcome of her total pregnancies (details of all pregnancies after marriage including live, still and miscarriage)</string>
     <string name="raf301">Born alive (Live birth)</string>
     <string name="raf302">Born dead (Still birth)</string>
@@ -464,7 +464,9 @@
     <string name="raf401">Yes</string>
     <string name="raf402">No</string>
     <string name="raf498">Don\'t know</string>
-    <string name="raf5">How many Weeks (gestational age) is she pregnant?  (If response is in month than convert it in weeks)</string>
+    <string name="raf5"> How many Weeks (gestational age) is she pregnant ? </string>
+    <string name="raf51"> Weeks </string>
+    <string name="raf5_info"> If response is in month than convert it in weeks </string>
     <string name="raf6">Has there been a death of women during pregnancy, delivery and within post-partum period (within 42 days) during the last five years at your home. If yes then ask details for below table.</string>
     <string name="raf601">Yes</string>
     <string name="raf602">No</string>
@@ -482,6 +484,9 @@
     <string name="raf7d04">NGO health facility</string>
     <string name="raf7d05">Enroute to hospital  </string>
     <string name="raf7e">Date of Death</string>
+    <string name="raf7ed">Day</string>
+    <string name="raf7em">Month</string>
+    <string name="raf7ey">Year</string>
     <string name="raf7f">Cause of death please specify</string>
     <string name="raf7f01">Severe Bleeding (mostly bleeding after childbirth)</string>
     <string name="raf7f02">Infection/Fever (mostly after childbirth)</string>
@@ -493,7 +498,8 @@
     <string name="cmf8">During last five years, has there been a death of a child up-to 5 years of age in your house?</string>
     <string name="cmf801">Yes</string>
     <string name="cmf802">No</string>
-    <string name="cmf9">If yes, then how many children died (Number)</string>
+    <string name="cmf9"> If yes, then how many children died </string>
+    <string name="cmf91"> Number of children </string>
     <string name="cmf9a">Serial No.</string>
     <string name="cmf9b">Complete name of deceased child</string>
     <string name="cmf9c">Father/mother Name of died child</string>
