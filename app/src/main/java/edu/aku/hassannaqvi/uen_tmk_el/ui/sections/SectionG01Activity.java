@@ -18,6 +18,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionG01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
+
 public class SectionG01Activity extends AppCompatActivity {
 
     ActivitySectionG01Binding bi;
@@ -71,8 +73,11 @@ public class SectionG01Activity extends AppCompatActivity {
             if (checkedId == bi.chg2003.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG04);
                 bi.fldGrpSecG04.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVchg25);
+                bi.fldGrpCVchg25.setVisibility(View.GONE);
             } else {
                 bi.fldGrpSecG04.setVisibility(View.VISIBLE);
+                bi.fldGrpCVchg25.setVisibility(View.VISIBLE);
             }
         });
 
@@ -114,18 +119,9 @@ public class SectionG01Activity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-
         /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SG, MainApp.form.getsG());
+        return updcount == 1;*/
         return true;
     }
 
@@ -279,6 +275,8 @@ public class SectionG01Activity extends AppCompatActivity {
                 : bi.chg2502.isChecked() ? "2"
                 : bi.chg2503.isChecked() ? "3"
                 : "-1");
+
+        form.setsG(json.toString());
 
 
     }
