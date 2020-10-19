@@ -491,6 +491,7 @@
                             android:layout_alignTop="@id/qtxt_mmd7"
                             android:layout_alignBottom="@id/qtxt_mmd7"
                             android:text="@string/Q_mmd7" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -527,8 +528,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/mmd799" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
