@@ -367,9 +367,13 @@
                             android:tag="ele296"
                             android:text='@{ele296.checked ? ele296x.getText().toString() : ""}'
                             android:visibility='@{ele296.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele3  Radio   -->
             <androidx.cardview.widget.CardView
@@ -401,6 +405,7 @@
                             android:layout_alignTop="@id/qtxt_ele3"
                             android:layout_alignBottom="@id/qtxt_ele3"
                             android:text="@string/Q_ele3" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -624,6 +629,7 @@
                             android:layout_alignTop="@id/qtxt_ele5"
                             android:layout_alignBottom="@id/qtxt_ele5"
                             android:text="@string/Q_ele5" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -665,9 +671,13 @@
                             android:tag="ele596"
                             android:text='@{ele596.checked ? ele596x.getText().toString() : ""}'
                             android:visibility='@{ele596.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- ele6  Radio   -->
             <androidx.cardview.widget.CardView

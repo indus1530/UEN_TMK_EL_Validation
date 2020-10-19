@@ -88,6 +88,7 @@ public class SectionDActivity extends AppCompatActivity {
 
 
         JSONObject json = new JSONObject();
+
         json.put("mmd1", bi.mmd1.getText().toString());
 
         json.put("mmd2", bi.mmd2.getText().toString());
