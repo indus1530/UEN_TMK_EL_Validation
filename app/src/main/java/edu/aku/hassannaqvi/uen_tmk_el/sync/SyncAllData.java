@@ -43,11 +43,11 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
     private Context mContext;
     private ProgressDialog pd;
     private String syncClass, url, tableName, updateSyncClass;
-    private Class contractClass;
-    private Collection dbData;
+    private Class<?> contractClass;
+    private Collection<?> dbData;
 
-    public SyncAllData(Context mContext, String syncClass, String updateSyncClass, Class contractClass, String url,
-                       String tableName, Collection dbData, int position, SyncListAdapter adapter, List<SyncModel> uploadlist) {
+    public SyncAllData(Context mContext, String syncClass, String updateSyncClass, Class<?> contractClass, String url,
+                       String tableName, Collection<?> dbData, int position, SyncListAdapter adapter, List<SyncModel> uploadlist) {
         this.mContext = mContext;
         this.syncClass = syncClass;
         this.updateSyncClass = updateSyncClass;
