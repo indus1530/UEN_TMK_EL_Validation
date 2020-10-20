@@ -28,10 +28,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.adapter.SyncListAdapter;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
@@ -126,6 +128,8 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
 
             DatabaseHelper db = new DatabaseHelper(this);
 
+            bi.noDataItem.setVisibility(View.GONE);
+
             new SyncDevice(this, false).execute();
 //  *******************************************************Forms*********************************
             String[] syncValues = new String[]{CONSTANTS.FORM_MP, CONSTANTS.FORM_MF};
@@ -147,14 +151,28 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                 ).execute();
             }
 
-            bi.noDataItem.setVisibility(View.GONE);
+            Toast.makeText(getApplicationContext(), "Syncing FamilyMembers", Toast.LENGTH_SHORT).show();
+            if (uploadlistActivityCreated) {
+                uploadmodel = new SyncModel();
+                uploadmodel.setstatusID(0);
+                uploadlist.add(uploadmodel);
+            }
+            new SyncAllData(
+                    this,
+                    "FamilyMembers",
+                    "updateSyncedFamilyMemForms",
+                    FamilyMembersContract.class,
+                    MainApp._HOST_URL + MainApp._SERVER_URL,
+                    FamilyMembersContract.SingleMember.TABLE_NAME,
+                    db.getUnsyncedFamilyMembers(), 2, syncListAdapter, uploadlist
+            ).execute();
 
             uploadlistActivityCreated = false;
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
-            editor.putString("LastDataUpload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
+            editor.putString("LastDataUpload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date()));
             editor.apply();
 
         } else {

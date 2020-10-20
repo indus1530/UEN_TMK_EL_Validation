@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk_el.utils;
 
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract.UsersTable;
@@ -105,10 +106,24 @@ public final class CreateTable {
             + " );";
 
 
-/*    public static final String SQL_ALTER_FORMS = "ALTER TABLE " +
-            FormsTable.TABLE_NAME + " ADD COLUMN " +
-            FormsTable.COLUMN_SYSDATE + " TEXT";
-    public static final String SQL_ALTER_CHILD_TABLE = "ALTER TABLE " +
-            ChildTable.TABLE_NAME + " ADD COLUMN " +
-            ChildTable.COLUMN_SYSDATE + " TEXT";*/
+    public static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE " + FamilyMembersContract.SingleMember.TABLE_NAME + "("
+            + FamilyMembersContract.SingleMember.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FamilyMembersContract.SingleMember.COLUMN_UID + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_UUID + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_LUID + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_KISH_SELECTED + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_CLUSTERNO + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_HHNO + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_SERIAL_NO + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_NAME + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_RELATION_HH + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_AGE + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_MOTHER_NAME + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_MOTHER_SERIAL + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_GENDER + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_MARITAL + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_SD + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_SYNCED + " TEXT," +
+            FamilyMembersContract.SingleMember.COLUMN_SYNCED_DATE + " TEXT"
+            + ");";
 }
