@@ -28,21 +28,29 @@ public class SectionJ02Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_j02);
         bi.setCallback(this);
         setupSkip();
+
     }
+
 
     private void setupSkip() {
-
         bi.bfj21.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj22));
 
-        bi.bfj22.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj23));
+        bi.bfj22.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbfj23);
+            Clear.clearAllFields(bi.fldGrpCVbfj13);
+            Clear.clearAllFields(bi.fldGrpCVbfj14);
+        });
 
-        /*bi.bfj13.setOnCheckedChangeListener(((radioGroup, i) -> {
+        bi.bfj13.setOnCheckedChangeListener(((radioGroup, i) -> {
             if (i == bi.bfj1303.getId()) {
-                Clear.clearAllFields(bi.fldGrpj13);
+                Clear.clearAllFields(bi.fldGrpCVbfj14);
+                Clear.clearAllFields(bi.fldGrpCVbfj24);
+                Clear.clearAllFields(bi.llbfj14);
             }
-        }));*/
+        }));
 
     }
+
 
     public void BtnContinue() {
         if (!formValidation()) return;
