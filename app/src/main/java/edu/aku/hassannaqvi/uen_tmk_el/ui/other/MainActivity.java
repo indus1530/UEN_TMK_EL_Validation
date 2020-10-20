@@ -41,7 +41,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionBActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionFActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionF01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionG01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity;
@@ -316,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 oF = new Intent(this, SectionE01Activity.class);
                 break;
             case R.id.formF:
-                oF = new Intent(this, SectionFActivity.class);
+                oF = new Intent(this, SectionF01Activity.class);
                 break;
             case R.id.formG:
                 oF = new Intent(this, SectionG01Activity.class);
