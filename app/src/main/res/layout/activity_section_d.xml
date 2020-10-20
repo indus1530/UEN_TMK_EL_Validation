@@ -283,7 +283,7 @@
                                 android:id="@+id/mmd315x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                                 android:hint="@string/mmd315"
                                 android:tag="mmd315"
                                 android:text='@{mmd315.checked ? mmd315x.getText().toString() : ""}'

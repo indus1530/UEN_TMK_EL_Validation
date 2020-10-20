@@ -202,3 +202,19 @@ fun showTooltip(context: Context, view: View) {
         Toast.makeText(context, "No ID Associated with this question.", Toast.LENGTH_SHORT).show()
     }
 }
+
+fun getMemberIcon(gender: Int, age: String): Int? {
+    return when (age.toInt()) {
+        -1 -> R.drawable.mem_icon
+        in 1..10 -> when (gender) {
+            1 -> R.drawable.ctr_childboy
+            2 -> R.drawable.ctr_childgirl
+            else -> R.drawable.mem_icon
+        }
+        else -> when (gender) {
+            1 -> R.drawable.ctr_male
+            2 -> R.drawable.ctr_female
+            else -> R.drawable.mem_icon
+        }
+    }
+}

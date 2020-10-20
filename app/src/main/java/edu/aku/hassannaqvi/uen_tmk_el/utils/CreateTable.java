@@ -106,24 +106,25 @@ public final class CreateTable {
             + " );";
 
 
-    public static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE " + FamilyMembersContract.SingleMember.TABLE_NAME + "("
-            + FamilyMembersContract.SingleMember.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            FamilyMembersContract.SingleMember.COLUMN_UID + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_UUID + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_LUID + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_KISH_SELECTED + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_CLUSTERNO + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_HHNO + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_SERIAL_NO + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_NAME + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_RELATION_HH + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_AGE + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_MOTHER_NAME + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_MOTHER_SERIAL + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_GENDER + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_MARITAL + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_SD + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_SYNCED + " TEXT," +
-            FamilyMembersContract.SingleMember.COLUMN_SYNCED_DATE + " TEXT"
+    public static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE " + FamilyMembersContract.MemberTable.TABLE_NAME + "("
+            + FamilyMembersContract.MemberTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FamilyMembersContract.MemberTable.COLUMN_UID + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_UUID + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_LUID + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_KISH_SELECTED + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_CLUSTERNO + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_HHNO + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_SERIAL_NO + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_NAME + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_RELATION_HH + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_RELATION_HHXX + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_AGE + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_MOTHER_NAME + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_MOTHER_SERIAL + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_GENDER + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_MARITAL + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_SD + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_SYNCED + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_SYNCED_DATE + " TEXT"
             + ");";
 }

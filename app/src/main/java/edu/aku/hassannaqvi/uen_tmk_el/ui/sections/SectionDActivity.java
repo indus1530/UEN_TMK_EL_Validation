@@ -18,8 +18,11 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
@@ -30,12 +33,13 @@ import edu.aku.hassannaqvi.uen_tmk_el.datecollection.AgeModel;
 import edu.aku.hassannaqvi.uen_tmk_el.datecollection.DateRepository;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.SERIAL_EXTRA;
 
-public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.EndSectionActivity {
+public class SectionDActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionDBinding bi;
     private MainVModel mainVModel;
@@ -131,7 +135,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
         fmc.set_id(String.valueOf(updcount));
         if (updcount > 0) {
             fmc.setUid(MainApp.deviceId + fmc.get_id());
-            db.updatesFamilyMemberColumn(FamilyMembersContract.SingleMember.COLUMN_UID, fmc.getUid(), fmc.get_id());
+            db.updatesFamilyMemberColumn(FamilyMembersContract.MemberTable.COLUMN_UID, fmc.getUid(), fmc.get_id());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -143,9 +147,9 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
 
         if (fmcFLAG) {
             fmc.setUuid(MainApp.form.get_UID());
-            fmc.setLuid(MainApp.form.getLuid());
-            fmc.setClusterno(MainApp.form.getClusterCode());
-            fmc.setHhno(MainApp.form.getHhno());
+//            fmc.setLuid(MainApp.form.getLuid());
+            fmc.setClusterno(MainApp.form.getElb1());
+            fmc.setHhno(MainApp.form.getElb11());
             fmc.setSerialno(bi.mmd1.getText().toString());
             fmc.setName(bi.mmd2.getText().toString());
             fmc.setRelHH(bi.mmd301.isChecked() ? "1" :
@@ -162,12 +166,13 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                                                                                                     bi.mmd312.isChecked() ? "12" :
                                                                                                             bi.mmd313.isChecked() ? "13" :
                                                                                                                     bi.mmd314.isChecked() ? "14" :
-                                                                                                                            bi.mmd396.isChecked() ? "15" : "0");
+                                                                                                                            bi.mmd315.isChecked() ? "15" : "-1");
+            fmc.setRelHHxx(bi.mmd315x.getText().toString());
 
             fmc.setGender(
                     bi.mmd401.isChecked() ? "1" :
                             bi.mmd402.isChecked() ? "2" :
-                                    bi.mmd403.isChecked() ? "3" : "0");
+                                    bi.mmd403.isChecked() ? "3" : "-1");
 
             if (serial == 1) FamilyMembersListActivity.Companion.setGenderFlag(fmc.getGender());
 
@@ -183,17 +188,17 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                 bi.mmd701.isChecked() ? "1" :
                         bi.mmd702.isChecked() ? "2" :
                                 bi.mmd703.isChecked() ? "3" :
-                                        bi.mmd704.isChecked() ? "4" : "0");
+                                        bi.mmd704.isChecked() ? "4" : "-1");
 
         JSONObject sd = new JSONObject();
 
-        sd.put("formdate", MainApp.form.getSysdate());
+        sd.put("sysdate", new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
         sd.put("username", MainApp.userName);
         sd.put("deviceid", MainApp.appInfo.getDeviceID());
         sd.put("tagid", MainApp.appInfo.getTagName());
         sd.put("appversion", MainApp.appInfo.getAppVersion());
 
-        FamilyMembersContract motherFMC = null;
+        FamilyMembersContract motherFMC;
         sd.put("mmd0801", menSLst.getFirst().size() != 0 && bi.mmd0801.getSelectedItemPosition() != 1
                 ? mainVModel.getMemberInfo(menSLst.getFirst().get(bi.mmd0801.getSelectedItemPosition() - 2)).getSerialno() : "97");
         fmc.setfName(bi.mmd0801.getSelectedItem().toString());
@@ -215,7 +220,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
 
         sd.put("mmd10", bi.mmd1001.isChecked() ? "1"
                 : bi.mmd1002.isChecked() ? "2"
-                : "0");
+                : "-1");
 
         sd.put("mmd11", bi.mmd1100.isChecked() ? "0" :
                 bi.mmd1101.isChecked() ? "1" :
@@ -239,7 +244,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                                                                                                                                                                 bi.mmd1119.isChecked() ? "19" :
                                                                                                                                                                         bi.mmd1120.isChecked() ? "20" :
                                                                                                                                                                                 bi.mmd1198.isChecked() ? "98" :
-                                                                                                                                                                                        bi.mmd1199.isChecked() ? "99" : "0");
+                                                                                                                                                                                        bi.mmd1199.isChecked() ? "99" : "-1");
         sd.put("mmd12", bi.mmd1201.isChecked() ? "1" :
                 bi.mmd1202.isChecked() ? "2" :
                         bi.mmd1203.isChecked() ? "3" :
@@ -253,11 +258,11 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                                                                                         bi.mmd1211.isChecked() ? "11" :
                                                                                                 bi.mmd1212.isChecked() ? "12" :
                                                                                                         bi.mmd1213.isChecked() ? "12" :
-                                                                                                                bi.mmd1299.isChecked() ? "99" : "0");
+                                                                                                                bi.mmd1299.isChecked() ? "99" : "-1");
 
-        sd.put("mmd13", bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "0");
+        sd.put("mmd13", bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "-1");
 
-        fmc.setAvailable(bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "0");
+        fmc.setAvailable(bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "-1");
 
         fmc.setsD(String.valueOf(sd));
 
@@ -266,11 +271,11 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
 
         if (Integer.parseInt(fmc.getAge()) >= 15 && Integer.parseInt(fmc.getAge()) < 60 && fmc.getGender().equals("2") && !bi.mmd702.isChecked())
             mainVModel.setMWRA(fmc);
-        else if (Integer.parseInt(fmc.getAge()) >= 5 && Integer.parseInt(fmc.getAge()) < 10) {
-            mainVModel.setChildU5to10(fmc);
+        else if (Integer.parseInt(fmc.getAge()) < 5) {
+            mainVModel.setChildU5(fmc);
             if (motherFMC == null) return;
             if (Integer.parseInt(motherFMC.getAge()) >= 15 && Integer.parseInt(motherFMC.getAge()) < 60)
-                mainVModel.setMwraChildU5to10(motherFMC);
+                mainVModel.setMwraChildU5(motherFMC);
         }
 
     }
@@ -332,7 +337,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                     return;
                 }
 
-                int day = bi.mmd501.getText().toString().equals("98") ? 0 : Integer.parseInt(bi.mmd501.getText().toString());
+                int day = bi.mmd501.getText().toString().equals("98") ? 15 : Integer.parseInt(bi.mmd501.getText().toString());
                 int month = Integer.parseInt(bi.mmd502.getText().toString());
                 int year = Integer.parseInt(bi.mmd503.getText().toString());
 
@@ -389,9 +394,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
         bi.mmd3.setOnCheckedChangeListener((group, checkedID) -> {
             Clear.clearAllFields(bi.mmd4, true);
             if (serial == 2) {
-
                 if (checkedID == bi.mmd302.getId()) {
-
                     String gender = FamilyMembersListActivity.Companion.getGenderFlag();
                     if (!gender.equals("3")) Clear.clearAllFields(bi.mmd4, false);
                     switch (gender) {
@@ -402,9 +405,7 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
                             bi.mmd401.setChecked(true);
                             break;
                     }
-
                 }
-
             }
         });
 
@@ -417,16 +418,18 @@ public class SectionDActivity extends AppCompatActivity implements AppUtilsKt.En
         bi.fldGrpCVmmd11.setVisibility(View.GONE);
         bi.fldGrpCVmmd12.setVisibility(View.GONE);
 
-        if (calAge >= 3 && calAge < 10) {
+        if (calAge > 3 && calAge < 10) {
             bi.fldGrpCVmmd10.setVisibility(View.VISIBLE);
             bi.fldGrpCVmmd11.setVisibility(View.VISIBLE);
         } else if (calAge == 10) {
+            bi.fldGrpCVmmd10.setVisibility(View.VISIBLE);
+            bi.fldGrpCVmmd11.setVisibility(View.VISIBLE);
             bi.fldGrpCVmmd12.setVisibility(View.VISIBLE);
         } else if (calAge > 10) {
-            bi.fldGrpCVmmd12.setVisibility(View.VISIBLE);
             bi.fldGrpCVmmd7.setVisibility(View.VISIBLE);
             bi.fldGrpCVmmd10.setVisibility(View.VISIBLE);
             bi.fldGrpCVmmd11.setVisibility(View.VISIBLE);
+            bi.fldGrpCVmmd12.setVisibility(View.VISIBLE);
         }
 
     }
