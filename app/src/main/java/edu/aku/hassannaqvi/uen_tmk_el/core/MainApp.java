@@ -16,17 +16,21 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
+import androidx.databinding.DataBindingUtil;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import java.util.List;
 
+import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract;
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.CountAlertDialogLayoutBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.location.LocationLiveData;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
@@ -76,20 +80,18 @@ public class MainApp extends Application {
     public static OnItemClick countItemClick;
     public static AppInfo appInfo;
     public static Boolean admin = false;
-    public static LiveData<Form> liveForms = new MutableLiveData<>();
-
     public static String userName = "0000";
     public static UsersContract user;
     public static Form form;
-    public static int deathCount = 0;
     public static String DeviceURL = "devices.php";
     public static String IMEI;
-    public static String G102;
     public static SharedPreferences sharedPref;
     public static String DIST_ID;
-    public static Pair<List<Integer>, List<String>> selectedChildren;
     protected static LocationManager locationManager;
     private LocationLiveData locationlivedata;
+    public static FamilyMembersContract indexKishMWRA;
+    public static FamilyMembersContract indexKishMWRAChild;
+    public static Pair<List<Integer>, List<String>> mwraChildren;
 
     public static void setItemClick(OnItemClick itemClick) {
         MainApp.itemClick = itemClick;
@@ -156,6 +158,8 @@ public class MainApp extends Application {
         alert.show();
     }
 
+    public static String[] relationHHLst = {"Head of HH", "Wife/Husband", "Son/Daughters", "Son in law/Daughter in law", "Grand child", "Parents", "Parents in law",
+            "Brother/Sister", "Brother in law/Sister in law", "Niece/Nephew", "Grand Parents", "Aunts/Uncle", "Adopted/Step child", "Domestic Servant", "Other"};
 
     @Override
     public void onCreate() {
@@ -266,10 +270,6 @@ public class MainApp extends Application {
         return provider1.equals(provider2);
     }
 
-    public interface OnItemClick {
-        void itemClick();
-    }
-
     public class GPSLocationListener implements LocationListener {
         public void onLocationChanged(Location location) {
 
@@ -313,6 +313,29 @@ public class MainApp extends Application {
         public void onProviderEnabled(String s) {
 
         }
+    }
+
+    public static void openDialog(Context context, FamilyMembersContract item) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setCancelable(false);
+        View view = LayoutInflater.from(context).inflate(R.layout.count_alert_dialog_layout, null);
+        CountAlertDialogLayoutBinding bi = DataBindingUtil.bind(view.getRootView());
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        assert bi != null;
+        bi.continueBtn.setOnClickListener(v -> {
+            itemClick.itemClick();
+            dialog.dismiss();
+        });
+
+        bi.noBtn.setOnClickListener(v -> dialog.dismiss());
+    }
+
+    public interface OnItemClick {
+        void itemClick();
     }
 
 }

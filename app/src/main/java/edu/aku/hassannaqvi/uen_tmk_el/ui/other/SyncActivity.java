@@ -163,7 +163,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     "updateSyncedFamilyMemForms",
                     FamilyMembersContract.class,
                     MainApp._HOST_URL + MainApp._SERVER_URL,
-                    FamilyMembersContract.SingleMember.TABLE_NAME,
+                    FamilyMembersContract.MemberTable.TABLE_NAME,
                     db.getUnsyncedFamilyMembers(), 2, syncListAdapter, uploadlist
             ).execute();
 

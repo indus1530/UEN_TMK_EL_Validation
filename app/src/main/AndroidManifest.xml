@@ -79,11 +79,6 @@
             android:theme="@style/AppThemeUrdu" />
 
         <activity
-            android:name=".ui.sections.SectionD01Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-
-        <activity
             android:name=".ui.sections.SectionE01Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
@@ -156,6 +151,21 @@
             android:theme="@style/AppThemeEnglish" />
 
         <service android:name=".utils.DownloadFileService" />
+
+        <activity
+            android:name=".ui.sections.SectionDActivity"
+            android:parentActivityName=".ui.list_activity.FamilyMembersListActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity" />
+        </activity>
+
+        <activity
+            android:name=".ui.list_activity.FamilyMembersListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

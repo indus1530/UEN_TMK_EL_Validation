@@ -9,6 +9,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class FamilyMembersContract implements Parcelable {
+    private String _id;
+    private String uid;
+    private String uuid;
+    private String clusterno;
+    private String hhno;
+    private String serialno;
+    private String name;
+    private String relHH;
     public static final Creator<FamilyMembersContract> CREATOR = new Creator<FamilyMembersContract>() {
         @Override
         public FamilyMembersContract createFromParcel(Parcel in) {
@@ -20,14 +28,6 @@ public class FamilyMembersContract implements Parcelable {
             return new FamilyMembersContract[size];
         }
     };
-    private String _id;
-    private String uid;
-    private String uuid;
-    private String clusterno;
-    private String hhno;
-    private String serialno;
-    private String name;
-    private String relHH;
     private String age;
     private String mother_name;
     private String mother_serial;
@@ -39,6 +39,7 @@ public class FamilyMembersContract implements Parcelable {
     //Not required in db
     private String fName;
     private String available;
+    private String relHHxx;
 
     public FamilyMembersContract() {
     }
@@ -53,6 +54,7 @@ public class FamilyMembersContract implements Parcelable {
         serialno = in.readString();
         name = in.readString();
         relHH = in.readString();
+        relHHxx = in.readString();
         age = in.readString();
         mother_name = in.readString();
         mother_serial = in.readString();
@@ -65,22 +67,23 @@ public class FamilyMembersContract implements Parcelable {
     }
 
     public FamilyMembersContract hydrate(Cursor cursor) {
-        this._id = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_UUID));
-        this.luid = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_LUID));
-        this.kishSelected = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_KISH_SELECTED));
-        this.clusterno = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_CLUSTERNO));
-        this.hhno = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_HHNO));
-        this.serialno = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_SERIAL_NO));
-        this.name = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_NAME));
-        this.relHH = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_RELATION_HH));
-        this.age = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_AGE));
-        this.mother_name = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_MOTHER_NAME));
-        this.mother_serial = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_MOTHER_SERIAL));
-        this.gender = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_GENDER));
-        this.marital = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_MARITAL));
-        this.sD = cursor.getString(cursor.getColumnIndex(SingleMember.COLUMN_SD));
+        this._id = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_UUID));
+        this.luid = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_LUID));
+        this.kishSelected = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_KISH_SELECTED));
+        this.clusterno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_CLUSTERNO));
+        this.hhno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_HHNO));
+        this.serialno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_SERIAL_NO));
+        this.name = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_NAME));
+        this.relHH = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_RELATION_HH));
+        this.relHHxx = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_RELATION_HHXX));
+        this.age = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_AGE));
+        this.mother_name = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_MOTHER_NAME));
+        this.mother_serial = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_MOTHER_SERIAL));
+        this.gender = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_GENDER));
+        this.marital = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_MARITAL));
+        this.sD = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_SD));
 
         return this;
     }
@@ -88,24 +91,25 @@ public class FamilyMembersContract implements Parcelable {
     public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
-        json.put(SingleMember.COLUMN_ID, this._id == null ? JSONObject.NULL : this._id);
-        json.put(SingleMember.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
-        json.put(SingleMember.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
-        json.put(SingleMember.COLUMN_LUID, this.luid == null ? JSONObject.NULL : this.luid);
-        json.put(SingleMember.COLUMN_KISH_SELECTED, this.kishSelected == null ? JSONObject.NULL : this.kishSelected);
-        json.put(SingleMember.COLUMN_CLUSTERNO, this.clusterno == null ? JSONObject.NULL : this.clusterno);
-        json.put(SingleMember.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
-        json.put(SingleMember.COLUMN_SERIAL_NO, this.serialno == null ? JSONObject.NULL : this.serialno);
-        json.put(SingleMember.COLUMN_NAME, this.name == null ? JSONObject.NULL : this.name);
-        json.put(SingleMember.COLUMN_RELATION_HH, this.relHH == null ? JSONObject.NULL : this.relHH);
-        json.put(SingleMember.COLUMN_AGE, this.age == null ? JSONObject.NULL : this.age);
-        json.put(SingleMember.COLUMN_MOTHER_NAME, this.mother_name == null ? JSONObject.NULL : this.mother_name);
-        json.put(SingleMember.COLUMN_MOTHER_SERIAL, this.mother_serial == null ? JSONObject.NULL : this.mother_serial);
-        json.put(SingleMember.COLUMN_GENDER, this.gender == null ? JSONObject.NULL : this.gender);
-        json.put(SingleMember.COLUMN_MARITAL, this.marital == null ? JSONObject.NULL : this.marital);
+        json.put(MemberTable.COLUMN_ID, this._id == null ? JSONObject.NULL : this._id);
+        json.put(MemberTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
+        json.put(MemberTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
+        json.put(MemberTable.COLUMN_LUID, this.luid == null ? JSONObject.NULL : this.luid);
+        json.put(MemberTable.COLUMN_KISH_SELECTED, this.kishSelected == null ? JSONObject.NULL : this.kishSelected);
+        json.put(MemberTable.COLUMN_CLUSTERNO, this.clusterno == null ? JSONObject.NULL : this.clusterno);
+        json.put(MemberTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+        json.put(MemberTable.COLUMN_SERIAL_NO, this.serialno == null ? JSONObject.NULL : this.serialno);
+        json.put(MemberTable.COLUMN_NAME, this.name == null ? JSONObject.NULL : this.name);
+        json.put(MemberTable.COLUMN_RELATION_HH, this.relHH == null ? JSONObject.NULL : this.relHH);
+        json.put(MemberTable.COLUMN_RELATION_HHXX, this.relHHxx == null ? JSONObject.NULL : this.relHHxx);
+        json.put(MemberTable.COLUMN_AGE, this.age == null ? JSONObject.NULL : this.age);
+        json.put(MemberTable.COLUMN_MOTHER_NAME, this.mother_name == null ? JSONObject.NULL : this.mother_name);
+        json.put(MemberTable.COLUMN_MOTHER_SERIAL, this.mother_serial == null ? JSONObject.NULL : this.mother_serial);
+        json.put(MemberTable.COLUMN_GENDER, this.gender == null ? JSONObject.NULL : this.gender);
+        json.put(MemberTable.COLUMN_MARITAL, this.marital == null ? JSONObject.NULL : this.marital);
 
         if (!this.sD.equals("")) {
-            json.put(SingleMember.COLUMN_SD, this.sD.equals("") ? JSONObject.NULL : new JSONObject(this.sD));
+            json.put(MemberTable.COLUMN_SD, new JSONObject(this.sD));
         }
 
         return json;
@@ -181,6 +185,14 @@ public class FamilyMembersContract implements Parcelable {
 
     public void setRelHH(String relHH) {
         this.relHH = relHH;
+    }
+
+    public String getRelHHxx() {
+        return relHHxx;
+    }
+
+    public void setRelHHxx(String relHHxx) {
+        this.relHHxx = relHHxx;
     }
 
     public String getAge() {
@@ -271,6 +283,7 @@ public class FamilyMembersContract implements Parcelable {
         parcel.writeString(serialno);
         parcel.writeString(name);
         parcel.writeString(relHH);
+        parcel.writeString(relHHxx);
         parcel.writeString(age);
         parcel.writeString(mother_name);
         parcel.writeString(mother_serial);
@@ -282,17 +295,18 @@ public class FamilyMembersContract implements Parcelable {
         parcel.writeString(available);
     }
 
-    public static abstract class SingleMember implements BaseColumns {
+    public static abstract class MemberTable implements BaseColumns {
 
-        public static final String TABLE_NAME = "familymembers";
+        public static final String TABLE_NAME = "familyMembers";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_LUID = "_luid";
         public static final String COLUMN_AGE = "age";
-        public static final String COLUMN_CLUSTERNO = "clusterno";
-        public static final String COLUMN_HHNO = "hhno";
+        public static final String COLUMN_CLUSTERNO = "elb1";
+        public static final String COLUMN_HHNO = "elb11";
         public static final String COLUMN_RELATION_HH = "relHH";
+        public static final String COLUMN_RELATION_HHXX = "relHHxx";
         public static final String COLUMN_KISH_SELECTED = "kishSelected";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_SERIAL_NO = "serial_no";
