@@ -885,14 +885,15 @@
                             android:id="@+id/can14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
                             android:hint="@string/can14"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="100"
+                            app:maxValue="120"
                             app:minValue="30"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -926,6 +927,7 @@
                                 android:layout_alignTop="@id/qtxt_can15"
                                 android:layout_alignBottom="@id/qtxt_can15"
                                 android:text="@string/Q_can15" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -935,10 +937,12 @@
                             android:hint="@string/can15"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="100"
+                            app:maxValue="120"
                             app:minValue="30"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1040,7 +1044,7 @@
                             android:hint="@string/can17"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="100"
+                            app:maxValue="120"
                             app:minValue="30"
                             app:type="range" />
 
@@ -1079,6 +1083,7 @@
                                 android:layout_alignTop="@id/qtxt_can18"
                                 android:layout_alignBottom="@id/qtxt_can18"
                                 android:text="@string/Q_can18" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -1093,7 +1098,9 @@
                             app:maxValue="30"
                             app:minValue="10"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1141,7 +1148,9 @@
                             app:maxValue="30"
                             app:minValue="10"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1234,6 +1243,7 @@
                                 android:layout_alignTop="@id/qtxt_can21"
                                 android:layout_alignBottom="@id/qtxt_can21"
                                 android:text="@string/Q_can21" />
+
                         </RelativeLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -1248,7 +1258,9 @@
                             app:maxValue="30"
                             app:minValue="10"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

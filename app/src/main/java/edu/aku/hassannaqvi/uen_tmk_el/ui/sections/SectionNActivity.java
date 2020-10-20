@@ -68,6 +68,33 @@ public class SectionNActivity extends AppCompatActivity {
             }
         });
 
+
+        bi.can12.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(bi.fldGrpCVcan13);
+            bi.fldGrpCVcan13.setVisibility(View.VISIBLE);
+            if (checkedId == bi.can1202.getId()) {
+                bi.fldGrpCVcan13.setVisibility(View.GONE);
+            }
+        });
+
+
+        bi.can16.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(bi.fldGrpCVcan17);
+            bi.fldGrpCVcan17.setVisibility(View.VISIBLE);
+            if (checkedId == bi.can1602.getId()) {
+                bi.fldGrpCVcan17.setVisibility(View.GONE);
+            }
+        });
+
+
+        bi.can20.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(bi.fldGrpCVcan21);
+            bi.fldGrpCVcan21.setVisibility(View.VISIBLE);
+            if (checkedId == bi.can2002.getId()) {
+                bi.fldGrpCVcan21.setVisibility(View.GONE);
+            }
+        });
+
     }
 
 
