@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <data>
 
         <import type="android.view.View" />
@@ -11,15 +12,18 @@
             type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionKActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
 
             <!-- wsk_title 1     -->
@@ -468,250 +472,247 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wsk303" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
-            <LinearLayout
-                android:id="@+id/fldGrpk03"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility='@{wsk303.checked? View.VISIBLE : View.GONE}'>
+            <!-- wsk15  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVwsk15"
+                style="@style/cardView"
+                android:visibility='@{wsk303.checked ? View.GONE : View.VISIBLE}'>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <!-- wsk15  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVwsk15"
-                    style="@style/cardView">
-
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/qtxt_wsk15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_wsk15"
+                            android:text="@string/wsk15" />
 
-                            <TextView
-                                android:id="@+id/qtxt_wsk15"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_wsk15"
-                                android:text="@string/wsk15" />
+                        <TextView
+                            android:id="@+id/q_wsk15"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_wsk15"
+                            android:layout_alignBottom="@id/qtxt_wsk15"
+                            android:text="@string/Q_wsk15" />
 
-                            <TextView
-                                android:id="@+id/q_wsk15"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_wsk15"
-                                android:layout_alignBottom="@id/qtxt_wsk15"
-                                android:text="@string/Q_wsk15" />
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                        <RadioGroup
-                            android:id="@+id/wsk15"
+                    <RadioGroup
+                        android:id="@+id/wsk15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/wsk1501"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk1501" />
 
-                            <RadioButton
-                                android:id="@+id/wsk1501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk1501" />
+                        <RadioButton
+                            android:id="@+id/wsk1502"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk1502" />
 
-                            <RadioButton
-                                android:id="@+id/wsk1502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk1502" />
+                        <RadioButton
+                            android:id="@+id/wsk1503"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk1503" />
 
-                            <RadioButton
-                                android:id="@+id/wsk1503"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk1503" />
+                        <RadioButton
+                            android:id="@+id/wsk1504"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk1504" />
 
-                            <RadioButton
-                                android:id="@+id/wsk1504"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk1504" />
+                        <RadioButton
+                            android:id="@+id/wsk1596"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk1596" />
 
-                            <RadioButton
-                                android:id="@+id/wsk1596"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk1596" />
+                        <EditText
+                            android:id="@+id/wsk1596x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
+                            android:hint="@string/wsk1596"
+                            android:tag="wsk1596"
+                            android:text='@{wsk1596.checked ? wsk1596x.getText().toString() : ""}'
+                            android:visibility='@{wsk1596.checked? View.VISIBLE : View.GONE}' />
 
-                            <EditText
-                                android:id="@+id/wsk1596x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789., "
-                                android:hint="@string/wsk1596"
-                                android:tag="wsk1596"
-                                android:text='@{wsk1596.checked ? wsk1596x.getText().toString() : ""}'
-                                android:visibility='@{wsk1596.checked? View.VISIBLE : View.GONE}' />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
-                <!-- wsk4  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVwsk4"
-                    style="@style/cardView">
+            <!-- wsk4  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVwsk4"
+                style="@style/cardView">
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/qtxt_wsk4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_wsk4"
+                            android:text="@string/wsk4" />
 
-                            <TextView
-                                android:id="@+id/qtxt_wsk4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_wsk4"
-                                android:text="@string/wsk4" />
-
-                            <TextView
-                                android:id="@+id/q_wsk4"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_wsk4"
-                                android:layout_alignBottom="@id/qtxt_wsk4"
-                                android:text="@string/Q_wsk4" />
-
-                        </RelativeLayout>
-
-                        <RadioGroup
-                            android:id="@+id/wsk4"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/q_wsk4"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_alignTop="@id/qtxt_wsk4"
+                            android:layout_alignBottom="@id/qtxt_wsk4"
+                            android:text="@string/Q_wsk4" />
 
-                            <RadioButton
-                                android:id="@+id/wsk401"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/wsk401" />
+                    </RelativeLayout>
 
-                            <RadioButton
-                                android:id="@+id/wsk498"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/wsk498" />
-
-                        </RadioGroup>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/wsk401x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:tag="wsk401"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text='@{wsk401.checked ? wsk401x.getText().toString() : ""}'
-                            app:minValue="1"
-                            android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="240"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- wsk5  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVwsk5"
-                    style="@style/cardView">
-
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/wsk4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <RadioButton
+                            android:id="@+id/wsk401"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/wsk401" />
+
+                        <RadioButton
+                            android:id="@+id/wsk498"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/wsk498" />
+
+                    </RadioGroup>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/wsk401x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="###"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:tag="wsk401"
+                        android:text='@{wsk401.checked ? wsk401x.getText().toString() : ""}'
+                        android:visibility='@{wsk401.checked? View.VISIBLE : View.GONE}'
+                        app:maxValue="300"
+                        app:minValue="1"
+                        app:type="range" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- wsk5  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVwsk5"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_wsk5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_wsk5"
+                            android:text="@string/wsk5" />
 
-                            <TextView
-                                android:id="@+id/qtxt_wsk5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_wsk5"
-                                android:text="@string/wsk5" />
+                        <TextView
+                            android:id="@+id/q_wsk5"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_wsk5"
+                            android:layout_alignBottom="@id/qtxt_wsk5"
+                            android:text="@string/Q_wsk5" />
+                    </RelativeLayout>
 
-                            <TextView
-                                android:id="@+id/q_wsk5"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_wsk5"
-                                android:layout_alignBottom="@id/qtxt_wsk5"
-                                android:text="@string/Q_wsk5" />
-                        </RelativeLayout>
+                    <RadioGroup
+                        android:id="@+id/wsk5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                        <RadioGroup
-                            android:id="@+id/wsk5"
+                        <RadioButton
+                            android:id="@+id/wsk501"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk501" />
 
-                            <RadioButton
-                                android:id="@+id/wsk501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk501" />
+                        <RadioButton
+                            android:id="@+id/wsk502"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk502" />
 
-                            <RadioButton
-                                android:id="@+id/wsk502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk502" />
+                        <RadioButton
+                            android:id="@+id/wsk503"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk503" />
 
-                            <RadioButton
-                                android:id="@+id/wsk503"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk503" />
+                        <RadioButton
+                            android:id="@+id/wsk504"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk504" />
 
-                            <RadioButton
-                                android:id="@+id/wsk504"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk504" />
+                        <RadioButton
+                            android:id="@+id/wsk505"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wsk505" />
 
-                            <RadioButton
-                                android:id="@+id/wsk505"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/wsk505" />
+                    </RadioGroup>
 
-                        </RadioGroup>
+                </LinearLayout>
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <!-- wsk6  Radio   -->
@@ -1216,7 +1217,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility='@{wsk1104.checked || wsk1111.checked? View.GONE : View.VISIBLE}'>
+                android:visibility='@{wsk1104.checked || wsk1111.checked ? View.GONE : View.VISIBLE}'>
 
 
                 <!-- wsk12  Radio   -->
@@ -1290,7 +1291,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility='@{wsk1201.checked? View.VISIBLE : View.GONE}'>
+                    android:visibility='@{wsk1201.checked ? View.VISIBLE : View.GONE}'>
 
 
                     <!-- wsk13  Radio   -->

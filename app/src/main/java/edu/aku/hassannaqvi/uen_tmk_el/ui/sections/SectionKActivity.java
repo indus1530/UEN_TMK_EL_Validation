@@ -28,22 +28,17 @@ public class SectionKActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k);
         bi.setCallback(this);
         setupSkip();
+
     }
+
+
     private void setupSkip() {
-
-        bi.wsk3.setOnCheckedChangeListener(((radioGroup, i) -> {
-            if (i == bi.wsk303.getId()) {
-                Clear.clearAllFields(bi.fldGrpk03);
-            }
-        }));
-
+        bi.wsk3.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVwsk15));
         bi.wsk8.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.wsk9cv));
-
         bi.wsk11.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpk11));
-
         bi.wsk12.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpk12));
-
     }
+
 
     public void BtnContinue() {
         if (!formValidation()) return;
@@ -59,6 +54,7 @@ public class SectionKActivity extends AppCompatActivity {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private boolean UpdateDB() {
         /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
