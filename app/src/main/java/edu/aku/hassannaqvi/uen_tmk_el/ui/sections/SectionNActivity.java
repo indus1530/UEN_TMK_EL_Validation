@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,13 +33,43 @@ public class SectionNActivity extends AppCompatActivity {
 
     private void setupSkip() {
 
+        bi.can1.setOnCheckedChangeListener((group, id) -> {
+            Clear.clearAllFields(bi.fldGrpCVcan2);
+            Clear.clearAllFields(bi.fldGrpCVcan3);
+            Clear.clearAllFields(bi.fldGrpCVcan4);
+            Clear.clearAllFields(bi.fldGrpCVcan5);
+            bi.fldGrpCVcan2.setVisibility(View.VISIBLE);
+            bi.fldGrpCVcan3.setVisibility(View.VISIBLE);
+            bi.fldGrpCVcan4.setVisibility(View.VISIBLE);
+            bi.fldGrpCVcan5.setVisibility(View.VISIBLE);
+            if (id == bi.can1.getId()) {
+                bi.fldGrpCVcan2.setVisibility(View.GONE);
+                bi.fldGrpCVcan3.setVisibility(View.GONE);
+                bi.fldGrpCVcan4.setVisibility(View.GONE);
+                bi.fldGrpCVcan5.setVisibility(View.GONE);
+            }
+        });
+
+
         bi.can4.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(bi.fldGrpCVcan5);
+            bi.fldGrpCVcan5.setVisibility(View.VISIBLE);
             if (checkedId == bi.can402.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVcan5);
+                bi.fldGrpCVcan5.setVisibility(View.GONE);
+            }
+        });
+
+
+        bi.can9.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(bi.llcan10t21);
+            bi.llcan10t21.setVisibility(View.GONE);
+            if (checkedId == bi.can901.getId()) {
+                bi.llcan10t21.setVisibility(View.VISIBLE);
             }
         });
 
     }
+
 
     public void BtnContinue() {
         if (!formValidation()) return;

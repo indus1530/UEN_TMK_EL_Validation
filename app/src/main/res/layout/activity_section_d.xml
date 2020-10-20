@@ -388,7 +388,6 @@
                             android:id="@+id/qtxt_mmd5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_mmd5"
                             android:text="@string/mmd5" />
 
                         <TextView
@@ -438,8 +437,11 @@
                             app:maxValue="99"
                             app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- mmd6  Title   -->
                 <androidx.cardview.widget.CardView
@@ -490,6 +492,7 @@
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- mmd7  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -561,6 +564,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- mmd08  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmmd08"
@@ -606,6 +610,7 @@
                             android:layout_margin="10dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- mmd9  Input   -->
                 <androidx.cardview.widget.CardView
