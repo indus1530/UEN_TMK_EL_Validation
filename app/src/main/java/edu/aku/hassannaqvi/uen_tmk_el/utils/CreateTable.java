@@ -4,9 +4,10 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract.UCTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VersionAppContract.VersionAppTable;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillagesContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract.VillageTable;
 
 public final class CreateTable {
 
@@ -67,13 +68,21 @@ public final class CreateTable {
             + UsersTable.COLUMN_FULL_NAME + " TEXT"
             + " );";
 
-    public static final String SQL_CREATE_VILLAGES = "CREATE TABLE " + VillagesContract.TableVillage.TABLE_NAME + "("
-            + VillagesContract.TableVillage._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + VillagesContract.TableVillage.COLUMN_UCNAME + " TEXT,"
-            + VillagesContract.TableVillage.COLUMN_VILLAGE_NAME + " TEXT,"
-            + VillagesContract.TableVillage.COLUMN_SEEM_VID + " TEXT,"
-            + VillagesContract.TableVillage.COLUMN_UCID + " TEXT"
-            + " );";
+
+    public static final String SQL_CREATE_DISTRICTS = "CREATE TABLE " + UCTable.TABLE_NAME + "("
+            + UCTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UCTable.COLUMN_UC_CODE + " TEXT,"
+            + UCTable.COLUMN_UC_NAME + " TEXT,"
+            + UCTable.COLUMN_TALUKA_CODE + " TEXT );";
+
+
+    public static final String SQL_CREATE_VILLAGE_TABLE = "CREATE TABLE " + VillageTable.TABLE_NAME + " (" +
+            VillageTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            VillageTable.COLUMN_VILLAGE_CODE + " TEXT, " +
+            VillageTable.COLUMN_VILLAGE_NAME + " TEXT, " +
+            VillageTable.COLUMN_AREA_CODE + " TEXT, " +
+            VillageTable.COLUMN_CLUSTER_CODE + " TEXT );";
+
 
     public static final String SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionAppTable.TABLE_NAME + " (" +
             VersionAppTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
