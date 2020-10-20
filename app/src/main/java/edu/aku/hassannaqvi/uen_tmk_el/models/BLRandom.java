@@ -6,6 +6,8 @@ import android.database.Cursor;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
 
 public class BLRandom {
@@ -25,7 +27,6 @@ public class BLRandom {
     private String selStructure;
     private String sno;
     private String tabno;
-
     private String rndType;
     private String assignHH;
 
@@ -48,30 +49,23 @@ public class BLRandom {
         this.tabno = tabno;
     }
 
-    public BLRandom Sync(JSONObject jsonObject) {
-        try {
-            this._ID = jsonObject.getString(BLRandomTable.COLUMN_ID);
-
-            this.LUID = jsonObject.getString(BLRandomTable.COLUMN_LUID);
-            this.pCode = jsonObject.getString(BLRandomTable.COLUMN_P_CODE);
-            this.ebCode = jsonObject.getString(BLRandomTable.COLUMN_EB_CODE);
-            this.structure = jsonObject.getString(BLRandomTable.COLUMN_STRUCTURE_NO);
-            this.structure = String.format("%04d", Integer.valueOf(this.structure));
-            this.extension = jsonObject.getString(BLRandomTable.COLUMN_FAMILY_EXT_CODE);
-            this.extension = String.format("%03d", Integer.valueOf(this.extension));
-            this.tabno = jsonObject.getString(BLRandomTable.COLUMN_TAB_NO);
-            this.hh = tabno + "-" + structure + "-" + extension;
-            this.randomDT = jsonObject.getString(BLRandomTable.COLUMN_RANDOMDT);
-            this.hhhead = jsonObject.getString(BLRandomTable.COLUMN_HH_HEAD);
-            this.contact = jsonObject.getString(BLRandomTable.COLUMN_CONTACT);
-            this.selStructure = jsonObject.getString(BLRandomTable.COLUMN_HH_SELECTED_STRUCT);
-            this.sno = jsonObject.getString(BLRandomTable.COLUMN_SNO_HH);
-            return this;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-
+    public BLRandom Sync(JSONObject jsonObject) throws JSONException {
+        this._ID = jsonObject.getString(BLRandomTable.COLUMN_ID);
+        this.LUID = jsonObject.getString(BLRandomTable.COLUMN_LUID);
+        this.pCode = jsonObject.getString(BLRandomTable.COLUMN_P_CODE);
+        this.ebCode = jsonObject.getString(BLRandomTable.COLUMN_EB_CODE);
+        this.structure = jsonObject.getString(BLRandomTable.COLUMN_STRUCTURE_NO);
+        this.structure = String.format(Locale.getDefault(), "%04d", Integer.valueOf(this.structure));
+        this.extension = jsonObject.getString(BLRandomTable.COLUMN_FAMILY_EXT_CODE);
+        this.extension = String.format(Locale.getDefault(), "%03d", Integer.valueOf(this.extension));
+        this.tabno = jsonObject.getString(BLRandomTable.COLUMN_TAB_NO);
+        this.hh = tabno + "-" + structure + "-" + extension;
+        this.randomDT = jsonObject.getString(BLRandomTable.COLUMN_RANDOMDT);
+        this.hhhead = jsonObject.getString(BLRandomTable.COLUMN_HH_HEAD);
+        this.contact = jsonObject.getString(BLRandomTable.COLUMN_CONTACT);
+        this.selStructure = jsonObject.getString(BLRandomTable.COLUMN_HH_SELECTED_STRUCT);
+        this.sno = jsonObject.getString(BLRandomTable.COLUMN_SNO_HH);
+        return this;
     }
 
     public BLRandom hydrate(Cursor cursor) {
@@ -87,7 +81,6 @@ public class BLRandom {
         this.contact = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_CONTACT));
         this.selStructure = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_HH_SELECTED_STRUCT));
         this.sno = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_SNO_HH));
-
         return this;
     }
 

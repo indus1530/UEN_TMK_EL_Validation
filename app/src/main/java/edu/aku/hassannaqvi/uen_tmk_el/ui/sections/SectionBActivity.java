@@ -58,8 +58,6 @@ public class SectionBActivity extends AppCompatActivity {
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -88,7 +86,6 @@ public class SectionBActivity extends AppCompatActivity {
         form.setDevicetagID(MainApp.appInfo.getTagName());
         form.setAppversion(MainApp.appInfo.getAppVersion());
 
-
         form.setElb1(bi.elb1.getText().toString());
 
         form.setElb2(bi.elb201.isChecked() ? "1"
@@ -96,28 +93,13 @@ public class SectionBActivity extends AppCompatActivity {
                 : bi.elb203.isChecked() ? "3"
                 : "-1");
 
-        form.setElb3(bi.elb3.getText().toString());
-
         form.setElb4(bi.elb4.getText().toString());
 
         form.setElb5(bi.elb5.getText().toString());
 
-        form.setElb6(bi.elb601.isChecked() ? "1"
-                : bi.elb602.isChecked() ? "2"
-                : bi.elb603.isChecked() ? "3"
-                : "-1");
+        form.setElb6(bi.elb6.getText().toString());
 
-        form.setElb7(bi.elb701.isChecked() ? "1"
-                : bi.elb702.isChecked() ? "2"
-                : bi.elb703.isChecked() ? "3"
-                : bi.elb704.isChecked() ? "4"
-                : bi.elb705.isChecked() ? "5"
-                : bi.elb706.isChecked() ? "6"
-                : bi.elb707.isChecked() ? "7"
-                : bi.elb708.isChecked() ? "8"
-                : bi.elb709.isChecked() ? "9"
-                : bi.elb710.isChecked() ? "10"
-                : "-1");
+        form.setElb7(bi.elb7.getText().toString());
 
         form.setElb8(bi.elb8.getText().toString());
 
@@ -127,8 +109,6 @@ public class SectionBActivity extends AppCompatActivity {
                 : bi.elb0902.isChecked() ? "2"
                 : bi.elb0903.isChecked() ? "3"
                 : "-1");
-
-        form.setElb10(bi.elb10.getText().toString());
 
         form.setElb11(bi.elb11.getText().toString());
 

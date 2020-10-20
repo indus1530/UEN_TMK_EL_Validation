@@ -104,8 +104,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="##########"
-                        android:maxLength="10"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="10" />
 
                 </LinearLayout>
 
@@ -169,51 +169,6 @@
                             android:text="@string/elb203" />
 
                     </RadioGroup>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- elb3  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVelb3"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_elb3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_elb3"
-                            android:text="@string/elb3" />
-
-                        <TextView
-                            android:id="@+id/q_elb3"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_elb3"
-                            android:layout_alignBottom="@id/qtxt_elb3"
-                            android:text="@string/Q_elb3" />
-
-                    </RelativeLayout>
-
-                    <EditText
-                        android:id="@+id/elb3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/elb3"
-                        android:inputType="number" />
 
                 </LinearLayout>
 
@@ -341,30 +296,11 @@
 
                     </RelativeLayout>
 
-                    <RadioGroup
+                    <EditText
                         android:id="@+id/elb6"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/elb601"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb601" />
-
-                        <RadioButton
-                            android:id="@+id/elb602"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb602" />
-
-                        <RadioButton
-                            android:id="@+id/elb603"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb603" />
-
-                    </RadioGroup>
+                        android:layout_height="wrap_content"
+                        android:hint="@string/elb6" />
 
                 </LinearLayout>
 
@@ -404,72 +340,11 @@
 
                     </RelativeLayout>
 
-                    <RadioGroup
+                    <EditText
                         android:id="@+id/elb7"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/elb701"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb701" />
-
-                        <RadioButton
-                            android:id="@+id/elb702"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb702" />
-
-                        <RadioButton
-                            android:id="@+id/elb703"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb703" />
-
-                        <RadioButton
-                            android:id="@+id/elb704"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb704" />
-
-                        <RadioButton
-                            android:id="@+id/elb705"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb705" />
-
-                        <RadioButton
-                            android:id="@+id/elb706"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb706" />
-
-                        <RadioButton
-                            android:id="@+id/elb707"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb707" />
-
-                        <RadioButton
-                            android:id="@+id/elb708"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb708" />
-
-                        <RadioButton
-                            android:id="@+id/elb709"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb709" />
-
-                        <RadioButton
-                            android:id="@+id/elb710"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/elb710" />
-
-                    </RadioGroup>
+                        android:layout_height="wrap_content"
+                        android:hint="@string/elb7" />
 
                 </LinearLayout>
 
@@ -622,50 +497,6 @@
                             android:text="@string/elb0903" />
 
                     </RadioGroup>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- elb10  Input   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVelb10"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_elb10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_elb10"
-                            android:text="@string/elb10" />
-
-                        <TextView
-                            android:id="@+id/q_elb10"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_elb10"
-                            android:layout_alignBottom="@id/qtxt_elb10"
-                            android:text="@string/Q_elb10" />
-
-                    </RelativeLayout>
-
-                    <EditText
-                        android:id="@+id/elb10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/elb10" />
 
                 </LinearLayout>
 

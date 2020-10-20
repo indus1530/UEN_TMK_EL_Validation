@@ -2,8 +2,6 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -13,15 +11,22 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF03Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
 
 public class SectionF03Activity extends AppCompatActivity {
 
     ActivitySectionF03Binding bi;
+    private Death death;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +51,6 @@ public class SectionF03Activity extends AppCompatActivity {
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -55,11 +58,11 @@ public class SectionF03Activity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
+        long updcount = db.addDeath(death);
+        death.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
+            death.set_UID(death.getDeviceID() + death.get_ID());
+            db.updatesDeathColumn(DeathContract.DeathTable.COLUMN_UID, death.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -70,6 +73,16 @@ public class SectionF03Activity extends AppCompatActivity {
 
 
     private void SaveDraft() throws JSONException {
+
+        death = new Death();
+        death.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+//        death.setUUID(MainApp.form.get_UID());
+        death.setUsername(MainApp.userName);
+        death.setDeviceID(MainApp.appInfo.getDeviceID());
+        death.setDevicetagID(MainApp.appInfo.getTagName());
+        death.setAppversion(MainApp.appInfo.getAppVersion());
+        /*death.setEb1(MainApp.form.getElb1());
+        death.setEb11(MainApp.form.getElb11());*/
 
         JSONObject json = new JSONObject();
 
@@ -99,7 +112,7 @@ public class SectionF03Activity extends AppCompatActivity {
 
         json.put("raf7f96x", bi.raf7f96x.getText().toString());
 
-        MainApp.form.setsF(json.toString());
+        death.setsB(json.toString());
 
     }
 
@@ -111,11 +124,6 @@ public class SectionF03Activity extends AppCompatActivity {
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
-    }
-
-
-    public void showTooltipView(View view) {
-        AppUtilsKt.showTooltip(this, view);
     }
 
 }
