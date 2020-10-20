@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionFBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
@@ -35,10 +37,9 @@ public class SectionFActivity extends AppCompatActivity {
 
 
     private void setupSkip() {
-        bi.raf4.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpCVraf5));
-        //bi.raf6.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf01));
-        //bi.cmf8.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf02));
-        //bi.cmf10.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.fldGrpsecf03));
+        bi.raf6.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.llraf7tf));
+        bi.cmf8.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.llcmf9ti));
+        bi.cmf10.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.llcmf11t12));
     }
 
 
@@ -126,7 +127,7 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.raf7d05.isChecked() ? "5"
                 : "-1");
 
-        json.put("raf7e", bi.raf7e.getText().toString());
+        json.put("raf7e", bi.raf7e.getText().toString().trim().isEmpty() ? "-1" : bi.raf7e.getText().toString());
 
         json.put("raf7f", bi.raf7f01.isChecked() ? "1"
                 : bi.raf7f02.isChecked() ? "2"
@@ -156,11 +157,9 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.cmf9e02.isChecked() ? "2"
                 : "-1");
 
-        json.put("cmf9fd", bi.cmf9fd.getText().toString());
-
-        json.put("cmf9fm", bi.cmf9fm.getText().toString());
-
-        json.put("cmf9fy", bi.cmf9fy.getText().toString());
+        json.put("cmf9fd", bi.cmf9fd.getText().toString().trim().isEmpty() ? "-1" : bi.cmf9fd.getText().toString());
+        json.put("cmf9fm", bi.cmf9fm.getText().toString().trim().isEmpty() ? "-1" : bi.cmf9fm.getText().toString());
+        json.put("cmf9fy", bi.cmf9fy.getText().toString().trim().isEmpty() ? "-1" : bi.cmf9fy.getText().toString());
 
         json.put("cmf9g", bi.cmf9g01.isChecked() ? "1"
                 : bi.cmf9g02.isChecked() ? "2"
@@ -195,8 +194,8 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.cmf1104.isChecked() ? "4"
                 : bi.cmf1196.isChecked() ? "96"
                 : "-1");
-
         json.put("cmf1196x", bi.cmf1196x.getText().toString());
+
         json.put("cmf1201", bi.cmf1201.isChecked() ? "1" : "-1");
 
         json.put("cmf1202", bi.cmf1202.isChecked() ? "2" : "-1");
@@ -209,17 +208,39 @@ public class SectionFActivity extends AppCompatActivity {
 
         json.put("cmf1206", bi.cmf1206.isChecked() ? "6" : "-1");
 
+        MainApp.form.setsF(json.toString());
+
 
     }
 
 
     private boolean formValidation() {
+
+        if (!bi.raf301.getText().toString().trim().isEmpty()
+                && !bi.raf302.getText().toString().trim().isEmpty()
+                && !bi.raf303.getText().toString().trim().isEmpty()
+                && !bi.raf304.getText().toString().trim().isEmpty()) {
+
+            if ((Integer.parseInt(bi.raf301.getText().toString())
+                    + Integer.parseInt(bi.raf302.getText().toString())
+                    + Integer.parseInt(bi.raf303.getText().toString())
+                    + Integer.parseInt(bi.raf304.getText().toString())) > 15) {
+                Toast.makeText(this, "Question RAF3 \nAll Pregnancies Can't be greater than 15!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
+    }
+
+
+    public void showTooltipView(View view) {
+        AppUtilsKt.showTooltip(this, view);
     }
 
 }

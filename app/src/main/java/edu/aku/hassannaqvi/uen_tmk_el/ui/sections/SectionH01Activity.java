@@ -45,9 +45,8 @@ public class SectionH01Activity extends AppCompatActivity {
         });
 
         bi.arih7.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.arih701.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVarih8);
-            }
+            Clear.clearAllFields(bi.llarih9);
         });
 
         bi.arih14.setOnCheckedChangeListener((group, checkedId) -> {
@@ -93,7 +92,7 @@ public class SectionH01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionH02Activity.class));
+            startActivity(new Intent(this, bi.arih301.isChecked() ? SectionH02Activity.class : SectionI01Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }

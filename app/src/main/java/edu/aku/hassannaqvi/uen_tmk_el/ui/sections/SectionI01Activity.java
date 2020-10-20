@@ -2,9 +2,13 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
@@ -15,6 +19,7 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionI01Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionI01Activity extends AppCompatActivity {
@@ -33,9 +38,8 @@ public class SectionI01Activity extends AppCompatActivity {
     private void setupSkip() {
 
         bi.imi1.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.imi101.getId()) {
-                Clear.clearAllFields(bi.fldGrpCVimi2);
-            }
+            Clear.clearAllFields(bi.fldGrpCVimi2);
+            Clear.clearAllFields(bi.llimi3);
         });
 
         /*bi.chg6.setOnCheckedChangeListener((group, checkedId) -> {
@@ -43,6 +47,34 @@ public class SectionI01Activity extends AppCompatActivity {
                 Clear.clearAllFields(bi.fldGrpCVchg7);
             }
         });*/
+
+        radioGroupImp(bi.imi4a, bi.imi4a01, bi.fldGrpCVimi4asrc, bi.fldGrpCVimi4aplc);
+        radioGroupImp(bi.imi4b, bi.imi4b01, bi.fldGrpCVimi4bsrc, bi.fldGrpCVimi4bplc);
+        radioGroupImp(bi.imi4c, bi.imi4c01, bi.fldGrpCVimi4csrc, bi.fldGrpCVimi4cplc);
+        radioGroupImp(bi.imi4d, bi.imi4d01, bi.fldGrpCVimi4dsrc, bi.fldGrpCVimi4dplc);
+        radioGroupImp(bi.imi4e, bi.imi4e01, bi.fldGrpCVimi4esrc, bi.fldGrpCVimi4eplc);
+        radioGroupImp(bi.imi4f, bi.imi4f01, bi.fldGrpCVimi4fsrc, bi.fldGrpCVimi4fplc);
+        radioGroupImp(bi.imi4g, bi.imi4g01, bi.fldGrpCVimi4gsrc, bi.fldGrpCVimi4gplc);
+        radioGroupImp(bi.imi4h, bi.imi4h01, bi.fldGrpCVimi4hsrc, bi.fldGrpCVimi4hplc);
+        radioGroupImp(bi.imi4i, bi.imi4i01, bi.fldGrpCVimi4isrc, bi.fldGrpCVimi4iplc);
+        radioGroupImp(bi.imi4j, bi.imi4j01, bi.fldGrpCVimi4jsrc, bi.fldGrpCVimi4jplc);
+
+    }
+
+
+    public void radioGroupImp(RadioGroup rg, RadioButton rb, CardView cv1, CardView cv2) {
+
+        rg.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(cv1);
+            Clear.clearAllFields(cv2);
+            if (checkedId == rb.getId()) {
+                cv1.setVisibility(View.VISIBLE);
+                cv2.setVisibility(View.VISIBLE);
+            } else {
+                cv1.setVisibility(View.GONE);
+                cv2.setVisibility(View.GONE);
+            }
+        });
 
     }
 
@@ -56,7 +88,7 @@ public class SectionI01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionI02Activity.class));
+            startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }

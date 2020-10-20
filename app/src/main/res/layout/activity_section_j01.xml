@@ -795,9 +795,13 @@
                             android:tag="bfj796"
                             android:text='@{bfj796.checked ? bfj796x.getText().toString() : ""}'
                             android:visibility='@{bfj796.checked? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bfj8  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -829,6 +833,7 @@
                             android:layout_alignTop="@id/qtxt_bfj8"
                             android:layout_alignBottom="@id/qtxt_bfj8"
                             android:text="@string/Q_bfj8" />
+
                     </RelativeLayout>
 
                     <LinearLayout

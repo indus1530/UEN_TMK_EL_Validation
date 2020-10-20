@@ -2,11 +2,16 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -43,6 +48,29 @@ public class SectionI02Activity extends AppCompatActivity {
                 Clear.clearAllFields(bi.fldGrpCVchg7);
             }
         });*/
+
+        radioGroupImp(bi.imi4k, bi.imi4k01, bi.fldGrpCVimi4ksrc, bi.fldGrpCVimi4kplc);
+        radioGroupImp(bi.imi4l, bi.imi4l01, bi.fldGrpCVimi4lsrc, bi.fldGrpCVimi4lplc);
+        radioGroupImp(bi.imi4m, bi.imi4m01, bi.fldGrpCVimi4msrc, bi.fldGrpCVimi4mplc);
+        radioGroupImp(bi.imi4n, bi.imi4n01, bi.fldGrpCVimi4nsrc, bi.fldGrpCVimi4nplc);
+        radioGroupImp(bi.imi4o, bi.imi4o01, bi.fldGrpCVimi4osrc, bi.fldGrpCVimi4oplc);
+
+    }
+
+
+    public void radioGroupImp(RadioGroup rg, RadioButton rb, CardView cv1, CardView cv2) {
+
+        rg.setOnCheckedChangeListener((group, checkedId) -> {
+            Clear.clearAllFields(cv1);
+            Clear.clearAllFields(cv2);
+            if (checkedId == rb.getId()) {
+                cv1.setVisibility(View.VISIBLE);
+                cv2.setVisibility(View.VISIBLE);
+            } else {
+                cv1.setVisibility(View.GONE);
+                cv2.setVisibility(View.GONE);
+            }
+        });
 
     }
 

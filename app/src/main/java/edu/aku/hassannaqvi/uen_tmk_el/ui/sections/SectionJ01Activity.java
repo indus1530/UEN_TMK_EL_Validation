@@ -108,65 +108,42 @@ public class SectionJ01Activity extends AppCompatActivity {
                 : "-1");
 
         json.put("bfj501", bi.bfj501.isChecked() ? "1" : "-1");
-
         json.put("bfj502", bi.bfj502.isChecked() ? "2" : "-1");
-
         json.put("bfj503", bi.bfj503.isChecked() ? "3" : "-1");
-
         json.put("bfj504", bi.bfj504.isChecked() ? "4" : "-1");
-
-        json.put("bfj505",bi.bfj505.isChecked() ? "5" :"-1");
-
-        json.put("bfj506",bi.bfj506.isChecked() ? "6" :"-1");
-
-        json.put("bfj507",bi.bfj507.isChecked() ? "7" :"-1");
-
-        json.put("bfj508",bi.bfj508.isChecked() ? "8" :"-1");
+        json.put("bfj505", bi.bfj505.isChecked() ? "5" : "-1");
+        json.put("bfj506", bi.bfj506.isChecked() ? "6" : "-1");
+        json.put("bfj507", bi.bfj507.isChecked() ? "7" : "-1");
+        json.put("bfj508", bi.bfj508.isChecked() ? "8" : "-1");
 
         json.put("bfj6", bi.bfj601.isChecked() ? "1"
                 : bi.bfj602.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
-        json.put("bfj701",bi.bfj701.isChecked() ? "1" :"-1");
-
-        json.put("bfj702",bi.bfj702.isChecked() ? "2" :"-1");
-
-        json.put("bfj703",bi.bfj703.isChecked() ? "3" :"-1");
-
-        json.put("bfj704",bi.bfj704.isChecked() ? "4" :"-1");
-
-        json.put("bfj705",bi.bfj705.isChecked() ? "5" :"-1");
-
+        json.put("bfj701", bi.bfj701.isChecked() ? "1" : "-1");
+        json.put("bfj702", bi.bfj702.isChecked() ? "2" : "-1");
+        json.put("bfj703", bi.bfj703.isChecked() ? "3" : "-1");
+        json.put("bfj704", bi.bfj704.isChecked() ? "4" : "-1");
+        json.put("bfj705", bi.bfj705.isChecked() ? "5" : "-1");
         json.put("bfj706", bi.bfj706.isChecked() ? "6" : "-1");
-
         json.put("bfj707", bi.bfj707.isChecked() ? "7" : "-1");
-
         json.put("bfj708", bi.bfj708.isChecked() ? "8" : "-1");
-
         json.put("bfj796", bi.bfj796.isChecked() ? "96" : "-1");
-
         json.put("bfj796x", bi.bfj796x.getText().toString());
+
+
         json.put("bfj801", bi.bfj801.isChecked() ? "1" : "-1");
-
         json.put("bfj802", bi.bfj802.isChecked() ? "2" : "-1");
-
         json.put("bfj803", bi.bfj803.isChecked() ? "3" : "-1");
-
         json.put("bfj804", bi.bfj804.isChecked() ? "4" : "-1");
-
         json.put("bfj805", bi.bfj805.isChecked() ? "5" : "-1");
-
         json.put("bfj806", bi.bfj806.isChecked() ? "6" : "-1");
-
         json.put("bfj807", bi.bfj807.isChecked() ? "7" : "-1");
-
         json.put("bfj808", bi.bfj808.isChecked() ? "8" : "-1");
-
         json.put("bfj809", bi.bfj809.isChecked() ? "9" : "-1");
-
         json.put("bfj896", bi.bfj896.isChecked() ? "96" : "-1");
-
         json.put("bfj896x", bi.bfj896x.getText().toString());
+
         json.put("bfj15a", bi.bfj15a01.isChecked() ? "1"
                 : bi.bfj15a02.isChecked() ? "2"
                 : bi.bfj15a98.isChecked() ? "98"

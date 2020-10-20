@@ -163,6 +163,25 @@ public class SectionE02Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        if (!bi.ele1401.getText().toString().trim().isEmpty()
+                && !bi.ele1402.getText().toString().trim().isEmpty()
+                && !bi.ele1403.getText().toString().trim().isEmpty()
+                && !bi.ele1404.getText().toString().trim().isEmpty()
+                && !bi.ele1405.getText().toString().trim().isEmpty()
+                && !bi.ele1406.getText().toString().trim().isEmpty()) {
+
+            if ((Integer.parseInt(bi.ele1401.getText().toString())
+                    + Integer.parseInt(bi.ele1402.getText().toString())
+                    + Integer.parseInt(bi.ele1403.getText().toString())
+                    + Integer.parseInt(bi.ele1404.getText().toString())
+                    + Integer.parseInt(bi.ele1405.getText().toString())
+                    + Integer.parseInt(bi.ele1406.getText().toString())) == 0) {
+                Toast.makeText(this, "Question ELE14 \nAll options Can't be ZERO!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 

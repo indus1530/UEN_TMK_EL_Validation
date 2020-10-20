@@ -130,7 +130,6 @@ public class SectionCActivity extends AppCompatActivity {
 
         form.setsC(json.toString());
 
-
         MainApp.setGPS(this);
     }
 

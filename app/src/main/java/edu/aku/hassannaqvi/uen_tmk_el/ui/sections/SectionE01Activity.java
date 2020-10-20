@@ -108,8 +108,8 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele216.isChecked() ? "16"
                 : bi.ele296.isChecked() ? "96"
                 :  "-1");
-
         json.put("ele296x", bi.ele296x.getText().toString());
+
         json.put("ele3", bi.ele301.isChecked() ? "1"
                 : bi.ele302.isChecked() ? "2"
                 : bi.ele303.isChecked() ? "3"
@@ -131,7 +131,6 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele319.isChecked() ? "19"
                 : bi.ele396.isChecked() ? ""
                 : "-1");
-
         json.put("ele396x", bi.ele396x.getText().toString());
 
         json.put("ele4", bi.ele4.getText().toString());
