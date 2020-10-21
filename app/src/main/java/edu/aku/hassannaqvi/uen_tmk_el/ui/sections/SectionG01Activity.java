@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +16,17 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionG01Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
@@ -30,7 +40,57 @@ public class SectionG01Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g01);
         bi.setCallback(this);
 
+        setupContent();
         setupSkip();
+    }
+
+    private void setupContent() {
+        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+        Pair<List<Integer>, List<String>> respList = FamilyMembersListActivity.mainVModel.getAllRespondent();
+
+        List<String> resp = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(respList.getSecond());
+            }
+        };
+
+        List<String> children = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(childList.getSecond());
+            }
+        };
+
+        bi.chg301.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, children));
+        bi.chg302.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, resp));
+
+        bi.chg301.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.chg301a.setText(childList.getFirst().get(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.chg302.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.chg302a.setText(respList.getFirst().get(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     private void setupSkip() {
@@ -111,7 +171,7 @@ public class SectionG01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionG02Activity.class));
+            startActivity(new Intent(this, bi.chg101.isChecked() ? SectionG02Activity.class : SectionH01Activity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -119,10 +179,9 @@ public class SectionG01Activity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SG, MainApp.form.getsG());
-        return updcount == 1;*/
-        return true;
+        return updcount == 1;
     }
 
 
@@ -137,8 +196,10 @@ public class SectionG01Activity extends AppCompatActivity {
 
         json.put("chg2", bi.chg2.getText().toString());
 
-        json.put("chg301", bi.chg301.getText().toString());
-        json.put("chg302", bi.chg302.getText().toString());
+        json.put("chg301", bi.chg101.isChecked() ? bi.chg301.getSelectedItem().toString() : "-1");
+        json.put("chg301a", bi.chg301a.getText().toString());
+        json.put("chg302", bi.chg101.isChecked() ? bi.chg302.getSelectedItem().toString() : "-1");
+        json.put("chg302a", bi.chg302a.getText().toString());
 
         json.put("chg4", bi.chg401.isChecked() ? "1"
                 : bi.chg402.isChecked() ? "2"

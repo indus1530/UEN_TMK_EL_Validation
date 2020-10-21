@@ -311,7 +311,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
             runOnUiThread(() -> {
                 String[] syncItems;
                 if (booleans[0])
-                    syncItems = new String[]{"User", "VersionApp", "Villages", "FollowUp"};
+                    syncItems = new String[]{"User", "VersionApp", "Villages", "UCs"};
                 else syncItems = new String[]{"BLRandom"};
                 for (String syncItem : syncItems) {
                     if (listActivityCreated) {

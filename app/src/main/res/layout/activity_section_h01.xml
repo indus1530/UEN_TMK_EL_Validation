@@ -348,13 +348,12 @@
                                 android:gravity="center"
                                 android:text="@string/arih501" />
 
-                            <EditText
+                            <Spinner
                                 android:id="@+id/arih501"
+                                style="@style/spinner"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-                                android:hint="@string/arih501" />
+                                android:layout_weight="1" />
 
                         </LinearLayout>
 
@@ -370,16 +369,14 @@
                                 android:gravity="center"
                                 android:text="@string/arih501a" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <EditText
                                 android:id="@+id/arih501a"
                                 android:layout_width="0dp"
                                 android:layout_height="56dp"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:gravity="center"
-                                android:hint="@string/arih501a"
-                                android:inputType="number"
-                                app:mask="##"
-                                app:type="range" />
+                                android:hint="@string/arih501a" />
 
                         </LinearLayout>
 
@@ -395,13 +392,12 @@
                                 android:gravity="center"
                                 android:text="@string/arih502" />
 
-                            <EditText
+                            <Spinner
                                 android:id="@+id/arih502"
+                                style="@style/spinner"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-                                android:hint="@string/arih502" />
+                                android:layout_weight="1" />
 
                         </LinearLayout>
 
@@ -417,16 +413,14 @@
                                 android:gravity="center"
                                 android:text="@string/arih502a" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <EditText
                                 android:id="@+id/arih502a"
                                 android:layout_width="0dp"
                                 android:layout_height="56dp"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:gravity="center"
-                                android:hint="@string/arih502a"
-                                android:inputType="number"
-                                app:mask="##"
-                                app:type="range" />
+                                android:hint="@string/arih502a" />
 
                         </LinearLayout>
 
@@ -1965,7 +1959,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/red_overlay"
                     android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="Cancel"
+                    android:text="Exit Form"
                     android:textColor="@color/white" />
 
                 <Button
@@ -1975,7 +1969,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/green_overlay"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="Save"
+                    android:text="Next Section"
                     android:textColor="@color/white" />
             </LinearLayout>
 

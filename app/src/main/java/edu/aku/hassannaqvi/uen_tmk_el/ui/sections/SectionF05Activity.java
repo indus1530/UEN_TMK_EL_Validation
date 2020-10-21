@@ -8,31 +8,57 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF05Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.C_DEATH_COUNT;
 
 public class SectionF05Activity extends AppCompatActivity {
 
     ActivitySectionF05Binding bi;
+    int count;
+    private Death death;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f05);
         bi.setCallback(this);
-        setupSkip();
+        setupContent();
     }
 
 
-    private void setupSkip() {
+    private void setupContent() {
+        count = Integer.parseInt(getIntent().getStringExtra(C_DEATH_COUNT));
+        setupNextButtonText();
+    }
+
+    private boolean setupNextButtonText() {
+        if (count > 1) {
+            Clear.clearAllFields(bi.GrpName);
+            bi.btnContinue.setText("Next Death");
+            bi.cmf9b.setFocusable(true);
+            return false;
+        } else if (count == 1) {
+            bi.btnContinue.setText("Next Section");
+            return false;
+        }
+        return true;
     }
 
 
@@ -44,8 +70,10 @@ public class SectionF05Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
+            if (setupNextButtonText()) {
+                finish();
+                startActivity(new Intent(this, SectionF06Activity.class));
+            }
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -53,23 +81,32 @@ public class SectionF05Activity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        long updcount = db.addDeath(death);
+        death.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
+            death.set_UID(death.getDeviceID() + death.get_ID());
+            db.updatesFormColumn(MWRAContract.MWRATable.COLUMN_UID, death.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
 
     private void SaveDraft() throws JSONException {
+
+        death = new Death();
+        death.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+        death.setUUID(MainApp.form.get_UID());
+        death.setUsername(MainApp.userName);
+        death.setDeviceID(MainApp.appInfo.getDeviceID());
+        death.setDevicetagID(MainApp.appInfo.getTagName());
+        death.setAppversion(MainApp.appInfo.getAppVersion());
+        death.setElb1(MainApp.form.getElb1());
+        death.setElb11(MainApp.form.getElb11());
+        death.setType("2");
 
         JSONObject json = new JSONObject();
 
@@ -107,8 +144,9 @@ public class SectionF05Activity extends AppCompatActivity {
                 : "-1");
         json.put("cmf9i96x", bi.cmf9i96x.getText().toString());
 
-        MainApp.form.setsF(json.toString());
+        death.setsB(json.toString());
 
+        count++;
     }
 
 

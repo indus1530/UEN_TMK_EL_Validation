@@ -35,11 +35,11 @@ public class SyncAllPhotos extends AsyncTask<Void, Integer, String> {
 
 
     private String TAG;
-    private Context mContext;
-    private String fileName;
+    private final Context mContext;
+    private final String fileName;
     private File filePath;
     private File sdDir;
-    private String appFolder;
+    private final String appFolder;
     private ProgressDialog pd;
 
     public SyncAllPhotos(String fileName, Context c) {
@@ -94,7 +94,7 @@ public class SyncAllPhotos extends AsyncTask<Void, Integer, String> {
 
         int bytesRead, bytesAvailable, bufferSize;
         byte[] buffer;
-        int maxBufferSize = 1 * 1024 * 1024;
+        int maxBufferSize = 1024 * 1024;
 
         String filefield = "image";
 

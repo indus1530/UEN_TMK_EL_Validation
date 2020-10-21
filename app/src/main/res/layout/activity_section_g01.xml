@@ -190,88 +190,6 @@
 
 
                 <!-- chg3  Title   -->
-                <!--<androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVchg3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
-                            <TextView
-                                android:id="@+id/qtxt_chg3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_chg3"
-                                android:text="@string/chg3" />
-
-                            <TextView
-                                android:id="@+id/q_chg3"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_chg3"
-                                android:layout_alignBottom="@id/qtxt_chg3"
-                                android:text="@string/Q_chg3" />
-
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/chg301" />
-
-                            <EditText
-                                android:id="@+id/chg301"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
-                                android:hint="@string/chg301" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/chg302" />
-
-                            <EditText
-                                android:id="@+id/chg302"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
-                                android:hint="@string/chg302" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>-->
-
-
-                <!-- chg3  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVchg3"
                     style="@style/cardView">
@@ -310,11 +228,12 @@
                             android:layout_marginTop="12dp"
                             android:text="@string/chg301" />
 
-                        <EditText
+                        <Spinner
                             android:id="@+id/chg301"
+                            style="@style/spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/chg301" />
+                            android:layout_margin="10dp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -334,11 +253,12 @@
                             android:layout_marginTop="12dp"
                             android:text="@string/chg302" />
 
-                        <EditText
+                        <Spinner
                             android:id="@+id/chg302"
+                            style="@style/spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/chg302" />
+                            android:layout_margin="10dp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -2042,7 +1962,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/red_overlay"
                     android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="Cancel"
+                    android:text="Exit Form"
                     android:textColor="@color/white" />
 
                 <Button
@@ -2052,7 +1972,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/green_overlay"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="Save"
+                    android:text="Next Section"
                     android:textColor="@color/white" />
             </LinearLayout>
 

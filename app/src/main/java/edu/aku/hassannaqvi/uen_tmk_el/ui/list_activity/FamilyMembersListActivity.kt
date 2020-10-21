@@ -21,11 +21,13 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityFamilyMembersListBindi
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionG01Activity
 import edu.aku.hassannaqvi.uen_tmk_el.utils.KishGrid
 import edu.aku.hassannaqvi.uen_tmk_el.utils.openEndActivity
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel
 import kotlinx.android.synthetic.main.activity_family_members_list.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class FamilyMembersListActivity : AppCompatActivity() {
 
@@ -55,8 +57,8 @@ class FamilyMembersListActivity : AppCompatActivity() {
     private fun settingMenu() {
 
         val actionItems = mutableListOf<SpeedDialActionItem>()
-        actionItems.add(SpeedDialActionItem.Builder(R.id.sd_fab, R.drawable.ic_add_person).setLabel("Add Member").create())
-        actionItems.add(SpeedDialActionItem.Builder(R.id.sd_fab, R.drawable.ic_finish).setLabel("Next Section").create())
+        actionItems.add(SpeedDialActionItem.Builder(R.id.sd_main_fab, R.drawable.ic_add_person).setLabel("Add Member").create())
+        actionItems.add(SpeedDialActionItem.Builder(R.id.arih1, R.drawable.ic_finish).setLabel("Next Section").create())
         actionItems.add(SpeedDialActionItem.Builder(R.id.sd_fab, R.drawable.ic_exit).setLabel("Force exit").create())
         bi.fabMenu.addAllActionItems(actionItems)
         bi.fabMenu.setOnActionSelectedListener(SpeedDialView.OnActionSelectedListener { actionItem ->
@@ -69,7 +71,7 @@ class FamilyMembersListActivity : AppCompatActivity() {
 
                     if (memSelectedCounter != serial - 1) return@OnActionSelectedListener false
 
-                    indexKishMWRA = mainVModel.mwraChildU5Lst.value?.get(
+                    /*indexKishMWRA = mainVModel.mwraChildU5Lst.value?.get(
                             kishSelectedMWRA(intent.getIntExtra("sno", 0),
                                     mainVModel.mwraChildU5Lst.value!!.size) - 1)
 
@@ -91,9 +93,19 @@ class FamilyMembersListActivity : AppCompatActivity() {
                     } else {
                         finish()
                         startActivity(Intent(this@FamilyMembersListActivity, EndingActivity::class.java).putExtra("complete", false))
-                    }
+                    }*/
+
+                    var intent = Intent(this@FamilyMembersListActivity, EndingActivity::class.java).putExtra("complete", true)
+                    if (bi.contentScroll.mwra.text.toString().toInt() > 0) {
+                        intent = Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java)
+                    } else if (bi.contentScroll.under5.text.toString().toInt() > 0)
+                        intent = Intent(this@FamilyMembersListActivity, SectionG01Activity::class.java)
+
+                    finish()
+                    startActivity(intent)
+
                 }
-                "Finish" -> {
+                "Force exit" -> {
                     openEndActivity(this)
                     return@OnActionSelectedListener true
                 }

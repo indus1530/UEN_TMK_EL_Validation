@@ -45,14 +45,14 @@ import kotlin.Pair;
 public class MainApp extends Application {
 
     public static final String TAG = "AppMain";
-    //public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
-    public static final String _IP = "http://f38158";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/moringa/api/";// .TEST server;
-    public static final String _SERVER_URL = "sync.php";
+    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    //    public static final String _IP = "http://f38158";// .TEST server
+    public static final String _HOST_URL = MainApp._IP + "/tmk_el/api/";// .TEST server;
+    public static final String _SERVER_URL = "sync_test.php";
     public static final String _SERVER_GET_URL = "getData.php";
-    public static final String _PHOTO_UPLOAD_URL = MainApp._IP + "/moringa/api/uploads.php";
+    public static final String _PHOTO_UPLOAD_URL = MainApp._IP + "/tmk_el/api/uploads.php";
 
-    public static final String _UPDATE_URL = MainApp._IP + "/moringa/app/";
+    public static final String _UPDATE_URL = MainApp._IP + "/tmk_el/app/el/";
     public static final Integer MONTHS_LIMIT = 11;
     public static final Integer DAYS_LIMIT = 29;
     // Location settings

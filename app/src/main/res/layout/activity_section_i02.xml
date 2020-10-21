@@ -1296,7 +1296,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/red_overlay"
                     android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="Cancel"
+                    android:text="Exit Form"
                     android:textColor="@color/white" />
 
                 <Button
@@ -1306,7 +1306,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/green_overlay"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="Save"
+                    android:text="Next Section"
                     android:textColor="@color/white" />
             </LinearLayout>
 

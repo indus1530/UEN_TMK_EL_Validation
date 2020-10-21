@@ -48,5 +48,11 @@ class CONSTANTS {
         //Main
         const val VILLAGES_DATA = "villages_data"
 
+        //MDeath
+        const val DEATH_COUNT = "death_count"
+
+        //CDeath
+        const val C_DEATH_COUNT = "c_death_count"
+
     }
 }

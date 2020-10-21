@@ -2,6 +2,9 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +16,19 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionH01Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import kotlin.Pair;
+
+import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 
 public class SectionH01Activity extends AppCompatActivity {
 
@@ -28,6 +41,55 @@ public class SectionH01Activity extends AppCompatActivity {
         bi.setCallback(this);
 
         setupSkip();
+    }
+
+    private void setupContent() {
+        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+        Pair<List<Integer>, List<String>> respList = FamilyMembersListActivity.mainVModel.getAllRespondent();
+
+        List<String> resp = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(respList.getSecond());
+            }
+        };
+
+        List<String> children = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(childList.getSecond());
+            }
+        };
+
+        bi.arih501.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, children));
+        bi.arih502.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, resp));
+
+        bi.arih501.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.arih501a.setText(childList.getFirst().get(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.arih502.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.arih502a.setText(respList.getFirst().get(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     private void setupSkip() {
@@ -100,19 +162,9 @@ public class SectionH01Activity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SH, MainApp.form.getsH());
+        return updcount == 1;
     }
 
 
@@ -134,9 +186,9 @@ public class SectionH01Activity extends AppCompatActivity {
 
         json.put("arih4", bi.arih4.getText().toString().trim().isEmpty() ? "-1" : bi.arih4.getText().toString());
 
-        json.put("arih501", bi.arih501.getText().toString().trim().isEmpty() ? "-1" : bi.arih501.getText().toString());
+        json.put("arih501", bi.arih102.isChecked() ? "-1" : bi.arih501.getSelectedItem().toString());
         json.put("arih501a", bi.arih501a.getText().toString().trim().isEmpty() ? "-1" : bi.arih501a.getText().toString());
-        json.put("arih502", bi.arih502.getText().toString().trim().isEmpty() ? "-1" : bi.arih502.getText().toString());
+        json.put("arih502", bi.arih102.isChecked() ? "-1" : bi.arih502.getSelectedItem().toString());
         json.put("arih502a", bi.arih502a.getText().toString().trim().isEmpty() ? "-1" : bi.arih502a.getText().toString());
 
         json.put("arih6", bi.arih6.getText().toString());
@@ -262,6 +314,8 @@ public class SectionH01Activity extends AppCompatActivity {
                 : bi.arih2603.isChecked() ? "3"
                 : "-1");
 
+
+        form.setsH(json.toString());
     }
 
 

@@ -15,9 +15,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionE02Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.JSONUtils;
 
 public class SectionE02Activity extends AppCompatActivity {
 
@@ -55,32 +58,22 @@ public class SectionE02Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, SectionE02Activity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SE, MainApp.form.getsE());
+        return updcount == 1;
     }
 
 
@@ -159,6 +152,12 @@ public class SectionE02Activity extends AppCompatActivity {
         json.put("ele2096", bi.ele2096.isChecked() ? "96" : "-1");
         json.put("ele2096x", bi.ele2096x.getText().toString().trim().isEmpty() ? "-1" : bi.ele2096x.getText().toString());
 
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(MainApp.form.getsE()), json);
+            MainApp.form.setsE(String.valueOf(json_merge));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 

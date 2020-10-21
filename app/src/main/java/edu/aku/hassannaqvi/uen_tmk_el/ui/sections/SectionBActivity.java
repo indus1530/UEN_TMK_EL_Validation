@@ -26,7 +26,6 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionBBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -87,7 +86,7 @@ public class SectionBActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionCActivity.class));
         }
     }
 

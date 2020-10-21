@@ -4,37 +4,99 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionF01Activity extends AppCompatActivity {
 
     ActivitySectionF01Binding bi;
-    int raf = 0;
+    ArrayAdapter<String> adapter;
+    List<String> mwraNames;
+    Map<String, FamilyMembersContract> mwraMAP;
+    FamilyMembersContract selectedMWRA;
+    MWRA mwra;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f01);
         bi.setCallback(this);
-        setupSkip();
+        setupContent();
+        setupListeners();
+    }
+
+    private void setupListeners() {
+        bi.f1a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                selectedMWRA = mwraMAP.get(bi.f1a.getSelectedItem().toString());
+                bi.f1b.setText(selectedMWRA.getSerialno());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
 
-    private void setupSkip() {
+    private void setupContent() {
+        List<FamilyMembersContract> mwra = FamilyMembersListActivity.mainVModel.getMwraLst().getValue();
+        mwraMAP = new HashMap<>();
+        mwraNames = new ArrayList<>();
+        mwraNames.add("....");
+        for (FamilyMembersContract item : mwra) {
+            mwraNames.add(item.getName());
+            mwraMAP.put(item.getName(), item);
+        }
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, mwraNames);
+        bi.f1a.setAdapter(adapter);
+
+        setupNextButtonText();
+    }
+
+    private boolean setupNextButtonText() {
+        if (mwraNames.size() > 1) {
+            Clear.clearAllFields(bi.fldGrpSecF01);
+            bi.btnContinue.setText("Next MWRA");
+            bi.f1b.setFocusable(true);
+            return false;
+        } else if (mwraNames.size() == 1) {
+            bi.btnContinue.setText("Next Section");
+            return false;
+        }
+        return true;
     }
 
 
@@ -46,8 +108,10 @@ public class SectionF01Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
+            if (setupNextButtonText()) {
+                finish();
+                startActivity(new Intent(this, SectionF02Activity.class));
+            }
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -56,26 +120,36 @@ public class SectionF01Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        long updcount = db.addMWRA(mwra);
+        mwra.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
+            mwra.set_UID(mwra.getDeviceID() + mwra.get_ID());
+            db.updatesFormColumn(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
 
     private void SaveDraft() throws JSONException {
 
+        mwra = new MWRA();
+        mwra.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+        mwra.setUsername(MainApp.userName);
+        mwra.setDeviceID(MainApp.appInfo.getDeviceID());
+        mwra.setDevicetagID(MainApp.appInfo.getTagName());
+        mwra.setAppversion(MainApp.appInfo.getAppVersion());
+        mwra.setUUID(MainApp.form.get_UID());
+        mwra.setElb1(MainApp.form.getElb1());
+        mwra.setElb11(MainApp.form.getElb11());
+
         JSONObject json = new JSONObject();
 
-        json.put("f1a", bi.f1a.getText().toString());
+        json.put("f1a", bi.f1a.getSelectedItem().toString());
+        json.put("f1a_fmuid", selectedMWRA.getUid());
         json.put("f1b", bi.f1b.getText().toString());
 
         json.put("raf1", bi.raf101.isChecked() ? "1"
@@ -96,8 +170,10 @@ public class SectionF01Activity extends AppCompatActivity {
 
         json.put("raf5", bi.raf5.getText().toString());
 
-        MainApp.form.setsF(json.toString());
+        mwra.setsB(json.toString());
 
+        mwraNames.remove(bi.f1a.getSelectedItem().toString());
+        adapter.notifyDataSetChanged();
     }
 
 

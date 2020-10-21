@@ -96,8 +96,7 @@ class MainVModel : ViewModel() {
     }
 
     fun getAllUnder5(): Pair<List<Int>?, List<String>?> {
-        val family = familyMemLst.value?.filter { it -> (it.age.toInt() < 5) }
-        return Pair(family?.map { it.serialno.toInt() }, family?.map { it.name })
+        return Pair(childLstU5.value?.map { it.serialno.toInt() }, childLstU5.value?.map { it.name })
     }
 
     fun getAllRespondent(): Pair<List<Int>?, List<String>?> {

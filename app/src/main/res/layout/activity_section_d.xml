@@ -368,7 +368,9 @@
 
                         <TextView
                             android:id="@+id/a202Name"
-                            style="@style/textViewIntro" />
+                            style="@style/textViewIntro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
 
@@ -402,8 +404,8 @@
                             android:hint="@string/days"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:maxValue="29"
-                            app:minValue="0"
+                            app:maxValue="31"
+                            app:minValue="1"
                             app:type="range" />
 
                         <TextView
@@ -418,8 +420,8 @@
                             android:hint="@string/month"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:maxValue="11"
-                            app:minValue="0"
+                            app:maxValue="12"
+                            app:minValue="1"
                             app:type="range" />
 
                         <TextView
@@ -434,8 +436,8 @@
                             android:hint="@string/year"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:maxValue="99"
-                            app:minValue="0"
+                            app:maxValue="2020"
+                            app:minValue="1930"
                             app:type="range" />
 
                     </LinearLayout>
@@ -472,7 +474,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="99"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                         <TextView
@@ -597,11 +599,6 @@
                                 android:text="@string/Q_mmd08" />
                         </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mmd0801" />
-
                         <Spinner
                             android:id="@+id/mmd0801"
                             style="@style/spinner"
@@ -643,11 +640,6 @@
                                 android:layout_alignBottom="@id/qtxt_mmd9"
                                 android:text="@string/Q_mmd9" />
                         </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mmd901" />
 
                         <Spinner
                             android:id="@+id/mmd901"
@@ -1082,7 +1074,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/red_overlay"
                     android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="Cancel"
+                    android:text="Exit Form"
                     android:textColor="@color/white" />
 
                 <Button
@@ -1092,7 +1084,7 @@
                     android:layout_marginStart="12dp"
                     android:background="@color/green_overlay"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="Save"
+                    android:text="Next Section"
                     android:textColor="@color/white" />
 
             </LinearLayout>

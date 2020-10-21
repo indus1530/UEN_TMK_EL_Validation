@@ -12,16 +12,16 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionE01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
 public class SectionE01Activity extends AppCompatActivity {
 
     ActivitySectionE01Binding bi;
-    private List<String> usersFullName, ucNames, ucCodes, villageNames, villageCodes;
-//    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,32 +41,22 @@ public class SectionE01Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, SectionE02Activity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, SectionE02Activity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-
-       /* DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SE, MainApp.form.getsE());
+        return updcount == 1;
     }
 
 
@@ -87,7 +77,7 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele111.isChecked() ? "11"
                 : bi.ele112.isChecked() ? "12"
                 : bi.ele196.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("ele196x", bi.ele196x.getText().toString());
         json.put("ele2", bi.ele201.isChecked() ? "1"
@@ -107,7 +97,7 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele215.isChecked() ? "15"
                 : bi.ele216.isChecked() ? "16"
                 : bi.ele296.isChecked() ? "96"
-                :  "-1");
+                : "-1");
         json.put("ele296x", bi.ele296x.getText().toString());
 
         json.put("ele3", bi.ele301.isChecked() ? "1"
@@ -147,7 +137,7 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele603.isChecked() ? "3"
                 : bi.ele604.isChecked() ? "4"
                 : bi.ele696.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("ele696x", bi.ele696x.getText().toString());
         json.put("ele7", bi.ele701.isChecked() ? "1"
@@ -163,68 +153,68 @@ public class SectionE01Activity extends AppCompatActivity {
                 : bi.ele711.isChecked() ? "11"
                 : bi.ele712.isChecked() ? "12"
                 : bi.ele796.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("ele796x", bi.ele796x.getText().toString());
         json.put("ele8a", bi.ele8a01.isChecked() ? "1"
                 : bi.ele8a02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8b", bi.ele8b01.isChecked() ? "1"
                 : bi.ele8b02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8c", bi.ele8c01.isChecked() ? "1"
                 : bi.ele8c02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8d", bi.ele8d01.isChecked() ? "1"
                 : bi.ele8d02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8e", bi.ele8e01.isChecked() ? "1"
                 : bi.ele8e02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8f", bi.ele8f01.isChecked() ? "1"
                 : bi.ele8f02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8g", bi.ele8g01.isChecked() ? "1"
                 : bi.ele8g02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8h", bi.ele8h01.isChecked() ? "1"
                 : bi.ele8h02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8i", bi.ele8i01.isChecked() ? "1"
                 : bi.ele8i02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8j", bi.ele8j01.isChecked() ? "1"
                 : bi.ele8j02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8k", bi.ele8k01.isChecked() ? "1"
                 : bi.ele8k02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8l", bi.ele8l01.isChecked() ? "1"
                 : bi.ele8l02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8m", bi.ele8m01.isChecked() ? "1"
                 : bi.ele8m02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8n", bi.ele8n01.isChecked() ? "1"
                 : bi.ele8n02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8o", bi.ele8o01.isChecked() ? "1"
                 : bi.ele8o02.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("ele8p", bi.ele8p01.isChecked() ? "1"
                 : bi.ele8p02.isChecked() ? "2"
@@ -289,6 +279,8 @@ public class SectionE01Activity extends AppCompatActivity {
         json.put("ele10", bi.ele1001.isChecked() ? "1"
                 : bi.ele1002.isChecked() ? "2"
                 : "-1");
+
+        MainApp.form.setsE(json.toString());
 
     }
 
