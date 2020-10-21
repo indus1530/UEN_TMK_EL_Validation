@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS
 import edu.aku.hassannaqvi.uen_tmk_el.R
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract
 import kotlinx.coroutines.*
 
 /**
@@ -14,18 +15,15 @@ import kotlinx.coroutines.*
 class SplashscreenActivity : Activity() {
     private val activityScope = CoroutineScope(Dispatchers.Main)
 
-/*    init {
-        provinces = mutableListOf("....")
-        districtsMap = mutableMapOf()
-    }*/
+    init {
+        ucs = mutableListOf("....")
+        ucsMap = mutableMapOf()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
         activityScope.launch {
-            /*val def = withContext(Dispatchers.Main) { getEnumData(this@SplashscreenActivity) }
-            if (def.isNotEmpty())
-                withContext(Dispatchers.Main) { setProvinceDistricts(this@SplashscreenActivity, def) }*/
             delay(SPLASH_TIME_OUT.toLong())
             finish()
             startActivity(Intent(this@SplashscreenActivity, LoginActivity::class.java).putExtra(CONSTANTS.LOGIN_SPLASH_FLAG, true))
@@ -34,8 +32,8 @@ class SplashscreenActivity : Activity() {
 
     companion object {
         private const val SPLASH_TIME_OUT = 500
-/*        lateinit var provinces: MutableList<String>
-        lateinit var districtsMap: MutableMap<String, Pair<String, EnumBlockContract>>*/
+        lateinit var ucs: MutableList<String>
+        lateinit var ucsMap: MutableMap<String, UCContract>
     }
 
     override fun onPause() {

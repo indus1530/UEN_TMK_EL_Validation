@@ -20,10 +20,11 @@ import java.net.URL;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.adapter.SyncListAdapter;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VersionAppContract;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillagesContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.models.SyncModel;
@@ -38,8 +39,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
     private SyncListAdapter adapter;
     private List<SyncModel> list;
     private int position;
-    private String TAG = "", syncClass;
-    private Context mContext;
+    private final String syncClass;
+    private final Context mContext;
+    private String TAG = "";
     private ProgressDialog pd;
 
     public GetAllData(Context context, String syncClass) {
@@ -56,6 +58,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
         TAG = "Get" + syncClass;
         switch (syncClass) {
             case "User":
+            case "BLRandom":
                 position = 0;
                 break;
             case "VersionApp":
@@ -64,7 +67,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "Villages":
                 position = 2;
                 break;
-            case "FollowUp":
+            case "UCs":
                 position = 3;
                 break;
         }
@@ -90,6 +93,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
         super.onProgressUpdate(values);
         switch (values[0]) {
             case "User":
+            case "BLRandom":
                 position = 0;
                 break;
             case "VersionApp":
@@ -98,7 +102,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "Villages":
                 position = 2;
                 break;
-            case "FollowUp":
+            case "UCs":
                 position = 3;
                 break;
         }
@@ -128,13 +132,18 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     break;
                 case "Villages":
                     url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
-                    tableName = VillagesContract.TableVillage.TABLE_NAME;
+                    tableName = VillageContract.VillageTable.TABLE_NAME;
                     position = 2;
                     break;
-                case "FollowUp":
+                case "UCs":
                     url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
-                    tableName = FollowUpContract.TableFollowUp.TABLE_NAME;
+                    tableName = UCContract.UCTable.TABLE_NAME;
                     position = 3;
+                    break;
+                case "BLRandom":
+                    url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
+                    tableName = BLRandomContract.BLRandomTable.TABLE_NAME;
+                    position = 0;
                     break;
             }
 
@@ -145,7 +154,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
             switch (syncClass) {
                 case "User":
                 case "Villages":
-                case "FollowUp":
+                case "UCs":
                     urlConnection.setRequestMethod("POST");
                     urlConnection.setDoOutput(true);
                     urlConnection.setDoInput(true);
@@ -166,6 +175,30 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     wr.writeBytes(json.toString());
                     wr.flush();
                     wr.close();
+                    break;
+
+                case "BLRandom":
+                    urlConnection.setRequestMethod("POST");
+                    urlConnection.setDoOutput(true);
+                    urlConnection.setDoInput(true);
+                    urlConnection.setRequestProperty("Content-Type", "application/json");
+                    urlConnection.setRequestProperty("charset", "utf-8");
+                    urlConnection.setUseCaches(false);
+
+                    // Starts the query
+                    urlConnection.connect();
+                    DataOutputStream wr1 = new DataOutputStream(urlConnection.getOutputStream());
+                    JSONObject json1 = new JSONObject();
+                    try {
+                        json1.put("table", tableName);
+                        json1.put("uc_code", MainApp.UC_ID);
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
+                    Log.d(TAG, "downloadUrl: " + json1.toString());
+                    wr1.writeBytes(json1.toString());
+                    wr1.flush();
+                    wr1.close();
                     break;
             }
 
@@ -221,13 +254,18 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             break;
                         case "Villages":
                             jsonArray = new JSONArray(result);
-                            insertCount = db.syncVillage(jsonArray);
+                            insertCount = db.syncVillages(jsonArray);
                             position = 2;
                             break;
-                        case "FollowUp":
+                        case "UCs":
                             jsonArray = new JSONArray(result);
-                            insertCount = db.syncFollowUp(jsonArray);
+                            insertCount = db.syncUCs(jsonArray);
                             position = 3;
+                            break;
+                        case "BLRandom":
+                            jsonArray = new JSONArray(result);
+                            insertCount = db.syncBLRandom(jsonArray);
+                            position = 0;
                             break;
                     }
 

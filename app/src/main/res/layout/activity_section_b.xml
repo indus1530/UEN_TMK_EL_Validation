@@ -102,8 +102,8 @@
                         android:id="@+id/elb1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:gravity="center"
-                        android:hint="##########"
                         android:inputType="number"
                         android:maxLength="10" />
 
@@ -212,7 +212,9 @@
                         android:id="@+id/elb4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/elb4" />
+                        android:enabled="false"
+                        android:hint="@string/elb4"
+                        android:text="Sindh" />
 
                 </LinearLayout>
 
@@ -256,7 +258,9 @@
                         android:id="@+id/elb5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/elb5" />
+                        android:enabled="false"
+                        android:hint="@string/elb5"
+                        android:text="Tando Mohammad Khan" />
 
                 </LinearLayout>
 
@@ -300,6 +304,7 @@
                         android:id="@+id/elb6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:hint="@string/elb6" />
 
                 </LinearLayout>
@@ -344,6 +349,7 @@
                         android:id="@+id/elb7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:hint="@string/elb7" />
 
                 </LinearLayout>
@@ -388,6 +394,7 @@
                         android:id="@+id/elb8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:hint="@string/elb8" />
 
                 </LinearLayout>
@@ -432,6 +439,7 @@
                         android:id="@+id/elb8a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:hint="@string/elb8a"
                         android:inputType="number" />
 
@@ -536,94 +544,119 @@
 
                     </RelativeLayout>
 
-                    <EditText
-                        android:id="@+id/elb11"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/elb11"
-                        android:inputType="number" />
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/elb11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:hint="@string/elb11"
+                            android:inputType="number"
+                            android:onTextChanged="@{callback::elb11OnTextChanged}" />
+
+                        <ImageButton
+                            android:id="@+id/open_form_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="false"
+                            android:onClick="@{callback::CheckHH}"
+                            android:src="@drawable/circle_search" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:id="@+id/fldGrpElb11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <!-- elb12  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVelb12"
-                style="@style/cardView">
+                <!-- elb12  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVelb12"
+                    style="@style/cardView">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_elb12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_elb12"
+                                android:text="@string/elb12" />
+
+                            <TextView
+                                android:id="@+id/q_elb12"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_elb12"
+                                android:layout_alignBottom="@id/qtxt_elb12"
+                                android:text="@string/Q_elb12" />
+
+                        </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/elb12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/elb12"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_gravity="end"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:layout_marginStart="12dp"
+                        android:background="@color/red_overlay"
+                        android:onClick="@{() -> callback.BtnEnd()}"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
 
-                        <TextView
-                            android:id="@+id/qtxt_elb12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_elb12"
-                            android:text="@string/elb12" />
-
-                        <TextView
-                            android:id="@+id/q_elb12"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_elb12"
-                            android:layout_alignBottom="@id/qtxt_elb12"
-                            android:text="@string/Q_elb12" />
-
-                    </RelativeLayout>
-
-                    <EditText
-                        android:id="@+id/elb12"
-                        android:layout_width="match_parent"
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/elb12"
-                        android:inputType="number" />
+                        android:layout_marginStart="12dp"
+                        android:background="@color/green_overlay"
+                        android:onClick="@{() -> callback.BtnContinue()}"
+                        android:text="Save"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
-
-            </androidx.cardview.widget.CardView>
-
-
-            <!--EndButton LinearLayout-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="24dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_End"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:background="@color/red_overlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="Cancel"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/btn_Continue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:background="@color/green_overlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="Save"
-                    android:textColor="@color/white" />
-
             </LinearLayout>
-            <!--EndButton LinearLayout-->
 
 
         </LinearLayout>

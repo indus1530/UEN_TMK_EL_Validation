@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
@@ -927,6 +928,93 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return alluser;
+    }
+
+    //Get All UC
+    public List<UCContract> getUCs() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                UCTable._ID,
+                UCTable.COLUMN_UC_CODE,
+                UCTable.COLUMN_UC_NAME,
+                UCTable.COLUMN_TALUKA_CODE
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = UCTable._ID + " ASC";
+        List<UCContract> allEB = new ArrayList<>();
+        try {
+            c = db.query(
+                    UCTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB.add(new UCContract().Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    //Get All EnumBlock
+    public List<VillageContract> getEnumBlock(String uc_id) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VillageTable._ID,
+                VillageTable.COLUMN_VILLAGE_CODE,
+                VillageTable.COLUMN_VILLAGE_NAME,
+                VillageTable.COLUMN_AREA_CODE,
+                VillageTable.COLUMN_CLUSTER_CODE,
+        };
+
+        String whereClause = VillageTable.COLUMN_AREA_CODE + " LIKE ? ";
+        String[] whereArgs = {"" + uc_id + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = VillageTable._ID + " ASC";
+        List<VillageContract> allEB = new ArrayList<>();
+        try {
+            c = db.query(
+                    VillageTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB.add(new VillageContract().HydrateEnum(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
     }
 
 

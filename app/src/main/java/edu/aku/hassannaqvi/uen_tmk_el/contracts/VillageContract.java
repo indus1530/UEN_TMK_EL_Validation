@@ -7,7 +7,9 @@ import android.provider.BaseColumns;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class VillageContract {
+import java.io.Serializable;
+
+public class VillageContract implements Serializable {
 
     private static final String TAG = "Village_CONTRACT";
     String village_code;
