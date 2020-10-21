@@ -69,7 +69,7 @@ public class SectionG01Activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
-                bi.chg301a.setText(childList.getFirst().get(i));
+                bi.chg301a.setText(childList.getFirst().get(i - 1));
             }
 
             @Override
@@ -82,7 +82,7 @@ public class SectionG01Activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
-                bi.chg302a.setText(respList.getFirst().get(i));
+                bi.chg302a.setText(respList.getFirst().get(i - 1));
             }
 
             @Override

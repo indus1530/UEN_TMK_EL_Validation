@@ -337,7 +337,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(MemberTable.COLUMN_ID, fmc.get_id());
         values.put(MemberTable.COLUMN_UID, fmc.getUid());
         values.put(MemberTable.COLUMN_UUID, fmc.getUuid());
         values.put(MemberTable.COLUMN_LUID, fmc.getLuid());
@@ -371,7 +370,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(DeathContract.DeathTable.COLUMN_ID, death.get_ID());
         values.put(DeathContract.DeathTable.COLUMN_UID, death.get_UID());
         values.put(DeathContract.DeathTable.COLUMN_UUID, death.getUUID());
         values.put(DeathContract.DeathTable.COLUMN_ELB1, death.getElb1());
@@ -401,7 +399,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(MWRAContract.MWRATable.COLUMN_ID, mwra.get_ID());
         values.put(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
         values.put(MWRAContract.MWRATable.COLUMN_UUID, mwra.getUUID());
         values.put(MWRAContract.MWRATable.COLUMN_ELB1, mwra.getElb1());

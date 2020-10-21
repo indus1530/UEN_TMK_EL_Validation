@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF03Binding;
@@ -85,7 +85,7 @@ public class SectionF03Activity extends AppCompatActivity {
         death.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
             death.set_UID(death.getDeviceID() + death.get_ID());
-            db.updatesFormColumn(MWRAContract.MWRATable.COLUMN_UID, death.get_UID());
+            db.updatesDeathColumn(DeathContract.DeathTable.COLUMN_UID, death.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -137,7 +137,7 @@ public class SectionF03Activity extends AppCompatActivity {
 
         death.setsB(json.toString());
 
-        count++;
+        count--;
 
     }
 

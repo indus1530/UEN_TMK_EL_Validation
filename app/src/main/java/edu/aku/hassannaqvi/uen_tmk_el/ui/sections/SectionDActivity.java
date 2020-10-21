@@ -138,7 +138,7 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
             db.updatesFamilyMemberColumn(FamilyMembersContract.MemberTable.COLUMN_UID, fmc.getUid(), fmc.get_id());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
         return false;
     }

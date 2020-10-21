@@ -58,7 +58,6 @@
                         android:id="@+id/raf7a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="false"
                         android:hint="@string/raf7a"
                         android:inputType="number"
                         android:maxLength="2"

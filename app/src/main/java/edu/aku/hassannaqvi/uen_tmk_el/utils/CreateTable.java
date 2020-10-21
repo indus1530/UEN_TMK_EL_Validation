@@ -151,9 +151,9 @@ public final class CreateTable {
             + DeathContract.DeathTable.COLUMN_SC + " TEXT,"
             + DeathContract.DeathTable.COLUMN_SB + " TEXT,"
             + DeathContract.DeathTable.COLUMN_DEVICEID + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_DEVICETAGID + " TEXT );"
-            + DeathContract.DeathTable.COLUMN_SYNCED + " TEXT );"
-            + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT );"
+            + DeathContract.DeathTable.COLUMN_DEVICETAGID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_SYNCED + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT,"
             + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
 
     public static final String SQL_CREATE_MWRA = "CREATE TABLE " + MWRAContract.MWRATable.TABLE_NAME + "("
@@ -170,9 +170,9 @@ public final class CreateTable {
             + MWRAContract.MWRATable.COLUMN_SC + " TEXT,"
             + MWRAContract.MWRATable.COLUMN_SB + " TEXT,"
             + MWRAContract.MWRATable.COLUMN_DEVICEID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_DEVICETAGID + " TEXT );"
-            + MWRAContract.MWRATable.COLUMN_SYNCED + " TEXT );"
-            + MWRAContract.MWRATable.COLUMN_SYNCED_DATE + " TEXT );"
+            + MWRAContract.MWRATable.COLUMN_DEVICETAGID + " TEXT, "
+            + MWRAContract.MWRATable.COLUMN_SYNCED + " TEXT, "
+            + MWRAContract.MWRATable.COLUMN_SYNCED_DATE + " TEXT, "
             + MWRAContract.MWRATable.COLUMN_APPVERSION + " TEXT );";
 
 }

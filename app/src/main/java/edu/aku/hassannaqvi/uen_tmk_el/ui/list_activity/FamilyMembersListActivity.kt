@@ -18,10 +18,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.*
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityFamilyMembersListBinding
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity
-import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionG01Activity
 import edu.aku.hassannaqvi.uen_tmk_el.utils.KishGrid
 import edu.aku.hassannaqvi.uen_tmk_el.utils.openEndActivity
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel
@@ -95,11 +93,11 @@ class FamilyMembersListActivity : AppCompatActivity() {
                         startActivity(Intent(this@FamilyMembersListActivity, EndingActivity::class.java).putExtra("complete", false))
                     }*/
 
-                    var intent = Intent(this@FamilyMembersListActivity, EndingActivity::class.java).putExtra("complete", true)
-                    if (bi.contentScroll.mwra.text.toString().toInt() > 0) {
+                    var intent = Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java)
+                    /*if (bi.contentScroll.mwra.text.toString().toInt() > 0) {
                         intent = Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java)
                     } else if (bi.contentScroll.under5.text.toString().toInt() > 0)
-                        intent = Intent(this@FamilyMembersListActivity, SectionG01Activity::class.java)
+                        intent = Intent(this@FamilyMembersListActivity, SectionG01Activity::class.java)*/
 
                     finish()
                     startActivity(intent)

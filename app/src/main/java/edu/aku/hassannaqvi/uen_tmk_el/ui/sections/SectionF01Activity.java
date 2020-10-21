@@ -87,12 +87,12 @@ public class SectionF01Activity extends AppCompatActivity {
     }
 
     private boolean setupNextButtonText() {
-        if (mwraNames.size() > 1) {
+        if (mwraNames.size() > 2) {
             Clear.clearAllFields(bi.fldGrpSecF01);
             bi.btnContinue.setText("Next MWRA");
             bi.f1b.setFocusable(true);
             return false;
-        } else if (mwraNames.size() == 1) {
+        } else if (mwraNames.size() == 2) {
             bi.btnContinue.setText("Next Section");
             return false;
         }
@@ -125,7 +125,7 @@ public class SectionF01Activity extends AppCompatActivity {
         mwra.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
             mwra.set_UID(mwra.getDeviceID() + mwra.get_ID());
-            db.updatesFormColumn(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
+            db.updatesMWRAColumn(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -145,11 +145,11 @@ public class SectionF01Activity extends AppCompatActivity {
         mwra.setUUID(MainApp.form.get_UID());
         mwra.setElb1(MainApp.form.getElb1());
         mwra.setElb11(MainApp.form.getElb11());
+        mwra.setFmuid(selectedMWRA.getUid());
 
         JSONObject json = new JSONObject();
 
         json.put("f1a", bi.f1a.getSelectedItem().toString());
-        json.put("f1a_fmuid", selectedMWRA.getUid());
         json.put("f1b", bi.f1b.getText().toString());
 
         json.put("raf1", bi.raf101.isChecked() ? "1"
