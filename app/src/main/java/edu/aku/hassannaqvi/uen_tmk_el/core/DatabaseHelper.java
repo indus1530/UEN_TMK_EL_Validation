@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract.MemberTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract.UCTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract;
@@ -35,6 +36,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.models.FollowUp;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Users;
 import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 
@@ -46,10 +48,11 @@ import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_DISTRI
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FAMILY_MEMBERS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FOLLOWUP;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_MWRA;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VILLAGE_TABLE;
-
+ImmunizationContract
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -74,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FOLLOWUP);
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(SQL_CREATE_DEATH);
-        //    db.execSQL(SQL_CREATE_MWRA);
+        db.execSQL(SQL_CREATE_MWRA);
         //    db.execSQL(SQL_CREATE_IMMUNIZATION);
     }
 
@@ -387,6 +390,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 DeathContract.DeathTable.TABLE_NAME,
                 DeathContract.DeathTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addMWRA(MWRA mwra) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(MWRAContract.MWRATable.COLUMN_ID, mwra.get_ID());
+        values.put(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
+        values.put(MWRAContract.MWRATable.COLUMN_UUID, mwra.getUUID());
+        values.put(MWRAContract.MWRATable.COLUMN_ELB1, mwra.getElb1());
+        values.put(MWRAContract.MWRATable.COLUMN_ELB11, mwra.getElb11());
+        values.put(MWRAContract.MWRATable.COLUMN_FMUID, mwra.getFmuid());
+        values.put(MWRAContract.MWRATable.COLUMN_MUID, mwra.getMuid());
+        values.put(MWRAContract.MWRATable.COLUMN_USERNAME, mwra.getUsername());
+        values.put(MWRAContract.MWRATable.COLUMN_SYSDATE, mwra.getSysdate());
+        values.put(MWRAContract.MWRATable.COLUMN_TYPE, mwra.getType());
+        values.put(MWRAContract.MWRATable.COLUMN_SC, mwra.getsC());
+        values.put(MWRAContract.MWRATable.COLUMN_SB, mwra.getsB());
+        values.put(MWRAContract.MWRATable.COLUMN_DEVICETAGID, mwra.getDevicetagID());
+        values.put(MWRAContract.MWRATable.COLUMN_DEVICEID, mwra.getDeviceID());
+        values.put(MWRAContract.MWRATable.COLUMN_APPVERSION, mwra.getAppversion());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                MWRAContract.MWRATable.TABLE_NAME,
+                MWRAContract.MWRATable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -1033,6 +1068,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDeaths;
     }
 
+    public Collection<MWRA> getUnsyncedMWRA(String mwratype) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                MWRAContract.MWRATable._ID,
+                MWRAContract.MWRATable.COLUMN_UID,
+                MWRAContract.MWRATable.COLUMN_UUID,
+                MWRAContract.MWRATable.COLUMN_ELB1,
+                MWRAContract.MWRATable.COLUMN_ELB11,
+                MWRAContract.MWRATable.COLUMN_FMUID,
+                MWRAContract.MWRATable.COLUMN_MUID,
+                MWRAContract.MWRATable.COLUMN_USERNAME,
+                MWRAContract.MWRATable.COLUMN_SYSDATE,
+                MWRAContract.MWRATable.COLUMN_DEVICEID,
+                MWRAContract.MWRATable.COLUMN_DEVICETAGID,
+                MWRAContract.MWRATable.COLUMN_APPVERSION,
+                MWRAContract.MWRATable.COLUMN_TYPE,
+                MWRAContract.MWRATable.COLUMN_SC,
+                MWRAContract.MWRATable.COLUMN_SB,
+        };
+
+        String whereClause;
+        String[] whereArgs;
+
+        whereClause = MWRAContract.MWRATable.COLUMN_SYNCED + " is null OR " + MWRAContract.MWRATable.COLUMN_SYNCED + " == ''";
+        whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+        String orderBy = MWRAContract.MWRATable.COLUMN_ID + " ASC";
+
+        Collection<MWRA> allMWRAs = new ArrayList<>();
+        try {
+            c = db.query(
+                    MWRAContract.MWRATable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedmwras: " + c.getCount());
+                MWRA mwra = new MWRA();
+                allMWRAs.add(mwra.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allMWRAs;
+    }
+
     public Collection<FamilyMembersContract> getUnsyncedFamilyMembers() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1235,18 +1328,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesDeathColumn(String column, String value, DeathContract.DeathTable death) {
+    public int updatesDeathColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = DeathContract.DeathTable._ID + " =? AND "
-                + DeathContract.DeathTable.COLUMN_SYNCED + " =? AND "
-                + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " =? ";
-        String[] selectionArgs = {death.getSynced(), death.getSync_date()};
+        String selection = DeathContract.DeathTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(value)};
 
         return db.update(DeathContract.DeathTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesMWRAColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = MWRAContract.MWRATable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(value)};
+
+        return db.update(MWRAContract.MWRATable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1476,6 +1582,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedDeath(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(DeathContract.DeathTable.COLUMN_SYNCED, true);
+        values.put(DeathContract.DeathTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = DeathContract.DeathTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                DeathContract.DeathTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedMWRA(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(MWRAContract.MWRATable.COLUMN_SYNCED, true);
+        values.put(MWRAContract.MWRATable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = MWRAContract.MWRATable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                MWRAContract.MWRATable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

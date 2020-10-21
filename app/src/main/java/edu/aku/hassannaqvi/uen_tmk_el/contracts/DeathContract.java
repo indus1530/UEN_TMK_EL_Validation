@@ -17,7 +17,7 @@ public class DeathContract {
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_ELB1 = "elb1";
-        public static final String COLUMN_ELB11 = "blb11";
+        public static final String COLUMN_ELB11 = "elb11";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_TYPE = "type";
@@ -46,4 +46,5 @@ public class DeathContract {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
     }
+
 }

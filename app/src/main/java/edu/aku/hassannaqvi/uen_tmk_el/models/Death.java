@@ -22,21 +22,18 @@ public class Death extends LiveData<Death> {
     private String username = "";
     private String sysdate = "";
     private String type = "";
-
     private String sC = "-2";
     private String sB = "-2";
-
     private String endingdatetime = "";
     private String deviceID = "";
     private String devicetagID = "";
     private String synced = "";
     private String synced_date = "";
     private String appversion = "";
-    private String deviceid = "";
-    private String tagid = "";
 
     public Death() {
     }
+
 
     public String get_ID() {
         return _ID;
@@ -50,9 +47,11 @@ public class Death extends LiveData<Death> {
         return _UID;
     }
 
+
     public void set_UID(String _UID) {
         this._UID = _UID;
     }
+
 
     public String getUUID() {
         return UUID;
@@ -62,6 +61,7 @@ public class Death extends LiveData<Death> {
         this.UUID = UUID;
     }
 
+
     public String getElb1() {
         return elb1;
     }
@@ -69,6 +69,7 @@ public class Death extends LiveData<Death> {
     public void setElb1(String elb1) {
         this.elb1 = elb1;
     }
+
 
     public String getElb11() {
         return elb11;
@@ -78,6 +79,7 @@ public class Death extends LiveData<Death> {
         this.elb11 = elb11;
     }
 
+
     public String getUsername() {
         return username;
     }
@@ -85,6 +87,7 @@ public class Death extends LiveData<Death> {
     public void setUsername(String username) {
         this.username = username;
     }
+
 
     public String getSysdate() {
         return sysdate;
@@ -94,6 +97,7 @@ public class Death extends LiveData<Death> {
         this.sysdate = sysdate;
     }
 
+
     public String getsC() {
         return sC;
     }
@@ -101,6 +105,7 @@ public class Death extends LiveData<Death> {
     public void setsC(String sC) {
         this.sC = sC;
     }
+
 
     public String getsB() {
         return sB;
@@ -110,6 +115,7 @@ public class Death extends LiveData<Death> {
         this.sB = sB;
     }
 
+
     public String getEndingdatetime() {
         return endingdatetime;
     }
@@ -117,6 +123,7 @@ public class Death extends LiveData<Death> {
     public void setEndingdatetime(String endingdatetime) {
         this.endingdatetime = endingdatetime;
     }
+
 
     public String getDeviceID() {
         return deviceID;
@@ -126,6 +133,7 @@ public class Death extends LiveData<Death> {
         this.deviceID = deviceID;
     }
 
+
     public String getDevicetagID() {
         return devicetagID;
     }
@@ -133,6 +141,7 @@ public class Death extends LiveData<Death> {
     public void setDevicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
+
 
     public String getSynced() {
         return synced;
@@ -142,6 +151,7 @@ public class Death extends LiveData<Death> {
         this.synced = synced;
     }
 
+
     public String getSynced_date() {
         return synced_date;
     }
@@ -149,6 +159,7 @@ public class Death extends LiveData<Death> {
     public void setSynced_date(String synced_date) {
         this.synced_date = synced_date;
     }
+
 
     public String getAppversion() {
         return appversion;
@@ -158,21 +169,6 @@ public class Death extends LiveData<Death> {
         this.appversion = appversion;
     }
 
-    public String getDeviceid() {
-        return deviceid;
-    }
-
-    public void setDeviceid(String deviceid) {
-        this.deviceid = deviceid;
-    }
-
-    public String getTagid() {
-        return tagid;
-    }
-
-    public void setTagid(String tagid) {
-        this.tagid = tagid;
-    }
 
     public String getType() {
         return type;
@@ -201,6 +197,7 @@ public class Death extends LiveData<Death> {
         this.appversion = jsonObject.getString(DeathTable.COLUMN_APPVERSION);
         return this;
     }
+
 
     public Death Hydrate(Cursor cursor) {
         this._ID = cursor.getString(cursor.getColumnIndex(DeathTable.COLUMN_ID));

@@ -5,6 +5,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract.UCTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VersionAppContract.VersionAppTable;
@@ -154,4 +155,24 @@ public final class CreateTable {
             + DeathContract.DeathTable.COLUMN_SYNCED + " TEXT );"
             + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT );"
             + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
+
+    public static final String SQL_CREATE_MWRA = "CREATE TABLE " + MWRAContract.MWRATable.TABLE_NAME + "("
+            + MWRAContract.MWRATable.COLUMN_ID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_UID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_UUID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_ELB1 + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_ELB11 + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_FMUID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_MUID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_USERNAME + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_SYSDATE + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_TYPE + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_SC + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_SB + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_DEVICEID + " TEXT,"
+            + MWRAContract.MWRATable.COLUMN_DEVICETAGID + " TEXT );"
+            + MWRAContract.MWRATable.COLUMN_SYNCED + " TEXT );"
+            + MWRAContract.MWRATable.COLUMN_SYNCED_DATE + " TEXT );"
+            + MWRAContract.MWRATable.COLUMN_APPVERSION + " TEXT );";
+
 }
