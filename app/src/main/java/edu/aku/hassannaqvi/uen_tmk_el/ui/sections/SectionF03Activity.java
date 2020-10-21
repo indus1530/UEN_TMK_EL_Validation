@@ -76,13 +76,13 @@ public class SectionF03Activity extends AppCompatActivity {
 
         death = new Death();
         death.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-//        death.setUUID(MainApp.form.get_UID());
+        death.setUUID(MainApp.form.get_UID());
         death.setUsername(MainApp.userName);
         death.setDeviceID(MainApp.appInfo.getDeviceID());
         death.setDevicetagID(MainApp.appInfo.getTagName());
         death.setAppversion(MainApp.appInfo.getAppVersion());
-        /*death.setEb1(MainApp.form.getElb1());
-        death.setEb11(MainApp.form.getElb11());*/
+        death.setElb1(MainApp.form.getElb1());
+        death.setElb11(MainApp.form.getElb11());
 
         JSONObject json = new JSONObject();
 

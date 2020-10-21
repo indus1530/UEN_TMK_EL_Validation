@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract.MemberTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
@@ -32,6 +33,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.VersionAppContract.VersionAppTab
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract.VillageTable;
 import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
+import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.models.FollowUp;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Users;
@@ -40,6 +42,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_BL_RANDOM;
+import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_DEATH;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_DISTRICTS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FAMILY_MEMBERS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FOLLOWUP;
@@ -71,6 +74,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_FOLLOWUP);
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
+        db.execSQL(SQL_CREATE_DEATH);
+        //    db.execSQL(SQL_CREATE_MWRA);
+        //    db.execSQL(SQL_CREATE_IMMUNIZATION);
     }
 
     @Override
@@ -356,6 +362,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addDeath(Death death) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(DeathContract.DeathTable.COLUMN_ID, death.get_ID());
+        values.put(DeathContract.DeathTable.COLUMN_UID, death.get_UID());
+        values.put(DeathContract.DeathTable.COLUMN_UUID, death.getUUID());
+        values.put(DeathContract.DeathTable.COLUMN_ELB1, death.getElb1());
+        values.put(DeathContract.DeathTable.COLUMN_ELB11, death.getElb11());
+        values.put(DeathContract.DeathTable.COLUMN_USERNAME, death.getUsername());
+        values.put(DeathContract.DeathTable.COLUMN_SYSDATE, death.getSysdate());
+        values.put(DeathContract.DeathTable.COLUMN_TYPE, death.getType());
+        values.put(DeathContract.DeathTable.COLUMN_SC, death.getsC());
+        values.put(DeathContract.DeathTable.COLUMN_SB, death.getsB());
+        values.put(DeathContract.DeathTable.COLUMN_DEVICETAGID, death.getDevicetagID());
+        values.put(DeathContract.DeathTable.COLUMN_DEVICEID, death.getDeviceID());
+        values.put(DeathContract.DeathTable.COLUMN_APPVERSION, death.getAppversion());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                DeathContract.DeathTable.TABLE_NAME,
+                DeathContract.DeathTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
 
     public VersionApp getVersionApp() {
 
@@ -1030,6 +1065,62 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public Collection<Death> getUnsyncedDeaths(String deathtype) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                DeathContract.DeathTable._ID,
+                DeathContract.DeathTable.COLUMN_UID,
+                DeathContract.DeathTable.COLUMN_UUID,
+                DeathContract.DeathTable.COLUMN_ELB1,
+                DeathContract.DeathTable.COLUMN_ELB11,
+                DeathContract.DeathTable.COLUMN_USERNAME,
+                DeathContract.DeathTable.COLUMN_SYSDATE,
+                DeathContract.DeathTable.COLUMN_DEVICEID,
+                DeathContract.DeathTable.COLUMN_DEVICETAGID,
+                DeathContract.DeathTable.COLUMN_APPVERSION,
+                DeathContract.DeathTable.COLUMN_TYPE,
+                DeathContract.DeathTable.COLUMN_SC,
+                DeathContract.DeathTable.COLUMN_SB,
+        };
+
+        String whereClause;
+        String[] whereArgs;
+
+        whereClause = DeathContract.DeathTable.COLUMN_SYNCED + " is null OR " + DeathContract.DeathTable.COLUMN_SYNCED + " == ''";
+        whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+        String orderBy = DeathContract.DeathTable.COLUMN_ID + " ASC";
+
+        Collection<Death> allDeaths = new ArrayList<>();
+        try {
+            c = db.query(
+                    DeathContract.DeathTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedDeaths: " + c.getCount());
+                Death death = new Death();
+                allDeaths.add(death.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDeaths;
+    }
+
     public Collection<FamilyMembersContract> getUnsyncedFamilyMembers() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1227,6 +1318,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.form.get_ID())};
 
         return db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesDeathColumn(String column, String value, DeathContract.DeathTable death) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = DeathContract.DeathTable._ID + " =? AND "
+                + DeathContract.DeathTable.COLUMN_SYNCED + " =? AND "
+                + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " =? ";
+        String[] selectionArgs = {death.getSynced(), death.getSync_date()};
+
+        return db.update(DeathContract.DeathTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

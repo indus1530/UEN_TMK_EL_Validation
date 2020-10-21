@@ -15,7 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF04Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
@@ -81,7 +80,14 @@ public class SectionF04Activity extends AppCompatActivity {
 
         json.put("cmf9", bi.cmf9.getText().toString());
 
-        MainApp.form.setsF(json.toString());
+       /* try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(death.getsF()), json);
+
+            death.setsF(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }*/
 
     }
 
