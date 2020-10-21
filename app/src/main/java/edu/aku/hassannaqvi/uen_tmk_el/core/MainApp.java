@@ -29,6 +29,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.CountAlertDialogLayoutBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.location.LocationLiveData;
@@ -86,7 +87,8 @@ public class MainApp extends Application {
     public static String DeviceURL = "devices.php";
     public static String IMEI;
     public static SharedPreferences sharedPref;
-    public static String DIST_ID;
+    public static String UC_ID;
+    public static UCContract SELECTED_UC;
     protected static LocationManager locationManager;
     private LocationLiveData locationlivedata;
     public static FamilyMembersContract indexKishMWRA;

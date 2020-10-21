@@ -45,5 +45,8 @@ class CONSTANTS {
         const val FORM_MP = "MP"
         const val FORM_MF = "MF"
 
+        //Main
+        const val VILLAGES_DATA = "villages_data"
+
     }
 }

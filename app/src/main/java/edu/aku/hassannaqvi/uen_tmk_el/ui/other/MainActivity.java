@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +27,17 @@ import androidx.databinding.DataBindingUtil;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityMainBinding;
@@ -53,21 +60,34 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.WarningActivityInterface;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.VILLAGES_DATA;
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.appInfo;
 
 public class MainActivity extends AppCompatActivity implements WarningActivityInterface {
 
     static File file;
     ActivityMainBinding bi;
-    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
-    String sysdateToday = new SimpleDateFormat("dd-MM-yy").format(new Date());
+    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime());
+    String sysdateToday = new SimpleDateFormat("dd-MM-yy", Locale.getDefault()).format(new Date());
     SharedPreferences sharedPrefDownload;
     SharedPreferences.Editor editorDownload;
     DownloadManager downloadManager;
     String preVer = "", newVer = "";
     VersionApp versionApp;
     Long refID;
+    //Setting Spinner
+    List<String> areaName, villageName;
+    Map<String, VillageContract> villageMap;
+    List<VillageContract> areaList;
+    VillageContract village;
+    private Boolean exit = false;
+
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -100,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
             }
         }
     };
-    private Boolean exit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,6 +253,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
             bi.testing.setVisibility(View.VISIBLE);
         }
 
+        setUIContent();
     }
 
     @Override
@@ -304,7 +324,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
-                oF = new Intent(this, SectionBActivity.class);
+                oF = new Intent(this, SectionBActivity.class).putExtra(VILLAGES_DATA, village);
                 break;
             case R.id.formC:
                 oF = new Intent(this, SectionCActivity.class);
@@ -360,5 +380,127 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         } else {
             bi.recordSummary.setVisibility(View.VISIBLE);
         }
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gettingAreaData();
+    }
+
+    //Other Dependent Functions
+    private void setUIContent() {
+        bi.spArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                onSettingDropDownContent(false);
+                if (i == 0) {
+                    bi.spVillage.setEnabled(false);
+                    bi.spVillage.setSelection(0);
+                    return;
+                }
+                initializingVillageVariables();
+                for (VillageContract item : areaList) {
+                    if (item.getArea_code().equals(bi.spArea.getSelectedItem().toString())) {
+                        villageName.add(item.getVillage_name());
+                        villageMap.put(item.getVillage_name(), item);
+                    }
+                }
+                bi.spVillage.setAdapter(new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, villageName));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        bi.spVillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    onSettingDropDownContent(false);
+                    return;
+                }
+                village = villageMap.get(bi.spVillage.getSelectedItem().toString());
+                onSettingDropDownContent(true);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+    private void onSettingDropDownContent(boolean enable) {
+        bi.formA.setEnabled(enable);
+    }
+
+    private void initializingAreaVariables() {
+        areaName = new ArrayList<String>() {
+            {
+                add("....");
+            }
+        };
+        areaList = new ArrayList<>();
+    }
+
+    private void initializingVillageVariables() {
+        villageName = new ArrayList<String>() {
+            {
+                add("....");
+            }
+        };
+        villageMap = new HashMap<>();
+        bi.spVillage.setEnabled(true);
+    }
+
+    //Reactive Streams
+    private Observable<List<VillageContract>> getAreas() {
+        return Observable.create(emitter -> {
+            emitter.onNext(appInfo.getDbHelper().getEnumBlock(MainApp.UC_ID));
+            emitter.onComplete();
+        });
+    }
+
+    //Getting data from db
+    public void gettingAreaData() {
+        initializingAreaVariables();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, areaName);
+        bi.spArea.setAdapter(adapter);
+        getAreas()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<List<VillageContract>>() {
+                    Disposable disposable;
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
+                    }
+
+                    @Override
+                    public void onNext(List<VillageContract> vContract) {
+                        for (VillageContract village : vContract) {
+                            if (!areaName.contains(village.getArea_code()))
+                                areaName.add(village.getArea_code());
+                            areaList.add(village);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        disposable.dispose();
+                    }
+                });
     }
 }

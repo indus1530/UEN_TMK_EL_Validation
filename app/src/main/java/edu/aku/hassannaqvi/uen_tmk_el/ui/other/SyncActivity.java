@@ -62,6 +62,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
     List<SyncModel> uploadlist;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
+    boolean sync_flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +80,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
         db = new DatabaseHelper(this);
         dbBackup();
 
-        boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
+        sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
 
         bi.btnSync.setOnClickListener(v -> onSyncDataClick());
         bi.btnUpload.setOnClickListener(v -> syncServer());
@@ -95,10 +96,8 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            /*if (sync_flag) new SyncData(SyncActivity.this, MainApp.DIST_ID).execute(true);
-            else new SyncDevice(SyncActivity.this, true).execute();*/
             new SyncDevice(this, true).execute();
-            new SyncData(this, MainApp.DIST_ID).execute(true);
+            new SyncData(this, MainApp.UC_ID).execute(sync_flag);
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
@@ -187,10 +186,10 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy", Locale.getDefault()).format(new Date()));
 
-            if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            if (!dt.equals(new SimpleDateFormat("dd-MM-yy", Locale.getDefault()).format(new Date()))) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy", Locale.getDefault()).format(new Date()));
                 editor.apply();
             }
 
@@ -286,7 +285,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                         e.printStackTrace();
                     }
                 }
-                editor.putString("LastPhotoUpload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
+                editor.putString("LastPhotoUpload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date()));
                 editor.apply();
             } else {
                 Toast.makeText(this, "No photos to upload.", Toast.LENGTH_SHORT).show();
@@ -299,8 +298,8 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
 
     private class SyncData extends AsyncTask<Boolean, String, String> {
 
-        private Context mContext;
-        private String distID;
+        private final Context mContext;
+        private final String distID;
 
         private SyncData(Context mContext, String districtId) {
             this.mContext = mContext;
@@ -310,8 +309,10 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
         @Override
         protected String doInBackground(Boolean... booleans) {
             runOnUiThread(() -> {
-
-                String[] syncItems = {"User", "VersionApp", "Villages", "FollowUp"};
+                String[] syncItems;
+                if (booleans[0])
+                    syncItems = new String[]{"User", "VersionApp", "Villages", "FollowUp"};
+                else syncItems = new String[]{"BLRandom"};
                 for (String syncItem : syncItems) {
                     if (listActivityCreated) {
                         model = new SyncModel();
@@ -330,7 +331,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
         @Override
         protected void onPostExecute(String s) {
             new Handler().postDelayed(() -> {
-                editor.putString("LastDataDownload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
+                editor.putString("LastDataDownload", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date()));
                 editor.apply();
                 editor.putBoolean("flag", true);
                 editor.commit();

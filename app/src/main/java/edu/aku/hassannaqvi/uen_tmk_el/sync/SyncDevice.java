@@ -26,10 +26,10 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import static android.content.Context.MODE_PRIVATE;
 
 public class SyncDevice extends AsyncTask<Void, Integer, String> {
-    private SyncDevicInterface delegate;
-    private Context context;
-    private boolean flag;
-    private String TAG = SyncDevice.class.getName();
+    private final SyncDevicInterface delegate;
+    private final Context context;
+    private final boolean flag;
+    private final String TAG = SyncDevice.class.getName();
 
     public SyncDevice(Context context, boolean flag) {
         this.context = context;
@@ -81,7 +81,7 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
                 DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
 
                 try {
-                    jsonObject.addProperty("dist_id", MainApp.DIST_ID);
+                    jsonObject.addProperty("dist_id", MainApp.UC_ID);
                     jsonObject.addProperty("imei", MainApp.IMEI);
                     jsonObject.addProperty("appversion", MainApp.appInfo.getAppVersion());
                     jsonObject.addProperty("appname", context.getString(R.string.app_name));

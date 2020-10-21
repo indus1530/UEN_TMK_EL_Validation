@@ -26,8 +26,8 @@ import android.text.format.DateFormat;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,6 +37,9 @@ import androidx.databinding.DataBindingUtil;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.validatorcrawler.aliazaz.Validator;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,6 +56,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.AppInfo;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityLoginBinding;
+import kotlin.Unit;
+import kotlin.coroutines.CoroutineContext;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES;
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES;
@@ -63,41 +68,21 @@ import static edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt.getPermissionsList
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.DB_NAME;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_tmk_el.utils.SplashRepositoryKt.populatingSpinners;
 import static java.lang.Thread.sleep;
 
 public class LoginActivity extends Activity {
 
     protected static LocationManager locationManager;
 
-    // UI references.
-  /*  @BindView(R.id.bi.loginProgress)
-    ProgressBar bi.loginProgress;
-    @BindView(R.id.login_form)
-    ScrollView bi.loginForm;
-    @BindView(R.id.username)
-    EditText bi.username;
-    @BindView(R.id.password)
-    EditText bi.password;
-    @BindView(R.id.txtinstalldate)
-    TextView txtinstalldate;
-    @BindView(R.id.username_sign_in_button)
-    AppCompatButton bi.btnSignin;
-    @BindView(R.id.syncData)
-    Button syncData;
-    @BindView(R.id.spinnerProvince)
-    Spinner spinnerProvince;
-    @BindView(R.id.spinners)
-    LinearLayout spinners;
-    @BindView(R.id.spinnerDistrict)*/
     ActivityLoginBinding bi;
-    Spinner spinnerDistrict;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     String DirectoryName;
     DatabaseHelper db;
-    ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
     private UserLoginTask mAuthTask = null;
+    ArrayAdapter<String> ucsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,13 +96,10 @@ public class LoginActivity extends Activity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkAndRequestPermissions()) {
-                //   populateAutoComplete();
                 loadIMEI();
             }
         } else {
-            // populateAutoComplete();
             loadIMEI();
-
         }
 
         // populateAutoComplete();
@@ -130,62 +112,13 @@ public class LoginActivity extends Activity {
                 .setContentText("\n\nPlease Sync Data before login...")
                 .singleShot(42)
                 .build();
-
-//        bi.password = findViewById(R.id.password);
-/*
-        bi.password.setOnEditorActionListener((textView, id, keyEvent) -> {
-            if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                attemptLogin();
-                return true;
-            }
-            return false;
-        });
-*/
-
         bi.btnSignin.setOnClickListener(view -> attemptLogin());
-
-        //setListeners();
-
         db = new DatabaseHelper(this);
 //        DB backup
         dbBackup();
+        setListeners();
     }
 
-    /*private void setListeners() {
-        provinceAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, SplashscreenActivity.provinces);
-        spinnerProvince.setAdapter(provinceAdapter);
-        spinnerProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) return;
-                List<String> districts = new ArrayList<>(Collections.singletonList("...."));
-                for (Map.Entry<String, Pair<String, EnumBlockContract>> entry : SplashscreenActivity.districtsMap.entrySet()) {
-                    if (entry.getValue().getFirst().equals(spinnerProvince.getSelectedItem().toString()))
-                        districts.add(entry.getKey());
-                }
-                spinnerDistrict.setAdapter(new ArrayAdapter<>(LoginActivity.this, android.R.layout.simple_list_item_1
-                        , districts));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        spinnerDistrict.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) return;
-                MainApp.DIST_ID = Objects.requireNonNull(SplashscreenActivity.districtsMap.get(spinnerDistrict.getSelectedItem().toString())).getSecond().getDist_code();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-*/
     private void gettingDeviceIMEI() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -276,10 +209,6 @@ public class LoginActivity extends Activity {
         }
     }
 
-/*    private void populateAutoComplete() {
-        getLoaderManager().initLoader(0, null, this);
-    }*/
-
     private void attemptLogin() {
 
 
@@ -323,10 +252,8 @@ public class LoginActivity extends Activity {
                 // form field with an error.
                 focusView.requestFocus();
             } else {
-                // Show a progress spinner, and kick off a background task to
-                // perform the user login attempt.
-          /*  if (!Validator.emptyCheckingContainer(this, spinners))
-                return;*/
+                if (!Validator.emptyCheckingContainer(this, bi.spinners))
+                    return;
                 showProgress(true);
                 mAuthTask = new UserLoginTask(this, username, password);
                 mAuthTask.execute((Void) null);
@@ -362,7 +289,6 @@ public class LoginActivity extends Activity {
         });
     }
 
-
     public void onShowPasswordClick(View view) {
         //TODO implement
         if (bi.password.getTransformationMethod() == null) {
@@ -377,7 +303,6 @@ public class LoginActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        populateSpinner(this);
     }
 
     public void loadIMEI() {
@@ -471,7 +396,6 @@ public class LoginActivity extends Activity {
         }
     }
 
-
     private void doPermissionGrantedStuffs() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -558,11 +482,6 @@ public class LoginActivity extends Activity {
         return provider1.equals(provider2);
     }
 
-    public void populateSpinner(Context context) {
-
-    }
-
-
     public class GPSLocationListener implements LocationListener {
         public void onLocationChanged(Location location) {
 
@@ -612,26 +531,27 @@ public class LoginActivity extends Activity {
 
     }
 
-/*    @Override
-    protected void onResume() {
-        super.onResume();
-        if (getIntent().getBooleanExtra(LOGIN_SPLASH_FLAG, false))
-            callingCoroutine();
+    private void setListeners() {
+        ucsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, SplashscreenActivity.ucs);
+        bi.spUCs.setAdapter(ucsAdapter);
+        bi.spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) return;
+                MainApp.UC_ID = Objects.requireNonNull(SplashscreenActivity.ucsMap.get(bi.spUCs.getSelectedItem().toString())).getUc_code();
+                MainApp.SELECTED_UC = Objects.requireNonNull(SplashscreenActivity.ucsMap.get(bi.spUCs.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CONSTANTS.LOGIN_RESULT_CODE) {
-            if (resultCode == RESULT_OK) {
-                callingCoroutine();
-            }
-        }
-    }*/
-
-/*    private void callingCoroutine() {
+    private void callingCoroutine() {
         //To call coroutine here
-        populatingSpinners(getApplicationContext(), provinceAdapter, new SplashscreenActivity.Continuation<Unit>() {
+        populatingSpinners(getApplicationContext(), ucsAdapter, new SplashscreenActivity.Continuation<Unit>() {
             @Override
             public void resume(Unit value) {
 
@@ -648,7 +568,13 @@ public class LoginActivity extends Activity {
                 return null;
             }
         });
-    }*/
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        callingCoroutine();
+    }
 
     /**
      * Represents an asynchronous login/registration task used to authenticate
@@ -707,8 +633,8 @@ public class LoginActivity extends Activity {
                         || (musername.equals("test1234") && mPassword.equals("test1234"))) {
                     MainApp.userName = musername;
                     MainApp.admin = musername.contains("@");
-                    Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(iLogin);
+                    finish();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                 } else {
                     bi.password.setError("Incorrect Password");
