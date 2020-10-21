@@ -53,7 +53,6 @@ import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_MWRA;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VILLAGE_TABLE;
-ImmunizationContract
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
