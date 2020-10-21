@@ -5,10 +5,6 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-/**
- * Created by hassan.naqvi on 11/30/2016.
- */
-
 public class MWRAContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.uen_tmk_el";

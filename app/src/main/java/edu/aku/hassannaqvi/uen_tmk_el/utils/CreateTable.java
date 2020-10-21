@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk_el.utils;
 
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
@@ -136,4 +137,21 @@ public final class CreateTable {
             FamilyMembersContract.MemberTable.COLUMN_SYNCED + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_SYNCED_DATE + " TEXT"
             + ");";
+
+    public static final String SQL_CREATE_DEATH = "CREATE TABLE " + DeathContract.DeathTable.TABLE_NAME + "("
+            + DeathContract.DeathTable.COLUMN_ID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_UID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_UUID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_ELB1 + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_ELB11 + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_USERNAME + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_SYSDATE + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_TYPE + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_SC + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_SB + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_DEVICEID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_DEVICETAGID + " TEXT );"
+            + DeathContract.DeathTable.COLUMN_SYNCED + " TEXT );"
+            + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT );"
+            + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
 }
