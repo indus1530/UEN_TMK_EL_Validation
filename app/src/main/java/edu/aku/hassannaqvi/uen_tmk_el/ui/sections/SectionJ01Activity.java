@@ -14,6 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJ01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
@@ -40,30 +43,21 @@ public class SectionJ01Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, SectionJ02Activity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, SectionJ02Activity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SJ, MainApp.form.getsJ());
+        return updcount == 1;
     }
 
     private void SaveDraft() throws JSONException {
@@ -90,7 +84,7 @@ public class SectionJ01Activity extends AppCompatActivity {
                 : bi.bfj211.isChecked() ? "11"
                 : bi.bfj212.isChecked() ? "12"
                 : bi.bfj296.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("bfj296x", bi.bfj296x.getText().toString());
         json.put("bfj3", bi.bfj3m.isChecked() ? ""
@@ -152,41 +146,41 @@ public class SectionJ01Activity extends AppCompatActivity {
         json.put("bfj15b", bi.bfj15b01.isChecked() ? "1"
                 : bi.bfj15b02.isChecked() ? "2"
                 : bi.bfj15b98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj15c", bi.bfj15c01.isChecked() ? "1"
                 : bi.bfj15c02.isChecked() ? "2"
                 : bi.bfj15c98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj16", bi.bfj1601.isChecked() ? "1"
                 : bi.bfj1602.isChecked() ? "2"
                 : bi.bfj1698.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj1601x", bi.bfj1601x.getText().toString());
         json.put("bfj17", bi.bfj1701.isChecked() ? "1"
                 : bi.bfj1702.isChecked() ? "2"
                 : bi.bfj1703.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj18", bi.bfj1801.isChecked() ? "1"
                 : bi.bfj1802.isChecked() ? "2"
                 : bi.bfj1898.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj9", bi.bfj901.isChecked() ? "1"
                 : bi.bfj902.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("bfj10", bi.bfj1001.isChecked() ? "1"
                 : bi.bfj1002.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("bfj11", bi.bfj1101.isChecked() ? "1"
                 : bi.bfj1102.isChecked() ? "2"
                 : bi.bfj1198.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj1101x", bi.bfj1101x.getText().toString());
         json.put("bfj1102x", bi.bfj1102x.getText().toString());
@@ -201,48 +195,49 @@ public class SectionJ01Activity extends AppCompatActivity {
         json.put("bfj19a", bi.bfj19a01.isChecked() ? "1"
                 : bi.bfj19a02.isChecked() ? "2"
                 : bi.bfj19a98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19b", bi.bfj19b01.isChecked() ? "1"
                 : bi.bfj19b02.isChecked() ? "2"
                 : bi.bfj19b98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19c", bi.bfj19c01.isChecked() ? "1"
                 : bi.bfj19c02.isChecked() ? "2"
                 : bi.bfj19c98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19d", bi.bfj19d01.isChecked() ? "1"
                 : bi.bfj19d02.isChecked() ? "2"
                 : bi.bfj19d98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19e", bi.bfj19e01.isChecked() ? "1"
                 : bi.bfj19e02.isChecked() ? "2"
                 : bi.bfj19e98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19f", bi.bfj19f01.isChecked() ? "1"
                 : bi.bfj19f02.isChecked() ? "2"
                 : bi.bfj19f98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19g", bi.bfj19g01.isChecked() ? "1"
                 : bi.bfj19g02.isChecked() ? "2"
                 : bi.bfj19g98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19h", bi.bfj19h01.isChecked() ? "1"
                 : bi.bfj19h02.isChecked() ? "2"
                 : bi.bfj19h98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("bfj19i", bi.bfj19i01.isChecked() ? "1"
                 : bi.bfj19i02.isChecked() ? "2"
                 : bi.bfj19i98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
+        MainApp.form.setsJ(json.toString());
 
     }
 

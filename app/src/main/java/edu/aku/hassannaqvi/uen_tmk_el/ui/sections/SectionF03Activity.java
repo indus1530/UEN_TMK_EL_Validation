@@ -33,7 +33,7 @@ public class SectionF03Activity extends AppCompatActivity {
 
     ActivitySectionF03Binding bi;
     private Death death;
-    int count;
+    int count, mCounter = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class SectionF03Activity extends AppCompatActivity {
     private void setupContent() {
         count = Integer.parseInt(getIntent().getStringExtra(DEATH_COUNT));
         setupNextButtonText();
+        bi.raf7a.setText(String.valueOf(mCounter));
     }
 
 
@@ -68,14 +69,14 @@ public class SectionF03Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                if (setupNextButtonText()) {
+                    finish();
+                    startActivity(new Intent(this, SectionF04Activity.class));
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            if (setupNextButtonText()) {
-                finish();
-                startActivity(new Intent(this, SectionF04Activity.class));
-            }
         }
     }
 
@@ -139,6 +140,7 @@ public class SectionF03Activity extends AppCompatActivity {
         death.setsB(json.toString());
 
         count--;
+        mCounter++;
 
     }
 

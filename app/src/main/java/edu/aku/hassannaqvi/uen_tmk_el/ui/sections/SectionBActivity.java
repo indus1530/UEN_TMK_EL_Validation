@@ -81,12 +81,12 @@ public class SectionBActivity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, SectionCActivity.class));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, SectionCActivity.class));
         }
     }
 

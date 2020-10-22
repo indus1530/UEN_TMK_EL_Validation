@@ -109,7 +109,7 @@ public class SectionH01Activity extends AppCompatActivity {
         });
 
         bi.arih7.setOnCheckedChangeListener((group, checkedId) -> {
-                Clear.clearAllFields(bi.fldGrpCVarih8);
+            Clear.clearAllFields(bi.fldGrpCVarih8);
             Clear.clearAllFields(bi.llarih9);
         });
 
@@ -151,14 +151,14 @@ public class SectionH01Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, bi.arih301.isChecked() ? SectionH02Activity.class : SectionI01Activity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, bi.arih301.isChecked() ? SectionH02Activity.class : SectionI01Activity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 

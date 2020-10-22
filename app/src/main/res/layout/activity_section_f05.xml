@@ -55,16 +55,14 @@
 
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                    <EditText
                         android:id="@+id/cmf9a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cmf9a"
                         android:inputType="number"
                         android:maxLength="2"
-                        app:maxValue="30"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:enabled="false" />
 
                 </LinearLayout>
 
@@ -325,6 +323,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                app:defaultValue="98"
                                 app:maxValue="29"
                                 app:minValue="0"
                                 app:type="range" />
@@ -353,6 +352,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                app:defaultValue="98"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />

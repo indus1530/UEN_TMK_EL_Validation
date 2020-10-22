@@ -115,11 +115,11 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
         if (fmcFLAG) {
             try {
                 SaveDraft();
+                setResult(RESULT_OK, new Intent().putExtra(SERIAL_EXTRA, serial));
+                finish();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            setResult(RESULT_OK, new Intent().putExtra(SERIAL_EXTRA, serial));
-            finish();
         } else {
             int calculatingAge = Integer.parseInt(bi.mmd601.getText().toString());
             if ((calculatingAge >= 5 && calculatingAge < 10) && bi.mmd901.getSelectedItemPosition() == 1)

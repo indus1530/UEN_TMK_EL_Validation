@@ -15,8 +15,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionLBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionLActivity extends AppCompatActivity {
@@ -81,20 +84,12 @@ public class SectionLActivity extends AppCompatActivity {
 
 
         bi.hwl809.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                Clear.clearAllFields(bi.hwl8check, false);
-            } else {
-                Clear.clearAllFields(bi.hwl8check, true);
-            }
+            Clear.clearAllFields(bi.hwl8check, !b);
         });
 
 
         bi.hwl1210.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                Clear.clearAllFields(bi.hwl12check, false);
-            } else {
-                Clear.clearAllFields(bi.hwl12check, true);
-            }
+            Clear.clearAllFields(bi.hwl12check, !b);
         });
 
     }
@@ -104,31 +99,22 @@ public class SectionLActivity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SL, MainApp.form.getsL());
+        return updcount == 1;
     }
 
     private void SaveDraft() throws JSONException {
@@ -265,6 +251,8 @@ public class SectionLActivity extends AppCompatActivity {
                 : "-1");
 
         json.put("hwl1596x", bi.hwl1596x.getText().toString());
+
+        MainApp.form.setsL(json.toString());
 
     }
 

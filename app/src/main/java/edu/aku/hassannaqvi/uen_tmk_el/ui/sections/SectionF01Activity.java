@@ -105,16 +105,16 @@ public class SectionF01Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                if (setupNextButtonText()) {
+                    finish();
+                    startActivity(new Intent(this, SectionF02Activity.class));
+                }
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            if (setupNextButtonText()) {
-                finish();
-                startActivity(new Intent(this, SectionF02Activity.class));
-            }
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 

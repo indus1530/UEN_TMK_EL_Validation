@@ -46,14 +46,14 @@ public class SectionF04Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, bi.cmf801.isChecked() ? SectionF05Activity.class : SectionF06Activity.class).putExtra(C_DEATH_COUNT, bi.cmf9.getText().toString()));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, bi.cmf801.isChecked() ? SectionF05Activity.class : SectionF06Activity.class).putExtra(C_DEATH_COUNT, bi.cmf9.getText().toString()));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 

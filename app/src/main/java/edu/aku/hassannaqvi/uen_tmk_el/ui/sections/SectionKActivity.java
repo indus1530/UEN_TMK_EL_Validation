@@ -14,6 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionKBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
@@ -43,31 +46,22 @@ public class SectionKActivity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, SectionLActivity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, SectionLActivity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SK, MainApp.form.getsK());
+        return updcount == 1;
     }
 
     private void SaveDraft() throws JSONException {
@@ -90,7 +84,7 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk114.isChecked() ? "14"
                 : bi.wsk115.isChecked() ? "15"
                 : bi.wsk196.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk196x", bi.wsk196x.getText().toString());
         json.put("wsk2", bi.wsk201.isChecked() ? "1"
@@ -109,25 +103,25 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk214.isChecked() ? "14"
                 : bi.wsk215.isChecked() ? "15"
                 : bi.wsk296.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk296x", bi.wsk296x.getText().toString());
         json.put("wsk3", bi.wsk301.isChecked() ? "1"
                 : bi.wsk302.isChecked() ? "2"
                 : bi.wsk303.isChecked() ? "3"
-                :  "-1");
+                : "-1");
 
         json.put("wsk15", bi.wsk1501.isChecked() ? "1"
                 : bi.wsk1502.isChecked() ? "2"
                 : bi.wsk1503.isChecked() ? "3"
                 : bi.wsk1504.isChecked() ? "4"
                 : bi.wsk1596.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk1596x", bi.wsk1596x.getText().toString());
         json.put("wsk4", bi.wsk401.isChecked() ? ""
                 : bi.wsk498.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("wsk401x", bi.wsk401x.getText().toString());
         json.put("wsk5", bi.wsk501.isChecked() ? "1"
@@ -135,21 +129,21 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk503.isChecked() ? "3"
                 : bi.wsk504.isChecked() ? "4"
                 : bi.wsk505.isChecked() ? "5"
-                :  "-1");
+                : "-1");
 
         json.put("wsk6", bi.wsk601.isChecked() ? "1"
                 : bi.wsk602.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("wsk7", bi.wsk701.isChecked() ? "1"
                 : bi.wsk702.isChecked() ? "2"
                 : bi.wsk798.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("wsk8", bi.wsk801.isChecked() ? "1"
                 : bi.wsk802.isChecked() ? "2"
                 : bi.wsk898.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("wsk9", bi.wsk901.isChecked() ? "1"
                 : bi.wsk902.isChecked() ? "2"
@@ -159,7 +153,7 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk906.isChecked() ? "6"
                 : bi.wsk907.isChecked() ? "7"
                 : bi.wsk996.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk996x", bi.wsk996x.getText().toString());
         json.put("wsk10", bi.wsk1001.isChecked() ? "1"
@@ -169,7 +163,7 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk1005.isChecked() ? "5"
                 : bi.wsk1006.isChecked() ? "6"
                 : bi.wsk1096.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk1096x", bi.wsk1096x.getText().toString());
         json.put("wsk11", bi.wsk1101.isChecked() ? "1"
@@ -183,31 +177,32 @@ public class SectionKActivity extends AppCompatActivity {
                 : bi.wsk1109.isChecked() ? "9"
                 : bi.wsk1110.isChecked() ? "10"
                 : bi.wsk1111.isChecked() ? "11"
-                :  "-1");
+                : "-1");
 
         json.put("wsk12", bi.wsk1201.isChecked() ? "1"
                 : bi.wsk1202.isChecked() ? "2"
                 : bi.wsk1298.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("wsk13", bi.wsk1301.isChecked() ? "1"
                 : bi.wsk1302.isChecked() ? "2"
-                :  "-1");
+                : "-1");
 
         json.put("wsk14", bi.wsk1401.isChecked() ? "1"
                 : bi.wsk1402.isChecked() ? "2"
                 : bi.wsk1498.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         json.put("wsk16", bi.wsk1601.isChecked() ? "1"
                 : bi.wsk1602.isChecked() ? "2"
                 : bi.wsk1603.isChecked() ? "3"
                 : bi.wsk1604.isChecked() ? "4"
                 : bi.wsk1605.isChecked() ? "96"
-                :  "-1");
+                : "-1");
 
         json.put("wsk1605x", bi.wsk1605x.getText().toString());
 
+        MainApp.form.setsK(json.toString());
     }
 
     private boolean formValidation() {

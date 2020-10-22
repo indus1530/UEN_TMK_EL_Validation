@@ -32,7 +32,7 @@ import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.C_DEATH_COUNT;
 public class SectionF05Activity extends AppCompatActivity {
 
     ActivitySectionF05Binding bi;
-    int count;
+    int count, cCounter = 1;
     private Death death;
 
     @Override
@@ -47,6 +47,7 @@ public class SectionF05Activity extends AppCompatActivity {
     private void setupContent() {
         count = Integer.parseInt(getIntent().getStringExtra(C_DEATH_COUNT));
         setupNextButtonText();
+        bi.cmf9a.setText(String.valueOf(cCounter));
     }
 
     private boolean setupNextButtonText() {
@@ -67,16 +68,16 @@ public class SectionF05Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                if (setupNextButtonText()) {
+                    finish();
+                    startActivity(new Intent(this, SectionF06Activity.class));
+                }
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            if (setupNextButtonText()) {
-                finish();
-                startActivity(new Intent(this, SectionF06Activity.class));
-            }
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -148,6 +149,7 @@ public class SectionF05Activity extends AppCompatActivity {
         death.setsB(json.toString());
 
         count--;
+        cCounter++;
     }
 
 
