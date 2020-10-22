@@ -33,6 +33,7 @@ import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 public class SectionH01Activity extends AppCompatActivity {
 
     ActivitySectionH01Binding bi;
+    public static Pair<List<Integer>, List<String>> childList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +42,11 @@ public class SectionH01Activity extends AppCompatActivity {
         bi.setCallback(this);
 
         setupSkip();
+        setupContent();
     }
 
     private void setupContent() {
-        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+        childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
         Pair<List<Integer>, List<String>> respList = FamilyMembersListActivity.mainVModel.getAllRespondent();
 
         List<String> resp = new ArrayList<String>() {

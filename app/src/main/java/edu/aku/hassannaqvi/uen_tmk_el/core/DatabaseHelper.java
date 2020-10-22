@@ -22,9 +22,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract.MemberTable;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract.UCTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract;
@@ -35,9 +34,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract.VillageTable;
 import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
-import edu.aku.hassannaqvi.uen_tmk_el.models.FollowUp;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
-import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Users;
 import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 
@@ -47,16 +45,12 @@ import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_BL_RAN
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_DEATH;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_DISTRICTS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FAMILY_MEMBERS;
-import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FOLLOWUP;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_FORMS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_MWRA;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable.SQL_CREATE_VILLAGE_TABLE;
 
-/**
- * Created by hassan.naqvi on 11/30/2016.
- */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
@@ -74,7 +68,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_DISTRICTS);
         db.execSQL(SQL_CREATE_BL_RANDOM);
         db.execSQL(SQL_CREATE_VERSIONAPP);
-        db.execSQL(SQL_CREATE_FOLLOWUP);
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(SQL_CREATE_DEATH);
         db.execSQL(SQL_CREATE_MWRA);
@@ -174,37 +167,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncEnumBlocks(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
-        return insertCount;
-    }
-
-    public int syncFollowUp(JSONArray followupList) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(FollowUpContract.TableFollowUp.TABLE_NAME, null, null);
-        int insertCount = 0;
-        try {
-            for (int i = 0; i < followupList.length(); i++) {
-
-                JSONObject jsonObjectVil = followupList.getJSONObject(i);
-
-                FollowUp followUp = new FollowUp();
-                followUp.Sync(jsonObjectVil);
-                ContentValues values = new ContentValues();
-
-                values.put(FollowUpContract.TableFollowUp.COLUMN_MP101, followUp.getMp101());
-                values.put(FollowUpContract.TableFollowUp.COLUMN__LUID, followUp.get_luid());
-                values.put(FollowUpContract.TableFollowUp.COLUMN_MPSYSDATE, followUp.getMpsysdate());
-                values.put(FollowUpContract.TableFollowUp.COLUMN_PID, followUp.getPid());
-                values.put(FollowUpContract.TableFollowUp.COLUMN_SEEM_VID, followUp.getSeem_vid());
-                long rowID = db.insert(FollowUpContract.TableFollowUp.TABLE_NAME, null, values);
-                if (rowID != -1) insertCount++;
-            }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncFollowUp(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -392,33 +354,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMWRA(MWRA mwra) {
+    public Long addMWRA(MWRA_CHILD mwraChild) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
-        values.put(MWRAContract.MWRATable.COLUMN_UUID, mwra.getUUID());
-        values.put(MWRAContract.MWRATable.COLUMN_ELB1, mwra.getElb1());
-        values.put(MWRAContract.MWRATable.COLUMN_ELB11, mwra.getElb11());
-        values.put(MWRAContract.MWRATable.COLUMN_FMUID, mwra.getFmuid());
-        values.put(MWRAContract.MWRATable.COLUMN_MUID, mwra.getMuid());
-        values.put(MWRAContract.MWRATable.COLUMN_USERNAME, mwra.getUsername());
-        values.put(MWRAContract.MWRATable.COLUMN_SYSDATE, mwra.getSysdate());
-        values.put(MWRAContract.MWRATable.COLUMN_TYPE, mwra.getType());
-        values.put(MWRAContract.MWRATable.COLUMN_SC, mwra.getsC());
-        values.put(MWRAContract.MWRATable.COLUMN_SB, mwra.getsB());
-        values.put(MWRAContract.MWRATable.COLUMN_DEVICETAGID, mwra.getDevicetagID());
-        values.put(MWRAContract.MWRATable.COLUMN_DEVICEID, mwra.getDeviceID());
-        values.put(MWRAContract.MWRATable.COLUMN_APPVERSION, mwra.getAppversion());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UUID, mwraChild.getUUID());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1, mwraChild.getElb1());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11, mwraChild.getElb11());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID, mwraChild.getFmuid());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID, mwraChild.getMuid());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME, mwraChild.getUsername());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE, mwraChild.getSysdate());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE, mwraChild.getType());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, mwraChild.getsC());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB, mwraChild.getsB());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICETAGID, mwraChild.getDevicetagID());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICEID, mwraChild.getDeviceID());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_APPVERSION, mwraChild.getAppversion());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                MWRAContract.MWRATable.TABLE_NAME,
-                MWRAContract.MWRATable.COLUMN_NAME_NULLABLE,
+                Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -1152,41 +1114,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDeaths;
     }
 
-    public Collection<MWRA> getUnsyncedMWRA(String mwratype) {
+    public Collection<MWRA_CHILD> getUnsyncedMWRA(String mwratype) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                MWRAContract.MWRATable._ID,
-                MWRAContract.MWRATable.COLUMN_UID,
-                MWRAContract.MWRATable.COLUMN_UUID,
-                MWRAContract.MWRATable.COLUMN_ELB1,
-                MWRAContract.MWRATable.COLUMN_ELB11,
-                MWRAContract.MWRATable.COLUMN_FMUID,
-                MWRAContract.MWRATable.COLUMN_MUID,
-                MWRAContract.MWRATable.COLUMN_USERNAME,
-                MWRAContract.MWRATable.COLUMN_SYSDATE,
-                MWRAContract.MWRATable.COLUMN_DEVICEID,
-                MWRAContract.MWRATable.COLUMN_DEVICETAGID,
-                MWRAContract.MWRATable.COLUMN_APPVERSION,
-                MWRAContract.MWRATable.COLUMN_TYPE,
-                MWRAContract.MWRATable.COLUMN_SC,
-                MWRAContract.MWRATable.COLUMN_SB,
+                Mwra_ChildrenContract.MWRAChildTable._ID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_UUID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICEID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICETAGID,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_APPVERSION,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC,
+                Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB,
         };
 
         String whereClause;
         String[] whereArgs;
 
-        whereClause = MWRAContract.MWRATable.COLUMN_SYNCED + " is null OR " + MWRAContract.MWRATable.COLUMN_SYNCED + " == ''";
+        whereClause = Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " is null OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " == ''";
         whereArgs = null;
 
         String groupBy = null;
         String having = null;
-        String orderBy = MWRAContract.MWRATable.COLUMN_ID + " ASC";
+        String orderBy = Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " ASC";
 
-        Collection<MWRA> allMWRAs = new ArrayList<>();
+        Collection<MWRA_CHILD> allMWRACHILDREN = new ArrayList<>();
         try {
             c = db.query(
-                    MWRAContract.MWRATable.TABLE_NAME,  // The table to query
+                    Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1196,8 +1158,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 Log.d(TAG, "getUnsyncedmwras: " + c.getCount());
-                MWRA mwra = new MWRA();
-                allMWRAs.add(mwra.Hydrate(c));
+                MWRA_CHILD mwraChild = new MWRA_CHILD();
+                allMWRACHILDREN.add(mwraChild.Hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -1207,7 +1169,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allMWRAs;
+        return allMWRACHILDREN;
     }
 
     public Collection<FamilyMembersContract> getUnsyncedFamilyMembers() {
@@ -1433,10 +1395,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = MWRAContract.MWRATable._ID + " =? ";
+        String selection = Mwra_ChildrenContract.MWRAChildTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(value)};
 
-        return db.update(MWRAContract.MWRATable.TABLE_NAME,
+        return db.update(Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1695,15 +1657,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(MWRAContract.MWRATable.COLUMN_SYNCED, true);
-        values.put(MWRAContract.MWRATable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED, true);
+        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = MWRAContract.MWRATable.COLUMN_ID + " = ?";
+        String where = Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                MWRAContract.MWRATable.TABLE_NAME,
+                Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -18,12 +17,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionI02Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_IMMUNIZATION;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity.childList;
 
 public class SectionI02Activity extends AppCompatActivity {
 
     ActivitySectionI02Binding bi;
+    MWRA_CHILD mwraChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,8 @@ public class SectionI02Activity extends AppCompatActivity {
         bi.setCallback(this);
 
         setupSkip();
+
+        mwraChild = (MWRA_CHILD) getIntent().getSerializableExtra(ADD_IMMUNIZATION);
     }
 
     private void setupSkip() {
@@ -78,32 +87,20 @@ public class SectionI02Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, childList.getFirst().size() == 0 ? SectionJ01Activity.class : SectionI01Activity.class));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, SectionJ01Activity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
-            return true;
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-        return true;
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, mwraChild.getsC());
+        return updcount == 1;
     }
 
 
@@ -201,6 +198,8 @@ public class SectionI02Activity extends AppCompatActivity {
                 : bi.imi4pplc02.isChecked() ? "2"
                 : bi.imi4pplc03.isChecked() ? "3"
                 : "-1");
+
+        mwraChild.setsC(json.toString());
 
     }
 

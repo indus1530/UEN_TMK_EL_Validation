@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -106,7 +107,7 @@ public class SectionF05Activity extends AppCompatActivity {
         death.setAppversion(MainApp.appInfo.getAppVersion());
         death.setElb1(MainApp.form.getElb1());
         death.setElb11(MainApp.form.getElb11());
-        death.setType("2");
+        death.setType(CONSTANTS.CHILD_DEATH_TYPE);
 
         JSONObject json = new JSONObject();
 

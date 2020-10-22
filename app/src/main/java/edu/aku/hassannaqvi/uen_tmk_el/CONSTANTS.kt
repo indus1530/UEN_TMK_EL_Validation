@@ -24,9 +24,10 @@ class CONSTANTS {
         const val MWRA_INFO = "mwra"
         const val SYNC_LOGIN = "sync_login"
 
-        //For CHC Section
+        //For CH Section
         const val IM02FLAG = "im02_flag"
         const val IM01CARDSEEN = "im01_card_seen"
+        const val ADD_IMMUNIZATION = "add_immunization"
 
         //Login Result Code
         const val LOGIN_RESULT_CODE = 10101
@@ -53,6 +54,12 @@ class CONSTANTS {
 
         //CDeath
         const val C_DEATH_COUNT = "c_death_count"
+
+        //TYPE_COUNTERS
+        const val MWRA_TYPE = "M101"
+        const val CHILD_TYPE = "C101"
+        const val MOTHER_DEATH_TYPE = "M102"
+        const val CHILD_DEATH_TYPE = "C102"
 
     }
 }

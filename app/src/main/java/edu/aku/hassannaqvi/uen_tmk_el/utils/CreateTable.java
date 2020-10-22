@@ -3,9 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk_el.utils;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.BLRandomContract.BLRandomTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.FollowUpContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UCContract.UCTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VersionAppContract.VersionAppTable;
@@ -107,15 +106,6 @@ public final class CreateTable {
             + BLRandomTable.COLUMN_RANDOMDT + " TEXT,"
             + BLRandomTable.COLUMN_SNO_HH + " TEXT );";
 
-    public static final String SQL_CREATE_FOLLOWUP = "CREATE TABLE " + FollowUpContract.TableFollowUp.TABLE_NAME + "("
-            + FollowUpContract.TableFollowUp._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FollowUpContract.TableFollowUp.COLUMN_MP101 + " TEXT,"
-            + FollowUpContract.TableFollowUp.COLUMN__LUID + " TEXT,"
-            + FollowUpContract.TableFollowUp.COLUMN_MPSYSDATE + " TEXT,"
-            + FollowUpContract.TableFollowUp.COLUMN_PID + " TEXT,"
-            + FollowUpContract.TableFollowUp.COLUMN_SEEM_VID + " TEXT"
-            + " );";
-
 
     public static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE " + FamilyMembersContract.MemberTable.TABLE_NAME + "("
             + FamilyMembersContract.MemberTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -156,23 +146,23 @@ public final class CreateTable {
             + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT,"
             + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
 
-    public static final String SQL_CREATE_MWRA = "CREATE TABLE " + MWRAContract.MWRATable.TABLE_NAME + "("
-            + MWRAContract.MWRATable.COLUMN_ID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_UID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_UUID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_ELB1 + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_ELB11 + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_FMUID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_MUID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_USERNAME + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_SYSDATE + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_TYPE + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_SC + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_SB + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_DEVICEID + " TEXT,"
-            + MWRAContract.MWRATable.COLUMN_DEVICETAGID + " TEXT, "
-            + MWRAContract.MWRATable.COLUMN_SYNCED + " TEXT, "
-            + MWRAContract.MWRATable.COLUMN_SYNCED_DATE + " TEXT, "
-            + MWRAContract.MWRATable.COLUMN_APPVERSION + " TEXT );";
+    public static final String SQL_CREATE_MWRA = "CREATE TABLE " + Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME + "("
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_UUID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1 + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11 + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICEID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICETAGID + " TEXT, "
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " TEXT, "
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED_DATE + " TEXT, "
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_APPVERSION + " TEXT );";
 
 }

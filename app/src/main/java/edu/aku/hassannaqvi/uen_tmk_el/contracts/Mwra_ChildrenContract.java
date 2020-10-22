@@ -5,12 +5,12 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-public class MWRAContract {
+public class Mwra_ChildrenContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.uen_tmk_el";
 
-    public static abstract class MWRATable implements BaseColumns {
-        public static final String TABLE_NAME = "mwra";
+    public static abstract class MWRAChildTable implements BaseColumns {
+        public static final String TABLE_NAME = "mwra_children";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -30,7 +30,7 @@ public class MWRAContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static String PATH = "mwra";
+        public static String PATH = "mwra_children";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
         public static final String CONTENT_ITEM_TYPE =

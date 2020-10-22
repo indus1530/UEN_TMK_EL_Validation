@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -17,13 +19,29 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
+import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionI01Binding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_IMMUNIZATION;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity.childList;
 
 public class SectionI01Activity extends AppCompatActivity {
 
     ActivitySectionI01Binding bi;
+    MWRA_CHILD mwraChild;
+    int position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +50,33 @@ public class SectionI01Activity extends AppCompatActivity {
         bi.setCallback(this);
 
         setupSkip();
+        setupContent();
+    }
+
+    private void setupContent() {
+        List<String> children = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(childList.getSecond());
+            }
+        };
+        bi.imi1a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, children));
+        bi.imi1a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                position = i;
+                bi.i1b.setText(childList.getFirst().get(i - 1));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.btnContinue.setText(childList.getFirst().size() > 1 ? "Next Child" : "Next Section");
+
     }
 
     private void setupSkip() {
@@ -58,6 +103,7 @@ public class SectionI01Activity extends AppCompatActivity {
         radioGroupImp(bi.imi4i, bi.imi4i01, bi.fldGrpCVimi4isrc, bi.fldGrpCVimi4iplc);
         radioGroupImp(bi.imi4j, bi.imi4j01, bi.fldGrpCVimi4jsrc, bi.fldGrpCVimi4jplc);
 
+
     }
 
 
@@ -82,40 +128,48 @@ public class SectionI01Activity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             SaveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : childList.getFirst().size() == 0 ? SectionJ01Activity.class : SectionI01Activity.class).putExtra(ADD_IMMUNIZATION, mwraChild));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : SectionJ01Activity.class));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private boolean UpdateDB() {
-
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.set_ID(String.valueOf(updcount));
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        long updcount = db.addMWRA(mwraChild);
+        mwraChild.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            form.set_UID(form.getDeviceID() + form.get_ID());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.get_UID());
+            mwraChild.set_UID(mwraChild.getDeviceID() + mwraChild.get_ID());
+            db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
 
     private void SaveDraft() throws JSONException {
 
+        mwraChild = new MWRA_CHILD();
+        mwraChild.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+        mwraChild.setUsername(MainApp.userName);
+        mwraChild.setDeviceID(MainApp.appInfo.getDeviceID());
+        mwraChild.setDevicetagID(MainApp.appInfo.getTagName());
+        mwraChild.setAppversion(MainApp.appInfo.getAppVersion());
+        mwraChild.setUUID(MainApp.form.get_UID());
+        mwraChild.setElb1(MainApp.form.getElb1());
+        mwraChild.setElb11(MainApp.form.getElb11());
+//        mwraChild.setFmuid(selectedMWRA.getUid());
+        mwraChild.setType(CONSTANTS.CHILD_TYPE);
+
         JSONObject json = new JSONObject();
 
-        json.put("imi1a", bi.imi1a.getText().toString().trim().isEmpty() ? "-1" : bi.imi1a.getText().toString());
+        json.put("imi1a", bi.imi1a.getSelectedItem().toString());
         json.put("i1b", bi.i1b.getText().toString().trim().isEmpty() ? "-1" : bi.i1b.getText().toString());
 
         json.put("imi1", bi.imi101.isChecked() ? "1"
@@ -267,6 +321,10 @@ public class SectionI01Activity extends AppCompatActivity {
                 : bi.imi4jplc03.isChecked() ? "3"
                 : "-1");
 
+        mwraChild.setsB(json.toString());
+
+        childList.getFirst().remove(position);
+        childList.getSecond().remove(position);
     }
 
 

@@ -25,13 +25,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA;
+import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
@@ -42,7 +43,7 @@ public class SectionF01Activity extends AppCompatActivity {
     List<String> mwraNames;
     Map<String, FamilyMembersContract> mwraMAP;
     FamilyMembersContract selectedMWRA;
-    MWRA mwra;
+    MWRA_CHILD mwraChild;
 
     @Override
 
@@ -121,11 +122,11 @@ public class SectionF01Activity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addMWRA(mwra);
-        mwra.set_ID(String.valueOf(updcount));
+        long updcount = db.addMWRA(mwraChild);
+        mwraChild.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            mwra.set_UID(mwra.getDeviceID() + mwra.get_ID());
-            db.updatesMWRAColumn(MWRAContract.MWRATable.COLUMN_UID, mwra.get_UID());
+            mwraChild.set_UID(mwraChild.getDeviceID() + mwraChild.get_ID());
+            db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -136,16 +137,17 @@ public class SectionF01Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
-        mwra = new MWRA();
-        mwra.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        mwra.setUsername(MainApp.userName);
-        mwra.setDeviceID(MainApp.appInfo.getDeviceID());
-        mwra.setDevicetagID(MainApp.appInfo.getTagName());
-        mwra.setAppversion(MainApp.appInfo.getAppVersion());
-        mwra.setUUID(MainApp.form.get_UID());
-        mwra.setElb1(MainApp.form.getElb1());
-        mwra.setElb11(MainApp.form.getElb11());
-        mwra.setFmuid(selectedMWRA.getUid());
+        mwraChild = new MWRA_CHILD();
+        mwraChild.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+        mwraChild.setUsername(MainApp.userName);
+        mwraChild.setDeviceID(MainApp.appInfo.getDeviceID());
+        mwraChild.setDevicetagID(MainApp.appInfo.getTagName());
+        mwraChild.setAppversion(MainApp.appInfo.getAppVersion());
+        mwraChild.setUUID(MainApp.form.get_UID());
+        mwraChild.setElb1(MainApp.form.getElb1());
+        mwraChild.setElb11(MainApp.form.getElb11());
+        mwraChild.setFmuid(selectedMWRA.getUid());
+        mwraChild.setType(CONSTANTS.MWRA_TYPE);
 
         JSONObject json = new JSONObject();
 
@@ -170,7 +172,7 @@ public class SectionF01Activity extends AppCompatActivity {
 
         json.put("raf5", bi.raf5.getText().toString());
 
-        mwra.setsB(json.toString());
+        mwraChild.setsB(json.toString());
 
         mwraNames.remove(bi.f1a.getSelectedItem().toString());
         adapter.notifyDataSetChanged();

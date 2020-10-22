@@ -98,11 +98,12 @@
 
                     </RelativeLayout>
 
-                    <EditText
+                    <Spinner
                         android:id="@+id/imi1a"
+                        style="@style/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/imi1a" />
+                        android:layout_margin="10dp" />
 
                 </LinearLayout>
 
@@ -144,6 +145,7 @@
 
                     <EditText
                         android:id="@+id/i1b"
+                        android:enabled="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/i1b"
