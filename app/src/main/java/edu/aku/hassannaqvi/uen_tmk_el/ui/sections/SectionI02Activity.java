@@ -99,7 +99,7 @@ public class SectionI02Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, mwraChild.getsC());
+        int updcount = db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, mwraChild.getsC(), mwraChild.get_ID());
         return updcount == 1;
     }
 
