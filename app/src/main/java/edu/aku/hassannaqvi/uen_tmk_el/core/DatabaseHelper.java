@@ -354,7 +354,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMWRA(MWRA_CHILD mwraChild) {
+    public Long addMWRACHILD(MWRA_CHILD mwraChild) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -1358,6 +1358,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+
     //Generic update FormColumn
     public int updatesFormColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1380,8 +1381,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = DeathContract.DeathTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(id)};
+        String selection = DeathContract.DeathTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {id};
 
         return db.update(DeathContract.DeathTable.TABLE_NAME,
                 values,
@@ -1395,14 +1396,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = Mwra_ChildrenContract.MWRAChildTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(id)};
+        String selection = Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {id};
 
         return db.update(Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
     }
+
 
     //Get FamilyMembers data for info activity
     public FamilyMembersContract getFamilyMember(String cluster, String hhno, String kishType, FamilyMembersContract mother) {

@@ -130,7 +130,7 @@ public final class CreateTable {
             + ");";
 
     public static final String SQL_CREATE_DEATH = "CREATE TABLE " + DeathContract.DeathTable.TABLE_NAME + "("
-            + DeathContract.DeathTable.COLUMN_ID + " TEXT,"
+            + DeathContract.DeathTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + DeathContract.DeathTable.COLUMN_UID + " TEXT,"
             + DeathContract.DeathTable.COLUMN_UUID + " TEXT,"
             + DeathContract.DeathTable.COLUMN_ELB1 + " TEXT,"
@@ -147,7 +147,7 @@ public final class CreateTable {
             + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
 
     public static final String SQL_CREATE_MWRA = "CREATE TABLE " + Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME + "("
-            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " TEXT,"
+            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_UUID + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1 + " TEXT,"

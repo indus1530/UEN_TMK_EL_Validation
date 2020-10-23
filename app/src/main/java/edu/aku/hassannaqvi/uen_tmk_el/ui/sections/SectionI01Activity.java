@@ -140,7 +140,7 @@ public class SectionI01Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addMWRA(mwraChild);
+        long updcount = db.addMWRACHILD(mwraChild);
         mwraChild.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
             mwraChild.set_UID(mwraChild.getDeviceID() + mwraChild.get_ID());
