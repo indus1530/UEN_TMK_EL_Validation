@@ -173,7 +173,7 @@ class FamilyMembersListActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Toast.makeText(this, "Press top back button", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show()
     }
 
     private suspend fun updateKishMember(fmc: FamilyMembersContract, int: Int) =

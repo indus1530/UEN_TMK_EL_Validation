@@ -306,4 +306,9 @@ public class SectionF01Activity extends AppCompatActivity {
         AppUtilsKt.showTooltip(this, view);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

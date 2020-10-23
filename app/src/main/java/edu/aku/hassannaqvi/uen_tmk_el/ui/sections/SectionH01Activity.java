@@ -329,4 +329,9 @@ public class SectionH01Activity extends AppCompatActivity {
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

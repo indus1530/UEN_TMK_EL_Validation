@@ -121,4 +121,9 @@ public class SectionCActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
 }

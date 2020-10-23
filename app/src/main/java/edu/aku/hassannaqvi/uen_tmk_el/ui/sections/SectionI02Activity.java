@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -211,5 +212,10 @@ public class SectionI02Activity extends AppCompatActivity {
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }
