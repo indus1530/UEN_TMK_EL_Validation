@@ -299,74 +299,142 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/raf3" />
+                            android:background="@drawable/bottom">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/raf301" />
+                            <TextView
+                                android:id="@+id/qtxt_raf3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_raf3"
+                                android:text="@string/raf3" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/raf301"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/raf301"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
+                            <TextView
+                                android:id="@+id/q_raf3"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_raf3"
+                                android:layout_alignBottom="@id/qtxt_raf3"
+                                android:text="@string/Q_raf3" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/raf302" />
+                        </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/raf302"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/raf302"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/raf303" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/raf301" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/raf303"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/raf303"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/raf301"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/raf304" />
+                        </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/raf304"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/raf304"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/raf302" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/raf302"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/raf303" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/raf303"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/raf304" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/raf304"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
