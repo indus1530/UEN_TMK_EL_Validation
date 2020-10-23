@@ -242,6 +242,7 @@
 
                         <EditText
                             android:id="@+id/chg301a"
+                            android:enabled="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/chg301a"
@@ -267,6 +268,7 @@
 
                         <EditText
                             android:id="@+id/chg302a"
+                            android:enabled="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/chg302a"

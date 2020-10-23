@@ -66,7 +66,7 @@ public class SectionI01Activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
                 position = i;
-                bi.i1b.setText(childList.getFirst().get(i - 1));
+                bi.i1b.setText(String.valueOf(childList.getFirst().get(i - 1)));
             }
 
             @Override
