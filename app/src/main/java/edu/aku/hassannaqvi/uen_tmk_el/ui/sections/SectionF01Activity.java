@@ -85,13 +85,80 @@ public class SectionF01Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.raf2.getText().toString().isEmpty()) return;
-                bi.raf301.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString()));
                 bi.raf302.setText("");
                 bi.raf303.setText("");
                 bi.raf304.setText("");
-                bi.raf302.setEnabled(false);
-                bi.raf303.setEnabled(false);
-                bi.raf304.setEnabled(false);
+                bi.raf301.setEnabled(true);
+                bi.raf301.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.raf301.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.raf301.getText().toString().isEmpty()) return;
+                bi.raf302.setText("");
+                bi.raf303.setText("");
+                bi.raf304.setText("");
+                bi.raf302.setEnabled(true);
+                bi.raf302.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString()) - Float.parseFloat(bi.raf301.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.raf302.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.raf302.getText().toString().isEmpty()) return;
+                bi.raf303.setText("");
+                bi.raf304.setText("");
+                bi.raf303.setEnabled(true);
+                bi.raf303.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString()) - (Float.parseFloat(bi.raf301.getText().toString()) + Float.parseFloat(bi.raf302.getText().toString())));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.raf303.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.raf303.getText().toString().isEmpty()) return;
+                bi.raf304.setText("");
+                bi.raf304.setEnabled(true);
+                bi.raf304.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString())
+                        - (Float.parseFloat(bi.raf301.getText().toString())
+                        + Float.parseFloat(bi.raf302.getText().toString())
+                        + Float.parseFloat(bi.raf303.getText().toString())));
             }
 
             @Override

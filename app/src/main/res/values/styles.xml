@@ -164,11 +164,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/spinner_style</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">10dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingStart">50dp</item>
-        <item name="android:spinnersShown">false</item>
+        <item name="android:spinnersShown">true</item>
     </style>
 
     <style name="spinnerDropDownItemStyle">
