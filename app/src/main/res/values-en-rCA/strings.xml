@@ -29,10 +29,11 @@
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="database">Database</string>
+    <string name="yes"> Yes </string>
     <string name="no"> No </string>
     <string name="dkn"> Don’t Know </string>
-    <string name="none"> No one </string>
-    <string name="never"> Never</string>
+    <string name="none"> None </string>
+    <string name="never"> Never </string>
     <string name="na"> Applicable /Not Available  </string>
     <string name="nap"> Not Applicable </string>
     <string name="error_invalid_password">This password is too short</string>

@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -69,6 +71,35 @@ public class SectionF01Activity extends AppCompatActivity {
 
             }
         });
+
+
+        bi.raf1.setOnCheckedChangeListener((group, id) -> Clear.clearAllFields(bi.llraf102));
+
+
+        bi.raf2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.raf2.getText().toString().isEmpty()) return;
+                bi.raf301.setMaxvalue(Float.parseFloat(bi.raf2.getText().toString()));
+                bi.raf302.setText("");
+                bi.raf303.setText("");
+                bi.raf304.setText("");
+                bi.raf302.setEnabled(false);
+                bi.raf303.setEnabled(false);
+                bi.raf304.setEnabled(false);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
 
