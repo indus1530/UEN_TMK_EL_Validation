@@ -87,7 +87,7 @@ public class SectionF03Activity extends AppCompatActivity {
         death.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
             death.set_UID(death.getDeviceID() + death.get_ID());
-            db.updatesDeathColumn(DeathContract.DeathTable.COLUMN_UID, death.get_UID());
+            db.updatesDeathColumn(DeathContract.DeathTable.COLUMN_UID, death.get_UID(), death.get_ID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();

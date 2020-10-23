@@ -1374,14 +1374,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesDeathColumn(String column, String value) {
+    public int updatesDeathColumn(String column, String value, String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(column, value);
 
         String selection = DeathContract.DeathTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(value)};
+        String[] selectionArgs = {String.valueOf(id)};
 
         return db.update(DeathContract.DeathTable.TABLE_NAME,
                 values,
@@ -1389,14 +1389,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesMWRAColumn(String column, String value) {
+    public int updatesMWRAColumn(String column, String value, String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(column, value);
 
         String selection = Mwra_ChildrenContract.MWRAChildTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(value)};
+        String[] selectionArgs = {String.valueOf(id)};
 
         return db.update(Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME,
                 values,
@@ -1610,7 +1610,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
     }
-
 
 
     //Generic Un-Synced Forms
