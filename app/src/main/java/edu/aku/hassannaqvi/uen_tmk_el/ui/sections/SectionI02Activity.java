@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_IMMUNIZATION;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity.mainVModel;
 import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity.childList;
 
 public class SectionI02Activity extends AppCompatActivity {
@@ -90,7 +91,7 @@ public class SectionI02Activity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, childList.getFirst().size() == 0 ? SectionJ01Activity.class : SectionI01Activity.class));
+                startActivity(new Intent(this, childList.getFirst().size() == 0 ? mainVModel.getAllUnder2().size() > 0 ? SectionJ01Activity.class : SectionKActivity.class : SectionI01Activity.class));
             }
         } catch (JSONException e) {
             e.printStackTrace();

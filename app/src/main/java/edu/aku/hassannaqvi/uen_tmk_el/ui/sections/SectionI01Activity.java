@@ -27,6 +27,7 @@ import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
@@ -35,7 +36,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_IMMUNIZATION;
-import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity.childList;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity.mainVModel;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionH01Activity.childListU2;
 
 public class SectionI01Activity extends AppCompatActivity {
 
@@ -57,16 +59,17 @@ public class SectionI01Activity extends AppCompatActivity {
         List<String> children = new ArrayList<String>() {
             {
                 add("....");
-                addAll(childList.getSecond());
             }
         };
+        for (FamilyMembersContract item : childListU2.getSecond())
+            children.add(item.getName());
         bi.imi1a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, children));
         bi.imi1a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
-                position = i;
-                bi.i1b.setText(String.valueOf(childList.getFirst().get(i - 1)));
+                position = i - 1;
+                bi.i1b.setText(String.valueOf(childListU2.getFirst().get(i - 1)));
             }
 
             @Override
@@ -75,7 +78,7 @@ public class SectionI01Activity extends AppCompatActivity {
             }
         });
 
-        bi.btnContinue.setText(childList.getFirst().size() > 1 ? "Next Child" : "Next Section");
+        bi.btnContinue.setText(childListU2.getFirst().size() > 1 ? "Next Child" : "Next Section");
 
     }
 
@@ -130,7 +133,7 @@ public class SectionI01Activity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : childList.getFirst().size() == 0 ? SectionJ01Activity.class : SectionI01Activity.class).putExtra(ADD_IMMUNIZATION, mwraChild));
+                startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : childListU2.getFirst().size() == 0 ? mainVModel.getAllUnder2().size() > 0 ? SectionJ01Activity.class : SectionKActivity.class : SectionI01Activity.class).putExtra(ADD_IMMUNIZATION, mwraChild));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -164,11 +167,13 @@ public class SectionI01Activity extends AppCompatActivity {
         mwraChild.setUUID(MainApp.form.get_UID());
         mwraChild.setElb1(MainApp.form.getElb1());
         mwraChild.setElb11(MainApp.form.getElb11());
-//        mwraChild.setFmuid(selectedMWRA.getUid());
+        mwraChild.setFmuid(childListU2.getSecond().get(position).getUid());
         mwraChild.setType(CONSTANTS.CHILD_TYPE);
 
         JSONObject json = new JSONObject();
 
+        json.put("mserial", childListU2.getSecond().get(position).getMother_serial());
+        json.put("mname", childListU2.getSecond().get(position).getMother_name());
         json.put("imi1a", bi.imi1a.getSelectedItem().toString());
         json.put("i1b", bi.i1b.getText().toString().trim().isEmpty() ? "-1" : bi.i1b.getText().toString());
 
@@ -323,8 +328,8 @@ public class SectionI01Activity extends AppCompatActivity {
 
         mwraChild.setsB(json.toString());
 
-        childList.getFirst().remove(position - 1);
-        childList.getSecond().remove(position - 1);
+        childListU2.getFirst().remove(position);
+        childListU2.getSecond().remove(position);
     }
 
 

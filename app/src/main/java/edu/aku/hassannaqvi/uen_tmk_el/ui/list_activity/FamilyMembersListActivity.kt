@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import com.leinardi.android.speeddial.SpeedDialView
@@ -25,6 +26,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.openEndActivity
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel
 import kotlinx.android.synthetic.main.activity_family_members_list.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FamilyMembersListActivity : AppCompatActivity() {
@@ -69,38 +71,40 @@ class FamilyMembersListActivity : AppCompatActivity() {
 
                     if (memSelectedCounter != serial - 1) return@OnActionSelectedListener false
 
-                    /*indexKishMWRA = mainVModel.mwraChildU5Lst.value?.get(
-                            kishSelectedMWRA(intent.getIntExtra("sno", 0),
-                                    mainVModel.mwraChildU5Lst.value!!.size) - 1)
 
-                    if (indexKishMWRA != null) {
-                        val childLst = mainVModel.getAllChildrenOfSelMWRA(indexKishMWRA.serialno.toInt())
-                        indexKishMWRAChild = childLst?.let {
-                            childLst[kishSelectedMWRA(intent.getIntExtra("sno", 0),
-                                    childLst.size) - 1]
-                        }
+                    lifecycleScope.launch {
 
-                        GlobalScope.launch {
-                            val indexMwraUpdate = async { updateKishMember(indexKishMWRA, 1) }
-                            val indexChildUpdate = async { updateKishMember(indexKishMWRAChild, 2) }
-                            if (indexMwraUpdate.await().let { true } and indexChildUpdate.await().let { true }) {
-                                finish()
-                                startActivity(Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java))
+                        if (mainVModel.getAllUnder2().isNotEmpty()) {
+                            indexKishMWRA = withContext(Dispatchers.Main) {
+                                mainVModel.mwraChildU2Lst.value?.get(
+                                        kishSelectedMWRA(intent.getIntExtra("sno", 0),
+                                                mainVModel.getAllUnder2().size) - 1)
+                            }
+
+                            val childLst = mainVModel.getAllU2ChildrenOfSelMWRA(indexKishMWRA.serialno.toInt())
+                            indexKishMWRAChild = withContext(Dispatchers.Main) {
+                                childLst?.let {
+                                    childLst[kishSelectedMWRA(intent.getIntExtra("sno", 0),
+                                            childLst.size) - 1]
+                                }
                             }
                         }
-                    } else {
+
                         finish()
-                        startActivity(Intent(this@FamilyMembersListActivity, EndingActivity::class.java).putExtra("complete", false))
-                    }*/
+                        startActivity(Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java))
 
-                    var intent = Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java)
-                    /*if (bi.contentScroll.mwra.text.toString().toInt() > 0) {
-                        intent = Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java)
-                    } else if (bi.contentScroll.under5.text.toString().toInt() > 0)
-                        intent = Intent(this@FamilyMembersListActivity, SectionG01Activity::class.java)*/
+                    }
 
-                    finish()
-                    startActivity(intent)
+                    /*
+                       GlobalScope.launch {
+                           val indexMwraUpdate = async { updateKishMember(indexKishMWRA, 1) }
+                           val indexChildUpdate = async { updateKishMember(indexKishMWRAChild, 2) }
+                           if (indexMwraUpdate.await().let { true } and indexChildUpdate.await().let { true }) {
+                               finish()
+                               startActivity(Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java))
+                           }
+                       }
+                   }*/
 
                 }
                 "Force exit" -> {

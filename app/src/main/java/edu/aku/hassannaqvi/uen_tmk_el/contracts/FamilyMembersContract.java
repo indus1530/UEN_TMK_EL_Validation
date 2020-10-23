@@ -37,6 +37,7 @@ public class FamilyMembersContract implements Parcelable {
     private String kishSelected;
     private String luid;
     //Not required in db
+    private int ageMonths;
     private String fName;
     private String available;
     private String relHHxx;
@@ -62,6 +63,7 @@ public class FamilyMembersContract implements Parcelable {
         marital = in.readString();
         sD = in.readString();
         kishSelected = in.readString();
+        ageMonths = in.readInt();
         fName = in.readString();
         available = in.readString();
     }
@@ -267,6 +269,14 @@ public class FamilyMembersContract implements Parcelable {
         this.luid = luid;
     }
 
+    public int getAgeMonths() {
+        return ageMonths;
+    }
+
+    public void setAgeMonths(int ageMonths) {
+        this.ageMonths = ageMonths;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -291,6 +301,7 @@ public class FamilyMembersContract implements Parcelable {
         parcel.writeString(marital);
         parcel.writeString(sD);
         parcel.writeString(kishSelected);
+        parcel.writeInt(ageMonths);
         parcel.writeString(fName);
         parcel.writeString(available);
     }

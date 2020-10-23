@@ -23,7 +23,6 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
     private String elb1 = "";
     private String elb11 = "";
     private String fmuid = "";
-    private String muid = "";
     private String username = "";
     private String sysdate = "";
     private String type = "";
@@ -95,15 +94,6 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
 
     public void setFmuid(String fmuid) {
         this.fmuid = fmuid;
-    }
-
-
-    public String getMuid() {
-        return muid;
-    }
-
-    public void setMuid(String muid) {
-        this.muid = muid;
     }
 
 
@@ -214,7 +204,6 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
         this.elb1 = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1);
         this.elb11 = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11);
         this.fmuid = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID);
-        this.muid = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID);
         this.username = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME);
         this.sysdate = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE);
         this.type = jsonObject.getString(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE);
@@ -237,7 +226,6 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
         this.elb1 = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1));
         this.elb11 = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11));
         this.fmuid = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID));
-        this.muid = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID));
         this.username = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME));
         this.sysdate = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE));
         this.deviceID = cursor.getString(cursor.getColumnIndex(Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICEID));
@@ -270,7 +258,6 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1, this.elb1 == null ? JSONObject.NULL : this.elb1);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11, this.elb11 == null ? JSONObject.NULL : this.elb11);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID, this.fmuid == null ? JSONObject.NULL : this.fmuid);
-            json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID, this.muid == null ? JSONObject.NULL : this.muid);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME, this.username == null ? JSONObject.NULL : this.username);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE, this.type == null ? JSONObject.NULL : this.type);

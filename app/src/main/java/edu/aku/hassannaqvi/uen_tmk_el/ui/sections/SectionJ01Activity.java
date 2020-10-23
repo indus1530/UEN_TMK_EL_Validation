@@ -20,6 +20,9 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJ01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
+import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.indexKishMWRA;
+import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.indexKishMWRAChild;
+
 public class SectionJ01Activity extends AppCompatActivity {
 
     ActivitySectionJ01Binding bi;
@@ -36,6 +39,10 @@ public class SectionJ01Activity extends AppCompatActivity {
         bi.bfj4.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj5));
         bi.bfj6.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.llbfj7));
         bi.bfj10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj11));
+        bi.bfj1ca.setText(indexKishMWRAChild.getName());
+        bi.bfj1cb.setText(indexKishMWRAChild.getSerialno());
+        bi.bfj1ma.setText(indexKishMWRA.getName());
+        bi.bfj1mb.setText(indexKishMWRA.getSerialno());
     }
 
 
@@ -63,6 +70,10 @@ public class SectionJ01Activity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         JSONObject json = new JSONObject();
+
+        json.put("j_fmuid", indexKishMWRAChild.getUid());
+        json.put("j_muid", indexKishMWRA.getUid());
+
         json.put("bfj1ca", bi.bfj1ca.getText().toString());
 
         json.put("bfj1cb", bi.bfj1cb.getText().toString());

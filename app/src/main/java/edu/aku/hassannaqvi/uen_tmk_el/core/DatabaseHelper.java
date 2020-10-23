@@ -366,7 +366,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1, mwraChild.getElb1());
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11, mwraChild.getElb11());
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID, mwraChild.getFmuid());
-        values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID, mwraChild.getMuid());
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME, mwraChild.getUsername());
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE, mwraChild.getSysdate());
         values.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE, mwraChild.getType());
@@ -1124,7 +1123,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1,
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11,
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID,
-                Mwra_ChildrenContract.MWRAChildTable.COLUMN_MUID,
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME,
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE,
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_DEVICEID,

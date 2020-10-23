@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
@@ -33,7 +34,7 @@ import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 public class SectionH01Activity extends AppCompatActivity {
 
     ActivitySectionH01Binding bi;
-    public static Pair<List<Integer>, List<String>> childList;
+    public static Pair<List<Integer>, List<FamilyMembersContract>> childListU2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,8 @@ public class SectionH01Activity extends AppCompatActivity {
     }
 
     private void setupContent() {
-        childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+        childListU2 = FamilyMembersListActivity.mainVModel.getAllUnder2Pair();
+        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
         Pair<List<Integer>, List<String>> respList = FamilyMembersListActivity.mainVModel.getAllRespondent();
 
         List<String> resp = new ArrayList<String>() {

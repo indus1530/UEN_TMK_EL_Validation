@@ -19,7 +19,6 @@ public class Mwra_ChildrenContract {
         public static final String COLUMN_ELB1 = "elb1";
         public static final String COLUMN_ELB11 = "elb11";
         public static final String COLUMN_FMUID = "fmuid";
-        public static final String COLUMN_MUID = "muid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_TYPE = "type";

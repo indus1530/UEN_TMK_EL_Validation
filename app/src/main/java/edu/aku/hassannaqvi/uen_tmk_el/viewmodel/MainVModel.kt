@@ -15,7 +15,7 @@ class MainVModel : ViewModel() {
     var childLstU5 = MutableLiveData<MutableList<FamilyMembersContract>>()
         private set
 
-    var mwraChildU5Lst = MutableLiveData<MutableList<FamilyMembersContract>>()
+    var mwraChildU2Lst = MutableLiveData<MutableList<FamilyMembersContract>>()
         private set
 
     var checkedItems = MutableLiveData<MutableList<Int>>()
@@ -43,17 +43,17 @@ class MainVModel : ViewModel() {
         childLstU5.value = lst
     }
 
-    fun setMwraChildU5(item: FamilyMembersContract) {
-        var lst = mwraChildU5Lst.value
+    fun setMwraChildU2(item: FamilyMembersContract) {
+        var lst = mwraChildU2Lst.value
         if (lst.isNullOrEmpty()) {
             lst = mutableListOf()
             lst.add(item)
         } else {
-            val fmc = mwraChildU5Lst.value?.find { it.serialno.toInt() == item.serialno.toInt() }
+            val fmc = mwraChildU2Lst.value?.find { it.serialno.toInt() == item.serialno.toInt() }
             fmc?.let { lst.map { if (it.serialno.toInt() == fmc.serialno.toInt()) item else it } }
                     ?: lst.add(item)
         }
-        mwraChildU5Lst.value = lst
+        mwraChildU2Lst.value = lst
     }
 
     fun setCheckedItemValues(index: Int) {
@@ -86,8 +86,8 @@ class MainVModel : ViewModel() {
         return Pair(family?.map { it.serialno.toInt() }, family?.map { it.name })
     }
 
-    fun getAllChildrenOfSelMWRA(mwraSerial: Int): List<FamilyMembersContract>? {
-        return childLstU5.value?.filter { it -> it.mother_serial.toInt() == mwraSerial }
+    fun getAllU2ChildrenOfSelMWRA(mwraSerial: Int): List<FamilyMembersContract>? {
+        return childLstU5.value?.filter { it.mother_serial.toInt() == mwraSerial && it.ageMonths < 24 }
     }
 
     fun getAllChildrenPairOfSelMWRA(mwraSerial: Int): Pair<List<Int>?, List<String>?> {
@@ -97,6 +97,14 @@ class MainVModel : ViewModel() {
 
     fun getAllUnder5(): Pair<List<Int>?, List<String>?> {
         return Pair(childLstU5.value?.map { it.serialno.toInt() }, childLstU5.value?.map { it.name })
+    }
+
+    fun getAllUnder2Pair(): Pair<List<Int>?, List<FamilyMembersContract>?> {
+        return Pair(childLstU5.value?.filter { it.ageMonths < 24 }?.map { it.serialno.toInt() }, childLstU5.value?.map { it })
+    }
+
+    fun getAllUnder2(): List<FamilyMembersContract> {
+        return childLstU5.value?.filter { it.ageMonths < 24 } ?: mutableListOf()
     }
 
     fun getAllRespondent(): Pair<List<Int>?, List<String>?> {
