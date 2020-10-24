@@ -7,9 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -19,6 +16,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -129,17 +128,11 @@ public class SectionG01Activity extends AppCompatActivity {
             }
         });
 
-        bi.chg20.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == bi.chg2003.getId()) {
+        bi.chg20.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.chg2003.getId()) {
                 Clear.clearAllFields(bi.fldGrpSecG04);
-                bi.fldGrpSecG04.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.fldGrpCVchg25);
-                bi.fldGrpCVchg25.setVisibility(View.GONE);
-            } else {
-                bi.fldGrpSecG04.setVisibility(View.VISIBLE);
-                bi.fldGrpCVchg25.setVisibility(View.VISIBLE);
             }
-        });
+        }));
 
         bi.chg21.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == bi.chg2102.getId()) {

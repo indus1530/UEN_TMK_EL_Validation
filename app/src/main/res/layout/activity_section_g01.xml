@@ -1596,7 +1596,8 @@
                             android:id="@+id/fldGrpSecG04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:visibility='@{chg2003.checked? View.GONE : View.VISIBLE}'>
 
 
                             <!-- chg21  Radio   -->
@@ -1874,10 +1875,6 @@
 
                             </LinearLayout>
 
-
-                        </LinearLayout>
-
-
                         <!-- chg25  Radio   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVchg25"
@@ -1939,6 +1936,7 @@
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+                        </LinearLayout>
 
 
                     </LinearLayout>
