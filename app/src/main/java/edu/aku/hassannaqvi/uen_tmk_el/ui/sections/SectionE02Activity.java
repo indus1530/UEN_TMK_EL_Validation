@@ -32,9 +32,9 @@ public class SectionE02Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e02);
         bi.setCallback(this);
-
         setupSkip();
     }
+
 
     private void setupSkip() {
         bi.ele11.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.ele12cv));

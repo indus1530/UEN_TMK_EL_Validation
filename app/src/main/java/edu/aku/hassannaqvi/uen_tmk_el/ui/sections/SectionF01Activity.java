@@ -57,6 +57,7 @@ public class SectionF01Activity extends AppCompatActivity {
         setupListeners();
     }
 
+
     private void setupListeners() {
         bi.f1a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -185,6 +186,7 @@ public class SectionF01Activity extends AppCompatActivity {
         setupNextButtonText();
     }
 
+
     private boolean setupNextButtonText() {
         if (mwraNames.size() > 2) {
             Clear.clearAllFields(bi.fldGrpSecF01);
@@ -311,4 +313,5 @@ public class SectionF01Activity extends AppCompatActivity {
     public void onBackPressed() {
         Toast.makeText(this, "You Can't go back", Toast.LENGTH_LONG).show();
     }
+
 }
