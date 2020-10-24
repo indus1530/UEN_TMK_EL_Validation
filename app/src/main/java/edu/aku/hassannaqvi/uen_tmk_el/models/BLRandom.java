@@ -24,7 +24,7 @@ public class BLRandom {
     private String hhhead;
     private String randomDT;
     private String contact;
-    private String selStructure;
+    private String selUC;
     private String sno;
     private String tabno;
     private String rndType;
@@ -59,11 +59,11 @@ public class BLRandom {
         this.extension = jsonObject.getString(BLRandomTable.COLUMN_FAMILY_EXT_CODE);
         this.extension = String.format(Locale.getDefault(), "%03d", Integer.valueOf(this.extension));
         this.tabno = jsonObject.getString(BLRandomTable.COLUMN_TAB_NO);
-        this.hh = tabno + "-" + structure + "-" + extension;
+        this.hh = structure + "-" + extension;
         this.randomDT = jsonObject.getString(BLRandomTable.COLUMN_RANDOMDT);
         this.hhhead = jsonObject.getString(BLRandomTable.COLUMN_HH_HEAD);
         this.contact = jsonObject.getString(BLRandomTable.COLUMN_CONTACT);
-        this.selStructure = jsonObject.getString(BLRandomTable.COLUMN_HH_SELECTED_STRUCT);
+        this.selUC = jsonObject.getString(BLRandomTable.COLUMN_HH_SELECTED_UC);
         this.sno = jsonObject.getString(BLRandomTable.COLUMN_SNO_HH);
         return this;
     }
@@ -79,7 +79,7 @@ public class BLRandom {
         this.randomDT = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_RANDOMDT));
         this.hhhead = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_HH_HEAD));
         this.contact = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_CONTACT));
-        this.selStructure = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_HH_SELECTED_STRUCT));
+        this.selUC = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_HH_SELECTED_UC));
         this.sno = cursor.getString(cursor.getColumnIndex(BLRandomTable.COLUMN_SNO_HH));
         return this;
     }
@@ -156,12 +156,12 @@ public class BLRandom {
         this.contact = contact;
     }
 
-    public String getSelStructure() {
-        return selStructure;
+    public String getSelUC() {
+        return selUC;
     }
 
-    public void setSelStructure(String selStructure) {
-        this.selStructure = selStructure;
+    public void setSelUC(String selUC) {
+        this.selUC = selUC;
     }
 
     public String getAssignHH() {

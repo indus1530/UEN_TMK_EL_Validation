@@ -14,17 +14,17 @@ public class BLRandomContract {
 
         public static final String TABLE_NAME = "bl_randomised";
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_RANDOMDT = "randDT";
-        public static final String COLUMN_LUID = "UID";
+        public static final String COLUMN_LUID = "uid";
+        public static final String COLUMN_RANDOMDT = "sysdate";
+        public static final String COLUMN_SNO_HH = "srno";
+        public static final String COLUMN_HH_SELECTED_UC = "uc_code";
         public static final String COLUMN_P_CODE = "hh02";
-        public static final String COLUMN_EB_CODE = "hh05";
+        public static final String COLUMN_EB_CODE = "village_code";
         public static final String COLUMN_STRUCTURE_NO = "hh03";
         public static final String COLUMN_FAMILY_EXT_CODE = "hh07";
-        public static final String COLUMN_HH = "hh";
         public static final String COLUMN_HH_HEAD = "hh08";
         public static final String COLUMN_CONTACT = "hh09";
-        public static final String COLUMN_HH_SELECTED_STRUCT = "hhss";
-        public static final String COLUMN_SNO_HH = "sno";
+        public static final String COLUMN_HH = "hh";
         public static final String COLUMN_TAB_NO = "tabNo";
         public static String PATH = "bl_randomised";
         public static final String CONTENT_TYPE =

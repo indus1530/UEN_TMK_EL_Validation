@@ -146,7 +146,7 @@ public class SectionI01Activity extends AppCompatActivity {
         mwraChild.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
             mwraChild.set_UID(mwraChild.getDeviceID() + mwraChild.get_ID());
-            db.updatesMWRAColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID(), mwraChild.get_ID());
+            db.updatesMWRAChildColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID(), mwraChild.get_ID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();

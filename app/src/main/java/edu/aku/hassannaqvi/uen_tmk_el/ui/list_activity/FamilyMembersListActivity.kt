@@ -88,23 +88,15 @@ class FamilyMembersListActivity : AppCompatActivity() {
                                             childLst.size) - 1]
                                 }
                             }
+
+                            updateKishMember(indexKishMWRA, 1)
+
                         }
 
                         finish()
                         startActivity(Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java))
 
                     }
-
-                    /*
-                       GlobalScope.launch {
-                           val indexMwraUpdate = async { updateKishMember(indexKishMWRA, 1) }
-                           val indexChildUpdate = async { updateKishMember(indexKishMWRAChild, 2) }
-                           if (indexMwraUpdate.await().let { true } and indexChildUpdate.await().let { true }) {
-                               finish()
-                               startActivity(Intent(this@FamilyMembersListActivity, SectionE01Activity::class.java))
-                           }
-                       }
-                   }*/
 
                 }
                 "Force exit" -> {

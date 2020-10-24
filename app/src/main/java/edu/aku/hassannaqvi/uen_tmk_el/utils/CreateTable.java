@@ -102,7 +102,7 @@ public final class CreateTable {
             + BLRandomTable.COLUMN_FAMILY_EXT_CODE + " TEXT,"
             + BLRandomTable.COLUMN_HH_HEAD + " TEXT,"
             + BLRandomTable.COLUMN_CONTACT + " TEXT,"
-            + BLRandomTable.COLUMN_HH_SELECTED_STRUCT + " TEXT,"
+            + BLRandomTable.COLUMN_HH_SELECTED_UC + " TEXT,"
             + BLRandomTable.COLUMN_RANDOMDT + " TEXT,"
             + BLRandomTable.COLUMN_SNO_HH + " TEXT );";
 

@@ -197,7 +197,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(BLRandomTable.COLUMN_RANDOMDT, Vc.getRandomDT());
                 values.put(BLRandomTable.COLUMN_HH_HEAD, Vc.getHhhead());
                 values.put(BLRandomTable.COLUMN_CONTACT, Vc.getContact());
-                values.put(BLRandomTable.COLUMN_HH_SELECTED_STRUCT, Vc.getSelStructure());
+                values.put(BLRandomTable.COLUMN_HH_SELECTED_UC, Vc.getSelUC());
                 values.put(BLRandomTable.COLUMN_SNO_HH, Vc.getSno());
 
                 long row = db.insert(BLRandomTable.TABLE_NAME, null, values);
@@ -1241,7 +1241,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 BLRandomTable.COLUMN_P_CODE,
                 BLRandomTable.COLUMN_EB_CODE,
                 BLRandomTable.COLUMN_RANDOMDT,
-                BLRandomTable.COLUMN_HH_SELECTED_STRUCT,
+                BLRandomTable.COLUMN_HH_SELECTED_UC,
                 BLRandomTable.COLUMN_CONTACT,
                 BLRandomTable.COLUMN_HH_HEAD,
                 BLRandomTable.COLUMN_SNO_HH
@@ -1388,7 +1388,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesMWRAColumn(String column, String value, String id) {
+    public int updatesMWRAChildColumn(String column, String value, String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();

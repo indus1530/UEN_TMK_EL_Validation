@@ -55,7 +55,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionJ01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionKActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionLActivity;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionNActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionN01Activity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
@@ -357,7 +357,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
                 oF = new Intent(this, SectionLActivity.class);
                 break;
             case R.id.formN:
-                oF = new Intent(this, SectionNActivity.class);
+                oF = new Intent(this, SectionN01Activity.class);
                 break;
             case R.id.databaseBtn:
                 oF = new Intent(this, AndroidDatabaseManager.class);

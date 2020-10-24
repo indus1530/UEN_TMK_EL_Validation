@@ -143,7 +143,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionNActivity"
+            android:name=".ui.sections.SectionN01Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name=".ui.sections.SectionN02Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
