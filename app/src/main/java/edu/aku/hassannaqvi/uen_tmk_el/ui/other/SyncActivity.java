@@ -38,7 +38,6 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySyncBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.SyncModel;
 import edu.aku.hassannaqvi.uen_tmk_el.sync.GetAllData;
 import edu.aku.hassannaqvi.uen_tmk_el.sync.SyncAllData;
@@ -131,7 +130,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
 
             new SyncDevice(this, false).execute();
 //  *******************************************************Forms*********************************
-            String[] syncValues = new String[]{CONSTANTS.FORM_MP, CONSTANTS.FORM_MF};
+            /*String[] syncValues = new String[]{CONSTANTS.FORM_MP, CONSTANTS.FORM_MF};
             for (int i = 0; i < syncValues.length; i++) {
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[i]), Toast.LENGTH_SHORT).show();
                 if (uploadlistActivityCreated) {
@@ -148,7 +147,23 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                         FormsContract.FormsTable.TABLE_NAME + syncValues[i],
                         db.getUnsyncedForms(syncValues[i]), i, syncListAdapter, uploadlist
                 ).execute();
+            }*/
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+            if (uploadlistActivityCreated) {
+                uploadmodel = new SyncModel();
+                uploadmodel.setstatusID(0);
+                uploadlist.add(uploadmodel);
             }
+            new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FamilyMembersContract.class,
+                    MainApp._HOST_URL + MainApp._SERVER_URL,
+                    FormsContract.FormsTable.TABLE_NAME,
+                    db.getUnsyncedForms(), 1, syncListAdapter, uploadlist
+            ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing FamilyMembers", Toast.LENGTH_SHORT).show();
             if (uploadlistActivityCreated) {
@@ -165,6 +180,24 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     FamilyMembersContract.MemberTable.TABLE_NAME,
                     db.getUnsyncedFamilyMembers(), 2, syncListAdapter, uploadlist
             ).execute();
+
+            /*String[] syncValues = new String[]{CONSTANTS.MWRA_TYPE, CONSTANTS.FORM_MF};
+            for (int i = 0; i < syncValues.length; i++) {
+                Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[i]), Toast.LENGTH_SHORT).show();
+                if (uploadlistActivityCreated) {
+                    uploadmodel = new SyncModel();
+                    uploadmodel.setstatusID(0);
+                    uploadlist.add(uploadmodel);
+                }
+                new SyncAllData(
+                        this,
+                        String.format("Forms - %s", syncValues[i]),
+                        "updateSyncedForms",
+                        Form.class,
+                        MainApp._HOST_URL + MainApp._SERVER_URL,
+                        FormsContract.FormsTable.TABLE_NAME + syncValues[i],
+                        db.getUnsyncedMWRA(syncValues[i]), i, syncListAdapter, uploadlist
+                ).execute();*/
 
             uploadlistActivityCreated = false;
 

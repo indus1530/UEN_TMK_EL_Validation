@@ -33,6 +33,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_ANTHRO;
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.CHILD_ANTHRO_TYPE;
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.VILLAGES_DATA;
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.appInfo;
 
@@ -107,6 +108,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
         anthro.setAppversion(MainApp.appInfo.getAppVersion());
         anthro.setElb1(bi.elb1.getText().toString());
         anthro.setElb11(bi.elb11.getText().toString());
+        anthro.setType(CHILD_ANTHRO_TYPE);
     }
 
 
