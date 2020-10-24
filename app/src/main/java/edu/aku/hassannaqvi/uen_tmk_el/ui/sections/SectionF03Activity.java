@@ -11,7 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -25,6 +24,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF03Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.DateUtils;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.DEATH_COUNT;
 
@@ -43,10 +43,8 @@ public class SectionF03Activity extends AppCompatActivity {
         setupContent();
 
         //for 5 years in RAF73 (Age at death) calendar
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.YEAR, +5);
-        bi.raf7e.setMaxDate(sdf.format(cal.getTime()));
+        String dt = DateUtils.getYearsBack("dd/MM/yyyy", -5);
+        bi.raf7e.setMinDate(dt);
     }
 
 

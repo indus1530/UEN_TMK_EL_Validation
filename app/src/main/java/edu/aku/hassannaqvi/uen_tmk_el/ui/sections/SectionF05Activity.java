@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -18,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract;
@@ -26,6 +25,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionF05Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.DateUtils;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.C_DEATH_COUNT;
 
@@ -41,11 +41,16 @@ public class SectionF05Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f05);
         bi.setCallback(this);
         setupContent();
+
+        //for 5 years in CMF9H (Age at death) calendar
+        String dt = DateUtils.getYearsBack("dd/MM/yyyy", -5);
+        bi.cmf9h.setMinDate(dt);
     }
 
 
     private void setupContent() {
-        count = Integer.parseInt(getIntent().getStringExtra(C_DEATH_COUNT));
+        String values = getIntent().getStringExtra(C_DEATH_COUNT);
+        count = Integer.parseInt(values != null ? values : "0");
         setupNextButtonText();
         bi.cmf9a.setText(String.valueOf(cCounter));
     }
