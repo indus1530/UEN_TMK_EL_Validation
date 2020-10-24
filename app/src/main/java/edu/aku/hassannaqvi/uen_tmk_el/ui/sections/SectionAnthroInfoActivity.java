@@ -4,7 +4,6 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -16,22 +15,24 @@ import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
-import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
-import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionAnthroInfoBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.VILLAGES_DATA;
@@ -43,6 +44,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     ActivitySectionAnthroInfoBinding bi;
     BLRandom bl;
     MWRA_CHILD anthro;
+    public static List<FamilyMembersContract> childListU2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,20 +81,12 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        try {
-            SaveDraft();
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, SectionCActivity.class));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        gettingAreaData();
     }
 
 
     private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addMWRACHILD(anthro);
         anthro.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
@@ -102,7 +96,8 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return true;
     }
 
 
@@ -116,8 +111,6 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
         anthro.setAppversion(MainApp.appInfo.getAppVersion());
         anthro.setElb1(bi.elb1.getText().toString());
         anthro.setElb11(bi.elb11.getText().toString());
-
-        MainApp.setGPS(this);
     }
 
 
@@ -145,19 +138,27 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
 
     //Reactive Streams
-    private Observable<BLRandom> getBLRandom() {
+    private Observable<FamilyMembersContract> getSelectedMother() {
         return Observable.create(emitter -> {
-            emitter.onNext(appInfo.getDbHelper().getHHFromBLRandom(bi.elb8a.getText().toString(), bi.elb11.getText().toString()));
+            emitter.onNext(appInfo.getDbHelper().getFamilyMember(bi.elb8a.getText().toString(), bi.elb11.getText().toString(), "1", null));
+            emitter.onComplete();
+        });
+    }
+
+    private Observable<List<FamilyMembersContract>> getFilledForm(FamilyMembersContract fmContract) {
+        return Observable.create(emitter -> {
+            emitter.onNext(appInfo.getDbHelper().getFamilyMemberList(bi.elb8a.getText().toString(), bi.elb11.getText().toString(), fmContract));
             emitter.onComplete();
         });
     }
 
     //Getting data from db
     public void gettingAreaData() {
-        getBLRandom()
+        getSelectedMother()
+                .flatMap((Function<FamilyMembersContract, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<BLRandom>() {
+                .subscribe(new Observer<List<FamilyMembersContract>>() {
                     Disposable disposable;
 
                     @Override
@@ -166,20 +167,32 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(@NonNull BLRandom blRandom) {
-                        bl = blRandom;
+                    public void onNext(@NonNull List<FamilyMembersContract> u2Lst) {
+                        childListU2.addAll(u2Lst);
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
                         disposable.dispose();
+
                     }
 
                     @Override
                     public void onComplete() {
                         disposable.dispose();
+
+                        try {
+                            SaveDraft();
+                            if (UpdateDB()) {
+                                finish();
+                                startActivity(new Intent(SectionAnthroInfoActivity.this, SectionN02Activity.class));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
+
     }
 
 
