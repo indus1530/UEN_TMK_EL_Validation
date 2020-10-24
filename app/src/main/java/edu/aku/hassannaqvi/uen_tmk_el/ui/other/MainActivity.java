@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_tmk_el.ui.other;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
@@ -44,6 +45,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.VersionApp;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FormsReportDate;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionAnthroInfoActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionBActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity;
@@ -320,11 +322,15 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
         );
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void openSpecificActivity(View v) {
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
                 oF = new Intent(this, SectionBActivity.class).putExtra(VILLAGES_DATA, village);
+                break;
+            case R.id.formAnthro:
+                oF = new Intent(this, SectionAnthroInfoActivity.class).putExtra(VILLAGES_DATA, village);
                 break;
             case R.id.formC:
                 oF = new Intent(this, SectionCActivity.class);

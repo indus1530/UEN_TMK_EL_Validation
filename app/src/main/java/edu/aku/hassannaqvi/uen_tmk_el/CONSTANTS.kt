@@ -28,6 +28,7 @@ class CONSTANTS {
         const val IM02FLAG = "im02_flag"
         const val IM01CARDSEEN = "im01_card_seen"
         const val ADD_IMMUNIZATION = "add_immunization"
+        const val ADD_ANTHRO = "add_anthro"
 
         //Login Result Code
         const val LOGIN_RESULT_CODE = 10101

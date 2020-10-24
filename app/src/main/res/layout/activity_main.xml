@@ -223,9 +223,9 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:elevation="@dimen/cardview_default_elevation"
+                        android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="@{callback::openSpecificActivity}"
-                        android:focusable="true"
                         app:cardCornerRadius="20dp">
 
                         <RelativeLayout
@@ -244,6 +244,41 @@
                                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                                 android:textColor="@color/white"
                                 app:drawableStartCompat="@drawable/open_form" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/formAnthro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:elevation="@dimen/cardview_default_elevation"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{callback::openSpecificActivity}"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_horizontal"
+                                android:drawablePadding="12dp"
+                                android:text="Open Anthro Form"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                                android:textColor="@color/white"
+                                app:drawableStartCompat="@drawable/ic_username" />
 
                         </RelativeLayout>
 

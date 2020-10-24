@@ -56,12 +56,12 @@
 
                     </RelativeLayout>
 
-                    <EditText
+                    <Spinner
                         android:id="@+id/can6"
+                        style="@style/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
-                        android:hint="@string/can6" />
+                        android:layout_margin="10dp" />
 
                 </LinearLayout>
 

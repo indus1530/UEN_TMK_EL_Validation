@@ -8,22 +8,19 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionAnthroInfoBinding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import io.reactivex.Observable;
@@ -35,6 +32,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_ANTHRO;
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.VILLAGES_DATA;
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.appInfo;
 
@@ -42,9 +40,8 @@ import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.appInfo;
 public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     ActivitySectionAnthroInfoBinding bi;
-    BLRandom bl;
     MWRA_CHILD anthro;
-    public static List<FamilyMembersContract> childListU2;
+    public static List<FamilyMembersContract> childListU5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +78,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        gettingAreaData();
+        gettingAnthroData();
     }
 
 
@@ -104,7 +101,6 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         anthro = new MWRA_CHILD();
-        anthro.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
         anthro.setUsername(MainApp.userName);
         anthro.setDeviceID(MainApp.appInfo.getDeviceID());
         anthro.setDevicetagID(MainApp.appInfo.getTagName());
@@ -153,7 +149,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     }
 
     //Getting data from db
-    public void gettingAreaData() {
+    public void gettingAnthroData() {
         getSelectedMother()
                 .flatMap((Function<FamilyMembersContract, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
                 .subscribeOn(Schedulers.io())
@@ -168,13 +164,13 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(@NonNull List<FamilyMembersContract> u2Lst) {
-                        childListU2.addAll(u2Lst);
+                        childListU5.addAll(u2Lst);
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
                         disposable.dispose();
-
+                        Snackbar.make(findViewById(android.R.id.content), "Sorry no members found", Snackbar.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -185,7 +181,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
                             SaveDraft();
                             if (UpdateDB()) {
                                 finish();
-                                startActivity(new Intent(SectionAnthroInfoActivity.this, SectionN02Activity.class));
+                                startActivity(new Intent(SectionAnthroInfoActivity.this, SectionN02Activity.class).putExtra(ADD_ANTHRO, anthro));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

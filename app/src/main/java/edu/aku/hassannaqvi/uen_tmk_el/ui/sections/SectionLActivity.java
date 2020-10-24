@@ -101,7 +101,7 @@ public class SectionLActivity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, MainApp.indexKishMWRA.getAvailable().equals("1") ? SectionN01Activity.class : EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, MainApp.indexKishMWRA != null && MainApp.indexKishMWRA.getAvailable().equals("1") ? SectionN01Activity.class : EndingActivity.class).putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }

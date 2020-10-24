@@ -143,6 +143,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
+            android:name=".ui.sections.SectionAnthroInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
             android:name=".ui.sections.SectionN01Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
