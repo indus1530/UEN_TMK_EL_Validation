@@ -483,8 +483,7 @@
             <!-- wsk15  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwsk15"
-                style="@style/cardView"
-                android:visibility='@{wsk303.checked ? View.GONE : View.VISIBLE}'>
+                style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -569,7 +568,8 @@
             <!-- wsk4  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwsk4"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility='@{wsk303.checked? View.VISIBLE : View.GONE}'>
 
                 <LinearLayout
                     android:layout_width="match_parent"
