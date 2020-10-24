@@ -19,7 +19,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
-        <item name="spinnerStyle">@style/spinner</item>
+        <!--<item name="spinnerStyle">@style/spinner</item>-->
         <item name="android:actionBarStyle">@style/topBarStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="editTextStyle">@style/textInput</item>

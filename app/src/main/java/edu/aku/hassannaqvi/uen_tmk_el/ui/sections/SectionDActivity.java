@@ -216,7 +216,7 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
         sd.put("mmd601", bi.mmd601.getText().toString());
         sd.put("mmd602", bi.mmd602.getText().toString());
         fmc.setAge(bi.mmd601.getText().toString());
-        fmc.setAgeMonths(Integer.parseInt(bi.mmd602.getText().toString()) * 12 + Integer.parseInt(bi.mmd601.getText().toString()));
+        fmc.setAgeMonths(Integer.parseInt(bi.mmd601.getText().toString()) * 12 + Integer.parseInt(bi.mmd602.getText().toString()));
 
         sd.put("mmd10", bi.mmd1001.isChecked() ? "1"
                 : bi.mmd1002.isChecked() ? "2"

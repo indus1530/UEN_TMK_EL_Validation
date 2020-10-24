@@ -26,7 +26,6 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.openEndActivity
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel
 import kotlinx.android.synthetic.main.activity_family_members_list.*
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FamilyMembersListActivity : AppCompatActivity() {
@@ -74,7 +73,7 @@ class FamilyMembersListActivity : AppCompatActivity() {
 
                     lifecycleScope.launch {
 
-                        if (mainVModel.getAllUnder2().isNotEmpty()) {
+                        if (mainVModel.getAllUnder2().isNotEmpty() && !mainVModel.mwraChildU2Lst.value.isNullOrEmpty()) {
                             indexKishMWRA = withContext(Dispatchers.Main) {
                                 mainVModel.mwraChildU2Lst.value?.get(
                                         kishSelectedMWRA(intent.getIntExtra("sno", 0),
