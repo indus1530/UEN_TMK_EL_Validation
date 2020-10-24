@@ -7,9 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -19,6 +16,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
@@ -30,11 +29,12 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity.mainVModel;
 
 public class SectionH01Activity extends AppCompatActivity {
 
-    ActivitySectionH01Binding bi;
     public static Pair<List<Integer>, List<FamilyMembersContract>> childListU2;
+    ActivitySectionH01Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +155,7 @@ public class SectionH01Activity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, bi.arih301.isChecked() ? SectionH02Activity.class : SectionI01Activity.class));
+                startActivity(new Intent(this, bi.arih301.isChecked() ? SectionH02Activity.class : mainVModel.getAllUnder2().size() > 0 ? SectionI01Activity.class : SectionKActivity.class));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
