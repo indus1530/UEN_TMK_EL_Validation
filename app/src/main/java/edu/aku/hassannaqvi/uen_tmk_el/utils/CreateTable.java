@@ -153,7 +153,6 @@ public final class CreateTable {
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB1 + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ELB11 + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_FMUID + " TEXT,"
-            + Mwra_ChildrenContract.MWRAChildTable.COLUMN_MSERIAL + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_USERNAME + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE + " TEXT,"
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + " TEXT,"
