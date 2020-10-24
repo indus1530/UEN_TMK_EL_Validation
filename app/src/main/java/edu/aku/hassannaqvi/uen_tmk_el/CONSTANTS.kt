@@ -60,6 +60,8 @@ class CONSTANTS {
         const val CHILD_TYPE = "C101"
         const val MOTHER_DEATH_TYPE = "M102"
         const val CHILD_DEATH_TYPE = "C102"
+        const val MWRA_ANTHRO_TYPE = "M103"
+        const val CHILD_ANTHRO_TYPE = "C103"
 
     }
 }
