@@ -100,7 +100,8 @@ class MainVModel : ViewModel() {
     }
 
     fun getAllUnder2Pair(): Pair<List<Int>?, List<FamilyMembersContract>?> {
-        return Pair(childLstU5.value?.filter { it.ageMonths < 24 }?.map { it.serialno.toInt() }, childLstU5.value?.map { it })
+        val items = childLstU5.value?.filter { it.ageMonths < 24 }
+        return Pair(items?.map { it.serialno.toInt() }, items?.map { it })
     }
 
     fun getAllUnder2(): List<FamilyMembersContract> {

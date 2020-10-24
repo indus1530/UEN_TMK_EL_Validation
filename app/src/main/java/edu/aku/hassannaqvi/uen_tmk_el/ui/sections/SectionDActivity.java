@@ -9,9 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -24,6 +21,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -288,7 +287,15 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
         else {
             if (!Validator.emptyCheckingContainer(this, bi.fldGrpSectionD))
                 return false;
-            return Validator.emptyEditTextPicker(this, bi.mmd601);
+            if (!Validator.emptyEditTextPicker(this, bi.mmd601))
+                return false;
+
+            if (Integer.parseInt(bi.mmd601.getText().toString()) == 0 && Integer.parseInt(bi.mmd602.getText().toString()) == 0) {
+                bi.mmd602.setError("Year and Month both cannot be 0");
+                bi.mmd602.setFocusable(true);
+                return false;
+            }
+            return true;
         }
     }
 
