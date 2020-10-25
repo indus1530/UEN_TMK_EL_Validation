@@ -26,6 +26,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Validator;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -62,6 +64,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.WarningActivityInterface;
+import edu.aku.hassannaqvi.uen_tmk_el.validator.ValidatorClass;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -324,6 +327,7 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
 
     @SuppressLint("NonConstantResourceId")
     public void openSpecificActivity(View v) {
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
