@@ -304,6 +304,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MemberTable.COLUMN_LUID, fmc.getLuid());
         values.put(MemberTable.COLUMN_KISH_SELECTED, fmc.getKishSelected());
         values.put(MemberTable.COLUMN_CLUSTERNO, fmc.getClusterno());
+        values.put(MemberTable.COLUMN_SUBCLUSTERNO, fmc.getSubclusterno());
         values.put(MemberTable.COLUMN_HHNO, fmc.getHhno());
         values.put(MemberTable.COLUMN_SERIAL_NO, fmc.getSerialno());
         values.put(MemberTable.COLUMN_NAME, fmc.getName());
@@ -1180,6 +1181,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MemberTable.COLUMN_LUID,
                 MemberTable.COLUMN_KISH_SELECTED,
                 MemberTable.COLUMN_CLUSTERNO,
+                MemberTable.COLUMN_SUBCLUSTERNO,
                 MemberTable.COLUMN_HHNO,
                 MemberTable.COLUMN_SERIAL_NO,
                 MemberTable.COLUMN_NAME,
@@ -1405,7 +1407,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Get FamilyMembers data for info activity
-    public FamilyMembersContract getFamilyMember(String cluster, String hhno, String kishType, FamilyMembersContract mother) {
+    public FamilyMembersContract getFamilyMember(String cluster, String subcluster, String hhno, String kishType, FamilyMembersContract mother) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1415,6 +1417,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MemberTable.COLUMN_LUID,
                 MemberTable.COLUMN_KISH_SELECTED,
                 MemberTable.COLUMN_CLUSTERNO,
+                MemberTable.COLUMN_SUBCLUSTERNO,
                 MemberTable.COLUMN_HHNO,
                 MemberTable.COLUMN_SERIAL_NO,
                 MemberTable.COLUMN_NAME,
@@ -1437,9 +1440,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + MemberTable.COLUMN_MOTHER_SERIAL + "=? AND " + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_MOTHER_NAME + "=?";
             whereArgs = new String[]{cluster, hhno, kishType, mother.getSerialno(), mother.getUuid(), mother.getName()};
         } else {
-            whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND "
+            whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_SUBCLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND "
                     + MemberTable.COLUMN_KISH_SELECTED + "=? ";
-            whereArgs = new String[]{cluster, hhno, kishType};
+            whereArgs = new String[]{cluster, subcluster, hhno, kishType};
         }
         String groupBy = null;
         String having = null;
@@ -1471,7 +1474,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allBL;
     }
 
-    public List<FamilyMembersContract> getFamilyMemberList(String cluster, String hhno, FamilyMembersContract mother) {
+    public List<FamilyMembersContract> getFamilyMemberList(String cluster, String subcluster, String hhno, FamilyMembersContract mother) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1481,6 +1484,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MemberTable.COLUMN_UUID,
                 MemberTable.COLUMN_KISH_SELECTED,
                 MemberTable.COLUMN_CLUSTERNO,
+                MemberTable.COLUMN_SUBCLUSTERNO,
                 MemberTable.COLUMN_HHNO,
                 MemberTable.COLUMN_SERIAL_NO,
                 MemberTable.COLUMN_NAME,
@@ -1495,9 +1499,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         };
 
-        String whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND " + MemberTable.COLUMN_KISH_SELECTED + " != 2 AND "
+        String whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_SUBCLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND " + MemberTable.COLUMN_KISH_SELECTED + " != 2 AND "
                 + MemberTable.COLUMN_MOTHER_SERIAL + "=? AND " + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_MOTHER_NAME + "=? AND (" + MemberTable.COLUMN_AGE + "  BETWEEN 0 to 4)";
-        String[] whereArgs = {cluster, hhno, mother.getSerialno(), mother.getUuid(), mother.getName()};
+        String[] whereArgs = {cluster, subcluster, hhno, mother.getSerialno(), mother.getUuid(), mother.getName()};
         String groupBy = null;
         String having = null;
 
@@ -1599,11 +1603,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = MemberTable.COLUMN_CLUSTERNO + " =? AND "
+                + MemberTable.COLUMN_SUBCLUSTERNO + " =? AND "
                 + MemberTable.COLUMN_HHNO + " =? AND "
                 + MemberTable.COLUMN_SERIAL_NO + " =? AND "
                 + MemberTable.COLUMN_UID + " =? AND "
                 + MemberTable.COLUMN_UUID + " =?";
-        String[] selectionArgs = {fmc.getClusterno(), fmc.getHhno(), fmc.getSerialno(), fmc.getUid(), fmc.getUuid()};
+        String[] selectionArgs = {fmc.getClusterno(), fmc.getSubclusterno(), fmc.getHhno(), fmc.getSerialno(), fmc.getUid(), fmc.getUuid()};
 
         return db.update(MemberTable.TABLE_NAME,
                 values,
@@ -1651,7 +1656,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedMWRA(String id) {
+    public void updateSyncedMWRACHILD(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column

@@ -13,6 +13,7 @@ public class FamilyMembersContract implements Parcelable {
     private String uid;
     private String uuid;
     private String clusterno;
+    private String subclusterno;
     private String hhno;
     private String serialno;
     private String name;
@@ -51,6 +52,7 @@ public class FamilyMembersContract implements Parcelable {
         uuid = in.readString();
         luid = in.readString();
         clusterno = in.readString();
+        subclusterno = in.readString();
         hhno = in.readString();
         serialno = in.readString();
         name = in.readString();
@@ -75,6 +77,7 @@ public class FamilyMembersContract implements Parcelable {
         this.luid = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_LUID));
         this.kishSelected = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_KISH_SELECTED));
         this.clusterno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_CLUSTERNO));
+        this.subclusterno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_SUBCLUSTERNO));
         this.hhno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_HHNO));
         this.serialno = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_SERIAL_NO));
         this.name = cursor.getString(cursor.getColumnIndex(MemberTable.COLUMN_NAME));
@@ -99,6 +102,7 @@ public class FamilyMembersContract implements Parcelable {
         json.put(MemberTable.COLUMN_LUID, this.luid == null ? JSONObject.NULL : this.luid);
         json.put(MemberTable.COLUMN_KISH_SELECTED, this.kishSelected == null ? JSONObject.NULL : this.kishSelected);
         json.put(MemberTable.COLUMN_CLUSTERNO, this.clusterno == null ? JSONObject.NULL : this.clusterno);
+        json.put(MemberTable.COLUMN_SUBCLUSTERNO, this.subclusterno == null ? JSONObject.NULL : this.subclusterno);
         json.put(MemberTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
         json.put(MemberTable.COLUMN_SERIAL_NO, this.serialno == null ? JSONObject.NULL : this.serialno);
         json.put(MemberTable.COLUMN_NAME, this.name == null ? JSONObject.NULL : this.name);
@@ -277,6 +281,14 @@ public class FamilyMembersContract implements Parcelable {
         this.ageMonths = ageMonths;
     }
 
+    public String getSubclusterno() {
+        return subclusterno;
+    }
+
+    public void setSubclusterno(String subclusterno) {
+        this.subclusterno = subclusterno;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -289,6 +301,7 @@ public class FamilyMembersContract implements Parcelable {
         parcel.writeString(uuid);
         parcel.writeString(luid);
         parcel.writeString(clusterno);
+        parcel.writeString(subclusterno);
         parcel.writeString(hhno);
         parcel.writeString(serialno);
         parcel.writeString(name);
@@ -316,6 +329,7 @@ public class FamilyMembersContract implements Parcelable {
         public static final String COLUMN_AGE = "age";
         public static final String COLUMN_CLUSTERNO = "elb1";
         public static final String COLUMN_HHNO = "elb11";
+        public static final String COLUMN_SUBCLUSTERNO = "elb8a";
         public static final String COLUMN_RELATION_HH = "relHH";
         public static final String COLUMN_RELATION_HHXX = "relHHxx";
         public static final String COLUMN_KISH_SELECTED = "kishSelected";

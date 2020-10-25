@@ -109,7 +109,7 @@ class MainVModel : ViewModel() {
     }
 
     fun getAllRespondent(): Pair<List<Int>?, List<String>?> {
-        val family = familyMemLst.value?.filter { it -> (it.age.toInt() >= 15) }
+        val family = familyMemLst.value?.filter { it -> (it.age.toInt() >= 15 && it.gender == "2") }
         return Pair(family?.map { it.serialno.toInt() }, family?.map { it.name })
     }
 

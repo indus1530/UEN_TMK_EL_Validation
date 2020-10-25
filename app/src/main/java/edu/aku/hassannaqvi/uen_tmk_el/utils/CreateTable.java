@@ -114,6 +114,7 @@ public final class CreateTable {
             FamilyMembersContract.MemberTable.COLUMN_LUID + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_KISH_SELECTED + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_CLUSTERNO + " TEXT," +
+            FamilyMembersContract.MemberTable.COLUMN_SUBCLUSTERNO + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_HHNO + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_SERIAL_NO + " TEXT," +
             FamilyMembersContract.MemberTable.COLUMN_NAME + " TEXT," +
