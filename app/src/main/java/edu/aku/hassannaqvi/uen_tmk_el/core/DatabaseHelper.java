@@ -1114,7 +1114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDeaths;
     }
 
-    public Collection<MWRA_CHILD> getUnsyncedMWRA(String type) {
+    public Collection<MWRA_CHILD> getUnsyncedMWRAChild(String type) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {

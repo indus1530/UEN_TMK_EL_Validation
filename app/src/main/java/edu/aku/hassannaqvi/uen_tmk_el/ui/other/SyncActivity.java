@@ -199,7 +199,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                         MWRA_CHILD.class,
                         MainApp._HOST_URL + MainApp._SERVER_URL,
                         syncValues[i][0],
-                        db.getUnsyncedMWRA(syncValues[i][1]), i, syncListAdapter, uploadlist
+                        db.getUnsyncedMWRAChild(syncValues[i][1]), i, syncListAdapter, uploadlist
                 ).execute();
             }
 
