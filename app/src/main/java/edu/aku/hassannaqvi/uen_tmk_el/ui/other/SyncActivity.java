@@ -164,7 +164,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     Form.class,
                     MainApp._HOST_URL + MainApp._SERVER_URL,
                     FormsContract.FormsTable.TABLE_NAME,
-                    db.getUnsyncedForms(), 1, syncListAdapter, uploadlist
+                    db.getUnsyncedForms(), 0, syncListAdapter, uploadlist
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing FamilyMembers", Toast.LENGTH_SHORT).show();
@@ -180,13 +180,14 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     FamilyMembersContract.class,
                     MainApp._HOST_URL + MainApp._SERVER_URL,
                     FamilyMembersContract.MemberTable.TABLE_NAME,
-                    db.getUnsyncedFamilyMembers(), 2, syncListAdapter, uploadlist
+                    db.getUnsyncedFamilyMembers(), 1, syncListAdapter, uploadlist
             ).execute();
 
             String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Death", null}, {"Anthro", null}};
-            int max = syncValues.length + 3;
-            for (int i = 3; i < max; i++) {
-                Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[i][0]), Toast.LENGTH_SHORT).show();
+            int max = syncValues.length;
+            for (int i = 2; i <= max; i++) {
+                int k = i - 2;
+                Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();
                 if (uploadlistActivityCreated) {
                     uploadmodel = new SyncModel();
                     uploadmodel.setstatusID(0);
@@ -194,12 +195,12 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                 }
                 new SyncAllData(
                         this,
-                        String.format("Forms - %s", syncValues[i][0]),
+                        String.format("Forms - %s", syncValues[k][0]),
                         "updateSyncedMWRACHILD",
                         MWRA_CHILD.class,
                         MainApp._HOST_URL + MainApp._SERVER_URL,
-                        syncValues[i][0],
-                        db.getUnsyncedMWRAChild(syncValues[i][1]), i, syncListAdapter, uploadlist
+                        syncValues[k][0],
+                        db.getUnsyncedMWRAChild(syncValues[k][1]), i, syncListAdapter, uploadlist
                 ).execute();
             }
 
