@@ -14,6 +14,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk_el.R;
@@ -152,6 +153,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     //Getting data from db
     public void gettingAnthroData() {
+        childListU5 = new ArrayList<>();
         getSelectedMother()
                 .flatMap((Function<FamilyMembersContract, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
                 .subscribeOn(Schedulers.io())

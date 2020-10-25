@@ -54,7 +54,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
     private void setupContent() {
 
-        bi.btnContinue.setText(childListU5.size() > 0 ? "Next Child" : "Next Section");
+        bi.btnContinue.setText(childListU5.size() > 1 ? "Next Child" : "Next Section");
         anthro = (MWRA_CHILD) getIntent().getSerializableExtra(ADD_ANTHRO);
 
         List<String> items = new ArrayList<String>() {

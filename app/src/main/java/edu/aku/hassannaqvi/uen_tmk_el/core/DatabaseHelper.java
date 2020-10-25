@@ -1499,8 +1499,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         };
 
-        String whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_SUBCLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND " + MemberTable.COLUMN_KISH_SELECTED + " != 2 AND "
-                + MemberTable.COLUMN_MOTHER_SERIAL + "=? AND " + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_MOTHER_NAME + "=? AND (" + MemberTable.COLUMN_AGE + "  BETWEEN 0 to 4)";
+        String whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_SUBCLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND " + MemberTable.COLUMN_KISH_SELECTED + " is null AND "
+                + MemberTable.COLUMN_MOTHER_SERIAL + "=? AND " + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_MOTHER_NAME + "=? AND " + MemberTable.COLUMN_AGE + " in (0,1,2,3,4)";
         String[] whereArgs = {cluster, subcluster, hhno, mother.getSerialno(), mother.getUuid(), mother.getName()};
         String groupBy = null;
         String having = null;
@@ -1529,7 +1529,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allBL;
+        return allBL.size() > 0 ? allBL : null;
     }
 
 
