@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -21,8 +24,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -148,6 +149,7 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
             fmc.setUuid(MainApp.form.get_UID());
 //            fmc.setLuid(MainApp.form.getLuid());
             fmc.setClusterno(MainApp.form.getElb1());
+            fmc.setSubclusterno(MainApp.form.getElb8a());
             fmc.setHhno(MainApp.form.getElb11());
             fmc.setSerialno(bi.mmd1.getText().toString());
             fmc.setName(bi.mmd2.getText().toString());

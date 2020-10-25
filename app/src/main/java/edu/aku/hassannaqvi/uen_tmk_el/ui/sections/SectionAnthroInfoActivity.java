@@ -138,14 +138,14 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     //Reactive Streams
     private Observable<FamilyMembersContract> getSelectedMother() {
         return Observable.create(emitter -> {
-            emitter.onNext(appInfo.getDbHelper().getFamilyMember(bi.elb8a.getText().toString(), bi.elb11.getText().toString(), "1", null));
+            emitter.onNext(appInfo.getDbHelper().getFamilyMember(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString(), "1", null));
             emitter.onComplete();
         });
     }
 
     private Observable<List<FamilyMembersContract>> getFilledForm(FamilyMembersContract fmContract) {
         return Observable.create(emitter -> {
-            emitter.onNext(appInfo.getDbHelper().getFamilyMemberList(bi.elb8a.getText().toString(), bi.elb11.getText().toString(), fmContract));
+            emitter.onNext(appInfo.getDbHelper().getFamilyMemberList(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString(), fmContract));
             emitter.onComplete();
         });
     }
