@@ -1024,7 +1024,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause;
         String[] whereArgs;
 
-        whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " == ''";
+        whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = ''";
         whereArgs = null;
 
         String groupBy = null;
@@ -1080,7 +1080,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause;
         String[] whereArgs;
 
-        whereClause = DeathContract.DeathTable.COLUMN_SYNCED + " is null OR " + DeathContract.DeathTable.COLUMN_SYNCED + " == ''";
+        whereClause = DeathContract.DeathTable.COLUMN_SYNCED + " is null OR " + DeathContract.DeathTable.COLUMN_SYNCED + " = ''";
         whereArgs = null;
 
         String groupBy = null;
@@ -1114,7 +1114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDeaths;
     }
 
-    public Collection<MWRA_CHILD> getUnsyncedMWRA(String mwratype) {
+    public Collection<MWRA_CHILD> getUnsyncedMWRA(String type) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1134,11 +1134,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB,
         };
 
-        String whereClause;
-        String[] whereArgs;
+        String whereClause = Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " is null OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " = '' ";
+        String[] whereArgs = null;
 
-        whereClause = Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " is null OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " == ''";
-        whereArgs = null;
+        if (type != null) {
+            whereClause += "AND " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?";
+            whereArgs = new String[]{type};
+        }
 
         String groupBy = null;
         String having = null;
@@ -1156,7 +1158,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedmwras: " + c.getCount());
                 MWRA_CHILD mwraChild = new MWRA_CHILD();
                 allMWRACHILDREN.add(mwraChild.Hydrate(c));
             }
