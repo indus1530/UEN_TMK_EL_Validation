@@ -132,7 +132,7 @@ public class SectionI01Activity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : childListU2.getFirst().size() == 0 ? SectionJ01Activity.class : SectionKActivity.class).putExtra(ADD_IMMUNIZATION, mwraChild));
+                startActivity(new Intent(this, bi.imi101.isChecked() ? SectionI02Activity.class : childListU2.getFirst().size() == 0 ? SectionJ01Activity.class : SectionI01Activity.class).putExtra(ADD_IMMUNIZATION, mwraChild));
             }
         } catch (JSONException e) {
             e.printStackTrace();

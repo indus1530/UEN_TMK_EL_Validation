@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionAnthroInfoBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import io.reactivex.Observable;
@@ -144,7 +145,14 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
         });
     }
 
-    private Observable<List<FamilyMembersContract>> getFilledForm(FamilyMembersContract fmContract) {
+    private Observable<Form> getSelectedForms() {
+        return Observable.create(emitter -> {
+            emitter.onNext(appInfo.getDbHelper().getSelectedForm(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString()));
+            emitter.onComplete();
+        });
+    }
+
+    private Observable<List<FamilyMembersContract>> getFilledForm(Form fmContract) {
         return Observable.create(emitter -> {
             emitter.onNext(appInfo.getDbHelper().getFamilyMemberList(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString(), fmContract));
             emitter.onComplete();
@@ -154,8 +162,8 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     //Getting data from db
     public void gettingAnthroData() {
         childListU5 = new ArrayList<>();
-        getSelectedMother()
-                .flatMap((Function<FamilyMembersContract, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
+        getSelectedForms()
+                .flatMap((Function<Form, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<FamilyMembersContract>>() {

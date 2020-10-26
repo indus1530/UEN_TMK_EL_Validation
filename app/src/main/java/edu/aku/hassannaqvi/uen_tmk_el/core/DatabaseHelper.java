@@ -1408,6 +1408,82 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Get FamilyMembers data for info activity
+    public Form getSelectedForm(String cluster, String subcluster, String hhno) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_USERNAME,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_ELB1,
+                FormsTable.COLUMN_ELB2,
+                FormsTable.COLUMN_ELB3,
+                FormsTable.COLUMN_ELB4,
+                FormsTable.COLUMN_ELB5,
+                FormsTable.COLUMN_ELB6,
+                FormsTable.COLUMN_ELB7,
+                FormsTable.COLUMN_ELB8,
+                FormsTable.COLUMN_ELB8a,
+                FormsTable.COLUMN_ELB09,
+                FormsTable.COLUMN_ELB10,
+                FormsTable.COLUMN_ELB11,
+                FormsTable.COLUMN_ELB12,
+                FormsTable.COLUMN_SC,
+                FormsTable.COLUMN_SD,
+                FormsTable.COLUMN_SE,
+                FormsTable.COLUMN_SF,
+                FormsTable.COLUMN_SG,
+                FormsTable.COLUMN_SH,
+                FormsTable.COLUMN_SI,
+                FormsTable.COLUMN_SJ,
+                FormsTable.COLUMN_SK,
+                FormsTable.COLUMN_SL,
+                FormsTable.COLUMN_SN,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS96x,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSDATE,
+                FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_APPVERSION,
+        };
+
+        String whereClause = FormsTable.COLUMN_ELB1 + "=? AND " + FormsTable.COLUMN_ELB8a + "=? AND " + FormsTable.COLUMN_ELB09 + "=? AND " + FormsTable.COLUMN_ISTATUS + "=? ";
+        String[] whereArgs = new String[]{cluster, subcluster, hhno, "1"};
+
+        String groupBy = null;
+        String having = null;
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Form allForms = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allForms = new Form().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
+
     public FamilyMembersContract getFamilyMember(String cluster, String subcluster, String hhno, String kishType, FamilyMembersContract mother) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1475,7 +1551,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allBL;
     }
 
-    public List<FamilyMembersContract> getFamilyMemberList(String cluster, String subcluster, String hhno, FamilyMembersContract mother) {
+    public List<FamilyMembersContract> getFamilyMemberList(String cluster, String subcluster, String hhno, Form form) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1501,8 +1577,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         String whereClause = MemberTable.COLUMN_CLUSTERNO + "=? AND " + MemberTable.COLUMN_SUBCLUSTERNO + "=? AND " + MemberTable.COLUMN_HHNO + "=? AND " + MemberTable.COLUMN_KISH_SELECTED + " is null AND "
-                + MemberTable.COLUMN_MOTHER_SERIAL + "=? AND " + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_MOTHER_NAME + "=? AND " + MemberTable.COLUMN_AGE + " in (0,1,2,3,4)";
-        String[] whereArgs = {cluster, subcluster, hhno, mother.getSerialno(), mother.getUuid(), mother.getName()};
+                + MemberTable.COLUMN_UUID + "=? AND " + MemberTable.COLUMN_AGE + " in (0,1,2,3,4)";
+        String[] whereArgs = {cluster, subcluster, hhno, form.get_UID()};
         String groupBy = null;
         String having = null;
 
