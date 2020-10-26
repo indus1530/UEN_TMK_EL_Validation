@@ -1452,7 +1452,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_APPVERSION,
         };
 
-        String whereClause = FormsTable.COLUMN_ELB1 + "=? AND " + FormsTable.COLUMN_ELB8a + "=? AND " + FormsTable.COLUMN_ELB09 + "=? AND " + FormsTable.COLUMN_ISTATUS + "=? ";
+        String whereClause = FormsTable.COLUMN_ELB1 + "=? AND " + FormsTable.COLUMN_ELB8a + "=? AND " + FormsTable.COLUMN_ELB11 + "=? AND " + FormsTable.COLUMN_ISTATUS + "=? ";
         String[] whereArgs = new String[]{cluster, subcluster, hhno, "1"};
 
         String groupBy = null;
