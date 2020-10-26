@@ -1569,7 +1569,7 @@
                                     android:text='@{chg2001.checked ? chg2001x.getText().toString() : ""}'
                                     android:visibility='@{chg2001.checked ? View.VISIBLE : View.GONE}'
                                     app:maxValue="23"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1583,8 +1583,8 @@
                                     android:tag="chg2002"
                                     android:text='@{chg2002.checked ? chg2002x.getText().toString() : ""}'
                                     android:visibility='@{chg2002.checked? View.VISIBLE : View.GONE}'
-                                    app:maxValue="30"
-                                    app:minValue="4"
+                                    app:maxValue="60"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
