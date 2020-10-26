@@ -944,13 +944,11 @@
                             android:text="@string/Q_hwl11a" />
                     </RelativeLayout>
 
-                    <EditText
+                    <Spinner
                         android:id="@+id/hwl11a"
+                        style="@style/spinner"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
-                        android:hint="@string/hwl11a" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

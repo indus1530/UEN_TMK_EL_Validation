@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,17 +16,23 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionLBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import kotlin.Pair;
 
 public class SectionLActivity extends AppCompatActivity {
 
     ActivitySectionLBinding bi;
+    String serial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,33 @@ public class SectionLActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_l);
         bi.setCallback(this);
         setupSkip();
+        setupContent();
+    }
+
+    private void setupContent() {
+        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+
+        List<String> children = new ArrayList<String>() {
+            {
+                add("....");
+                addAll(childList.getSecond());
+            }
+        };
+
+        bi.hwl11a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, children));
+
+        bi.hwl11a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                serial = String.valueOf(childList.getFirst().get(i - 1));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
     }
 
@@ -204,7 +239,8 @@ public class SectionLActivity extends AppCompatActivity {
                 : "-1");
 
         json.put("hwl1196x", bi.hwl1196x.getText().toString());
-        json.put("hwl11a", bi.hwl11a.getText().toString());
+        json.put("hwl11a", bi.hwl11a.getSelectedItem().toString());
+        json.put("hwl11a_serial", serial);
 
 //        json.put("hwl12title",bi.hwl12title.isChecked() ? "" :"-1");
 

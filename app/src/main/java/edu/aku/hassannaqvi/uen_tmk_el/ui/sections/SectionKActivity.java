@@ -4,19 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionKBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionKActivity extends AppCompatActivity {
@@ -48,7 +51,8 @@ public class SectionKActivity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionLActivity.class));
+                boolean routeFlag = FamilyMembersListActivity.mainVModel.getChildLstU5().getValue() != null && FamilyMembersListActivity.mainVModel.getChildLstU5().getValue().size() > 0;
+                startActivity(new Intent(this, routeFlag ? SectionLActivity.class : MainApp.indexKishMWRA != null && MainApp.indexKishMWRA.getAvailable().equals("1") ? SectionN01Activity.class : EndingActivity.class).putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
