@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -18,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
@@ -44,23 +43,11 @@ public class SectionN01Activity extends AppCompatActivity {
 
     private void setupSkip() {
 
-        bi.can1.setOnCheckedChangeListener((group, id) -> {
-            Clear.clearAllFields(bi.fldGrpCVcan2);
-            Clear.clearAllFields(bi.fldGrpCVcan3);
-            Clear.clearAllFields(bi.fldGrpCVcan4);
-            Clear.clearAllFields(bi.fldGrpCVcan5);
-            bi.fldGrpCVcan2.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcan3.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcan4.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcan5.setVisibility(View.VISIBLE);
-            if (id == bi.can1.getId()) {
-                bi.fldGrpCVcan2.setVisibility(View.GONE);
-                bi.fldGrpCVcan3.setVisibility(View.GONE);
-                bi.fldGrpCVcan4.setVisibility(View.GONE);
-                bi.fldGrpCVcan5.setVisibility(View.GONE);
+        bi.can1.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (i == bi.can102.getId()) {
+                Clear.clearAllFields(bi.ele01check);
             }
-        });
-
+        }));
 
         bi.can4.setOnCheckedChangeListener((group, checkedId) -> {
             Clear.clearAllFields(bi.fldGrpCVcan5);

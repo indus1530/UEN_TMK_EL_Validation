@@ -31,22 +31,27 @@
         tools:replace="android:allowBackup">
         <activity
             android:name=".ui.sections.SectionF06Activity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF05Activity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF04Activity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF03Activity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF02Activity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -83,14 +88,17 @@
             android:theme="@style/AppThemeEnglish" />
         <activity
             android:name=".ui.sections.SectionBActivity"
+            android:label="@string/elb_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionCActivity"
+            android:label="@string/elc_title11"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionE01Activity"
+            android:label="@string/sectione_mainheading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -100,22 +108,27 @@
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF01Activity"
+            android:label="@string/raf_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionG01Activity"
+            android:label="@string/chg_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionG02Activity"
+            android:label="@string/chg_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionH01Activity"
+            android:label="@string/arih_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionH02Activity"
+            android:label="@string/arih_title1"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -173,6 +186,7 @@
 
         <activity
             android:name=".ui.sections.SectionDActivity"
+            android:label="@string/mmd_title1"
             android:parentActivityName=".ui.list_activity.FamilyMembersListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu">

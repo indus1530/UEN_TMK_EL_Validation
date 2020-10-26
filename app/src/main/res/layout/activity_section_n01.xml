@@ -144,237 +144,240 @@
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:id="@+id/ele01check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility='@{can102.checked? View.GONE : View.VISIBLE}'>
 
-            <!-- can2  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcan2"
-                style="@style/cardView">
+                <!-- can2  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcan2"
+                    style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/qtxt_can2"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can2"
-                            android:text="@string/can2" />
+                            android:background="@drawable/bottom">
 
-                        <TextView
-                            android:id="@+id/q_can2"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can2"
-                            android:layout_alignBottom="@id/qtxt_can2"
-                            android:text="@string/Q_can2" />
+                            <TextView
+                                android:id="@+id/qtxt_can2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_can2"
+                                android:text="@string/can2" />
 
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/q_can2"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_can2"
+                                android:layout_alignBottom="@id/qtxt_can2"
+                                android:text="@string/Q_can2" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/can2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/can2"
-                        android:inputType="number"
-                        android:maxLength="3"
-                        app:maxValue="140"
-                        app:minValue="50"
-                        app:type="range" />
+                        </RelativeLayout>
 
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- can3  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcan3"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_can3"
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/can2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can3"
-                            android:text="@string/can3" />
+                            android:hint="@string/can2"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            app:maxValue="140"
+                            app:minValue="50"
+                            app:type="range" />
 
-                        <TextView
-                            android:id="@+id/q_can3"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can3"
-                            android:layout_alignBottom="@id/qtxt_can3"
-                            android:text="@string/Q_can3" />
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/can3"
+                </androidx.cardview.widget.CardView>
+
+                <!-- can3  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcan3"
+                    style="@style/cardView">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/can3"
-                        android:inputType="number"
-                        android:maxLength="3"
-                        app:maxValue="100"
-                        app:minValue="35"
-                        app:type="range" />
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
 
-            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/qtxt_can3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_can3"
+                                android:text="@string/can3" />
 
+                            <TextView
+                                android:id="@+id/q_can3"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_can3"
+                                android:layout_alignBottom="@id/qtxt_can3"
+                                android:text="@string/Q_can3" />
+                        </RelativeLayout>
 
-            <!-- can4  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcan4"
-                style="@style/cardView">
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/can3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/can3"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            app:maxValue="100"
+                            app:minValue="35"
+                            app:type="range" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    </LinearLayout>
 
-                    <RelativeLayout
+                </androidx.cardview.widget.CardView>
+
+                <!-- can4  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcan4"
+                    style="@style/cardView">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/qtxt_can4"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can4"
-                            android:text="@string/can4" />
+                            android:background="@drawable/bottom">
 
-                        <TextView
-                            android:id="@+id/q_can4"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can4"
-                            android:layout_alignBottom="@id/qtxt_can4"
-                            android:text="@string/Q_can4" />
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/qtxt_can4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_can4"
+                                android:text="@string/can4" />
 
-                    <RadioGroup
-                        android:id="@+id/can4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/q_can4"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_can4"
+                                android:layout_alignBottom="@id/qtxt_can4"
+                                android:text="@string/Q_can4" />
+                        </RelativeLayout>
 
-                        <RadioButton
-                            android:id="@+id/can401"
+                        <RadioGroup
+                            android:id="@+id/can4"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/can401" />
+                            android:layout_height="wrap_content">
 
-                        <RadioButton
-                            android:id="@+id/can402"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/can402" />
+                            <RadioButton
+                                android:id="@+id/can401"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/can401" />
 
-                        <RadioButton
-                            android:id="@+id/can403"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/can403" />
+                            <RadioButton
+                                android:id="@+id/can402"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/can402" />
 
-                    </RadioGroup>
+                            <RadioButton
+                                android:id="@+id/can403"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/can403" />
 
-                </LinearLayout>
+                        </RadioGroup>
 
-            </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
 
-            <!-- can5  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcan5"
-                style="@style/cardView">
+                <!-- can5  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcan5"
+                    style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_can5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_can5"
-                            android:text="@string/can5" />
-
-                        <TextView
-                            android:id="@+id/q_can5"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_can5"
-                            android:layout_alignBottom="@id/qtxt_can5"
-                            android:text="@string/Q_can5" />
-
-                    </RelativeLayout>
-
-                    <RadioGroup
-                        android:id="@+id/can5"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <RadioButton
-                            android:id="@+id/can501"
-                            android:layout_width="0dp"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/can501" />
+                            android:background="@drawable/bottom">
 
-                        <RadioButton
-                            android:id="@+id/can502"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:id="@+id/qtxt_can5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_can5"
+                                android:text="@string/can5" />
+
+                            <TextView
+                                android:id="@+id/q_can5"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_can5"
+                                android:layout_alignBottom="@id/qtxt_can5"
+                                android:text="@string/Q_can5" />
+
+                        </RelativeLayout>
+
+                        <RadioGroup
+                            android:id="@+id/can5"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/can502" />
+                            android:orientation="horizontal">
 
-                    </RadioGroup>
+                            <RadioButton
+                                android:id="@+id/can501"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/can501" />
 
-                    <EditText
-                        android:id="@+id/can501x"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:hint="###"
-                        android:inputType="numberDecimal"
-                        android:maxLength="3"
-                        android:tag="can501"
-                        android:text='@{can501.checked ? can501x.getText().toString() : ""}'
-                        android:visibility='@{can501.checked ? View.VISIBLE : View.GONE}' />
+                            <RadioButton
+                                android:id="@+id/can502"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/can502" />
 
-                </LinearLayout>
+                        </RadioGroup>
 
-            </androidx.cardview.widget.CardView>
+                        <EditText
+                            android:id="@+id/can501x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:tag="can501"
+                            android:text='@{can501.checked ? can501x.getText().toString() : ""}'
+                            android:visibility='@{can501.checked ? View.VISIBLE : View.GONE}' />
 
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <!--EndButton LinearLayout-->
             <LinearLayout

@@ -9,9 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -24,6 +21,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -97,8 +96,8 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
                 }
             };
 
-            bi.mmd0801.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, menLst));
-            bi.mmd901.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, womenLst));
+            bi.mmd0801.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menLst));
+            bi.mmd901.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, womenLst));
         }
 
         if (serial == 1) {

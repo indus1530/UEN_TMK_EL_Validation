@@ -2,14 +2,15 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -22,6 +23,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
@@ -42,6 +45,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
     MWRA_CHILD anthro;
     FamilyMembersContract selectedChild;
     int position = 0;
+    boolean anthroFlag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +85,192 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
             }
         });
 
+        RadioGroup[] otherRadioGroup = new RadioGroup[]{bi.can12, bi.can16, bi.can20};
+        for (RadioGroup rdp : otherRadioGroup) {
+            for (int i = 0; i < rdp.getChildCount(); i++) {
+                rdp.getChildAt(i).setEnabled(false);
+            }
+        }
+
+        EditTextPicker[] txt210_2013 = new EditTextPicker[]{bi.can10, bi.can11};
+        EditTextPicker[] txt214_2017 = new EditTextPicker[]{bi.can13, bi.can14};
+        EditTextPicker[] txt218_2021 = new EditTextPicker[]{bi.can17, bi.can18};
+
+        for (EditTextPicker txt : txt210_2013) {
+            txt.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    bi.can12.clearCheck();
+                    bi.can13.setText(null);
+                    if (bi.can10.getText().toString().isEmpty() || bi.can11.getText().toString().isEmpty())
+                        return;
+                    if (!bi.can10.isTextEqualToPattern() || !bi.can11.isTextEqualToPattern())
+                        return;
+                    if (bi.can10.getText().toString().split(".").length > 1 || bi.can11.getText().toString().split(".").length > 1)
+                        return;
+                    double value = Math.abs(Double.parseDouble(bi.can10.getText().toString()) - Double.parseDouble(bi.can11.getText().toString()));
+                    bi.can12.check(value > 1 ? bi.can1201.getId() : bi.can1202.getId());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+        }
+        bi.can13.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.can13.getText().toString().isEmpty() || bi.can11.getText().toString().isEmpty() || bi.can10.getText().toString().isEmpty())
+                    return;
+                if (!bi.can13.isTextEqualToPattern())
+                    return;
+                if (bi.can13.getText().toString().split(".").length > 1 || bi.can11.getText().toString().split(".").length > 1 || bi.can10.getText().toString().split(".").length > 1)
+                    return;
+                double value01 = Math.abs(Double.parseDouble(bi.can13.getText().toString()) - Double.parseDouble(bi.can11.getText().toString()));
+                if (value01 > 1) {
+                    double value02 = Math.abs(Double.parseDouble(bi.can13.getText().toString()) - Double.parseDouble(bi.can11.getText().toString()));
+                    if (value02 > 1) {
+                        bi.can13.setText(null);
+                        anthroFlag = false;
+                        AppUtilsKt.showDialogActivity(SectionN02Activity.this, "Kindly Re-Do the measurements");
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        for (EditTextPicker txt : txt214_2017) {
+
+            txt.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    bi.can16.clearCheck();
+                    bi.can17.setText(null);
+                    if (bi.can14.getText().toString().isEmpty() || bi.can15.getText().toString().isEmpty())
+                        return;
+                    if (!bi.can14.isTextEqualToPattern() || !bi.can15.isTextEqualToPattern())
+                        return;
+                    if (bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
+                        return;
+                    double value = Math.abs(Double.valueOf(bi.can14.getText().toString()) - Double.valueOf(bi.can15.getText().toString()));
+                    bi.can16.check(value > 0.5 ? bi.can1601.getId() : bi.can1602.getId());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+        }
+        bi.can17.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.can17.getText().toString().isEmpty() || bi.can14.getText().toString().isEmpty() || bi.can15.getText().toString().isEmpty())
+                    return;
+                if (!bi.can17.isTextEqualToPattern())
+                    return;
+                if (bi.can17.getText().toString().split(".").length > 1 || bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
+                    return;
+                double value01 = Math.abs(Double.valueOf(bi.can17.getText().toString()) - Double.valueOf(bi.can14.getText().toString()));
+                if (value01 > 0.5) {
+                    double value02 = Math.abs(Double.valueOf(bi.can17.getText().toString()) - Double.valueOf(bi.can15.getText().toString()));
+                    if (value02 > 0.5) {
+                        bi.can17.setText(null);
+                        anthroFlag = false;
+                        AppUtilsKt.showDialogActivity(SectionN02Activity.this, "Kindly Re-Do the measurements");
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        for (EditTextPicker txt : txt218_2021) {
+            txt.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    bi.can20.clearCheck();
+                    bi.can21.setText(null);
+                    if (bi.can18.getText().toString().isEmpty() || bi.can19.getText().toString().isEmpty())
+                        return;
+                    if (!bi.can18.isTextEqualToPattern() || !bi.can19.isTextEqualToPattern())
+                        return;
+                    if (bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1)
+                        return;
+                    double value = Math.abs(Double.valueOf(bi.can18.getText().toString()) - Double.valueOf(bi.can19.getText().toString()));
+                    bi.can20.check(value > 1 ? bi.can2001.getId() : bi.can2002.getId());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+        }
+        bi.can21.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.can18.getText().toString().isEmpty() || bi.can19.getText().toString().isEmpty() || bi.can21.getText().toString().isEmpty())
+                    return;
+                if (!bi.can21.isTextEqualToPattern())
+                    return;
+                if (bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1 || bi.can21.getText().toString().split(".").length > 1)
+                    return;
+                double value01 = Math.abs(Double.valueOf(bi.can21.getText().toString()) - Double.valueOf(bi.can18.getText().toString()));
+                if (value01 > 1) {
+                    double value02 = Math.abs(Double.valueOf(bi.can21.getText().toString()) - Double.valueOf(bi.can19.getText().toString()));
+                    if (value02 > 1) {
+                        bi.can21.setText(null);
+                        anthroFlag = false;
+                        AppUtilsKt.showDialogActivity(SectionN02Activity.this, "Kindly Re-Do the measurements");
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     private void setupSkip() {

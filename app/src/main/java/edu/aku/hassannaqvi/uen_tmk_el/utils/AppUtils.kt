@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import edu.aku.hassannaqvi.uen_tmk_el.R
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ChildEndDialogBinding
+import edu.aku.hassannaqvi.uen_tmk_el.databinding.GeneralEndDialogBinding
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity
 import java.util.*
 
@@ -64,23 +65,23 @@ fun openEndActivity(activity: Activity) {
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
 
-fun openFormEndActivity(activity: Activity, extraKey: String, extraValue: Int) {
+fun showDialogActivity(activity: Activity, message: String) {
     val dialog = Dialog(activity)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-    dialog.setContentView(R.layout.general_end_dialog)
+    val bi: GeneralEndDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(activity), R.layout.general_end_dialog, null, false)
+    dialog.setContentView(bi.root)
+    bi.content.text = message
     dialog.setCancelable(false)
     val params = WindowManager.LayoutParams()
     params.copyFrom(dialog.window!!.attributes)
     params.width = WindowManager.LayoutParams.WRAP_CONTENT
     params.height = WindowManager.LayoutParams.WRAP_CONTENT
-    dialog.show()
     dialog.window!!.attributes = params
-    dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
-        activity.finish()
-        activity.startActivity(Intent(activity, EndingActivity::class.java).putExtra(extraKey, extraValue))
-//                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+    dialog.show()
+    bi.btnOk.visibility = View.GONE
+    bi.btnNo.setOnClickListener {
+        dialog.dismiss()
     }
-    dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
 
 @JvmOverloads
