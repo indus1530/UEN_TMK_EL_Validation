@@ -93,8 +93,8 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
         }
 
         EditTextPicker[] txt210_2013 = new EditTextPicker[]{bi.can10, bi.can11};
-        EditTextPicker[] txt214_2017 = new EditTextPicker[]{bi.can13, bi.can14};
-        EditTextPicker[] txt218_2021 = new EditTextPicker[]{bi.can17, bi.can18};
+        EditTextPicker[] txt214_2017 = new EditTextPicker[]{bi.can14, bi.can15};
+        EditTextPicker[] txt218_2021 = new EditTextPicker[]{bi.can18, bi.can19};
 
         for (EditTextPicker txt : txt210_2013) {
             txt.addTextChangedListener(new TextWatcher() {
@@ -123,6 +123,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                 }
             });
         }
+
         bi.can13.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -172,8 +173,8 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                         return;
                     if (bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
                         return;
-                    double value = Math.abs(Double.valueOf(bi.can14.getText().toString()) - Double.valueOf(bi.can15.getText().toString()));
-                    bi.can16.check(value > 0.5 ? bi.can1601.getId() : bi.can1602.getId());
+                    double value = Math.abs(Double.parseDouble(bi.can14.getText().toString()) - Double.parseDouble(bi.can15.getText().toString()));
+                    bi.can16.check(value > 1 ? bi.can1601.getId() : bi.can1602.getId());
                 }
 
                 @Override
@@ -182,6 +183,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                 }
             });
         }
+
         bi.can17.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -190,16 +192,16 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.can17.getText().toString().isEmpty() || bi.can14.getText().toString().isEmpty() || bi.can15.getText().toString().isEmpty())
+                if (bi.can17.getText().toString().isEmpty() || bi.can15.getText().toString().isEmpty() || bi.can14.getText().toString().isEmpty())
                     return;
                 if (!bi.can17.isTextEqualToPattern())
                     return;
                 if (bi.can17.getText().toString().split(".").length > 1 || bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
                     return;
-                double value01 = Math.abs(Double.valueOf(bi.can17.getText().toString()) - Double.valueOf(bi.can14.getText().toString()));
-                if (value01 > 0.5) {
-                    double value02 = Math.abs(Double.valueOf(bi.can17.getText().toString()) - Double.valueOf(bi.can15.getText().toString()));
-                    if (value02 > 0.5) {
+                double value01 = Math.abs(Double.parseDouble(bi.can17.getText().toString()) - Double.parseDouble(bi.can14.getText().toString()));
+                if (value01 > 1) {
+                    double value02 = Math.abs(Double.parseDouble(bi.can17.getText().toString()) - Double.parseDouble(bi.can15.getText().toString()));
+                    if (value02 > 1) {
                         bi.can17.setText(null);
                         anthroFlag = false;
                         AppUtilsKt.showDialogActivity(SectionN02Activity.this, "Kindly Re-Do the measurements");
@@ -213,6 +215,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
             }
         });
+
         for (EditTextPicker txt : txt218_2021) {
             txt.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -230,7 +233,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                         return;
                     if (bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1)
                         return;
-                    double value = Math.abs(Double.valueOf(bi.can18.getText().toString()) - Double.valueOf(bi.can19.getText().toString()));
+                    double value = Math.abs(Double.parseDouble(bi.can18.getText().toString()) - Double.parseDouble(bi.can19.getText().toString()));
                     bi.can20.check(value > 1 ? bi.can2001.getId() : bi.can2002.getId());
                 }
 
@@ -248,15 +251,15 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.can18.getText().toString().isEmpty() || bi.can19.getText().toString().isEmpty() || bi.can21.getText().toString().isEmpty())
+                if (bi.can21.getText().toString().isEmpty() || bi.can18.getText().toString().isEmpty() || bi.can19.getText().toString().isEmpty())
                     return;
                 if (!bi.can21.isTextEqualToPattern())
                     return;
-                if (bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1 || bi.can21.getText().toString().split(".").length > 1)
+                if (bi.can21.getText().toString().split(".").length > 1 || bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1)
                     return;
-                double value01 = Math.abs(Double.valueOf(bi.can21.getText().toString()) - Double.valueOf(bi.can18.getText().toString()));
+                double value01 = Math.abs(Double.parseDouble(bi.can21.getText().toString()) - Double.parseDouble(bi.can18.getText().toString()));
                 if (value01 > 1) {
-                    double value02 = Math.abs(Double.valueOf(bi.can21.getText().toString()) - Double.valueOf(bi.can19.getText().toString()));
+                    double value02 = Math.abs(Double.parseDouble(bi.can21.getText().toString()) - Double.parseDouble(bi.can19.getText().toString()));
                     if (value02 > 1) {
                         bi.can21.setText(null);
                         anthroFlag = false;
