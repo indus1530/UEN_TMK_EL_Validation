@@ -262,10 +262,10 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE, this.type == null ? JSONObject.NULL : this.type);
 
-            if (this.sC != null && !this.sC.equals("")) {
+            if (this.sC != null && !this.sC.equals("-2")) {
                 json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, new JSONObject(this.sC));
             }
-            if (this.sB != null && !this.sB.equals("")) {
+            if (this.sB != null && !this.sB.equals("-2")) {
                 json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB, new JSONObject(this.sB));
             }
 

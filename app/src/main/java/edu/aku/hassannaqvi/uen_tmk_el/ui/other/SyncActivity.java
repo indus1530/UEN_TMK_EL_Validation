@@ -184,7 +184,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
             ).execute();
 
             String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Death", null}, {"Anthro", null}};
-            int max = syncValues.length;
+            int max = syncValues.length + 1;
             for (int i = 2; i <= max; i++) {
                 int k = i - 2;
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();

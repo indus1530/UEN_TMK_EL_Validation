@@ -696,37 +696,37 @@ public class Form extends LiveData<Form> {
             json.put(FormsTable.COLUMN_ELB11, this.elb11 == null ? JSONObject.NULL : this.elb11);
             json.put(FormsTable.COLUMN_ELB12, this.elb12 == null ? JSONObject.NULL : this.elb12);
 
-            if (this.sC != null && !this.sC.equals("")) {
+            if (this.sC != null && !this.sC.equals("-2")) {
                 json.put(FormsTable.COLUMN_SC, new JSONObject(this.sC));
             }
-            if (this.sD != null && !this.sD.equals("")) {
+            if (this.sD != null && !this.sD.equals("-2")) {
                 json.put(FormsTable.COLUMN_SD, new JSONObject(this.sD));
             }
-            if (this.sE != null && !this.sE.equals("")) {
+            if (this.sE != null && !this.sE.equals("-2")) {
                 json.put(FormsTable.COLUMN_SE, new JSONObject(this.sE));
             }
-            if (this.sF != null && !this.sF.equals("")) {
+            if (this.sF != null && !this.sF.equals("-2")) {
                 json.put(FormsTable.COLUMN_SF, new JSONObject(this.sF));
             }
-            if (this.sG != null && !this.sG.equals("")) {
+            if (this.sG != null && !this.sG.equals("-2")) {
                 json.put(FormsTable.COLUMN_SG, new JSONObject(this.sG));
             }
-            if (this.sH != null && !this.sH.equals("")) {
+            if (this.sH != null && !this.sH.equals("-2")) {
                 json.put(FormsTable.COLUMN_SH, new JSONObject(this.sH));
             }
-            if (this.sI != null && !this.sI.equals("")) {
+            if (this.sI != null && !this.sI.equals("-2")) {
                 json.put(FormsTable.COLUMN_SI, new JSONObject(this.sI));
             }
-            if (this.sJ != null && !this.sJ.equals("")) {
+            if (this.sJ != null && !this.sJ.equals("-2")) {
                 json.put(FormsTable.COLUMN_SJ, new JSONObject(this.sJ));
             }
-            if (this.sK != null && !this.sK.equals("")) {
+            if (this.sK != null && !this.sK.equals("-2")) {
                 json.put(FormsTable.COLUMN_SK, new JSONObject(this.sK));
             }
-            if (this.sL != null && !this.sL.equals("")) {
+            if (this.sL != null && !this.sL.equals("-2")) {
                 json.put(FormsTable.COLUMN_SL, new JSONObject(this.sL));
             }
-            if (this.sN != null && !this.sN.equals("")) {
+            if (this.sN != null && !this.sN.equals("-2")) {
                 json.put(FormsTable.COLUMN_SN, new JSONObject(this.sN));
             }
 
