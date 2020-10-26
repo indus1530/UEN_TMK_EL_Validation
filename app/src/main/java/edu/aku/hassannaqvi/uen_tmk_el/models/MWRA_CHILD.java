@@ -26,8 +26,8 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
     private String username = "";
     private String sysdate = "";
     private String type = "";
-    private String sC = "-2";
-    private String sB = "-2";
+    private String sC = "";
+    private String sB = "";
     private String endingdatetime = "";
     private String deviceID = "";
     private String devicetagID = "";
@@ -262,10 +262,10 @@ public class MWRA_CHILD extends LiveData<MWRA_CHILD> implements Serializable {
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
             json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE, this.type == null ? JSONObject.NULL : this.type);
 
-            if (this.sC != null && !this.sC.equals("-2")) {
+            if (this.sC != null && !this.sC.equals("")) {
                 json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SC, new JSONObject(this.sC));
             }
-            if (this.sB != null && !this.sB.equals("-2")) {
+            if (this.sB != null && !this.sB.equals("")) {
                 json.put(Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB, new JSONObject(this.sB));
             }
 
