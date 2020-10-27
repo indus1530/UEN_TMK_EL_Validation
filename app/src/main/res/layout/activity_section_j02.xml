@@ -65,10 +65,9 @@
 
             </androidx.cardview.widget.CardView>
 
-
-            <!-- bfj20a  Input-Numeric   -->
+            <!-- bfj19f  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20a"
+                android:id="@+id/fldGrpCVbfj19f"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -82,40 +81,64 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20a"
+                            android:id="@+id/qtxt_bfj19f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20a"
-                            android:text="@string/bfj20a" />
+                            android:layout_toEndOf="@id/q_bfj19f"
+                            android:text="@string/bfj19f" />
 
                         <TextView
-                            android:id="@+id/q_bfj20a"
+                            android:id="@+id/q_bfj19f"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20a"
-                            android:layout_alignBottom="@id/qtxt_bfj20a"
-                            android:text="@string/Q_bfj20a" />
-
+                            android:layout_alignTop="@id/qtxt_bfj19f"
+                            android:layout_alignBottom="@id/qtxt_bfj19f"
+                            android:text="@string/Q_bfj19f" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20a"
+                    <RadioGroup
+                        android:id="@+id/bfj19f"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20a"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/bfj19f01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19f01" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/bfj19f01x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bfj19f01"
+                            android:inputType="number"
+                            android:tag="bfj19f01"
+                            android:text='@{bfj19f01.checked ? bfj19f01x.getText().toString() : ""}'
+                            android:visibility='@{bfj19f01.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="40"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19f02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19f02" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19f98"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19f98" />
+                    </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <!-- bfj20b  Input-Numeric   -->
+            <!-- bfj19g  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20b"
+                android:id="@+id/fldGrpCVbfj19g"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -129,39 +152,64 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20b"
+                            android:id="@+id/qtxt_bfj19g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20b"
-                            android:text="@string/bfj20b" />
+                            android:layout_toEndOf="@id/q_bfj19g"
+                            android:text="@string/bfj19g" />
 
                         <TextView
-                            android:id="@+id/q_bfj20b"
+                            android:id="@+id/q_bfj19g"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20b"
-                            android:layout_alignBottom="@id/qtxt_bfj20b"
-                            android:text="@string/Q_bfj20b" />
+                            android:layout_alignTop="@id/qtxt_bfj19g"
+                            android:layout_alignBottom="@id/qtxt_bfj19g"
+                            android:text="@string/Q_bfj19g" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20b"
+                    <RadioGroup
+                        android:id="@+id/bfj19g"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20b"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/bfj19g01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19g01" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/bfj19g01x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bfj19g01"
+                            android:inputType="number"
+                            android:tag="bfj19g01"
+                            android:text='@{bfj19g01.checked ? bfj19g01x.getText().toString() : ""}'
+                            android:visibility='@{bfj19g01.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="40"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19g02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19g02" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19g98"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19g98" />
+                    </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <!-- bfj20c  Input-Numeric   -->
+            <!-- bfj19h  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20c"
+                android:id="@+id/fldGrpCVbfj19h"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -175,39 +223,64 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20c"
+                            android:id="@+id/qtxt_bfj19h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20c"
-                            android:text="@string/bfj20c" />
+                            android:layout_toEndOf="@id/q_bfj19h"
+                            android:text="@string/bfj19h" />
 
                         <TextView
-                            android:id="@+id/q_bfj20c"
+                            android:id="@+id/q_bfj19h"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20c"
-                            android:layout_alignBottom="@id/qtxt_bfj20c"
-                            android:text="@string/Q_bfj20c" />
+                            android:layout_alignTop="@id/qtxt_bfj19h"
+                            android:layout_alignBottom="@id/qtxt_bfj19h"
+                            android:text="@string/Q_bfj19h" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20c"
+                    <RadioGroup
+                        android:id="@+id/bfj19h"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20c"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/bfj19h01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19h01" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/bfj19h01x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bfj19h01"
+                            android:inputType="number"
+                            android:tag="bfj19h01"
+                            android:text='@{bfj19h01.checked ? bfj19h01x.getText().toString() : ""}'
+                            android:visibility='@{bfj19h01.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="40"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19h02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19h02" />
+
+                        <RadioButton
+                            android:id="@+id/bfj19h98"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bfj19h98" />
+                    </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <!-- bfj20d  Input-Numeric   -->
+            <!-- bfj19i  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20d"
+                android:id="@+id/fldGrpCVbfj19i"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -221,265 +294,56 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_bfj20d"
+                            android:id="@+id/qtxt_bfj19i"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20d"
-                            android:text="@string/bfj20d" />
+                            android:layout_toEndOf="@id/q_bfj19i"
+                            android:text="@string/bfj19i" />
 
                         <TextView
-                            android:id="@+id/q_bfj20d"
+                            android:id="@+id/q_bfj19i"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20d"
-                            android:layout_alignBottom="@id/qtxt_bfj20d"
-                            android:text="@string/Q_bfj20d" />
+                            android:layout_alignTop="@id/qtxt_bfj19i"
+                            android:layout_alignBottom="@id/qtxt_bfj19i"
+                            android:text="@string/Q_bfj19i" />
                     </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20d"
+                    <RadioGroup
+                        android:id="@+id/bfj19i"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20d"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:layout_height="wrap_content">
 
-
-            <!-- bfj20e  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20e"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_bfj20e"
+                        <RadioButton
+                            android:id="@+id/bfj19i01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20e"
-                            android:text="@string/bfj20e" />
+                            android:text="@string/bfj19i01" />
 
-                        <TextView
-                            android:id="@+id/q_bfj20e"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20e"
-                            android:layout_alignBottom="@id/qtxt_bfj20e"
-                            android:text="@string/Q_bfj20e" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20e"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20e"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- bfj20f  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20f"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_bfj20f"
+                        <EditText
+                            android:id="@+id/bfj19i01x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20f"
-                            android:text="@string/bfj20f" />
+                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:tag="bfj19i01"
+                            android:text='@{bfj19i01.checked ? bfj19i01x.getText().toString() : ""}'
+                            android:visibility='@{bfj19i01.checked? View.VISIBLE : View.GONE}' />
 
-                        <TextView
-                            android:id="@+id/q_bfj20f"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20f"
-                            android:layout_alignBottom="@id/qtxt_bfj20f"
-                            android:text="@string/Q_bfj20f" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20f"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20f"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- bfj20g  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20g"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_bfj20g"
+                        <RadioButton
+                            android:id="@+id/bfj19i02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20g"
-                            android:text="@string/bfj20g" />
+                            android:text="@string/bfj19i02" />
 
-                        <TextView
-                            android:id="@+id/q_bfj20g"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20g"
-                            android:layout_alignBottom="@id/qtxt_bfj20g"
-                            android:text="@string/Q_bfj20g" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20g"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20g"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- bfj20h  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20h"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_bfj20h"
+                        <RadioButton
+                            android:id="@+id/bfj19i98"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20h"
-                            android:text="@string/bfj20h" />
-
-                        <TextView
-                            android:id="@+id/q_bfj20h"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20h"
-                            android:layout_alignBottom="@id/qtxt_bfj20h"
-                            android:text="@string/Q_bfj20h" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20h"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20h"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
+                            android:text="@string/bfj19i98" />
+                    </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
-            <!-- bfj20i  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVbfj20i"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_bfj20i"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_bfj20i"
-                            android:text="@string/bfj20i" />
-
-                        <TextView
-                            android:id="@+id/q_bfj20i"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_bfj20i"
-                            android:layout_alignBottom="@id/qtxt_bfj20i"
-                            android:text="@string/Q_bfj20i" />
-                    </RelativeLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/bfj20i"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/bfj20i"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        app:maxValue="20"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
 
             <!-- bfj21  Radio   -->
             <androidx.cardview.widget.CardView

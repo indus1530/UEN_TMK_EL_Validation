@@ -23,9 +23,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.io.File;
@@ -39,6 +36,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.AndroidDatabaseManager;
@@ -64,7 +63,6 @@ import edu.aku.hassannaqvi.uen_tmk_el.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.CreateTable;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.WarningActivityInterface;
-import edu.aku.hassannaqvi.uen_tmk_el.validator.ValidatorClass;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -327,13 +325,14 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
 
     @SuppressLint("NonConstantResourceId")
     public void openSpecificActivity(View v) {
-        if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
         Intent oF = null;
         switch (v.getId()) {
             case R.id.formA:
+                if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
                 oF = new Intent(this, SectionBActivity.class).putExtra(VILLAGES_DATA, village);
                 break;
             case R.id.formAnthro:
+                if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
                 oF = new Intent(this, SectionAnthroInfoActivity.class).putExtra(VILLAGES_DATA, village);
                 break;
             case R.id.formC:

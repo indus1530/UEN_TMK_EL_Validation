@@ -1058,7 +1058,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
-    public Collection<Death> getUnsyncedDeaths(String deathtype) {
+    public Collection<Death> getUnsyncedDeaths(String deathtype, String deathtype02) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1077,11 +1077,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DeathContract.DeathTable.COLUMN_SB,
         };
 
-        String whereClause;
-        String[] whereArgs;
-
-        whereClause = DeathContract.DeathTable.COLUMN_SYNCED + " is null OR " + DeathContract.DeathTable.COLUMN_SYNCED + " = ''";
-        whereArgs = null;
+        String whereClause = DeathContract.DeathTable.COLUMN_SYNCED + " is null OR " + DeathContract.DeathTable.COLUMN_SYNCED + " = '' " +
+                "AND (" + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?" + " OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?)";
+        String[] whereArgs = {deathtype, deathtype02};
 
         String groupBy = null;
         String having = null;
@@ -1114,7 +1112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDeaths;
     }
 
-    public Collection<MWRA_CHILD> getUnsyncedMWRAChild(String type) {
+    public Collection<MWRA_CHILD> getUnsyncedMWRAChild(String... type) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1134,12 +1132,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Mwra_ChildrenContract.MWRAChildTable.COLUMN_SB,
         };
 
-        String whereClause = Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " is null OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = "(" + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " is null OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_SYNCED + " = '') ";
         String[] whereArgs = null;
 
         if (type != null) {
-            whereClause += "AND " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?";
-            whereArgs = new String[]{type};
+            if (type.length == 1) {
+                whereClause += "AND " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?";
+                whereArgs = new String[]{type[0]};
+            } else if (type.length == 2) {
+                whereClause += "AND (" + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?" + " OR " + Mwra_ChildrenContract.MWRAChildTable.COLUMN_TYPE + "=?)";
+                whereArgs = new String[]{type[0], type[1]};
+            }
         }
 
         String groupBy = null;

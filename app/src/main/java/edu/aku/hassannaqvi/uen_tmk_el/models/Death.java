@@ -2,14 +2,13 @@ package edu.aku.hassannaqvi.uen_tmk_el.models;
 
 import android.database.Cursor;
 
-import androidx.lifecycle.LiveData;
-
 import com.google.gson.GsonBuilder;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.lifecycle.LiveData;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.DeathContract.DeathTable;
 
 public class Death extends LiveData<Death> {
@@ -240,10 +239,10 @@ public class Death extends LiveData<Death> {
             json.put(DeathTable.COLUMN_SYSDATE, this.sysdate == null ? JSONObject.NULL : this.sysdate);
             json.put(DeathTable.COLUMN_TYPE, this.type == null ? JSONObject.NULL : this.type);
 
-            if (this.sC != null && !this.sC.equals("")) {
+            if (this.sC != null && !this.sC.equals("-2")) {
                 json.put(DeathTable.COLUMN_SC, new JSONObject(this.sC));
             }
-            if (this.sB != null && !this.sB.equals("")) {
+            if (this.sB != null && !this.sB.equals("-2")) {
                 json.put(DeathTable.COLUMN_SB, new JSONObject(this.sB));
             }
 

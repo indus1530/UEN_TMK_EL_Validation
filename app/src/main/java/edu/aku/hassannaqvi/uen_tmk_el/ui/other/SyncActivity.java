@@ -12,12 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -30,6 +24,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.adapter.SyncListAdapter;
@@ -38,6 +37,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySyncBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.models.SyncModel;
@@ -183,10 +183,26 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     db.getUnsyncedFamilyMembers(), 1, syncListAdapter, uploadlist
             ).execute();
 
-            String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Death", null}, {"Anthro", null}};
+            Toast.makeText(getApplicationContext(), "Syncing Forms Death", Toast.LENGTH_SHORT).show();
+            if (uploadlistActivityCreated) {
+                uploadmodel = new SyncModel();
+                uploadmodel.setstatusID(0);
+                uploadlist.add(uploadmodel);
+            }
+            new SyncAllData(
+                    this,
+                    "Forms - Death",
+                    "updateSyncedDeath",
+                    Death.class,
+                    MainApp._HOST_URL + MainApp._SERVER_URL,
+                    "Death",
+                    db.getUnsyncedDeaths(CONSTANTS.CHILD_DEATH_TYPE, CONSTANTS.MOTHER_DEATH_TYPE), 2, syncListAdapter, uploadlist
+            ).execute();
+
+            String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Anthro", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
             int max = syncValues.length + 1;
-            for (int i = 2; i <= max; i++) {
-                int k = i - 2;
+            for (int i = 3; i <= max; i++) {
+                int k = i - 3;
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();
                 if (uploadlistActivityCreated) {
                     uploadmodel = new SyncModel();
@@ -200,7 +216,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                         MWRA_CHILD.class,
                         MainApp._HOST_URL + MainApp._SERVER_URL,
                         syncValues[k][0],
-                        db.getUnsyncedMWRAChild(syncValues[k][1]), i, syncListAdapter, uploadlist
+                        syncValues[k][1].contains("-") ? db.getUnsyncedMWRAChild(syncValues[k][1].split("-")) : db.getUnsyncedMWRAChild(syncValues[k][1]), i, syncListAdapter, uploadlist
                 ).execute();
             }
 
