@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -248,30 +249,34 @@ public class SectionJ01Activity extends AppCompatActivity {
                 : bi.bfj19i98.isChecked() ? "98"
                 : "-1");*/
 
+        json.put("bfj19a", bi.bfj19a01.isChecked() ? "1"
+                : bi.bfj19a02.isChecked() ? "2"
+                : bi.bfj19a98.isChecked() ? "98"
+                : "-1");
         json.put("bfj19a01x", bi.bfj19a01x.getText().toString());
+
         json.put("bfj19b", bi.bfj19b01.isChecked() ? "1"
                 : bi.bfj19b02.isChecked() ? "2"
                 : bi.bfj19b98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19b01x", bi.bfj19b01x.getText().toString());
+
         json.put("bfj19c", bi.bfj19c01.isChecked() ? "1"
                 : bi.bfj19c02.isChecked() ? "2"
                 : bi.bfj19c98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19c01x", bi.bfj19c01x.getText().toString());
+
         json.put("bfj19d", bi.bfj19d01.isChecked() ? "1"
                 : bi.bfj19d02.isChecked() ? "2"
                 : bi.bfj19d98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19d01x", bi.bfj19d01x.getText().toString());
+
         json.put("bfj19e", bi.bfj19e01.isChecked() ? "1"
                 : bi.bfj19e02.isChecked() ? "2"
                 : bi.bfj19e98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19e01x", bi.bfj19e01x.getText().toString());
 
         MainApp.form.setsJ(json.toString());
