@@ -63,6 +63,7 @@ public class SectionI02Activity extends AppCompatActivity {
         radioGroupImp(bi.imi4n, bi.imi4n01, bi.fldGrpCVimi4nsrc, bi.fldGrpCVimi4nplc);
         radioGroupImp(bi.imi4o, bi.imi4o01, bi.fldGrpCVimi4osrc, bi.fldGrpCVimi4oplc);
         radioGroupImp(bi.imi4o1, bi.imi4o101, bi.fldGrpCVimi4o1src, bi.fldGrpCVimi4o1plc);
+        radioGroupImp(bi.imi4p, bi.imi4p01, bi.fldGrpCVimi4psrc, bi.fldGrpCVimi4pplc);
     }
 
 

@@ -371,8 +371,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###"
                             android:inputType="numberDecimal"
+                            android:hint="##.#"
+                            app:mask="##.#"
+                            app:maxValue="36"
+                            app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             android:maxLength="3"
                             android:tag="can501"
                             android:text='@{can501.checked ? can501x.getText().toString() : ""}'
