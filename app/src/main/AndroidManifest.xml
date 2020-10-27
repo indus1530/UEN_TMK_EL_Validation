@@ -31,27 +31,27 @@
         tools:replace="android:allowBackup">
         <activity
             android:name=".ui.sections.SectionF06Activity"
-            android:label=""
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF05Activity"
-            android:label=""
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF04Activity"
-            android:label=""
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF03Activity"
-            android:label=""
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF02Activity"
-            android:label=""
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -88,71 +88,77 @@
             android:theme="@style/AppThemeEnglish" />
         <activity
             android:name=".ui.sections.SectionBActivity"
-            android:label="@string/elb_title1"
+            android:label="HOUSEHOLD IDENTIFICATION AND DEMOGRAPHIC INFORMATION"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionCActivity"
-            android:label="@string/elc_title11"
+            android:label="SECTION C : INTRODUCTION And CONSENT"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionE01Activity"
-            android:label="@string/sectione_mainheading"
+            android:label="SOCIO ECONOMIC STATUS OF HOUSEHOLD"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionE02Activity"
-            android:label="@string/sectione_mainheading"
+            android:label="SOCIO ECONOMIC STATUS OF HOUSEHOLD"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionF01Activity"
-            android:label="@string/raf_title1"
+            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionG01Activity"
-            android:label="@string/chg_title1"
+            android:label="SECTION G. CHILD HEALTH (Diarrhoea)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionG02Activity"
-            android:label="@string/chg_title1"
+            android:label="SECTION G. CHILD HEALTH (Diarrhoea)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionH01Activity"
-            android:label="@string/arih_title1"
+            android:label="H. CHILD HEALTH ( Acute Respiratory Infection(ARI)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionH02Activity"
-            android:label="@string/arih_title1"
+            android:label="H. CHILD HEALTH ( Acute Respiratory Infection(ARI)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionI01Activity"
+            android:label="section I: Immunization"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionI02Activity"
+            android:label="section I: Immunization"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionJ01Activity"
+            android:label="Section J: BREAST FEEDING AND NUTRITION"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionJ02Activity"
+            android:label="Section J: BREAST FEEDING AND NUTRITION"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionKActivity"
+            android:label="SECTION K: WATER AND SANITATION"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionLActivity"
+            android:label="SECTION L: HANDWASHING"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -161,10 +167,12 @@
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionN01Activity"
+            android:label="SECTION N: ANTHROPOMETRIC MEASURMENTS"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.SectionN02Activity"
+            android:label="SECTION N: ANTHROPOMETRIC MEASURMENTS"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
@@ -186,7 +194,7 @@
 
         <activity
             android:name=".ui.sections.SectionDActivity"
-            android:label="@string/mmd_title1"
+            android:label="SECTION D: HOUSEHOLD MEMBERS’ INFORMATION"
             android:parentActivityName=".ui.list_activity.FamilyMembersListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu">
