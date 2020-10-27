@@ -354,8 +354,8 @@
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="160"
-                            app:minValue="60"
+                            app:maxValue="180"
+                            app:minValue="40"
                             android:hint="###.#"
                             app:mask="###.#"
                             app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
@@ -408,8 +408,8 @@
                             android:hint="###.#"
                             app:mask="###.#"
                             app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                            app:maxValue="160"
-                            app:minValue="60"
+                            app:maxValue="180"
+                            app:minValue="40"
                             app:type="range" />
 
                     </LinearLayout>
@@ -518,8 +518,8 @@
                             app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="160"
-                            app:minValue="60"
+                            app:maxValue="180"
+                            app:minValue="40"
                             app:type="range" />
 
                     </LinearLayout>
@@ -563,13 +563,13 @@
                             android:id="@+id/can14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="120"
-                            app:minValue="30"
+                            android:hint="##.#"
+                            app:mask="##.#"
+                            app:maxValue="40"
+                            app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                     </LinearLayout>
@@ -614,13 +614,13 @@
                             android:id="@+id/can15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                            android:hint="##.#"
+                            app:mask="##.#"
+                            app:maxValue="40"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="120"
-                            app:minValue="30"
+                            app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                     </LinearLayout>
@@ -723,13 +723,13 @@
                             android:id="@+id/can17"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                            android:hint="##.#"
+                            app:mask="##.#"
+                            app:maxValue="40"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="120"
-                            app:minValue="30"
+                            app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                     </LinearLayout>
@@ -780,7 +780,7 @@
                             app:mask="##.#"
                             app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:maxValue="30"
-                            app:minValue="10"
+                            app:minValue="6"
                             app:type="range" />
 
                     </LinearLayout>
@@ -831,7 +831,7 @@
                             app:mask="##.#"
                             app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:maxValue="30"
-                            app:minValue="10"
+                            app:minValue="6"
                             app:type="range" />
 
                     </LinearLayout>
@@ -942,7 +942,7 @@
                             app:mask="##.#"
                             app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:maxValue="30"
-                            app:minValue="10"
+                            app:minValue="6"
                             app:type="range" />
                     </LinearLayout>
 
