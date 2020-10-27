@@ -12,6 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -24,11 +30,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.adapter.SyncListAdapter;
@@ -200,8 +201,7 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
             ).execute();
 
             String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Anthro", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
-            int max = syncValues.length + 1;
-            for (int i = 3; i <= max; i++) {
+            for (int i = 3; i <= 5; i++) {
                 int k = i - 3;
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();
                 if (uploadlistActivityCreated) {
