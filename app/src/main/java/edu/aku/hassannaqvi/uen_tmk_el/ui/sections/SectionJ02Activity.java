@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -100,25 +101,24 @@ public class SectionJ02Activity extends AppCompatActivity {
                 : bi.bfj19f02.isChecked() ? "2"
                 : bi.bfj19f98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19f01x", bi.bfj19f01x.getText().toString());
+
         json.put("bfj19g", bi.bfj19g01.isChecked() ? "1"
                 : bi.bfj19g02.isChecked() ? "2"
                 : bi.bfj19g98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19g01x", bi.bfj19g01x.getText().toString());
+
         json.put("bfj19h", bi.bfj19h01.isChecked() ? "1"
                 : bi.bfj19h02.isChecked() ? "2"
                 : bi.bfj19h98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19h01x", bi.bfj19h01x.getText().toString());
+
         json.put("bfj19i", bi.bfj19i01.isChecked() ? "1"
                 : bi.bfj19i02.isChecked() ? "2"
                 : bi.bfj19i98.isChecked() ? "98"
                 : "-1");
-
         json.put("bfj19i01x", bi.bfj19i01x.getText().toString());
 
         json.put("bfj21", bi.bfj2101.isChecked() ? "1"
