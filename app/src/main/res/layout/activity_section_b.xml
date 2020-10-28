@@ -551,14 +551,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/elb11"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
-                            android:hint="@string/elb11"
+                            android:layout_weight="8"
+                            android:hint="####-###"
                             android:inputType="number"
-                            android:onTextChanged="@{callback::elb11OnTextChanged}" />
+                            android:onTextChanged="@{callback::elb11OnTextChanged}"
+                            app:mask="####-###" />
 
                         <ImageButton
                             android:id="@+id/open_form_btn"

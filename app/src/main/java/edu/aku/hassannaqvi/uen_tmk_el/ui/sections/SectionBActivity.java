@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -16,8 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
@@ -51,7 +52,7 @@ public class SectionBActivity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkip();
         VillageContract village = (VillageContract) getIntent().getSerializableExtra(VILLAGES_DATA);
-        bi.elb1.setText(village.getCluster_code());
+        bi.elb1.setText(village.getArea_code());
         bi.elb6.setText(getTalukaName(Integer.parseInt(MainApp.SELECTED_UC.getTaluka_code())));
         bi.elb7.setText(MainApp.SELECTED_UC.getUc_name());
         bi.elb8.setText(village.getVillage_name());
@@ -144,11 +145,11 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.setGPS(this);
 
         JSONObject json = new JSONObject();
-        json.put("hhdt", "");
-        json.put("_luid", "");
-        json.put("hh_srno", "");
-        json.put("hhhead", "");
-        json.put("rndt", "");
+        json.put("hhdt", bl.getSysDT());
+        json.put("_luid", bl.getLUID());
+        json.put("hh_srno", bl.getSno());
+        json.put("hhhead", bl.getHhhead());
+        json.put("rndt", bl.getRandDT());
 
         form.setsC(json.toString());
     }
@@ -164,7 +165,8 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public void CheckHH(View v) {
-        resetVariables(View.VISIBLE);
+        if (!formValidation()) return;
+        gettingBLData();
     }
 
     private void resetVariables(int visibility) {
@@ -180,13 +182,13 @@ public class SectionBActivity extends AppCompatActivity {
     //Reactive Streams
     private Observable<BLRandom> getBLRandom() {
         return Observable.create(emitter -> {
-            emitter.onNext(appInfo.getDbHelper().getHHFromBLRandom(bi.elb8a.getText().toString(), bi.elb11.getText().toString()));
+            emitter.onNext(appInfo.getDbHelper().getHHFromBLRandom(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString()));
             emitter.onComplete();
         });
     }
 
     //Getting data from db
-    public void gettingAreaData() {
+    private void gettingBLData() {
         getBLRandom()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -201,6 +203,7 @@ public class SectionBActivity extends AppCompatActivity {
                     @Override
                     public void onNext(@NonNull BLRandom blRandom) {
                         bl = blRandom;
+                        resetVariables(View.VISIBLE);
                     }
 
                     @Override

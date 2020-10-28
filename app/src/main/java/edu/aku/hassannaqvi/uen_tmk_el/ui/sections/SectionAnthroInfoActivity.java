@@ -53,7 +53,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkip();
         VillageContract village = (VillageContract) getIntent().getSerializableExtra(VILLAGES_DATA);
-        bi.elb1.setText(village.getCluster_code());
+        bi.elb1.setText(village.getArea_code());
         bi.elb6.setText(getTalukaName(Integer.parseInt(MainApp.SELECTED_UC.getTaluka_code())));
         bi.elb7.setText(MainApp.SELECTED_UC.getUc_name());
         bi.elb8.setText(village.getVillage_name());

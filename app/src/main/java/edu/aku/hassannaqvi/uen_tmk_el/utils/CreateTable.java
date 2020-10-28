@@ -94,16 +94,16 @@ public final class CreateTable {
 
     public static final String SQL_CREATE_BL_RANDOM = "CREATE TABLE " + BLRandomTable.TABLE_NAME + "("
             + BLRandomTable.COLUMN_ID + " TEXT,"
-            + BLRandomTable.COLUMN_P_CODE + " TEXT,"
-            + BLRandomTable.COLUMN_EB_CODE + " TEXT,"
+            + BLRandomTable.COLUMN_CLUSTER_CODE + " TEXT,"
+            + BLRandomTable.COLUMN_VILLAGE_CODE + " TEXT,"
             + BLRandomTable.COLUMN_LUID + " TEXT,"
             + BLRandomTable.COLUMN_HH + " TEXT,"
             + BLRandomTable.COLUMN_STRUCTURE_NO + " TEXT,"
             + BLRandomTable.COLUMN_FAMILY_EXT_CODE + " TEXT,"
             + BLRandomTable.COLUMN_HH_HEAD + " TEXT,"
-            + BLRandomTable.COLUMN_CONTACT + " TEXT,"
+            + BLRandomTable.COLUMN_RANDDT + " TEXT,"
             + BLRandomTable.COLUMN_HH_SELECTED_UC + " TEXT,"
-            + BLRandomTable.COLUMN_RANDOMDT + " TEXT,"
+            + BLRandomTable.COLUMN_SYSDT + " TEXT,"
             + BLRandomTable.COLUMN_SNO_HH + " TEXT );";
 
 

@@ -192,11 +192,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(BLRandomTable.COLUMN_STRUCTURE_NO, Vc.getStructure());
                 values.put(BLRandomTable.COLUMN_FAMILY_EXT_CODE, Vc.getExtension());
                 values.put(BLRandomTable.COLUMN_HH, Vc.getHh());
-                values.put(BLRandomTable.COLUMN_EB_CODE, Vc.getEbcode());
-                values.put(BLRandomTable.COLUMN_P_CODE, Vc.getpCode());
-                values.put(BLRandomTable.COLUMN_RANDOMDT, Vc.getRandomDT());
+                values.put(BLRandomTable.COLUMN_VILLAGE_CODE, Vc.getEbcode());
+                values.put(BLRandomTable.COLUMN_CLUSTER_CODE, Vc.getpCode());
+                values.put(BLRandomTable.COLUMN_SYSDT, Vc.getSysDT());
                 values.put(BLRandomTable.COLUMN_HH_HEAD, Vc.getHhhead());
-                values.put(BLRandomTable.COLUMN_CONTACT, Vc.getContact());
+                values.put(BLRandomTable.COLUMN_RANDDT, Vc.getRandDT());
                 values.put(BLRandomTable.COLUMN_HH_SELECTED_UC, Vc.getSelUC());
                 values.put(BLRandomTable.COLUMN_SNO_HH, Vc.getSno());
 
@@ -1234,7 +1234,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Get BLRandom data
-    public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {
+    public BLRandom getHHFromBLRandom(String cluster, String subcluster, String hh) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
 
@@ -1244,17 +1244,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 BLRandomTable.COLUMN_STRUCTURE_NO,
                 BLRandomTable.COLUMN_FAMILY_EXT_CODE,
                 BLRandomTable.COLUMN_HH,
-                BLRandomTable.COLUMN_P_CODE,
-                BLRandomTable.COLUMN_EB_CODE,
-                BLRandomTable.COLUMN_RANDOMDT,
+                BLRandomTable.COLUMN_CLUSTER_CODE,
+                BLRandomTable.COLUMN_VILLAGE_CODE,
+                BLRandomTable.COLUMN_SYSDT,
                 BLRandomTable.COLUMN_HH_SELECTED_UC,
-                BLRandomTable.COLUMN_CONTACT,
+                BLRandomTable.COLUMN_RANDDT,
                 BLRandomTable.COLUMN_HH_HEAD,
                 BLRandomTable.COLUMN_SNO_HH
         };
 
-        String whereClause = BLRandomTable.COLUMN_P_CODE + "=? AND " + BLRandomTable.COLUMN_HH + "=?";
-        String[] whereArgs = new String[]{subAreaCode, hh};
+        String whereClause = BLRandomTable.COLUMN_CLUSTER_CODE + "=? AND " + BLRandomTable.COLUMN_VILLAGE_CODE + "=? AND " + BLRandomTable.COLUMN_HH + "=?";
+        String[] whereArgs = new String[]{cluster, subcluster, hh};
         String groupBy = null;
         String having = null;
 

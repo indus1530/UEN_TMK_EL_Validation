@@ -18,9 +18,11 @@ private suspend fun getEnumGeoArea(context: Context) = withContext(Dispatchers.I
 
 fun setUcs(def: MutableList<UCContract>, adapter: ArrayAdapter<String>) {
     def.forEach { item ->
-        ucs.add(item.uc_name)
-        adapter.notifyDataSetChanged()
-        ucsMap[item.uc_name] = item
+        if (!ucs.contains(item.uc_name)) {
+            ucs.add(item.uc_name)
+            adapter.notifyDataSetChanged()
+            ucsMap[item.uc_name] = item
+        }
     }
 }
 

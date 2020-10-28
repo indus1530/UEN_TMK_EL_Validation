@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionJ02Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.JSONUtils;
 
 public class SectionJ02Activity extends AppCompatActivity {
 
@@ -283,6 +284,14 @@ public class SectionJ02Activity extends AppCompatActivity {
 
         json.put("bfj25q01x", bi.bfj25q01x.getText().toString());
 
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(MainApp.form.getsJ()), json);
+
+            MainApp.form.setsJ(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
