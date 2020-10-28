@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -209,11 +210,13 @@ public class SectionBActivity extends AppCompatActivity {
                     @Override
                     public void onError(@NonNull Throwable e) {
                         disposable.dispose();
+                        Snackbar.make(findViewById(android.R.id.content), "Please contact IT Team", Snackbar.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onComplete() {
                         disposable.dispose();
+                        Snackbar.make(findViewById(android.R.id.content), "Sorry no HH found", Snackbar.LENGTH_LONG).show();
                     }
                 });
     }
