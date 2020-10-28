@@ -8,16 +8,15 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
@@ -26,8 +25,8 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el.utils.JSONUtils;
 
-import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.userName;
 
 
@@ -108,7 +107,13 @@ public class SectionCActivity extends AppCompatActivity {
                 : bi.elc602.isChecked() ? "2"
                 : "-1");
 
-        form.setsC(json.toString());
+        try {
+            JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(MainApp.form.getsC()), json);
+            MainApp.form.setsC(String.valueOf(json_merge));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -6,18 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
@@ -140,10 +140,17 @@ public class SectionBActivity extends AppCompatActivity {
                 : "-1");
 
         form.setElb11(bi.elb11.getText().toString());
-
         form.setElb12(bi.elb12.getText().toString());
-
         MainApp.setGPS(this);
+
+        JSONObject json = new JSONObject();
+        json.put("hhdt", "");
+        json.put("_luid", "");
+        json.put("hh_srno", "");
+        json.put("hhhead", "");
+        json.put("rndt", "");
+
+        form.setsC(json.toString());
     }
 
 

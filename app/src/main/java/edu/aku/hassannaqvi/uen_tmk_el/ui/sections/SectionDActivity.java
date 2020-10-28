@@ -263,6 +263,8 @@ public class SectionDActivity extends AppCompatActivity implements EndSectionAct
 
         sd.put("mmd13", bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "-1");
 
+        sd.put("tagid", MainApp.form.getTagid());
+
         fmc.setAvailable(bi.mmd1301.isChecked() ? "1" : bi.mmd1302.isChecked() ? "2" : "-1");
 
         fmc.setsD(String.valueOf(sd));
