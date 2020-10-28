@@ -366,7 +366,7 @@
 
                         </RadioGroup>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/can501x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -376,6 +376,7 @@
                             app:maxValue="36"
                             app:minValue="1"
                             app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
+                            app:type="range"
                             android:maxLength="3"
                             android:tag="can501"
                             android:text='@{can501.checked ? can501x.getText().toString() : ""}'
