@@ -210,13 +210,12 @@ public class SectionBActivity extends AppCompatActivity {
                     @Override
                     public void onError(@NonNull Throwable e) {
                         disposable.dispose();
-                        Snackbar.make(findViewById(android.R.id.content), "Please contact IT Team", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(findViewById(android.R.id.content), "Sorry no HH found", Snackbar.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onComplete() {
                         disposable.dispose();
-                        Snackbar.make(findViewById(android.R.id.content), "Sorry no HH found", Snackbar.LENGTH_LONG).show();
                     }
                 });
     }

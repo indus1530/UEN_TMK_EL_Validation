@@ -554,6 +554,7 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/elb11"
                             android:layout_width="0dp"
+                            android:layoutDirection="ltr"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
                             android:hint="####-###"
