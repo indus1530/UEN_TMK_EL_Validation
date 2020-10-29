@@ -16,11 +16,14 @@ import edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.Companion.SERIAL_EXTRA
 import edu.aku.hassannaqvi.uen_tmk_el.R
 import edu.aku.hassannaqvi.uen_tmk_el.adapter.FamilyMemberListAdapter
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper
+import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.*
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivityFamilyMembersListBinding
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionDActivity
 import edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionE01Activity
+import edu.aku.hassannaqvi.uen_tmk_el.utils.JSONUtils
 import edu.aku.hassannaqvi.uen_tmk_el.utils.KishGrid
 import edu.aku.hassannaqvi.uen_tmk_el.utils.openEndActivity
 import edu.aku.hassannaqvi.uen_tmk_el.viewmodel.MainVModel
@@ -28,6 +31,8 @@ import kotlinx.android.synthetic.main.activity_family_members_list.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONException
+import org.json.JSONObject
 
 class FamilyMembersListActivity : AppCompatActivity() {
 
@@ -88,6 +93,7 @@ class FamilyMembersListActivity : AppCompatActivity() {
                             }
 
                             updateKishMember(indexKishMWRA, 1)
+                            updateCounters()
 
                         }
 
@@ -173,6 +179,22 @@ class FamilyMembersListActivity : AppCompatActivity() {
     private suspend fun updateKishMember(fmc: FamilyMembersContract, int: Int) =
             withContext(Dispatchers.IO) {
                 db.updatesFamilyMemberColumn(FamilyMembersContract.MemberTable.COLUMN_KISH_SELECTED, int.toString(), fmc)
+            }
+
+    private suspend fun updateCounters() =
+            withContext(Dispatchers.IO) {
+                try {
+                    val json = JSONObject()
+                    json.put("d14", bi.contentScroll.total.text.toString())
+                    json.put("d15", bi.contentScroll.mwra.text.toString())
+                    json.put("d16", bi.contentScroll.under5.text.toString())
+                    val json_merge = JSONUtils.mergeJSONObjects(JSONObject(form.getsC()), json)
+                    form.setsC(json_merge.toString())
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+
+                db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SC, MainApp.form.getsC())
             }
 
 

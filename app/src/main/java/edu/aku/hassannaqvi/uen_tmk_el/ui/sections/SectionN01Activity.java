@@ -25,7 +25,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionN01Binding;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
-import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 
 public class SectionN01Activity extends AppCompatActivity {
@@ -70,7 +70,7 @@ public class SectionN01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -92,20 +92,12 @@ public class SectionN01Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
-        mwraChild = new MWRA_CHILD();
         mwraChild.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        mwraChild.setUsername(MainApp.userName);
-        mwraChild.setDeviceID(MainApp.appInfo.getDeviceID());
-        mwraChild.setDevicetagID(MainApp.appInfo.getTagName());
-        mwraChild.setAppversion(MainApp.appInfo.getAppVersion());
-        mwraChild.setUUID(MainApp.form.get_UID());
-        mwraChild.setElb1(MainApp.form.getElb1());
-        mwraChild.setElb11(MainApp.form.getElb11());
         mwraChild.setFmuid(MainApp.indexKishMWRA.getUid());
         mwraChild.setType(CONSTANTS.MWRA_ANTHRO_TYPE);
 
         JSONObject json = new JSONObject();
-        json.put("elb8a", MainApp.form.getElb8a());
+        json.put("elb8a", MainApp.indexKishMWRA.getSubclusterno());
         json.put("serial", MainApp.indexKishMWRA.getSerialno());
         json.put("name", MainApp.indexKishMWRA.getName());
         json.put("can1", bi.can101.isChecked() ? "1"

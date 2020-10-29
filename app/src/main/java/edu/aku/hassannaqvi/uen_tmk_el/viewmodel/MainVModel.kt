@@ -123,4 +123,9 @@ class MainVModel : ViewModel() {
         flag?.let { return true } ?: return false
     }
 
+    fun getSelectedMWRAChild(indexM: FamilyMembersContract): FamilyMembersContract? {
+        val item = childLstU5.value?.find { (it.age.toInt() in 3..4) && it.mother_serial == indexM.serialno }
+        return item
+    }
+
 }

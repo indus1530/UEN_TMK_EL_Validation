@@ -3,8 +3,6 @@ package edu.aku.hassannaqvi.uen_tmk_el.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,10 +14,8 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.aku.hassannaqvi.uen_tmk_el.R;
+import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
@@ -27,7 +23,6 @@ import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionLBinding;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
-import kotlin.Pair;
 
 public class SectionLActivity extends AppCompatActivity {
 
@@ -44,7 +39,7 @@ public class SectionLActivity extends AppCompatActivity {
     }
 
     private void setupContent() {
-        Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
+        /*Pair<List<Integer>, List<String>> childList = FamilyMembersListActivity.mainVModel.getAllUnder5();
 
         List<String> children = new ArrayList<String>() {
             {
@@ -66,7 +61,16 @@ public class SectionLActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
+
+        if (MainApp.indexKishMWRA != null) {
+            FamilyMembersContract fb = FamilyMembersListActivity.mainVModel.getSelectedMWRAChild(MainApp.indexKishMWRA);
+            if (fb != null) {
+                bi.fldGrpIndexM.setVisibility(View.VISIBLE);
+                bi.hwl11a.setText(fb.getName());
+                serial = fb.getSerialno();
+            }
+        }
 
     }
 
@@ -136,7 +140,7 @@ public class SectionLActivity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, MainApp.indexKishMWRA != null && MainApp.indexKishMWRA.getAvailable().equals("1") ? SectionN01Activity.class : EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
@@ -239,7 +243,7 @@ public class SectionLActivity extends AppCompatActivity {
                 : "-1");
 
         json.put("hwl1196x", bi.hwl1196x.getText().toString());
-        json.put("hwl11a", bi.hwl11a.getSelectedItem().toString());
+        json.put("hwl11a", bi.hwl11a.getText().toString());
         json.put("hwl11a_serial", serial);
 
 //        json.put("hwl12title",bi.hwl12title.isChecked() ? "" :"-1");

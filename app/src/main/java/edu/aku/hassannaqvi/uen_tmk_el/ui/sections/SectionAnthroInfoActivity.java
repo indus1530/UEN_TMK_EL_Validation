@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionAnthroInfoBinding;
+import edu.aku.hassannaqvi.uen_tmk_el.models.BLRandom;
 import edu.aku.hassannaqvi.uen_tmk_el.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
@@ -81,7 +82,7 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        gettingAnthroData();
+        gettingMotherData();
     }
 
 
@@ -124,7 +125,8 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     }
 
     public void CheckHH(View v) {
-        resetVariables(View.VISIBLE);
+        if (!formValidation()) return;
+        gettingBLData();
     }
 
     private void resetVariables(int visibility) {
@@ -138,6 +140,13 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
 
 
     //Reactive Streams
+    private Observable<BLRandom> getBLRandom() {
+        return Observable.create(emitter -> {
+            emitter.onNext(appInfo.getDbHelper().getHHFromBLRandom(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString()));
+            emitter.onComplete();
+        });
+    }
+
     private Observable<FamilyMembersContract> getSelectedMother() {
         return Observable.create(emitter -> {
             emitter.onNext(appInfo.getDbHelper().getFamilyMember(bi.elb1.getText().toString(), bi.elb8a.getText().toString(), bi.elb11.getText().toString(), "1", null));
@@ -160,7 +169,37 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
     }
 
     //Getting data from db
-    public void gettingAnthroData() {
+    private void gettingMotherData() {
+        getSelectedMother()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<FamilyMembersContract>() {
+                    Disposable disposable;
+
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
+
+                    @Override
+                    public void onNext(@NonNull FamilyMembersContract familyMembersContract) {
+                        MainApp.indexKishMWRA = familyMembersContract;
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        disposable.dispose();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        disposable.dispose();
+                        gettingAnthroData();
+                    }
+                });
+    }
+
+    private void gettingAnthroData() {
         childListU5 = new ArrayList<>();
         getSelectedForms()
                 .flatMap((Function<Form, ObservableSource<List<FamilyMembersContract>>>) this::getFilledForm)
@@ -201,6 +240,36 @@ public class SectionAnthroInfoActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    private void gettingBLData() {
+        getBLRandom()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<BLRandom>() {
+                    Disposable disposable;
+
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
+
+                    @Override
+                    public void onNext(@NonNull BLRandom blRandom) {
+                        resetVariables(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        disposable.dispose();
+                        Snackbar.make(findViewById(android.R.id.content), "Sorry no HH found", Snackbar.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        disposable.dispose();
+                    }
+                });
     }
 
 
