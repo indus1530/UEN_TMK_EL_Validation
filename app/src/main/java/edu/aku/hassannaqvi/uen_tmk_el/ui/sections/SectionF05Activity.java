@@ -50,21 +50,22 @@ public class SectionF05Activity extends AppCompatActivity {
 
 
     private void setupContent() {
-        String values = getIntent().getStringExtra(C_DEATH_COUNT);
-        count = Integer.parseInt(values != null ? values : "0");
+        count = Integer.parseInt(getIntent().getStringExtra(C_DEATH_COUNT));
         setupNextButtonText();
-        bi.cmf9a.setText(String.valueOf(cCounter));
     }
 
     private boolean setupNextButtonText() {
-        if (count > 1) {
+        if (count > 0) {
             Clear.clearAllFields(bi.GrpName);
-            bi.btnContinue.setText("Next Death");
-            bi.cmf9b.setFocusable(true);
-            return false;
-        } else if (count == 1) {
-            bi.btnContinue.setText("Next Section");
-            return true;
+            bi.cmf9a.setText(String.valueOf(cCounter));
+            bi.cmf9b.requestFocus();
+            if (count > 1) {
+                bi.btnContinue.setText("Next Death");
+                return false;
+            } else if (count == 1) {
+                bi.btnContinue.setText("Next Section");
+                return false;
+            }
         }
         return true;
     }

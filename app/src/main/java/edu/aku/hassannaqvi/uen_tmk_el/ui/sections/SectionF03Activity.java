@@ -52,19 +52,21 @@ public class SectionF03Activity extends AppCompatActivity {
     private void setupContent() {
         count = Integer.parseInt(getIntent().getStringExtra(DEATH_COUNT));
         setupNextButtonText();
-        bi.raf7a.setText(String.valueOf(mCounter));
     }
 
 
     private boolean setupNextButtonText() {
-        if (count > 1) {
+        if (count > 0) {
             Clear.clearAllFields(bi.GrpName);
-            bi.btnContinue.setText("Next Death");
-            bi.raf7b.setFocusable(true);
-            return false;
-        } else if (count == 1) {
-            bi.btnContinue.setText("Next Section");
-            return true;
+            bi.raf7a.setText(String.valueOf(mCounter));
+            bi.raf7b.requestFocus();
+            if (count > 1) {
+                bi.btnContinue.setText("Next Death");
+                return false;
+            } else if (count == 1) {
+                bi.btnContinue.setText("Next Section");
+                return false;
+            }
         }
         return true;
     }
