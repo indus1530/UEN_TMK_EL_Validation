@@ -161,6 +161,7 @@
                             android:id="@+id/mmd2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/name"
                             android:inputType="textPersonName" />
 

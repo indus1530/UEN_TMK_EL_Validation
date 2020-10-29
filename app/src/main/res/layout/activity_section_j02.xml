@@ -327,6 +327,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:tag="bfj19i01"
+                            android:hint="@id/bfj19i01"
                             android:text='@{bfj19i01.checked ? bfj19i01x.getText().toString() : ""}'
                             android:visibility='@{bfj19i01.checked? View.VISIBLE : View.GONE}' />
 
