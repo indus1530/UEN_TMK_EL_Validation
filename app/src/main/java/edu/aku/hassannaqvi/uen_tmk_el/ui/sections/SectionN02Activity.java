@@ -110,7 +110,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                         return;
                     if (!bi.can10.isTextEqualToPattern() || !bi.can11.isTextEqualToPattern())
                         return;
-                    if (bi.can10.getText().toString().split("\\.").length > 1 || bi.can11.getText().toString().split("\\.").length > 1)
+                    if (bi.can10.getText().toString().split(".").length > 1 || bi.can11.getText().toString().split(".").length > 1)
                         return;
                     double value = Math.abs(Double.parseDouble(bi.can10.getText().toString()) - Double.parseDouble(bi.can11.getText().toString()));
                     bi.can12.check(value > 1 ? bi.can1201.getId() : bi.can1202.getId());
@@ -135,7 +135,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                     return;
                 if (!bi.can13.isTextEqualToPattern())
                     return;
-                if (bi.can13.getText().toString().split("\\.").length > 1 || bi.can11.getText().toString().split("\\.").length > 1 || bi.can10.getText().toString().split("\\.").length > 1)
+                if (bi.can13.getText().toString().split(".").length > 1 || bi.can11.getText().toString().split(".").length > 1 || bi.can10.getText().toString().split(".").length > 1)
                     return;
                 double value01 = Math.abs(Double.parseDouble(bi.can13.getText().toString()) - Double.parseDouble(bi.can11.getText().toString()));
                 if (value01 > 1) {
@@ -170,7 +170,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                         return;
                     if (!bi.can14.isTextEqualToPattern() || !bi.can15.isTextEqualToPattern())
                         return;
-                    if (bi.can14.getText().toString().split("\\.").length > 1 || bi.can15.getText().toString().split("\\.").length > 1)
+                    if (bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
                         return;
                     double value = Math.abs(Double.parseDouble(bi.can14.getText().toString()) - Double.parseDouble(bi.can15.getText().toString()));
                     bi.can16.check(value > 1 ? bi.can1601.getId() : bi.can1602.getId());
@@ -195,7 +195,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                     return;
                 if (!bi.can17.isTextEqualToPattern())
                     return;
-                if (bi.can17.getText().toString().split("\\.").length > 1 || bi.can14.getText().toString().split("\\.").length > 1 || bi.can15.getText().toString().split("\\.").length > 1)
+                if (bi.can17.getText().toString().split(".").length > 1 || bi.can14.getText().toString().split(".").length > 1 || bi.can15.getText().toString().split(".").length > 1)
                     return;
                 double value01 = Math.abs(Double.parseDouble(bi.can17.getText().toString()) - Double.parseDouble(bi.can14.getText().toString()));
                 if (value01 > 1) {
@@ -230,7 +230,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                         return;
                     if (!bi.can18.isTextEqualToPattern() || !bi.can19.isTextEqualToPattern())
                         return;
-                    if (bi.can18.getText().toString().split("\\.").length > 1 || bi.can19.getText().toString().split("\\.").length > 1)
+                    if (bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1)
                         return;
                     double value = Math.abs(Double.parseDouble(bi.can18.getText().toString()) - Double.parseDouble(bi.can19.getText().toString()));
                     bi.can20.check(value > 1 ? bi.can2001.getId() : bi.can2002.getId());
@@ -254,7 +254,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
                     return;
                 if (!bi.can21.isTextEqualToPattern())
                     return;
-                if (bi.can21.getText().toString().split("\\.").length > 1 || bi.can18.getText().toString().split("\\.").length > 1 || bi.can19.getText().toString().split("\\.").length > 1)
+                if (bi.can21.getText().toString().split(".").length > 1 || bi.can18.getText().toString().split(".").length > 1 || bi.can19.getText().toString().split(".").length > 1)
                     return;
                 double value01 = Math.abs(Double.parseDouble(bi.can21.getText().toString()) - Double.parseDouble(bi.can18.getText().toString()));
                 if (value01 > 1) {
