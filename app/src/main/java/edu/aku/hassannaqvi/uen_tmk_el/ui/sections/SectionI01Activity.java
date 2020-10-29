@@ -171,6 +171,7 @@ public class SectionI01Activity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("elb8a", MainApp.form.getElb8a());
         json.put("mserial", childListU2.getSecond().get(position).getMother_serial());
         json.put("mname", childListU2.getSecond().get(position).getMother_name());
         json.put("imi1a", bi.imi1a.getSelectedItem().toString());

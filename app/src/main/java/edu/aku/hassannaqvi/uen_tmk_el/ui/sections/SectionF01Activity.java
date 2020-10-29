@@ -251,6 +251,7 @@ public class SectionF01Activity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("elb8a", MainApp.form.getElb8a());
         json.put("f1a", bi.f1a.getSelectedItem().toString());
         json.put("f1b", bi.f1b.getText().toString());
 

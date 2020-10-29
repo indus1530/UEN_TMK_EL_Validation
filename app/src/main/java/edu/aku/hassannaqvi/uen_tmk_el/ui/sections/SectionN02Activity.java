@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
@@ -23,8 +26,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el.R;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
@@ -353,6 +354,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
         JSONObject json = new JSONObject();
 
+        json.put("elb8a", MainApp.form.getElb8a());
         json.put("serial", selectedChild.getSerialno());
         json.put("name", bi.can6.getSelectedItem().toString());
         json.put("can6", bi.can6.getSelectedItem().toString());

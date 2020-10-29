@@ -118,6 +118,7 @@ public class SectionF03Activity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("elb8a", MainApp.form.getElb8a());
         json.put("raf7a", bi.raf7a.getText().toString());
         json.put("raf7b", bi.raf7b.getText().toString());
         json.put("raf7cd", bi.raf7cd.getText().toString());
