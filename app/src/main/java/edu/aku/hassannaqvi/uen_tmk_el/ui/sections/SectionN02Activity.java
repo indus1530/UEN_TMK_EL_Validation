@@ -354,7 +354,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
 
         JSONObject json = new JSONObject();
 
-        json.put("elb8a", MainApp.form.getElb8a());
+        json.put("elb8a", selectedChild.getSubclusterno());
         json.put("serial", selectedChild.getSerialno());
         json.put("name", bi.can6.getSelectedItem().toString());
         json.put("can6", bi.can6.getSelectedItem().toString());
