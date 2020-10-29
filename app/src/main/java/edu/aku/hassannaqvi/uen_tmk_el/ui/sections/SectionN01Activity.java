@@ -24,14 +24,14 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionN01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
+
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionAnthroInfoActivity.anthro;
 
 public class SectionN01Activity extends AppCompatActivity {
 
     ActivitySectionN01Binding bi;
-    MWRA_CHILD mwraChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +78,11 @@ public class SectionN01Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addMWRACHILD(mwraChild);
-        mwraChild.set_ID(String.valueOf(updcount));
+        long updcount = db.addMWRACHILD(anthro);
+        anthro.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            mwraChild.set_UID(mwraChild.getDeviceID() + mwraChild.get_ID());
-            db.updatesMWRAChildColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, mwraChild.get_UID(), mwraChild.get_ID());
+            anthro.set_UID(anthro.getDeviceID() + anthro.get_ID());
+            db.updatesMWRAChildColumn(Mwra_ChildrenContract.MWRAChildTable.COLUMN_UID, anthro.get_UID(), anthro.get_ID());
             return true;
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
@@ -92,9 +92,9 @@ public class SectionN01Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
-        mwraChild.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        mwraChild.setFmuid(MainApp.indexKishMWRA.getUid());
-        mwraChild.setType(CONSTANTS.MWRA_ANTHRO_TYPE);
+        anthro.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+        anthro.setFmuid(MainApp.indexKishMWRA.getUid());
+        anthro.setType(CONSTANTS.MWRA_ANTHRO_TYPE);
 
         JSONObject json = new JSONObject();
         json.put("elb8a", MainApp.indexKishMWRA.getSubclusterno());
@@ -119,7 +119,7 @@ public class SectionN01Activity extends AppCompatActivity {
 
         json.put("can501x", bi.can501x.getText().toString());
 
-        mwraChild.setsB(json.toString());
+        anthro.setsB(json.toString());
     }
 
     private boolean formValidation() {

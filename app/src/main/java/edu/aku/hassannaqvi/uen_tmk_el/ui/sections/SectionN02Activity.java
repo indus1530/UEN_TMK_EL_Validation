@@ -32,18 +32,17 @@ import edu.aku.hassannaqvi.uen_tmk_el.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el.databinding.ActivitySectionN02Binding;
-import edu.aku.hassannaqvi.uen_tmk_el.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el.ui.other.MainActivity;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.uen_tmk_el.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.uen_tmk_el.CONSTANTS.ADD_ANTHRO;
+import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionAnthroInfoActivity.anthro;
 import static edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionAnthroInfoActivity.childListU5;
 
 public class SectionN02Activity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionN02Binding bi;
-    MWRA_CHILD anthro;
     FamilyMembersContract selectedChild;
     int position = 0;
     boolean anthroFlag = true;
@@ -60,7 +59,6 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
     private void setupContent() {
 
         bi.btnContinue.setText(childListU5.size() > 1 ? "Next Child" : "Next Section");
-        anthro = (MWRA_CHILD) getIntent().getSerializableExtra(ADD_ANTHRO);
 
         List<String> items = new ArrayList<String>() {
             {

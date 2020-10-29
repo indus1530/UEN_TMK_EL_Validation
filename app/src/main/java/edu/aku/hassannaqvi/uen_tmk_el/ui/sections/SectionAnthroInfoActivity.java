@@ -44,8 +44,8 @@ import static edu.aku.hassannaqvi.uen_tmk_el.core.MainApp.appInfo;
 public class SectionAnthroInfoActivity extends AppCompatActivity {
 
     ActivitySectionAnthroInfoBinding bi;
-    MWRA_CHILD anthro;
     public static List<FamilyMembersContract> childListU5;
+    public static MWRA_CHILD anthro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
