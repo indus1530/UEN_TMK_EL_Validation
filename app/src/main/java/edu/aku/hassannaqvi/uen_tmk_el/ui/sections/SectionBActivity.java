@@ -204,6 +204,7 @@ public class SectionBActivity extends AppCompatActivity {
                     @Override
                     public void onNext(@NonNull BLRandom blRandom) {
                         bl = blRandom;
+                        bi.headname.setText(String.format("HH-Head: %s", bl.getHhhead().toUpperCase()));
                         resetVariables(View.VISIBLE);
                     }
 
