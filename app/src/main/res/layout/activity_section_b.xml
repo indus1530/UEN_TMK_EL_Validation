@@ -588,6 +588,14 @@
                 android:visibility="gone"
                 tools:visibility="visible">
 
+
+                <TextView
+                    android:id="@+id/headname"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANBCD" />
+
                 <!-- elb12  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVelb12"
