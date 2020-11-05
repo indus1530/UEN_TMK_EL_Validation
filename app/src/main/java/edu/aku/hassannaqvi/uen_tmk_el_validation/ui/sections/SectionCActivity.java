@@ -106,6 +106,15 @@ public class SectionCActivity extends AppCompatActivity {
                 : bi.elc602.isChecked() ? "2"
                 : "-1");
 
+        json.put("elc801", bi.elc801.getText().toString());
+        json.put("elc802", bi.elc802.getText().toString());
+        json.put("elc803", bi.elc803.getText().toString());
+        json.put("elc804", bi.elc804.getText().toString());
+        json.put("elc805", bi.elc805.getText().toString());
+        json.put("elc806", bi.elc806.getText().toString());
+        json.put("elc807", bi.elc807.getText().toString());
+        json.put("elc808", bi.elc808.getText().toString());
+
         try {
             JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(MainApp.form.getsC()), json);
             MainApp.form.setsC(String.valueOf(json_merge));

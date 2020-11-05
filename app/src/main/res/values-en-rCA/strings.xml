@@ -126,6 +126,16 @@
     <string name="elc707">No Child between 0-05 years</string>
     <string name="elc708">Temporarily locked </string>
     <string name="elc796">Others (specify)</string>
+    <string name="elc801">گھر ڀاتين جو ٽوٽل تعداد</string>
+    <string name="elc802">مرد</string>
+    <string name="elc803">عورتون</string>
+    <string name="elc804"> 0 کان 28 ڏينهن جا نوان ڄاول ٻار </string>
+    <string name="elc805">هڪ مهيني کان 5 سالن جا ٻار </string>
+    <string name="elc806"> 5 کان 14 سالن جا ٻار </string>
+    <string name="elc807"> 15 کان 49 سالن  واريون غير شادي شده عورتون </string>
+    <string name="elc808"> 15 کان 49 سالن  واريون شادي شده عورتون </string>
+
+
     <string name="mmd_title1">SECTION D: HOUSEHOLD MEMBERS’ INFORMATION (This section will be asked from the head of the household or someone else at least 18 years of age or older.)</string>
     <string name="mmd_title2">Now I would like to ask you questions on household member information who live with you in this house and share the same kitchen. This information will be used to assess the health care needs, and services available to you and your household members in the area. </string>
     <string name="mmd1">Member Serial number</string>
@@ -1805,6 +1815,15 @@ Is this person under age 15? What sex?</string>
     <string name='Q_elc5'>elc5</string>
     <string name='Q_elc6'>elc6</string>
     <string name='Q_elc7'>elc7</string>
+    <string name='Q_elc801'>elc801</string>
+    <string name='Q_elc802'>elc802</string>
+    <string name='Q_elc803'>elc803</string>
+    <string name='Q_elc804'>elc804</string>
+    <string name='Q_elc805'>elc805</string>
+    <string name='Q_elc806'>elc806</string>
+    <string name='Q_elc807'>elc807</string>
+    <string name='Q_elc808'>elc808</string>
+
     <string name='Q_ele_title1'>ele_title1</string>
     <string name='Q_ele_title2'>ele_title2</string>
     <string name='Q_ele1'>ele1</string>
