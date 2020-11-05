@@ -23,8 +23,9 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivitySectionN01B
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.uen_tmk_el_validation.utils.EndSectionActivity;
 
-public class SectionN01Activity extends AppCompatActivity {
+public class SectionN01Activity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySectionN01Binding bi;
     MWRA_CHILD anthro;
@@ -59,7 +60,7 @@ public class SectionN01Activity extends AppCompatActivity {
     public void BtnContinue() {
         if (!formValidation()) return;
         try {
-            SaveDraft();
+            SaveDraft(true);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -85,7 +86,7 @@ public class SectionN01Activity extends AppCompatActivity {
         }
     }
 
-    private void SaveDraft() throws JSONException {
+    private void SaveDraft(boolean flag) throws JSONException {
 
         anthro = new MWRA_CHILD();
         anthro.setUsername(MainApp.userName);
@@ -119,6 +120,8 @@ public class SectionN01Activity extends AppCompatActivity {
 
         json.put("can501x", bi.can501x.getText().toString());
 
+        json.put("status", flag);
+
         anthro.setsB(json.toString());
     }
 
@@ -127,7 +130,23 @@ public class SectionN01Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this);
+        if (!Validator.emptyTextBox(this, bi.can0)) return;
+        AppUtilsKt.openWarningActivity(this, "Are you sure, you want to end " + bi.can0.getText().toString() + " anthro form?");
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
+        try {
+            SaveDraft(false);
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 

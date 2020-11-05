@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name"> TMK UEN EL </string>
+    <string name="app_name"> TMK UEN EL Validation</string>
 
     <string name="sectionb_mainheading">SECTION B: HOUSEHOLD IDENTIFICATION AND DEMOGRAPHIC INFORMATION</string>
     <string name="sectionc_mainheading">SECTION C: INTRODUCTION And CONSENT</string>
@@ -2020,5 +2020,13 @@ Is this person under age 15? What sex?</string>
     <string name='Q_wsk8'>wsk8</string>
     <string name='Q_wsk9'>wsk9</string>
     <string name="can0">سربراه جو نالو</string>
+    <string name="Q_imi5">imi5</string>
+    <string name="Q_imi6">imi6</string>
+    <string name="imi501">Yes</string>
+    <string name="imi502">No</string>
+    <string name="imi601">Yes</string>
+    <string name="imi602">No</string>
+    <string name="imi5">ڇا هن گھر ۾ 2 سالن کان ننڍو ٻار آهي؟</string>
+    <string name="imi6">ڇا هن گھر ۾ 6 مهينن کان ننڍو ٻار آهي؟</string>
 
 </resources>
