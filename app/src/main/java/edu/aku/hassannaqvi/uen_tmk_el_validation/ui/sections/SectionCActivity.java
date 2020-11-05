@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -126,7 +127,26 @@ public class SectionCActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        int totalmember = (TextUtils.isEmpty(bi.elc802.getText()) ? 0 : Integer.parseInt(bi.elc802.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.elc803.getText()) ? 0 : Integer.parseInt(bi.elc803.getText().toString().trim()));
+
+        if (totalmember == 0) {
+            return Validator.emptyCustomTextBox(this, bi.elc801, "Invalid Total Count Please check again");
+        } else if (totalmember != Integer.parseInt(bi.elc801.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.elc801, "Invalid Total Count Please check again");
+        }
+
+        int totalfemales = (TextUtils.isEmpty(bi.elc807.getText()) ? 0 : Integer.parseInt(bi.elc807.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.elc808.getText()) ? 0 : Integer.parseInt(bi.elc808.getText().toString().trim()));
+
+        if (totalfemales != Integer.parseInt(bi.elc803.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.elc801, "Invalid Count of females Please check again");
+        }
+
+        return true;
     }
 
     public void BtnEnd() {
