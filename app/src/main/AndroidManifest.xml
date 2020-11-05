@@ -107,10 +107,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionAnthroInfoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
             android:name=".ui.sections.SectionN01Activity"
             android:label="SECTION N: ANTHROPOMETRIC MEASURMENTS"
             android:screenOrientation="portrait"

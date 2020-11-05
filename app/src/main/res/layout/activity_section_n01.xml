@@ -66,19 +66,47 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!--  Text View  -->
-            <androidx.cardview.widget.CardView style="@style/cardView">
+            <!-- can6  Input   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcan6"
+                style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/kishName"
-                        style="@style/textViewIntro"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_can6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_can6"
+                            android:text="@string/can0" />
+
+                        <TextView
+                            android:id="@+id/q_can6"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_can6"
+                            android:layout_alignBottom="@id/qtxt_can6"
+                            android:text="@string/Q_can1" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/can0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="@string/can0"
+                        android:inputType="textPersonName"
+                        android:maxLength="30" />
 
                 </LinearLayout>
 

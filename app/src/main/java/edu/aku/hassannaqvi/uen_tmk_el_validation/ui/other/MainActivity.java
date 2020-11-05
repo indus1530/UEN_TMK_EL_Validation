@@ -23,6 +23,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.io.File;
@@ -36,8 +39,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.VillageContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.AndroidDatabaseManager;
@@ -46,7 +47,6 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.VersionApp;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.list_activity.FormsReportDate;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionAnthroInfoActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionBActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionCActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionGActivity;
@@ -326,10 +326,6 @@ public class MainActivity extends AppCompatActivity implements WarningActivityIn
             case R.id.formA:
                 if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
                 oF = new Intent(this, SectionBActivity.class).putExtra(VILLAGES_DATA, village);
-                break;
-            case R.id.formAnthro:
-                if (!Validator.emptyCheckingContainer(this, bi.fldGrpna10)) return;
-                oF = new Intent(this, SectionAnthroInfoActivity.class).putExtra(VILLAGES_DATA, village);
                 break;
             case R.id.formC:
                 oF = new Intent(this, SectionCActivity.class);

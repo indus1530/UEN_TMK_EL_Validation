@@ -1,8 +1,6 @@
 package edu.aku.hassannaqvi.uen_tmk_el_validation.utils;
 
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.BLRandomContract.BLRandomTable;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.DeathContract;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.UCContract.UCTable;
@@ -105,47 +103,6 @@ public final class CreateTable {
             + BLRandomTable.COLUMN_HH_SELECTED_UC + " TEXT,"
             + BLRandomTable.COLUMN_SYSDT + " TEXT,"
             + BLRandomTable.COLUMN_SNO_HH + " TEXT );";
-
-
-    public static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE " + FamilyMembersContract.MemberTable.TABLE_NAME + "("
-            + FamilyMembersContract.MemberTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            FamilyMembersContract.MemberTable.COLUMN_UID + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_UUID + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_LUID + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_KISH_SELECTED + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_CLUSTERNO + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_SUBCLUSTERNO + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_HHNO + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_SERIAL_NO + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_NAME + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_RELATION_HH + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_RELATION_HHXX + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_AGE + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_MOTHER_NAME + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_MOTHER_SERIAL + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_GENDER + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_MARITAL + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_SD + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_SYNCED + " TEXT," +
-            FamilyMembersContract.MemberTable.COLUMN_SYNCED_DATE + " TEXT"
-            + ");";
-
-    public static final String SQL_CREATE_DEATH = "CREATE TABLE " + DeathContract.DeathTable.TABLE_NAME + "("
-            + DeathContract.DeathTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + DeathContract.DeathTable.COLUMN_UID + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_UUID + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_ELB1 + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_ELB11 + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_USERNAME + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_SYSDATE + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_TYPE + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_SC + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_SB + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_DEVICEID + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_DEVICETAGID + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_SYNCED + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_SYNCED_DATE + " TEXT,"
-            + DeathContract.DeathTable.COLUMN_APPVERSION + " TEXT );";
 
     public static final String SQL_CREATE_MWRA = "CREATE TABLE " + Mwra_ChildrenContract.MWRAChildTable.TABLE_NAME + "("
             + Mwra_ChildrenContract.MWRAChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"

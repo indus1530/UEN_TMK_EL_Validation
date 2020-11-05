@@ -1565,7 +1565,7 @@
     <string name="can5">اندازن ڪيترو ڊگهو يا ننڍو آهي مهرباني ڪري فرق انچ ۾لکو</string>
     <string name="can501"> انڇ </string>
     <string name="can502">معلوم نه آهي </string>
-    <string name="can6">پنجن سالن کان ننڍي ٻار جو نالو؟ ڊراپ ڊائون</string>
+    <string name="can6">پنجن سالن کان ننڍي ٻار جو نالو؟ </string>
     <string name="can7">ڇا توهان کي لڳي ٿو ته توهان جي ٻار (نالو) جو قد سندس عمر جي حساب سان صحيع آهي؟</string>
     <string name="can701">قد عمر جي حساب سان صحيع آهي </string>
     <string name="can702">قد عمر جي حساب سان وڌيڪ ڊگهو آهي </string>
@@ -1988,5 +1988,6 @@
     <string name='Q_wsk7'>wsk7</string>
     <string name='Q_wsk8'>wsk8</string>
     <string name='Q_wsk9'>wsk9</string>
+    <string name="can0">سربراه جو نالو</string>
 
 </resources>

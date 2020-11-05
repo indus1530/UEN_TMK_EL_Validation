@@ -56,12 +56,14 @@
 
                     </RelativeLayout>
 
-                    <Spinner
+                    <EditText
                         android:id="@+id/can6"
-                        style="@style/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp" />
+                        android:layout_margin="10dp"
+                        android:hint="@string/can6"
+                        android:inputType="textPersonName"
+                        android:maxLength="30" />
 
                 </LinearLayout>
 
@@ -245,207 +247,207 @@
             </androidx.cardview.widget.CardView>
 
 
-                <!-- can10  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcan10"
-                    style="@style/cardView">
+            <!-- can10  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcan10"
+                style="@style/cardView">
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/qtxt_can10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_can10"
+                            android:text="@string/can10" />
 
-                            <TextView
-                                android:id="@+id/qtxt_can10"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_can10"
-                                android:text="@string/can10" />
-
-                            <TextView
-                                android:id="@+id/q_can10"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_can10"
-                                android:layout_alignBottom="@id/qtxt_can10"
-                                android:text="@string/Q_can10" />
-
-                        </RelativeLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/can10"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/q_can10"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="180"
-                            app:minValue="40"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                            app:type="range" />
+                            android:layout_alignTop="@id/qtxt_can10"
+                            android:layout_alignBottom="@id/qtxt_can10"
+                            android:text="@string/Q_can10" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- can11  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcan11"
-                    style="@style/cardView">
-
-                    <LinearLayout
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/can10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:hint="###.#"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:mask="###.#"
+                        app:maxValue="180"
+                        app:minValue="40"
+                        app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                        app:type="range" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                </LinearLayout>
 
-                            <TextView
-                                android:id="@+id/qtxt_can11"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_can11"
-                                android:text="@string/can11" />
-
-                            <TextView
-                                android:id="@+id/q_can11"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_can11"
-                                android:layout_alignBottom="@id/qtxt_can11"
-                                android:text="@string/Q_can11" />
-
-                        </RelativeLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/can11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                            app:maxValue="180"
-                            app:minValue="40"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-                <!-- can14  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcan14"
-                    style="@style/cardView">
+            <!-- can11  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcan11"
+                style="@style/cardView">
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/qtxt_can11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_can11"
+                            android:text="@string/can11" />
 
-                            <TextView
-                                android:id="@+id/qtxt_can14"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_can14"
-                                android:text="@string/can14" />
-
-                            <TextView
-                                android:id="@+id/q_can14"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_can14"
-                                android:layout_alignBottom="@id/qtxt_can14"
-                                android:text="@string/Q_can14" />
-                        </RelativeLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/can14"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/q_can11"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:hint="##.#"
-                            app:mask="##.#"
-                            app:maxValue="40"
-                            app:minValue="1"
-                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
-                            app:type="range" />
+                            android:layout_alignTop="@id/qtxt_can11"
+                            android:layout_alignBottom="@id/qtxt_can11"
+                            android:text="@string/Q_can11" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- can15  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcan15"
-                    style="@style/cardView">
-
-                    <LinearLayout
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/can11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:hint="###.#"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:mask="###.#"
+                        app:maxValue="180"
+                        app:minValue="40"
+                        app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                        app:type="range" />
 
-                        <RelativeLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- can14  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcan14"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_can14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
+                            android:layout_toEndOf="@id/q_can14"
+                            android:text="@string/can14" />
 
-                            <TextView
-                                android:id="@+id/qtxt_can15"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_can15"
-                                android:text="@string/can15" />
+                        <TextView
+                            android:id="@+id/q_can14"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_can14"
+                            android:layout_alignBottom="@id/qtxt_can14"
+                            android:text="@string/Q_can14" />
+                    </RelativeLayout>
 
-                            <TextView
-                                android:id="@+id/q_can15"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_can15"
-                                android:layout_alignBottom="@id/qtxt_can15"
-                                android:text="@string/Q_can15" />
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/can14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="##.#"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:mask="##.#"
+                        app:maxValue="40"
+                        app:minValue="1"
+                        app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
+                        app:type="range" />
 
-                        </RelativeLayout>
+                </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/can15"
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- can15  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcan15"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_can15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="##.#"
-                            app:mask="##.#"
-                            app:maxValue="40"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:minValue="1"
-                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
-                            app:type="range" />
+                            android:layout_toEndOf="@id/q_can15"
+                            android:text="@string/can15" />
 
-                    </LinearLayout>
+                        <TextView
+                            android:id="@+id/q_can15"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_can15"
+                            android:layout_alignBottom="@id/qtxt_can15"
+                            android:text="@string/Q_can15" />
 
-                </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/can15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="##.#"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:mask="##.#"
+                        app:maxValue="40"
+                        app:minValue="1"
+                        app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
+                        app:type="range" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
             <!--EndButton LinearLayout-->

@@ -16,23 +16,15 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
-import java.util.List;
-
-import androidx.core.app.ActivityCompat;
-import androidx.databinding.DataBindingUtil;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.UCContract;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.CountAlertDialogLayoutBinding;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other.EndingActivity;
-import kotlin.Pair;
 
 
 /**
@@ -84,9 +76,6 @@ public class MainApp extends Application {
     public static SharedPreferences sharedPref;
     public static String UC_ID;
     public static UCContract SELECTED_UC;
-    public static FamilyMembersContract indexKishMWRA;
-    public static FamilyMembersContract indexKishMWRAChild;
-    public static Pair<List<Integer>, List<String>> mwraChildren;
     public static String[] relationHHLst = {"Head of HH", "Wife/Husband", "Son/Daughters", "Son in law/Daughter in law", "Grand child", "Parents", "Parents in law",
             "Brother/Sister", "Brother in law/Sister in law", "Niece/Nephew", "Grand Parents", "Aunts/Uncle", "Adopted/Step child", "Domestic Servant", "Other"};
     protected static LocationManager locationManager;
@@ -154,25 +143,6 @@ public class MainApp extends Application {
                 });
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
-    }
-
-    public static void openDialog(Context context, FamilyMembersContract item) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setCancelable(false);
-        View view = LayoutInflater.from(context).inflate(R.layout.count_alert_dialog_layout, null);
-        CountAlertDialogLayoutBinding bi = DataBindingUtil.bind(view.getRootView());
-        builder.setView(view);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        assert bi != null;
-        bi.continueBtn.setOnClickListener(v -> {
-            itemClick.itemClick();
-            dialog.dismiss();
-        });
-
-        bi.noBtn.setOnClickListener(v -> dialog.dismiss());
     }
 
     @Override
