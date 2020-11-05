@@ -86,11 +86,11 @@
                             android:id="@+id/qtxt_elc802"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hb10"
+                            android:layout_toEndOf="@id/q_bfj27"
                             android:text="@string/elc802" />
 
                         <TextView
-                            android:id="@+id/q_hb10"
+                            android:id="@+id/q_bfj27"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

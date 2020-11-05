@@ -105,8 +105,6 @@ public class SectionN01Activity extends AppCompatActivity {
 
         json.put("can2", bi.can2.getText().toString());
 
-        json.put("can3", bi.can3.getText().toString());
-
         json.put("can4", bi.can401.isChecked() ? "1"
                 : bi.can402.isChecked() ? "2"
                 : bi.can403.isChecked() ? "3"

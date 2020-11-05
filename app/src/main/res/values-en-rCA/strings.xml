@@ -1347,6 +1347,14 @@
     <string name="bfj25q01">Yes (If Yes Number of times)</string>
     <string name="bfj25q02">No</string>
     <string name="bfj25q03">DK</string>
+
+    <string name="bfj26">ڇا هن گھر ۾ 2 سالن کان ننڍو ٻار آهي؟</string>
+    <string name="bfj2601">ھا </string>
+    <string name="bfj2602">نه </string>
+    <string name="bfj27">ڇا هن گھر ۾ 6 مهينن کان ننڍو ٻار آهي؟</string>
+    <string name="bfj2701">ھا </string>
+    <string name="bfj2702">نه </string>
+
     <string name="wsk_title_1">SECTION K: WATER AND SANITATION (This section will be filled by the index Mother or head of the household or someone else at least 18 years of age or older)</string>
     <string name="wsk_title_2">Now I would like to talk about water and sanitation status of HH</string>
     <string name="wsk1">What is the main source of drinking water for members of your household?</string>
@@ -1716,6 +1724,8 @@ Is this person under age 15? What sex?</string>
     <string name='Q_bfj7'>bfj7</string>
     <string name='Q_bfj8'>bfj8</string>
     <string name='Q_bfj9'>bfj9</string>
+    <string name='Q_bfj26'>bfj26</string>
+    <string name='Q_bfj27'>bfj26</string>
     <string name='Q_can_title_1'>can_title 1</string>
     <string name='Q_can_title_2'>can_title 2</string>
     <string name='Q_can_tittle_1a'>can_tittle 1a</string>

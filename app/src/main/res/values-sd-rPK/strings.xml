@@ -1347,6 +1347,14 @@
     <string name="bfj25q01"> جيڪڏهن ها ته ڪيترا ڀيرا </string>
     <string name="bfj25q02">نه</string>
     <string name="bfj25q03">معلوم نه آھي</string>
+
+    <string name="bfj26">ڇا هن گھر ۾ 2 سالن کان ننڍو ٻار آهي؟</string>
+    <string name="bfj2601">ھا </string>
+    <string name="bfj2602">نه </string>
+    <string name="bfj27">ڇا هن گھر ۾ 6 مهينن کان ننڍو ٻار آهي؟</string>
+    <string name="bfj2701">ھا </string>
+    <string name="bfj2702">نه </string>
+
     <string name="wsk_title_1">سيڪشن ڪي؛ پاڻي  ۽ صفائي (ھي سيڪشن انڊيڪس ماءُ يا گھراڻي جي سربراھ يا 18 سال ۽ ان کان وڌيڪ عمر جي ڪنهن سمجھدار شخص کان پڇيو ويندو.)</string>
     <string name="wsk_title_2">ھاڻي آئون توھان کان توھان جي گھر جي پاڻيءَ، نيڪال ۽ صفائيءَ جي صورتحال بابت پڇنديس</string>
     <string name="wsk1">توهان جي گھر ۾ پيئڻ جي پاڻي جو مکيه ذريعو ڪھڙو آهي؟</string>
@@ -1713,6 +1721,8 @@
     <string name='Q_bfj7'>bfj7</string>
     <string name='Q_bfj8'>bfj8</string>
     <string name='Q_bfj9'>bfj9</string>
+    <string name='Q_bfj26'>bfj26</string>
+    <string name='Q_bfj27'>bfj26</string>
     <string name='Q_can_title_1'>can_title 1</string>
     <string name='Q_can_title_2'>can_title 2</string>
     <string name='Q_can_tittle_1a'>can_tittle 1a</string>
