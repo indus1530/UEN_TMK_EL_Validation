@@ -1094,6 +1094,14 @@
     <string name="imi4pplc01">گورمينٽ اسپتال</string>
     <string name="imi4pplc02">پرائوئٽ اسپتال</string>
     <string name="imi4pplc03">گھر</string>
+
+    <string name="imi5">ڇا هن گھر ۾ 2 سالن کان ننڍو ٻار آهي؟</string>
+    <string name="imi501">ھا </string>
+    <string name="imi502">نه </string>
+    <string name="imi6">ڇا هن گھر ۾ 6 مهينن کان ننڍو ٻار آهي؟</string>
+    <string name="imi601">ھا </string>
+    <string name="imi602">نه </string>
+
     <string name="bfj_title1">ماڊيول جي؛ ماءُ جو کير ۽ غذايت (ھي سيڪشن گھراڻي جي 24 مھينن کان گھٽ عمر جي ٻارن لاءِ انڊيڪس ماءُ کان پڇيو ويندو (ٻارن جا نالا خاندان جي معلومات واري حصي مان پاڻ مرادو ظاھر ٿيندا)</string>
     <string name="bfj_title2">ھاڻي آئون توھان کان ماءُ جي کير ۽ غذايت بابت پڇنديس</string>
     <string name="bfj1ca">نئين ڄاول ٻارجونالو  </string>
@@ -1963,6 +1971,8 @@
     <string name='Q_imi4p'>imi4p</string>
     <string name='Q_imi4pplc'>imi4pplc</string>
     <string name='Q_imi4psrc'>imi4psrc</string>
+    <string name='Q_imi5'>imi5</string>
+    <string name='Q_imi6'>imi6</string>
     <string name='Q_mmd_title1'>mmd_title1</string>
     <string name='Q_mmd_title2'>mmd_title2</string>
     <string name='Q_mmd08'>mmd08</string>

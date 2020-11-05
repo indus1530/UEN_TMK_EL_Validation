@@ -280,6 +280,15 @@ public class SectionI01Activity extends AppCompatActivity {
                 : bi.imi4jplc02.isChecked() ? "2"
                 : bi.imi4jplc03.isChecked() ? "3"
                 : "-1");
+
+        json.put("imi5", bi.imi501.isChecked() ? "1"
+                : bi.imi502.isChecked() ? "2"
+                : "-1");
+
+        json.put("imi6", bi.imi601.isChecked() ? "1"
+                : bi.imi601.isChecked() ? "2"
+                : "-1");
+
         mwraChild.setsB(json.toString());
 
     }

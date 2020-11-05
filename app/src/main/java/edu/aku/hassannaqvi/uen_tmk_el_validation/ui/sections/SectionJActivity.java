@@ -204,6 +204,14 @@ public class SectionJActivity extends AppCompatActivity {
         json.put("bfj1301x", bi.bfj1301x.getText().toString());
         json.put("bfj1302x", bi.bfj1302x.getText().toString());
 
+        json.put("bfj26", bi.bfj2601.isChecked() ? "1"
+                : bi.bfj2601.isChecked() ? "2"
+                : "-1");
+
+        json.put("imi6", bi.bfj2701.isChecked() ? "1"
+                : bi.bfj2701.isChecked() ? "2"
+                : "-1");
+
         MainApp.form.setsJ(json.toString());
 
     }
