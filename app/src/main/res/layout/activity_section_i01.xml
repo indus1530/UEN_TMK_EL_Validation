@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionI01Activity" />
+            type="edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionI01Activity" />
     </data>
 
 
@@ -98,58 +98,13 @@
 
                     </RelativeLayout>
 
-                    <Spinner
-                        android:id="@+id/imi1a"
-                        style="@style/spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- i1b  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVi1b"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_i1b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_i1b"
-                            android:text="@string/i1b" />
-
-                        <TextView
-                            android:id="@+id/q_i1b"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_i1b"
-                            android:layout_alignBottom="@id/qtxt_i1b"
-                            android:text="@string/Q_i1b" />
-
-                    </RelativeLayout>
-
                     <EditText
-                        android:id="@+id/i1b"
-                        android:enabled="false"
+                        android:id="@+id/imi1a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/i1b"
-                        android:inputType="number" />
+                        android:hint="@string/imi1a"
+                        android:inputType="textPersonName"
+                        android:maxLength="30" />
 
                 </LinearLayout>
 
@@ -390,80 +345,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Take Photo   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVtakePhoto"
-                    style="@style/cardView">
-
-                    <LinearLayout style="@style/vlinearlayout">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/frontPhoto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/outline_btn"
-                                android:onClick="@{(v) -> callback.takePhoto(1)}"
-                                android:paddingStart="12dp"
-                                android:paddingEnd="12dp"
-                                android:text="Take Front Photo"
-                                android:textColor="@color/redInfo" />
-
-                            <Button
-                                android:id="@+id/backPhoto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/outline_btn"
-                                android:onClick="@{(v) -> callback.takePhoto(2)}"
-                                android:text="Take Back Photo"
-                                android:textColor="@color/redInfo" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/frontFileName"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:enabled="false"
-                                android:textColor="#7f7f7f7f"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/backFileName"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:enabled="false"
-                                android:textColor="#7f7f7f7f"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
                 <!-- imi4a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVimi4a"

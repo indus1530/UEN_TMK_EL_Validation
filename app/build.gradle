@@ -24,11 +24,11 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.uen_tmk_el"
+            applicationId "edu.aku.hassannaqvi.uen_tmk_el_validation"
             minSdkVersion 22
             targetSdkVersion 30
             versionCode code
-            versionName "1.1"
+            versionName "0.1"
             testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         }
     } else {

@@ -8,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionCActivity" />
+            type="edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionCActivity" />
     </data>
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="edu.aku.hassannaqvi.uen_tmk_el">
+    package="edu.aku.hassannaqvi.uen_tmk_el_validation">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
@@ -29,31 +29,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity
-            android:name=".ui.sections.SectionF06Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionF05Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionF04Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionF03Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionF02Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
@@ -97,37 +72,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionE01Activity"
-            android:label="SOCIO ECONOMIC STATUS OF HOUSEHOLD"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionE02Activity"
-            android:label="SOCIO ECONOMIC STATUS OF HOUSEHOLD"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionF01Activity"
-            android:label="Section F: Reproductive health, Maternal AND CHild MORTALITY"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionG01Activity"
+            android:name=".ui.sections.SectionGActivity"
             android:label="SECTION G. CHILD HEALTH (Diarrhoea)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionG02Activity"
-            android:label="SECTION G. CHILD HEALTH (Diarrhoea)"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionH01Activity"
-            android:label="H. CHILD HEALTH ( Acute Respiratory Infection(ARI)"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionH02Activity"
+            android:name=".ui.sections.SectionHActivity"
             android:label="H. CHILD HEALTH ( Acute Respiratory Infection(ARI)"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
@@ -142,12 +92,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
-            android:name=".ui.sections.SectionJ01Activity"
-            android:label="Section J: BREAST FEEDING AND NUTRITION"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.SectionJ02Activity"
+            android:name=".ui.sections.SectionJActivity"
             android:label="Section J: BREAST FEEDING AND NUTRITION"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
@@ -192,16 +137,6 @@
 
         <service android:name=".utils.DownloadFileService" />
 
-        <activity
-            android:name=".ui.sections.SectionDActivity"
-            android:label="SECTION D: HOUSEHOLD MEMBERS’ INFORMATION"
-            android:parentActivityName=".ui.list_activity.FamilyMembersListActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.FamilyMembersListActivity" />
-        </activity>
         <activity
             android:name=".ui.list_activity.FamilyMembersListActivity"
             android:screenOrientation="portrait"

@@ -8,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.uen_tmk_el.adapter.FormsAdapter" />
+            type="edu.aku.hassannaqvi.uen_tmk_el_validation.adapter.FormsAdapter" />
     </data>
 
 

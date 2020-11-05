@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.uen_tmk_el.ui.list_activity.PendingFormsActivity" />
+            type="edu.aku.hassannaqvi.uen_tmk_el_validation.ui.list_activity.PendingFormsActivity" />
     </data>
 
     <LinearLayout

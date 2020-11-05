@@ -8,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.uen_tmk_el.ui.sections.SectionN01Activity" />
+            type="edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionN01Activity" />
     </data>
 
 
@@ -194,55 +194,6 @@
                             app:mask="###.#"
                             app:maxValue="200"
                             app:minValue="100"
-                            app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- can3  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcan3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom">
-
-                            <TextView
-                                android:id="@+id/qtxt_can3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_can3"
-                                android:text="@string/can3" />
-
-                            <TextView
-                                android:id="@+id/q_can3"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_can3"
-                                android:layout_alignBottom="@id/qtxt_can3"
-                                android:text="@string/Q_can3" />
-                        </RelativeLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/can3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:hint="###.#"
-                            app:mask="###.#"
-                            app:maxValue="250"
-                            app:minValue="15"
                             app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                             app:type="range" />
 
