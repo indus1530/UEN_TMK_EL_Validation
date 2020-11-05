@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivitySectionLBinding;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt;
 
 public class SectionLActivity extends AppCompatActivity {
@@ -70,7 +70,7 @@ public class SectionLActivity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionN02Activity.class));
             } else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }

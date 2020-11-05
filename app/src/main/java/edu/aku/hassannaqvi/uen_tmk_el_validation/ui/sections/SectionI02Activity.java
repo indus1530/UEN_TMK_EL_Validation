@@ -7,15 +7,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
@@ -25,7 +26,6 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.ADD_IMMUNIZATION;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionHActivity.childListU2;
 
 public class SectionI02Activity extends AppCompatActivity {
 
@@ -90,7 +90,7 @@ public class SectionI02Activity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, childListU2.getFirst().size() == 0 ? SectionJActivity.class : SectionI01Activity.class));
+                startActivity(new Intent(this, SectionJActivity.class));
             }
         } catch (JSONException e) {
             e.printStackTrace();

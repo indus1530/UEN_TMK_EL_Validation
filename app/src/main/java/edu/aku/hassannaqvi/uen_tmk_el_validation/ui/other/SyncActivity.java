@@ -12,6 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -24,20 +30,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.adapter.SyncListAdapter;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivitySyncBinding;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.models.Death;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.Form;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.MWRA_CHILD;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.models.SyncModel;
@@ -131,25 +130,6 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
             bi.noDataItem.setVisibility(View.GONE);
 
             new SyncDevice(this, false).execute();
-//  *******************************************************Forms*********************************
-            /*String[] syncValues = new String[]{CONSTANTS.FORM_MP, CONSTANTS.FORM_MF};
-            for (int i = 0; i < syncValues.length; i++) {
-                Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[i]), Toast.LENGTH_SHORT).show();
-                if (uploadlistActivityCreated) {
-                    uploadmodel = new SyncModel();
-                    uploadmodel.setstatusID(0);
-                    uploadlist.add(uploadmodel);
-                }
-                new SyncAllData(
-                        this,
-                        String.format("Forms - %s", syncValues[i]),
-                        "updateSyncedForms",
-                        Form.class,
-                        MainApp._HOST_URL + MainApp._SERVER_URL,
-                        FormsContract.FormsTable.TABLE_NAME + syncValues[i],
-                        db.getUnsyncedForms(syncValues[i]), i, syncListAdapter, uploadlist
-                ).execute();
-            }*/
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             if (uploadlistActivityCreated) {
@@ -167,41 +147,9 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     db.getUnsyncedForms(), 0, syncListAdapter, uploadlist
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing FamilyMembers", Toast.LENGTH_SHORT).show();
-            if (uploadlistActivityCreated) {
-                uploadmodel = new SyncModel();
-                uploadmodel.setstatusID(0);
-                uploadlist.add(uploadmodel);
-            }
-            new SyncAllData(
-                    this,
-                    "FamilyMembers",
-                    "updateSyncedFamilyMemForms",
-                    FamilyMembersContract.class,
-                    MainApp._HOST_URL + MainApp._SERVER_URL,
-                    FamilyMembersContract.MemberTable.TABLE_NAME,
-                    db.getUnsyncedFamilyMembers(), 1, syncListAdapter, uploadlist
-            ).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Forms Death", Toast.LENGTH_SHORT).show();
-            if (uploadlistActivityCreated) {
-                uploadmodel = new SyncModel();
-                uploadmodel.setstatusID(0);
-                uploadlist.add(uploadmodel);
-            }
-            new SyncAllData(
-                    this,
-                    "Forms - Death",
-                    "updateSyncedDeath",
-                    Death.class,
-                    MainApp._HOST_URL + MainApp._SERVER_URL,
-                    "Death",
-                    db.getUnsyncedDeaths(CONSTANTS.CHILD_DEATH_TYPE, CONSTANTS.MOTHER_DEATH_TYPE), 2, syncListAdapter, uploadlist
-            ).execute();
-
-            String[][] syncValues = new String[][]{{"MWRAs", CONSTANTS.MWRA_TYPE}, {"Immunization", CONSTANTS.CHILD_TYPE}, {"Anthro", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
-            for (int i = 3; i <= 5; i++) {
-                int k = i - 3;
+            String[][] syncValues = new String[][]{{"ImmunizationV", CONSTANTS.CHILD_TYPE}, {"AnthroV", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
+            for (int i = 1; i <= 2; i++) {
+                int k = i - 1;
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();
                 if (uploadlistActivityCreated) {
                     uploadmodel = new SyncModel();

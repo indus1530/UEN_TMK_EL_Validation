@@ -5,32 +5,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.Mwra_ChildrenContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivitySectionN01Binding;
-import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other.MainActivity;
+import edu.aku.hassannaqvi.uen_tmk_el_validation.models.MWRA_CHILD;
+import edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt;
-
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.ui.sections.SectionAnthroInfoActivity.anthro;
 
 public class SectionN01Activity extends AppCompatActivity {
 
     ActivitySectionN01Binding bi;
+    MWRA_CHILD anthro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +35,6 @@ public class SectionN01Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_n01);
         bi.setCallback(this);
         setupSkip();
-        bi.kishName.setText(String.format("Name:%s & Serial no: %s", MainApp.indexKishMWRA.getName().toUpperCase(), MainApp.indexKishMWRA.getSerialno()));
     }
 
     private void setupSkip() {
@@ -69,7 +65,7 @@ public class SectionN01Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -91,14 +87,21 @@ public class SectionN01Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
-        anthro.setSysdate(new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date().getTime()));
-        anthro.setFmuid(MainApp.indexKishMWRA.getUid());
+        anthro = new MWRA_CHILD();
+        anthro.setUsername(MainApp.userName);
+        anthro.setDeviceID(MainApp.appInfo.getDeviceID());
+        anthro.setDevicetagID(MainApp.appInfo.getTagName());
+        anthro.setAppversion(MainApp.appInfo.getAppVersion());
+        anthro.setElb1(MainApp.form.getElb1());
+        anthro.setElb11(MainApp.form.getElb11());
         anthro.setType(CONSTANTS.MWRA_ANTHRO_TYPE);
+        anthro.setSysdate(MainApp.form.getSysdate());
 
         JSONObject json = new JSONObject();
-        json.put("elb8a", MainApp.indexKishMWRA.getSubclusterno());
-        json.put("serial", MainApp.indexKishMWRA.getSerialno());
-        json.put("name", MainApp.indexKishMWRA.getName());
+
+        json.put("elb8a", MainApp.form.getElb8a());
+
+        json.put("name", bi.can0.getText().toString());
         json.put("can1", bi.can101.isChecked() ? "1"
                 : bi.can102.isChecked() ? "2"
                 : "-1");
