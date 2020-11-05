@@ -35,12 +35,12 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.models.SyncModel;
 
 public class GetAllData extends AsyncTask<String, String, String> {
 
+    private final String syncClass;
+    private final Context mContext;
     private HttpURLConnection urlConnection;
     private SyncListAdapter adapter;
     private List<SyncModel> list;
     private int position;
-    private final String syncClass;
-    private final Context mContext;
     private String TAG = "";
     private ProgressDialog pd;
 

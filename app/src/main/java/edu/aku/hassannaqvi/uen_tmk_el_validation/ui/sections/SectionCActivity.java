@@ -9,15 +9,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
@@ -142,7 +143,7 @@ public class SectionCActivity extends AppCompatActivity {
         int totalfemales = (TextUtils.isEmpty(bi.elc807.getText()) ? 0 : Integer.parseInt(bi.elc807.getText().toString().trim()))
                 + (TextUtils.isEmpty(bi.elc808.getText()) ? 0 : Integer.parseInt(bi.elc808.getText().toString().trim()));
 
-        if (totalfemales != Integer.parseInt(bi.elc803.getText().toString())) {
+        if (totalfemales > Integer.parseInt(bi.elc803.getText().toString())) {
             return Validator.emptyCustomTextBox(this, bi.elc801, "Invalid Count of females Please check again");
         }
 
