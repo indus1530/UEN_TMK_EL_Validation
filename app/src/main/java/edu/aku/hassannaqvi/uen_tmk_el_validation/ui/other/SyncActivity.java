@@ -143,11 +143,11 @@ public class SyncActivity extends AppCompatActivity implements SyncDevice.SyncDe
                     "updateSyncedForms",
                     Form.class,
                     MainApp._HOST_URL + MainApp._SERVER_URL,
-                    FormsContract.FormsTable.TABLE_NAME,
+                    FormsContract.FormsTable.TABLE_NAME + "_VAL",
                     db.getUnsyncedForms(), 0, syncListAdapter, uploadlist
             ).execute();
 
-            String[][] syncValues = new String[][]{{"ImmunizationV", CONSTANTS.CHILD_TYPE}, {"AnthroV", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
+            String[][] syncValues = new String[][]{{"Immunization_VAL", CONSTANTS.CHILD_TYPE}, {"Anthro_VAL", CONSTANTS.CHILD_ANTHRO_TYPE + "-" + CONSTANTS.MWRA_ANTHRO_TYPE}};
             for (int i = 1; i <= 2; i++) {
                 int k = i - 1;
                 Toast.makeText(getApplicationContext(), String.format("Syncing Forms %s", syncValues[k][0]), Toast.LENGTH_SHORT).show();

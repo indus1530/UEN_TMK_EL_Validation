@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.DatabaseHelper;
@@ -34,6 +35,11 @@ public class SectionJActivity extends AppCompatActivity {
     private void setupSkip() {
         bi.bfj6.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.llbfj7));
         bi.bfj10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVbfj11));
+        bi.bfj26.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (bi.bfj2602.isChecked()) {
+                Clear.clearAllFields(bi.llbfj26);
+            }
+        }));
     }
 
 
@@ -97,7 +103,6 @@ public class SectionJActivity extends AppCompatActivity {
         json.put("bfj6", bi.bfj601.isChecked() ? "1"
                 : bi.bfj602.isChecked() ? "2"
                 : "-1");
-
 
 
         json.put("bfj801", bi.bfj801.isChecked() ? "1" : "-1");
@@ -206,10 +211,6 @@ public class SectionJActivity extends AppCompatActivity {
 
         json.put("bfj26", bi.bfj2601.isChecked() ? "1"
                 : bi.bfj2601.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi6", bi.bfj2701.isChecked() ? "1"
-                : bi.bfj2701.isChecked() ? "2"
                 : "-1");
 
         MainApp.form.setsJ(json.toString());

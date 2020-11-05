@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name"> UEN TMK EL </string>
+    <string name="app_name"> UEN TMK EL Validation</string>
     <string name="sectionb_mainheading">سيڪشن بي: گھراڻي جي سڃاڻپ ۽ آبادياتي معلومات</string>
     <string name="sectionc_mainheading">سيڪشن سي:   تعارف ۽ اجازت نامو </string>
     <string name="sectiond_mainheading">سيڪشن ڊي:  گھراڻي جي فردن متعلق معلومات</string>

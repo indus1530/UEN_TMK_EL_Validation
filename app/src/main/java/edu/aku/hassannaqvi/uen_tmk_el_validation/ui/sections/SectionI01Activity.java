@@ -7,15 +7,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.Mwra_ChildrenContract;
@@ -64,6 +65,10 @@ public class SectionI01Activity extends AppCompatActivity {
         radioGroupImp(bi.imi4i, bi.imi4i01, bi.fldGrpCVimi4isrc, bi.fldGrpCVimi4iplc);
         radioGroupImp(bi.imi4j, bi.imi4j01, bi.fldGrpCVimi4jsrc, bi.fldGrpCVimi4jplc);
 
+        bi.imi5.setOnCheckedChangeListener(((radioGroup, i) -> {
+            if (bi.imi502.isChecked())
+                Clear.clearAllFields(bi.llimi6);
+        }));
 
     }
 
@@ -283,10 +288,6 @@ public class SectionI01Activity extends AppCompatActivity {
 
         json.put("imi5", bi.imi501.isChecked() ? "1"
                 : bi.imi502.isChecked() ? "2"
-                : "-1");
-
-        json.put("imi6", bi.imi601.isChecked() ? "1"
-                : bi.imi601.isChecked() ? "2"
                 : "-1");
 
         mwraChild.setsB(json.toString());
