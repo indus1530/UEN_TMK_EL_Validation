@@ -61,7 +61,7 @@
                         android:hint="@string/elc801"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
+                        app:maxValue="99"
                         app:minValue="1"
                         app:type="range" />
                 </LinearLayout>
@@ -106,8 +106,8 @@
                         android:hint="@string/elc802"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -151,8 +151,8 @@
                         android:hint="@string/elc803"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
 
                 </LinearLayout>
@@ -197,8 +197,8 @@
                         android:hint="@string/elc804"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -242,8 +242,8 @@
                         android:hint="@string/elc805"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -288,8 +288,8 @@
                         android:hint="@string/elc806"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -333,8 +333,8 @@
                         android:hint="@string/elc807"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -375,12 +375,11 @@
                         android:id="@+id/elc808"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:hint="@string/elc808"
                         android:inputType="number"
                         app:mask="##"
-                        app:maxValue="10"
-                        app:minValue="1"
+                        app:maxValue="99"
+                        app:minValue="0"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

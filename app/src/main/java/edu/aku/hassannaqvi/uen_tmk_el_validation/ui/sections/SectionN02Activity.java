@@ -142,6 +142,7 @@ public class SectionN02Activity extends AppCompatActivity implements EndSectionA
         anthro.setElb11(MainApp.form.getElb11());
         anthro.setType(CHILD_ANTHRO_TYPE);
         anthro.setSysdate(MainApp.form.getSysdate());
+        anthro.setUUID(MainApp.form.get_UID());
 
         JSONObject json = new JSONObject();
 
