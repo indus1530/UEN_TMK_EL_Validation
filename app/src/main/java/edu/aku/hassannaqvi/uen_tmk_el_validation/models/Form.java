@@ -2,12 +2,13 @@ package edu.aku.hassannaqvi.uen_tmk_el_validation.models;
 
 import android.database.Cursor;
 
+import androidx.lifecycle.LiveData;
+
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.lifecycle.LiveData;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract.FormsTable;
 
 /**
@@ -16,7 +17,7 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.contracts.FormsContract.FormsTa
 
 public class Form extends LiveData<Form> {
 
-    private final String projectName = "UenTmkEl2020";
+    private final String projectName = "UenTmkEl2023";
     private String _ID = "";
     private String _UID = "";
     private String username;

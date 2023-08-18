@@ -216,7 +216,8 @@
                         android:layout_height="wrap_content"
                         android:enabled="false"
                         android:hint="@string/elb4"
-                        android:text="Sindh" />
+                        android:text="Sindh"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -262,7 +263,8 @@
                         android:layout_height="wrap_content"
                         android:enabled="false"
                         android:hint="@string/elb5"
-                        android:text="Tando Mohammad Khan" />
+                        android:text="Tando Mohammad Khan"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -307,7 +309,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="@string/elb6" />
+                        android:hint="@string/elb6"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -352,7 +355,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="@string/elb7" />
+                        android:hint="@string/elb7"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -397,7 +401,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="@string/elb8" />
+                        android:hint="@string/elb8"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -443,7 +448,8 @@
                         android:layout_height="wrap_content"
                         android:enabled="false"
                         android:hint="@string/elb8a"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:textColor="@color/red" />
 
                 </LinearLayout>
 
@@ -486,24 +492,28 @@
                     <RadioGroup
                         android:id="@+id/elb09"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/elb0901"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:text="@string/elb0901" />
 
                         <RadioButton
                             android:id="@+id/elb0902"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:text="@string/elb0902" />
 
                         <RadioButton
                             android:id="@+id/elb0903"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:text="@string/elb0903" />
 
                     </RadioGroup>
@@ -554,11 +564,11 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/elb11"
                             android:layout_width="0dp"
-                            android:layoutDirection="ltr"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
                             android:hint="####-###"
                             android:inputType="number"
+                            android:layoutDirection="ltr"
                             android:onTextChanged="@{callback::elb11OnTextChanged}"
                             app:mask="####-###" />
 
@@ -637,7 +647,8 @@
                             android:hint="DD/MM/YYYY"
                             app:dateFormat="dd-MM-yyyy"
                             app:maxDate="CR_DATE"
-                            app:minDate="20/10/2015" />
+                            app:minDate="20/10/2015"
+                            app:theme="@style/DatePickerEditTextDialogTheme" />
 
                     </LinearLayout>
 

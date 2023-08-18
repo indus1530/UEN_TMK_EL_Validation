@@ -86,8 +86,8 @@ public class SectionJActivity extends AppCompatActivity {
                 : bi.bfj212.isChecked() ? "12"
                 : bi.bfj296.isChecked() ? "96"
                 : "-1");
-
         json.put("bfj296x", bi.bfj296x.getText().toString());
+
         json.put("bfj3", bi.bfj3m.isChecked() ? ""
                 : bi.bfj3h.isChecked() ? ""
                 : bi.bfj3d.isChecked() ? ""

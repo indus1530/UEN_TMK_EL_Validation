@@ -1,5 +1,17 @@
 package edu.aku.hassannaqvi.uen_tmk_el_validation.ui.other;
 
+import static java.lang.Thread.sleep;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.TWO_MINUTES;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt.getPermissionsList;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.DB_NAME;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.SplashRepositoryKt.populatingSpinners;
+
 import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -30,6 +42,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.databinding.DataBindingUtil;
+
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
@@ -46,9 +62,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.R;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.core.AppInfo;
@@ -57,18 +70,6 @@ import edu.aku.hassannaqvi.uen_tmk_el_validation.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_el_validation.databinding.ActivityLoginBinding;
 import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
-
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.CONSTANTS.TWO_MINUTES;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.AppUtilsKt.getPermissionsList;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.DB_NAME;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.CreateTable.PROJECT_NAME;
-import static edu.aku.hassannaqvi.uen_tmk_el_validation.utils.SplashRepositoryKt.populatingSpinners;
-import static java.lang.Thread.sleep;
 
 public class LoginActivity extends Activity {
 
@@ -102,7 +103,7 @@ public class LoginActivity extends Activity {
         }
 
         // populateAutoComplete();
-        gettingDeviceIMEI();
+//        gettingDeviceIMEI();
         Target viewTarget = new ViewTarget(bi.syncData.getId(), this);
 
         new ShowcaseView.Builder(this)
@@ -406,7 +407,7 @@ public class LoginActivity extends Activity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+//        MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 
     }
 
